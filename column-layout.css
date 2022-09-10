@@ -1,3 +1,216 @@
+/* ページ内画像のサイズダウン(最大サイズの設定) */
+.asset-container img {
+    max-width: 600px !important;
+}
+
+
+/* 区切り「---」 の表示 */
+hr {
+    border-top: 2px dashed;
+    margin-top: 2.5em;
+}
+
+
+
+/* 左サイドバー メニューにカーソルが乗ったとき */
+.light-theme div.left-sidebar-inner a:hover {
+    background: linear-gradient(#c1e0ff 110%, transparent 70%);
+}
+
+
+/* 左サイドバーのメニューアイコンを大きくする */
+.page-icon {
+    font-size: 24px;
+    padding-right: 1.5em;
+}
+
+
+/* 左サイドバー　縦の間隔調整 */
+div.nav-content-item-inner {
+    margin-top: 3em;
+}
+
+
+/* #タグの強調 */
+a.tag[data-ref] {
+    font-weight: bold;
+    font-size: 20px;
+    margin: 3px;
+    box-shadow: :0 0 0 2px #e9ecef;
+    border-radius: .25rem;
+    padding: 5px;
+}
+
+
+/* タグにカーソルが乗ったとき */
+.light-theme a.tag[data-ref]:hover {
+    background: linear-gradient(transparent 70%, #c1e0ff 60%);
+    font-weight: bolder;
+}
+
+
+/* チェックボタンのサイズアップ */
+input.form-checkbox {
+    transform: scale(1.2);
+}
+input.form-checkbox+div input.form-checkbox {
+    transform: scale(0.9);
+}
+input.form-checkbox+div a {
+    font-size: medium;
+}
+
+/* NOWの強調 */
+.light-theme .now {
+    background: linear-gradient(transparent 40%, #c1e0ff 70%);
+    font-weight: bold;
+}
+
+/* LATERの強調 */
+.light-theme .later {
+    background: linear-gradient(transparent 70%, #c1e0ff 80%);
+    font-weight: bold;
+}
+
+/* DOINGの強調 */
+.light-theme .doing {
+    background: linear-gradient(transparent 40%, #cadbcf 80%);
+    font-weight: bold;
+}
+
+/* TODOの強調 */
+.light-theme .todo {
+    background: linear-gradient(transparent 80%, #cadbcf 70%);
+    font-weight: bold;
+}
+
+/* LATER、NOW、TODO、DOINGなどの強調 */
+a.block-marker {
+    font-weight: bold;
+    font-size: 26px;
+    margin-right: 0.3em;
+}
+
+/* CANCELED、DONEを打消し線にしない、ピンク */
+.canceled,
+.done {
+    text-decoration：none;
+    background: #ffdbed;
+    border-radius: 0.25em;
+    display: inline;
+}
+
+.dark-theme .canceled,
+.dark-theme .done {
+    color: #111;
+}
+.dark-theme .canceled a,
+.dark-theme .done a {
+    color: #222;
+}
+
+
+
+
+/* リンクにカーソルが乗ったら強調 */
+.light-theme a:hover {
+    background: linear-gradient(transparent 70%, #91b2d2 70%);
+    font-weight: bold;
+    text-shadow: 1px 1px 1px gray;
+}
+
+
+/* ジャーナルページのタイトル */
+div.flex h1 {
+    overflow: hidden;
+    padding: 4px;
+    margin-bottom: 0;
+    color: #999;
+}
+
+div.flex h1:before {
+    content: "title";
+    font-size: medium;
+    padding: 0.5em;
+}
+
+
+
+/* Taskカードにヘッダーが含まれる場合に文字サイズを小さくする */
+div#today-queries h2,
+div#today-queries h3,
+div#today-queries h4 {
+    font-size: 17px;
+    padding: 5px;
+}
+
+
+/* タイトルヘッダーの上側に余白をつける */
+h2,
+h3,
+h4 {
+    margin-top: 20px;
+}
+
+
+/* ヘッダーサイズの表示をする */
+.ls-block h1::after {
+    content: "h1";
+}
+
+.ls-block h2::after {
+    content: "h2";
+}
+
+.ls-block h3::after {
+    content: "h3";
+}
+
+.ls-block h4::after {
+    content: "h4";
+}
+
+.ls-block h5::after {
+    content: "h5";
+}
+
+.ls-block h1::after,
+.ls-block h2::after,
+.ls-block h3::after,
+.ls-block h4::after,
+.ls-block h5::after,
+.ls-block h6::after {
+    color: #f1f1f1;
+    margin-left: 1em;
+    font-size: medium;
+    font-weight: bold;
+    background: #abbdda;
+    padding: 0.5em;
+    border-radius: 0.5em;
+}
+
+
+/* クエリーテーブルの項目が見づらいのを調整 */
+.custom-query .table-auto>thead>tr>th {
+    background-color: rgba(0, 0, 0, 0.1);
+    padding: 3px 6px;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+.custom-query .table-auto>tbody>tr>td.whitespace-nowrap {
+    overflow-wrap: break-word;
+    min-width: 20px;
+    white-space: normal;
+    font-weight: 300;
+    font-size: 13px;
+}
+
+.custom-query .table-auto>tbody>tr>.whitespace-nowrap img {
+    max-height: 120px;
+    margin: 0;
+}
+
 /* カラムレイアウト(高解像度ディスプレイ向け、横幅大きめ) */
 @supports (display: flex) {
 @media screen and (min-width: 1850px) {
@@ -156,3 +369,4 @@ div#main-content-container div.relative+div.references.mt-6.flex-1.flex-row {
 
 
 }}/* カラムレイアウトここまで */
+
