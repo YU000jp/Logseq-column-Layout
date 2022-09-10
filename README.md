@@ -1,4 +1,4 @@
-# Logseq-column-Layout
+# Column-Layout Plugin for Logseq
 
 ![1662768116823-So7NpcKumn](https://user-images.githubusercontent.com/111847207/189483249-87505a6e-29f5-4ee5-91f7-961be542da16.png)
 
@@ -10,7 +10,7 @@
 
 the screen min-width: 1850px
 
-This theme is available on the Logseq Market place.
+This Plugin is available on the Logseq Market place.
 
 
 ---
