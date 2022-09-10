@@ -1,10 +1,17 @@
 {
-  "name": "Column-Layout",
+  "name": "column-Layout",
   "author": "YU000jp",
-  "version": "0.0.1",
-  "description": "Column-Layout Style",
-  "main": "./index.html",
+  "version": "0.1.1",
+  "description": "column-Layout theme",
   "logseq": {
-    "id": "column-layout",
+    "themes": [
+      {
+        "name": "column-Layout",
+        "url": "./column-layout.css",
+        "description": "column-Layout theme",
+        "mode": "light"
+      }
+    ],
+    "id": "column-Layout-theme"
   }
 }
