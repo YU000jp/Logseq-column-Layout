@@ -16,3 +16,5 @@ Edit Logseq custom.css
 the screen min-width: 1850px
 
 Incompatible with some theme packages.
+
+Enhancing Journal Queries turns logseq into an outliner task management tool.
