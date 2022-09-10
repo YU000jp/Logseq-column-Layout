@@ -15,7 +15,7 @@ Incompatible with some theme packages.
 ### Edit Logseq 「custom.css」
 
 ```clojure
-@import url('https://github.com/YU000jp/Logseq-column-Layout/blob/main/custom.css');
+@import url('https://yu000jp.github.io/Logseq-column-Layout/custom.css');
 ```
 
 
