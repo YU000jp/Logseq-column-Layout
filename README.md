@@ -144,7 +144,7 @@ Enhancing Journal Queries turns Logseq into an outliner task management tool.
  
  ---
  
-# SUPPORT
+## SUPPORT
 
  If this custom css helps you, I'd really appreciate your support. You can buy me a coffee here.
  
