@@ -13,6 +13,9 @@ the screen min-width: 1850px
 This Theme is available on the Logseq Market place.
 
 
+Some plugins are not supported.
+
+
 ---
 
 
