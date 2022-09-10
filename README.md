@@ -21,11 +21,14 @@ Incompatible with some theme packages.
 
 ---
 
-## OPTION
 
-### Edit Logseq「config.edn」 (part of)
+## Change Jounal Queries
 
 Enhancing Journal Queries turns Logseq into an outliner task management tool.
+
+ ![1662770461291-FhSBaJXekb](https://user-images.githubusercontent.com/111847207/189484746-8364ad0c-98d2-4117-b321-b79d7c56052c.png)
+
+### Edit Logseq「config.edn」 (part of)
 
 ```clojure
  :default-queries{
@@ -125,6 +128,9 @@ Enhancing Journal Queries turns Logseq into an outliner task management tool.
     ]}
 ```
 
+### Contains the following 7 queries
+
+
  1. 🔨 Working Tasks #NOW
 
  1. 📅 Scheduled to #LATER
@@ -138,3 +144,4 @@ Enhancing Journal Queries turns Logseq into an outliner task management tool.
  1. ⏳ Not Assigned #WAITING
 
  1. ⏰ Scheduled appointments, 14 days #TODO
+ 
