@@ -1,8 +1,8 @@
 {
-  "name": "column-Layout",
+  "name": "Column-Layout",
   "author": "YU000jp",
   "version": "0.0.8",
-  "description": "column-Layout theme",
+  "description": "If you're using wide monitors, you can place journals, linked references, and journal queries side by side.",
   "main": "./index.html",
   "logseq": {
     "id": "column-Layout-theme",

@@ -1,5 +1,9 @@
 # Column-Layout Plugin for Logseq
 
+If you're using wide monitors, you can place journals, linked references, and journal queries side by side.
+
+
+
 ![1662768116823-So7NpcKumn](https://user-images.githubusercontent.com/111847207/189483249-87505a6e-29f5-4ee5-91f7-961be542da16.png)
 
 ![1662766493774-uanJkoieHO](https://user-images.githubusercontent.com/111847207/189498997-5d6f791b-2a6b-45d7-bcb2-d09bee36d431.png)
