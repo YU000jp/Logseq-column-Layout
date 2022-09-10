@@ -2,21 +2,15 @@
 
 ![1662768116823-So7NpcKumn](https://user-images.githubusercontent.com/111847207/189483249-87505a6e-29f5-4ee5-91f7-961be542da16.png)
 
-![1662766493774-uanJkoieHO](https://user-images.githubusercontent.com/111847207/189484368-024b8451-1456-4e11-bd88-3457f797b9d0.png)
+![1662766493774-uanJkoieHO](https://user-images.githubusercontent.com/111847207/189498997-5d6f791b-2a6b-45d7-bcb2-d09bee36d431.png)
+
 
 
 ## INSTALL
 
 the screen min-width: 1850px
 
-Incompatible with some theme packages.
-
-
-### Edit Logseq 「custom.css」
-
-```clojure
-@import url('https://yu000jp.github.io/Logseq-column-Layout/custom.css');
-```
+This theme is available on the Logseq Market place.
 
 
 ---
@@ -29,6 +23,9 @@ Enhancing Journal Queries turns Logseq into an outliner task management tool.
  ![1662770461291-FhSBaJXekb](https://user-images.githubusercontent.com/111847207/189484746-8364ad0c-98d2-4117-b321-b79d7c56052c.png)
 
 ### Edit Logseq「config.edn」 (part of)
+
+![1662772563325-tkA2Gj61wv](https://user-images.githubusercontent.com/111847207/189498869-2b99016d-a2b3-44cc-80ed-f9e0cb123d78.png)
+
 
 ```clojure
  :default-queries{
