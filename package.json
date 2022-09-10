@@ -10,6 +10,12 @@
         "url": "./column-layout.css",
         "description": "column-Layout theme",
         "mode": "light"
+      },
+      {     {
+        "name": "column-Layout",
+        "url": "./column-layout.css",
+        "description": "column-Layout theme",
+        "mode": "dark"
       }
     ],
     "id": "column-Layout-theme"
