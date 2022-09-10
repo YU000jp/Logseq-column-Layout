@@ -39,6 +39,7 @@ a.tag[data-ref] {
     box-shadow: :0 0 0 2px #e9ecef;
     border-radius: .25rem;
     padding: 5px;
+    border: solid 2px #045591;
 }
 
 
