@@ -1,16 +1,11 @@
 {
   "name": "column-Layout",
   "author": "YU000jp",
-  "version": "0.1.0",
+  "version": "0.0.8",
   "description": "column-Layout theme",
+  "main": "./index.html",
   "logseq": {
-    "themes": [
-      {
-        "name": "column-Layout",
-        "url": "./column-layout.css",
-        "description": "column-Layout theme"
-      }
-    ],
-    "id": "column-Layout-theme"
+    "id": "column-Layout-theme",
+    "icon": "icon.svg"
   }
 }
