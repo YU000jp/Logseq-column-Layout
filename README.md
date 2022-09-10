@@ -142,3 +142,11 @@ Enhancing Journal Queries turns Logseq into an outliner task management tool.
 
  1. ⏰ Scheduled appointments, 14 days #TODO
  
+ ---
+ 
+# SUPPORT
+
+ If this custom css helps you, I'd really appreciate your support. You can buy me a coffee here.
+ 
+ <a href="https://www.buymeacoffee.com/yu000japan" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
+ 
