@@ -1,8 +1,9 @@
 # Logseq-column-Layout
 
-![スクリーンショット 2022-08-15 182636](https://user-images.githubusercontent.com/111847207/189482366-75d64a25-adcc-4939-91dc-d5f991147b23.png)
+![1662768116823-So7NpcKumn](https://user-images.githubusercontent.com/111847207/189483249-87505a6e-29f5-4ee5-91f7-961be542da16.png)
 
-![スクリーンショット 2022-08-15 180232](https://user-images.githubusercontent.com/111847207/189482369-26284960-d911-4062-9864-4e387903c90b.png)
+![1662766493774-uanJkoieHO](https://user-images.githubusercontent.com/111847207/189483251-1e3adcba-0573-462b-8a61-daa52329effd.png)
+
 
 the screen min-width: 1850px
 Incompatible with some theme packages.
