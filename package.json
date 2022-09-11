@@ -9,6 +9,6 @@
   "repo":"YU000jp/Logseq-column-Layout",
   "logseq": {
     "id": "column-Layout-theme",
-    "icon": "icon.svg"
+    "icon": "./icon.svg"
   }
 }
