@@ -158,7 +158,7 @@ div#main-content-container div.relative+div.references.mt-6.flex-1.flex-row {
 [data-refs-self*="kanban"] > .block-children-container > .block-children {
     overflow-x: scroll !important;
     flex-direction: column;
-    max-width: 700px;
+    max-width: 760px;
 }
 /* TODOリストプラグイン */
 .light-theme div#logseq-plugin-todo span {
