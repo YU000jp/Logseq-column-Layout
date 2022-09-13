@@ -3,7 +3,6 @@
 If you're using wide monitors, you can place journals, linked references, and journal queries side by side.
 
 
-
 ![1662768116823-So7NpcKumn](https://user-images.githubusercontent.com/111847207/189483249-87505a6e-29f5-4ee5-91f7-961be542da16.png)
 
 ![1662766493774-uanJkoieHO](https://user-images.githubusercontent.com/111847207/189498997-5d6f791b-2a6b-45d7-bcb2-d09bee36d431.png)
@@ -20,10 +19,18 @@ This Plugin is available on the Logseq Market place.
 Some plugins are not supported.
 
 
+## Pattern
+
+Column layout applies only to journals.
+
+Other pages display **page-tags** instead.
+
+![スクリーンショット 2022-09-13 142137](https://user-images.githubusercontent.com/111847207/189815678-5d55e9b6-6d27-4c6e-983e-709d389f36c9.png)
+
 ---
 
 
-## Change Jounal Queries (**OPTION**)
+# Change Jounal Queries (**OPTION**)
 
 Enhancing Journal Queries turns Logseq into an outliner task management tool.
 
