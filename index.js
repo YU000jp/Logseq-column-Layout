@@ -3,23 +3,15 @@ function main() {
 
 
 
-/* カラムレイアウト(高解像度ディスプレイ向け、横幅大きめ) */
+/* Screen size */
 @supports (display: flex) {
 @media screen and (min-width: 1850px) {
 
 
 
-/* ページ内画像のサイズダウン(最大サイズの設定) */
+/* Images sizedown */
 .asset-container img {
     max-width: 600px !important;
-}
-
-/* Taskカードにヘッダーが含まれる場合に文字サイズを小さくする */
-div#today-queries h2,
-div#today-queries h3,
-div#today-queries h4 {
-    font-size: 17px;
-    padding: 5px;
 }
 
 div.flex-1.journal.page {
@@ -28,17 +20,17 @@ div.flex-1.journal.page {
     flex-wrap: wrap;
 }
 
-/* メインコンテンツのサイズアップ */
+/* content-size */
 :root {
     --ls-main-content-max-width: auto !important;
 }
 
-/* 右クエリーカラムの領域確保 */
+/* Journal-queries space */
 div#journals {
     margin-right: 360px;
 }
 
-/* ジャーナルカラム */
+/* Journals */
 .journal>div.flex.flex-col:first-child {
     margin-right: 0.5em;
     min-width: 750px;
@@ -47,7 +39,7 @@ div#journals {
 }
 
 
-/* SCHEDULED AND DEADLINEを浮かせる */
+/* SCHEDULED AND DEADLINE */
 div#today-queries+div.flex.flex-col {
     position: fixed;
     right: 440px;
@@ -71,7 +63,7 @@ div#today-queries+div.flex.flex-col h2.font-bold.opacity-50 {
 }
 
 
-/* Linked Referencesカラム flex表示 */
+/* Linked References */
 div#journals div.references {
     max-height: 1220px;
     z-index: 1;
@@ -79,13 +71,17 @@ div#journals div.references {
     overflow-y: auto;
     font-size: smaller;
 }
+div.journal>div.lazy-visibility div.references-blocks div.flex.flex-col>div {
+    padding-left: 0;
+    padding-right: 0;
+}
+
 
 div.max-w-7xl.mx-auto.pb-24 {
     max-width: 2400px !important;
 }
 
-
-/* 右クエリーカラム 固定表示 上下にスクロール可能 */
+/* Journal-queries */
 div#today-queries {
     width: 385px;
     position: fixed;
@@ -115,8 +111,15 @@ div#today-queries a.block-marker {
     font-size: 22px;
 }
 
+/* Journal-queries h2-h4 header sizedown */
+div#today-queries h2,
+div#today-queries h3,
+div#today-queries h4 {
+    font-size: 17px;
+    padding: 5px;
+}
 
-/* 右サイドバーを浮かせる */
+/* right-sidebar */
 div#right-sidebar {
     position: fixed;
     right: 0;
@@ -124,27 +127,20 @@ div#right-sidebar {
     z-index: 15;
 }
 
-/* 右サイドバーの背景色 */
+/* right-sidebar-background */
 div.cp__right-sidebar-scrollable>div+div {
     background: #999;
 }
 
-/* Linked Referencesのpaddingを減らす */
-
-div.journal>div.lazy-visibility div.references-blocks div.flex.flex-col>div {
-    padding-left: 0;
-    padding-right: 0;
-}
 
 
-
-/* ジャーナル以外のページ */
+/* ELSE Pages */
 div#main-content-container div.flex-1.page.relative {
     margin-right: 400px;
     padding: 6em;
 }
 
-/* Pages tagged with "〇〇" のみ右側にfixed固定表示 上下スクロール */
+/* ELSE Pages Pages-tagged-with */
 div#main-content-container div.relative+div.references.mt-6.flex-1.flex-row {
     max-width: 370px;
     order: 2;
@@ -161,21 +157,21 @@ div#main-content-container div.relative+div.references.mt-6.flex-1.flex-row {
 }
 
 
-/* 各テーマパッケージのfix */
+/* themes */
 
-/* #kanban かんばん表示タグ */
+/* #kanban */
 [data-refs-self*="kanban"] > .block-children-container > .block-children {
     overflow-x: scroll !important;
     flex-direction: column;
     max-width: 790px;
 }
-/* TODOリストプラグイン */
+/* TODO-List */
 .light-theme div#logseq-plugin-todo span {
     color: #666;
 }
 
 
-}}/* カラムレイアウトここまで */
+}}/* Screen size Finish */
 
 
 
