@@ -2,16 +2,33 @@ function main() {
     logseq.provideStyle(String.raw`
 
 
+
+/* カラムレイアウト(高解像度ディスプレイ向け、横幅大きめ) */
+@supports (display: flex) {
+@media screen and (min-width: 1850px) {
+
+
+
 /* ページ内画像のサイズダウン(最大サイズの設定) */
 .asset-container img {
     max-width: 600px !important;
 }
 
 
+/* Taskカードにヘッダーが含まれる場合に文字サイズを小さくする */
 
-/* カラムレイアウト(高解像度ディスプレイ向け、横幅大きめ) */
-@supports (display: flex) {
-@media screen and (min-width: 1850px) {
+div#today-queries h2,
+
+div#today-queries h3,
+
+div#today-queries h4 {
+
+    font-size: 17px;
+
+    padding: 5px;
+
+}
+
 
 div.flex-1.journal.page {
     display: flex;
