@@ -14,21 +14,13 @@ function main() {
     max-width: 600px !important;
 }
 
-
 /* Taskカードにヘッダーが含まれる場合に文字サイズを小さくする */
-
 div#today-queries h2,
-
 div#today-queries h3,
-
 div#today-queries h4 {
-
-    font-size: 17px;
-
-    padding: 5px;
-
+    font-size: 17px;
+    padding: 5px;
 }
-
 
 div.flex-1.journal.page {
     display: flex;
