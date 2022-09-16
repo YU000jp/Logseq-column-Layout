@@ -1,6 +1,8 @@
 # Column-Layout Plugin for Logseq
 
-If you're using wide monitors, you can place journals, linked references, and journal queries side by side.
+ - If you're using wide monitors, you can place journals, linked references, and journal queries side by side.
+
+ - Pages can be placed side by side in the sidebar.
 
 
 ![1662768116823-So7NpcKumn](https://user-images.githubusercontent.com/111847207/189483249-87505a6e-29f5-4ee5-91f7-961be542da16.png)
@@ -11,28 +13,32 @@ If you're using wide monitors, you can place journals, linked references, and jo
 
 ## INSTALL
 
-the screen min-width: 1850px
+ - the screen min-width: 1850px
 
-This Plugin is available on the Logseq Market place.
+ - This Plugin is available on the Logseq Market place.
 
-
-Some plugins are not supported.
+ - Some plugins are not supported.
 
 
 ## Pattern
 
-Column layout applies only to journals.
+ - Column layout applies only to journals.
 
-Other pages display **page-tags** instead.
+ - Other pages display **page-tags** instead.
 
 ![スクリーンショット 2022-09-13 142137](https://user-images.githubusercontent.com/111847207/189815678-5d55e9b6-6d27-4c6e-983e-709d389f36c9.png)
 
+
+ - 
+
 ---
+
+ - 
 
 
 # Change Jounal Queries (**OPTION**)
 
-Enhancing Journal Queries turns Logseq into an outliner task management tool.
+ - Enhancing Journal Queries turns Logseq into an outliner task management tool.
 
  ![1662770461291-FhSBaJXekb](https://user-images.githubusercontent.com/111847207/189484746-8364ad0c-98d2-4117-b321-b79d7c56052c.png)
 
@@ -160,7 +166,7 @@ Enhancing Journal Queries turns Logseq into an outliner task management tool.
  
 ## SUPPORT
 
- If the plugin helps you, I'd really appreciate your support. You can buy me a coffee here.
+  - If the plugin helps you, I'd really appreciate your support. You can buy me a coffee here.
  
  <a href="https://www.buymeacoffee.com/yu000japan" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
  
