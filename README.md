@@ -2,7 +2,7 @@
 
  - If you're using wide monitors, you can place journals, linked references, and journal queries side by side.
 
- - Pages can be placed side by side in the sidebar.
+ - Pages can be placed side by side in the sidebar.(Credit: [Logseq Vertical Panels for Sidebar](https://github.com/r-hegde/logseq-vertical-panels))
 
 
 ![1662768116823-So7NpcKumn](https://user-images.githubusercontent.com/111847207/189483249-87505a6e-29f5-4ee5-91f7-961be542da16.png)
