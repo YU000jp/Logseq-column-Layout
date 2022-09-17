@@ -105,17 +105,21 @@ function main() {
             z-index: 15;
         }
         /* right-sidebar-background */
-        div.cp__right-sidebar-scrollable>div+div {
+        div#right-sidebar {
+            overflow-x: scroll;
+            border: 2px double #666;
+        }
+        div#right-sidebar div.cp__right-sidebar-scrollable>div+div {
             background: #999;
         }
-        div.cp__right-sidebar-scrollable>div.cp__right-sidebar-topbar {
+        div#right-sidebar div.cp__right-sidebar-scrollable>div.cp__right-sidebar-topbar {
             height: unset;
         }
-        div.cp__right-sidebar div.sidebar-item {
+        div#right-sidebar div.cp__right-sidebar div.sidebar-item {
             min-height: 4em;
             padding-top: unset;
         }
-        div.sidebar-item-list {
+        div#right-sidebar div.sidebar-item-list {
             padding-left: 0.3rem !important;
             padding-right: 0.1rem !important;
             height: 96vh !important;
@@ -125,7 +129,7 @@ function main() {
             align-content: flex-start;
             padding-bottom: 0;
         }
-        div.sidebar-item.content>div>div:first-of-type {
+        div#right-sidebar div.sidebar-item.content>div>div:first-of-type {
             margin-top: 0;
             position: sticky !important;
             top: 0;
@@ -134,19 +138,15 @@ function main() {
             backdrop-filter: blur(20px);
             font-size: small;
         }
-        div.sidebar-item.content.color-level.px-4 {
+        div#right-sidebar div.sidebar-item.content.color-level.px-4 {
             min-width: 33vw;
             overflow-y: scroll;
         }
-        div.sidebar-item-list.flex-1.scrollbar-spacing {
+        div#right-sidebar div.sidebar-item-list.flex-1.scrollbar-spacing {
             display: flex;
             padding-bottom: 0;
         }
-        div#right-sidebar {
-            overflow-x: scroll;
-            border: 2px double #666;
-        }
-        div.cp__right-sidebar div.sidebar-item.content {
+        div#right-sidebar div.cp__right-sidebar div.sidebar-item.content {
             resize: both;
             display: inline-block;
             align-self: flex-start;
@@ -154,17 +154,17 @@ function main() {
             max-height: 91vh;
             max-width: 700px;
         }
-        div.sidebar-item-list div.sidebar-item.flex-col {
+        div#right-sidebar div.sidebar-item-list div.sidebar-item.flex-col {
             width: 100% !important;
         }
-        div.graph {
+        div#right-sidebar div.graph {
             height: 500px !important;
         }
-        div.graph canvas {
+        div#right-sidebar div.graph canvas {
             height: 100% !important;
             width: 100% !important;
         }
-        div.graph:hover {
+        div#right-sidebar div.graph:hover {
             transform:scale(1.4,1.4);
             position: fixed;
             right: 4em;
