@@ -39,11 +39,11 @@ function main() {
             max-width: 410px;
         }
         .light-theme div#today-queries+div.flex.flex-col {
-            background-color: #eed67e;
+            background-color: #69aac6;
         }
         .dark-theme div#today-queries+div.flex.flex-col {
             background-color: var(--ls-primary-background-color);
-            border: 2px solid #eed67e;
+            border: 2px solid #69aac6;
         }
         /* Linked References */
         div#journals div.references {
@@ -72,8 +72,19 @@ function main() {
             font-size: smaller;
             background-color: var(--ls-primary-background-color);
             border-radius: 10px;
+            padding-top: 3.2em;
             padding-bottom: 4em;
         }
+        div#today-queries>div.lazy-visibility {
+            min-height: unset !important;
+        }
+        div#today-queries>div.lazy-visibility div.custom-query div.foldable-title {
+            height: 3em;
+        }
+        div#today-queries>div.lazy-visibility div.custom-query div.foldable-title div.items-center {
+            height: 100%;
+            padding: 3px;
+        }          
         div#today-queries.mt-10 {
             margin-top: 0.1em;
         }
@@ -108,6 +119,7 @@ function main() {
         div#right-sidebar {
             overflow-x: scroll;
             border: 2px double #666;
+            margin-top: unset !important;
         }
         div#right-sidebar div.cp__right-sidebar-scrollable>div+div {
             background: #999;
