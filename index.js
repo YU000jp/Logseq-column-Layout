@@ -75,6 +75,15 @@ function main() {
             padding-top: 3.2em;
             padding-bottom: 4em;
         }
+        div#today-queries:hover {
+            position: fixed;
+            top: 4em;
+            right: 0;
+            width: 480px;
+            border: 2px double;
+            z-index: 35;
+            margin: 2em;
+        }
         div#today-queries>div.lazy-visibility {
             min-height: unset !important;
         }
