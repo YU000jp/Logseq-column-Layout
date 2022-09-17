@@ -1,7 +1,6 @@
 function main() {
     logseq.provideStyle(String.raw`
 
-
 /* Screen size */
 @supports (display: flex) {
     @media screen and (min-width: 1850px) {
@@ -32,12 +31,12 @@ function main() {
         /* SCHEDULED AND DEADLINE */
         div#today-queries+div.flex.flex-col {
             position: fixed;
-            right: 440px;
+            right: 410px;
             top: 0.1em;
             z-index: 10;
             border-radius: 10px;
             padding: 0.5em;
-            padding-left: 2em;
+            max-width: 410px;
         }
         .light-theme div#today-queries+div.flex.flex-col {
             background-color: #eed67e;
@@ -98,11 +97,27 @@ function main() {
             font-size: 17px;
             padding: 5px;
         }
+        /* right-sidebar */
+        div#right-sidebar {
+            position: fixed;
+            right: 0;
+            top: 50px;
+            z-index: 15;
+        }
+        /* right-sidebar-background */
+        div.cp__right-sidebar-scrollable>div+div {
+            background: #999;
+        }
+        div.cp__right-sidebar-scrollable>div.cp__right-sidebar-topbar {
+            height: unset;
+        }
+        div.cp__right-sidebar div.sidebar-item {
+            min-height: 4em;
+            padding-top: unset;
+        }
         div.sidebar-item-list {
-            padding-left: 0.5rem !important;
-            /* alternate value 1rem */
-            padding-right: 0.05rem !important;
-            /* alternate value 1rem */
+            padding-left: 0.3rem !important;
+            padding-right: 0.1rem !important;
             height: 96vh !important;
             display: flex;
             flex-direction: column;
@@ -142,19 +157,21 @@ function main() {
         div.sidebar-item-list div.sidebar-item.flex-col {
             width: 100% !important;
         }
+        div.graph {
+            height: 500px !important;
+        }
         div.graph canvas {
-            height: 40vh !imnportant;
+            height: 100% !important;
+            width: 100% !important;
         }
-        /* right-sidebar */
-        div#right-sidebar {
+        div.graph:hover {
+            transform:scale(1.4,1.4);
             position: fixed;
-            right: 0;
-            top: 50px;
-            z-index: 15;
-        }
-        /* right-sidebar-background */
-        div.cp__right-sidebar-scrollable>div+div {
-            background: #999;
+            right: 4em;
+            background-color: var(--color-level-1);
+            border: 2px double;
+            z-index: 35;
+            margin: 5em;
         }
         /* ELSE Pages */
         div#main-content-container div.flex-1.page.relative {
@@ -190,7 +207,6 @@ function main() {
     }
 }
 /* Screen size Finish */
-
 
     `);
 }
