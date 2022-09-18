@@ -33,13 +33,14 @@ function main() {
             position: fixed;
             right: 410px;
             top: 0.1em;
-            z-index: 10;
+            z-index: calc(var(--ls-z-index-level-1) + 1);
             border-radius: 10px;
             padding: 0.5em;
             max-width: 410px;
         }
         .light-theme div#today-queries+div.flex.flex-col {
             background-color: #69aac6;
+            border: 1px;
         }
         .dark-theme div#today-queries+div.flex.flex-col {
             background-color: var(--ls-primary-background-color);
@@ -77,12 +78,16 @@ function main() {
         }
         div#today-queries:hover {
             position: fixed;
-            top: 4em;
+            top: 86px;
             right: 0;
             width: 480px;
             border: 2px double;
             z-index: 35;
             margin: 2em;
+        }
+        /*For tabs-plugin*/
+        body:not(.is-tabs-loaded) div#root div#today-queries:hover {
+            top:4em;
         }
         div#today-queries>div.lazy-visibility {
             min-height: unset !important;
@@ -121,8 +126,14 @@ function main() {
         div#right-sidebar {
             position: fixed;
             right: 0;
-            top: 50px;
+            top: 0;
+            margin-top: 2em !important;
             z-index: 10;
+            border-radius: 0.25em;
+        }
+        /* For tabs-plugin */
+        body:not(.is-tabs-loaded) div#root div#right-sidebar {
+            top:50px;
         }
         /* right-sidebar-background */
         div#right-sidebar {
@@ -191,8 +202,12 @@ function main() {
             right: 4em;
             background-color: var(--color-level-1);
             border: 2px double;
-            z-index: 35;
+            z-index: calc(var(--ls-z-index-level-3) + 10);
             margin: 5em;
+        }
+        /* For right-sidebar menu */
+        div#custom-context-menu {
+            z-index: var(--ls-z-index-level-4);
         }
         /* ELSE Pages */
         div#main-content-container div.flex-1.page.relative {
