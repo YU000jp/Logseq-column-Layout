@@ -4,6 +4,10 @@ function main() {
 /* Screen size */
 @supports (display: flex) {
     @media screen and (min-width: 1850px) {
+        div#root div::-webkit-scrollbar {
+            width: 15px !important;
+            height: 20px !important;
+        }
         /* Images sizedown */
         .asset-container img {
             max-width: 600px !important;
@@ -25,7 +29,7 @@ function main() {
         .journal>div.flex.flex-col:first-child {
             margin-right: 0.5em;
             min-width: 750px;
-            max-width: 1000px;
+            max-width: 1050px;
             flex: 3;
         }
         /* SCHEDULED AND DEADLINE */
@@ -98,13 +102,15 @@ function main() {
         }
        div#today-queries>div.lazy-visibility div.custom-query {
             background: var(--color-level-1);
-        }
-        div#today-queries>div.lazy-visibility div.custom-query div.foldable-title {
+            margin-top: 0;
+        } 
+        div#today-queries>div.lazy-visibility div.custom-query>div>div.content>div.foldable-title {
             height: 3em;
+                        background: var(--color-level-2);
         }
-        div#today-queries>div.lazy-visibility div.custom-query div.foldable-title div.items-center {
+        div#today-queries>div.lazy-visibility div.custom-query>div>div.content>div.foldable-title>div.items-center {
             height: 100%;
-            padding: 3px;
+            padding: 2px;
         }          
         div#today-queries.mt-10 {
             margin-top: 0.1em;
@@ -138,7 +144,7 @@ function main() {
             z-index: 10;
             border-radius: 0.25em;
             overflow-x: scroll;
-            border: 2px double #666;
+            border: 2px double;
             margin-top: unset !important;
         }
         /* ELSE tabs-plugin */
@@ -157,20 +163,18 @@ function main() {
             padding-top: unset;
         }
         div#right-sidebar div.sidebar-item-list {
-            padding-left: 0.3rem !important;
-            padding-right: 0.1rem !important;
-            height: 96vh !important;
+            height: 94vh !important;
             display: flex;
             flex-direction: column;
             flex-wrap: wrap;
             align-content: flex-start;
-            padding-bottom: 0;
+            overflow-x: scroll;
         }
         div#right-sidebar div.sidebar-item.content>div>div:first-of-type {
             margin-top: 0;
             position: sticky !important;
             top: 0;
-            padding: 0.5rem;
+            padding: 0.3rem;
             z-index: 10;
             backdrop-filter: blur(20px);
             font-size: small;
@@ -182,6 +186,7 @@ function main() {
         div#right-sidebar div.sidebar-item-list.flex-1.scrollbar-spacing {
             display: flex;
             padding-bottom: 0;
+            margin: unset;
         }
         div#right-sidebar div.cp__right-sidebar div.sidebar-item.content {
             resize: both;
@@ -200,15 +205,7 @@ function main() {
         div#right-sidebar div.graph canvas {
             height: 100% !important;
             width: 100% !important;
-        }
-        div#right-sidebar div.graph:hover {
-            transform:scale(1.4,1.4);
-            position: fixed;
-            right: 4em;
-            background-color: var(--color-level-1);
             border: 2px double;
-            z-index: calc(var(--ls-z-index-level-3) + 10);
-            margin: 5em;
         }
         /* For right-sidebar menu */
         div#custom-context-menu {
