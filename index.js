@@ -39,7 +39,7 @@ function main() {
             max-width: 410px;
         }
         .light-theme div#today-queries+div.flex.flex-col {
-            background-color: #69aac6;
+            background: rgba(105,170,198,0.8);
             border: 1px;
         }
         .dark-theme div#today-queries+div.flex.flex-col {
@@ -66,15 +66,18 @@ function main() {
             width: 385px;
             position: fixed;
             right: 1em;
-            top: 0;
+            top: 86px;
             bottom: 0;
             overflow-y: scroll;
-            z-index: 0;
             font-size: smaller;
             background-color: var(--ls-primary-background-color);
             border-radius: 10px;
-            padding-top: 3.2em;
-            padding-bottom: 4em;
+            padding-top: auto;
+            padding-bottom: 3em;
+        }
+        /* ELSE tabs-plugin */
+        body:not(.is-tabs-loaded) div#root div#today-queries {
+            top:48px;
         }
         div#today-queries:hover {
             position: fixed;
@@ -84,13 +87,17 @@ function main() {
             border: 2px double;
             z-index: 35;
             margin: 2em;
+            padding-top: 0;
         }
-        /*For tabs-plugin*/
         body:not(.is-tabs-loaded) div#root div#today-queries:hover {
-            top:4em;
+            top:46px;
         }
+        /* Fix "Extra space when journal queries are not active #6773" */
         div#today-queries>div.lazy-visibility {
             min-height: unset !important;
+        }
+       div#today-queries>div.lazy-visibility div.custom-query {
+            background: var(--color-level-1);
         }
         div#today-queries>div.lazy-visibility div.custom-query div.foldable-title {
             height: 3em;
@@ -130,19 +137,17 @@ function main() {
             margin-top: 2em !important;
             z-index: 10;
             border-radius: 0.25em;
-        }
-        /* For tabs-plugin */
-        body:not(.is-tabs-loaded) div#root div#right-sidebar {
-            top:50px;
-        }
-        /* right-sidebar-background */
-        div#right-sidebar {
             overflow-x: scroll;
             border: 2px double #666;
             margin-top: unset !important;
         }
+        /* ELSE tabs-plugin */
+        body:not(.is-tabs-loaded) div#root div#right-sidebar {
+            top:50px;
+        }
+        /* right-sidebar-background */
         div#right-sidebar div.cp__right-sidebar-scrollable>div+div {
-            background: #999;
+            background: rgba(6,6,6,0.8);
         }
         div#right-sidebar div.cp__right-sidebar-scrollable>div.cp__right-sidebar-topbar {
             height: unset;
@@ -184,7 +189,7 @@ function main() {
             align-self: flex-start;
             overflow-y: auto;
             max-height: 91vh;
-            max-width: 700px;
+            max-width: 600px;
         }
         div#right-sidebar div.sidebar-item-list div.sidebar-item.flex-col {
             width: 100% !important;
@@ -229,16 +234,20 @@ function main() {
             background-color: var(--ls-primary-background-color);
             border-radius: 10px;
         }
-        /* themes */
         /* #kanban */
-        [data-refs-self*="kanban"]>.block-children-container>.block-children {
-            overflow-x: scroll !important;
-            flex-direction: column;
-            max-width: 790px;
+         div#root [data-refs-self*="kanban"]>.block-children-container>.block-children {
+            overflow-x: scroll;
+            padding: 1em;
+            margin-top: 1em;
+            font-size: smaller;
         }
-        /* TODO-List */
-        .light-theme div#logseq-plugin-todo span {
-            color: #666;
+         div#root [data-refs-self*="kanban"]>.block-children-container>.block-children:hover {
+            visibility: visible;
+            transform:scale(1.14,1.14);
+            border: 2px double;
+            left: 40px;
+            z-index: var(--ls-z-index-level-3);
+            border-radius: 10px;
         }
     }
 }
