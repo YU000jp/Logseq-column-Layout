@@ -4,10 +4,6 @@ function main() {
 /* Screen size */
 @supports (display: flex) {
     @media screen and (min-width: 1850px) {
-        div#root div::-webkit-scrollbar {
-            width: 15px !important;
-            height: 20px !important;
-        }
         /* Images sizedown */
         .asset-container img {
             max-width: 600px !important;
@@ -50,12 +46,18 @@ function main() {
             background-color: var(--ls-primary-background-color);
             border: 2px solid #69aac6;
         }
+        div#journals div.lazy-visibility {
+            min-width: 340px;
+        }
         /* Linked References */
         div#journals div.references {
+            visibility: visible;
+            min-height: 400px;
             max-height: 1220px;
             z-index: 1;
-            width: 350px;
+            width: 360px;
             overflow-y: auto;
+            overflow-x: hidden;
             font-size: smaller;
         }
         div.journal>div.lazy-visibility div.references-blocks div.flex.flex-col>div {
@@ -205,6 +207,10 @@ function main() {
             height: 100% !important;
             width: 100% !important;
             border: 2px double;
+        }
+        div#right-sidebar ::-webkit-scrollbar {
+            width: 15px !important;
+            height: 20px !important;
         }
         /* For right-sidebar menu */
         div#custom-context-menu {
