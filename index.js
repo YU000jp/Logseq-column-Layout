@@ -70,7 +70,7 @@ function main() {
             width: 385px;
             position: fixed;
             right: 1em;
-            top: 86px;
+            top: 88px;
             bottom: 0;
             overflow-y: scroll;
             font-size: smaller;
@@ -78,20 +78,20 @@ function main() {
             border-radius: 10px;
             padding-top: auto;
             padding-bottom: 3em;
+            margin-top: auto;
         }
         /* ELSE tabs-plugin */
         body:not(.is-tabs-loaded) div#root div#today-queries {
-            top:48px;
+            top:52px;
         }
         div#today-queries:hover {
             position: fixed;
-            top: 86px;
+            top: 90px;
             right: 0;
             width: 480px;
             border: 2px double;
-            z-index: 35;
+            z-index: 30;
             margin: 2em;
-            padding-top: 0;
         }
         body:not(.is-tabs-loaded) div#root div#today-queries:hover {
             top:46px;
@@ -106,7 +106,7 @@ function main() {
         } 
         div#today-queries>div.lazy-visibility div.custom-query>div>div.content>div.foldable-title {
             height: 3em;
-                        background: var(--color-level-2);
+            background: var(--color-level-2);
         }
         div#today-queries>div.lazy-visibility div.custom-query>div>div.content>div.foldable-title>div.items-center {
             height: 100%;
@@ -163,7 +163,6 @@ function main() {
             padding-top: unset;
         }
         div#right-sidebar div.sidebar-item-list {
-            height: 94vh !important;
             display: flex;
             flex-direction: column;
             flex-wrap: wrap;
@@ -179,9 +178,14 @@ function main() {
             backdrop-filter: blur(20px);
             font-size: small;
         }
-        div#right-sidebar div.sidebar-item.content.color-level.px-4 {
-            min-width: 33vw;
+        div#right-sidebar div.sidebar-item.content {
+            min-width: 560px;
+            max-width: 800px;
             overflow-y: scroll;
+            resize: both;
+            display: inline-block;
+            align-self: flex-start;
+            overflow-y: auto;
         }
         div#right-sidebar div.sidebar-item-list.flex-1.scrollbar-spacing {
             display: flex;
@@ -189,12 +193,7 @@ function main() {
             margin: unset;
         }
         div#right-sidebar div.cp__right-sidebar div.sidebar-item.content {
-            resize: both;
-            display: inline-block;
-            align-self: flex-start;
-            overflow-y: auto;
-            max-height: 91vh;
-            max-width: 600px;
+
         }
         div#right-sidebar div.sidebar-item-list div.sidebar-item.flex-col {
             width: 100% !important;
