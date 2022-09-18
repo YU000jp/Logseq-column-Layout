@@ -122,7 +122,7 @@ function main() {
             position: fixed;
             right: 0;
             top: 50px;
-            z-index: 15;
+            z-index: 10;
         }
         /* right-sidebar-background */
         div#right-sidebar {
