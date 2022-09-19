@@ -91,9 +91,10 @@ function main() {
             top: 90px;
             right: 0;
             width: 480px;
-            border: 2px double;
+            border: 4px double;
             z-index: 30;
             margin: 2em;
+            padding: 1em;
         }
         body:not(.is-tabs-loaded) div#root div#today-queries:hover {
             top:46px;
@@ -146,7 +147,7 @@ function main() {
             z-index: 10;
             border-radius: 0.25em;
             overflow-x: scroll;
-            border: 2px double;
+            border: 4px double;
             margin-top: unset !important;
         }
         /* ELSE tabs-plugin */
@@ -188,14 +189,13 @@ function main() {
             display: inline-block;
             align-self: flex-start;
             overflow-y: auto;
+            margin-bottom: 1em;
+            max-height: 91vh;
         }
         div#right-sidebar div.sidebar-item-list.flex-1.scrollbar-spacing {
             display: flex;
             padding-bottom: 0;
             margin: unset;
-        }
-        div#right-sidebar div.cp__right-sidebar div.sidebar-item.content {
-
         }
         div#right-sidebar div.sidebar-item-list div.sidebar-item.flex-col {
             width: 100% !important;
