@@ -33,7 +33,7 @@ function main() {
             position: fixed;
             right: 410px;
             top: 0.1em;
-            z-index: var(--ls-z-index-level-1);
+            z-index: 10;
             border-radius: 10px;
             padding: 0.5em;
             max-width: 410px;
