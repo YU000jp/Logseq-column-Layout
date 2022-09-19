@@ -1,7 +1,6 @@
 function main() {
     logseq.provideStyle(String.raw`
 
-
 /* Screen size */
 @supports (display: flex) {
     @media screen and (min-width: 1850px) {
@@ -25,7 +24,7 @@ function main() {
         }
         /* Journals */
         div.journal>div.flex.flex-col:first-child {
-            margin-left: 1em;
+            margin-left: 2em;
             min-width: 750px;
             flex: 3;
         }
@@ -53,10 +52,9 @@ function main() {
             visibility: visible;
             max-height: 83vh;
             z-index: var(--ls-z-index-level-1);
-            min-width: 300px;
-            max-width: 440px;
+            min-width: 260px;
+            max-width: 430px;
             overflow-y: scroll;
-            overflow-x: hidden;
             font-size: smaller;
             position: sticky;
             top: 10em;
@@ -68,7 +66,8 @@ function main() {
         div#journals div.journal.page div.lazy-visibility div.fade-enter-active {
             height: 100%;
         }
-        div.journal>div.lazy-visibility div.references-blocks div.flex.flex-col>div {
+        div#journals div.journal>div.lazy-visibility div.references-blocks div.flex.flex-col>div,
+        div#journals div.references div.references-blocks div.lazy-visibility div.px-2 {
             padding-left: 0;
             padding-right: 0;
         }
