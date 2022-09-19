@@ -1,6 +1,7 @@
 function main() {
     logseq.provideStyle(String.raw`
 
+
 /* Screen size */
 @supports (display: flex) {
     @media screen and (min-width: 1850px) {
@@ -10,8 +11,9 @@ function main() {
         }
         div.flex-1.journal.page {
             display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
+            flex-direction: row-reverse;
+            justify-content: flex-end;
+            flex-wrap: nowrap;
         }
         /* content-size */
         :root {
@@ -23,17 +25,14 @@ function main() {
         }
         /* Journals */
         div.journal>div.flex.flex-col:first-child {
-            margin-right: 0.5em;
+            margin-left: 1em;
             min-width: 750px;
-            max-width: 1050px;
             flex: 3;
         }
         /* SCHEDULED AND DEADLINE */
         div#today-queries+div.flex.flex-col {
-            position: fixed;
-            right: 410px;
-            top: 0.1em;
-            z-index: calc(var(--ls-z-index-level-1) + 1);
+            position: absolute;
+            z-index: var(--ls-z-index-level-2);
             border-radius: 10px;
             padding: 0.5em;
             max-width: 410px;
@@ -52,16 +51,19 @@ function main() {
         /* Linked References */
         div#journals div.references {
             visibility: visible;
-            max-height: 95vh;
+            max-height: 83vh;
             z-index: var(--ls-z-index-level-1);
-            width: 380px;
-            margin: 2px;
+            min-width: 300px;
+            max-width: 440px;
             overflow-y: scroll;
             overflow-x: hidden;
             font-size: smaller;
             position: sticky;
-            top: 2em;
-            bottom: 2em;
+            top: 10em;
+            bottom: 0;
+            left: 0;
+            margin-top: 5em;
+            resize: horizontal;
         }
         div#journals div.journal.page div.lazy-visibility div.fade-enter-active {
             height: 100%;
@@ -77,20 +79,18 @@ function main() {
         div#today-queries {
             width: 385px;
             position: fixed;
-            right: 1em;
-            top: 88px;
-            bottom: 0;
+            right: 2px;
+            top: 92px;
+            bottom: 5px;
             overflow-y: scroll;
             font-size: smaller;
             background-color: var(--ls-primary-background-color);
             border-radius: 10px;
-            padding-top: auto;
             padding-bottom: 3em;
-            margin-top: auto;
         }
         /* ELSE tabs-plugin */
         body:not(.is-tabs-loaded) div#root div#today-queries {
-            top:52px;
+            top:48px;
         }
         div#today-queries:hover {
             position: fixed;
@@ -109,7 +109,11 @@ function main() {
         div#today-queries>div.lazy-visibility {
             min-height: unset !important;
         }
-       div#today-queries>div.lazy-visibility div.custom-query {
+        /* Fix Logseq a bug */
+        div#today-queries>div.lazy-visibility>div.shadow {
+            display: none;
+        }
+        div#today-queries>div.lazy-visibility div.custom-query {
             background: var(--color-level-1);
             margin-top: 0;
         } 
@@ -256,6 +260,36 @@ function main() {
             left: 40px;
             z-index: var(--ls-z-index-level-3);
             border-radius: 10px;
+        }
+    }
+    @media screen and (min-width: 2260px) {
+        div.journal>div.flex.flex-col:first-child {
+            max-width: 1000px;
+        }
+        div#today-queries {
+            width: 520px;
+        }
+        div#today-queries:hover {
+            width: 580px;
+        }
+    }
+    @media screen and (min-width: 2360px) {
+        div#today-queries {
+            width: 620px;
+        }
+        div#today-queries:hover {
+            width: 680px;
+        }
+         div#journals div.references {
+            max-width: 30vh;
+        }
+    }
+    @media screen and (min-width: 2520px) {
+        div#today-queries {
+            left: 1820px;
+        }
+        div#today-queries:hover {
+            right: 1820px;
         }
     }
 }
