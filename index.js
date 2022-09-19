@@ -24,7 +24,7 @@ function main() {
         }
         /* Journals */
         div.journal>div.flex.flex-col:first-child {
-            margin-left: 2em;
+            margin-left: 1.4em;
             min-width: 750px;
             flex: 3;
         }
@@ -44,23 +44,21 @@ function main() {
             background-color: var(--ls-primary-background-color);
             border: 2px solid #69aac6;
         }
-        div#journals div.lazy-visibility {
-            min-width: 340px;
-        }
         /* Linked References */
         div#journals div.references {
             visibility: visible;
             max-height: 83vh;
             z-index: var(--ls-z-index-level-1);
-            min-width: 260px;
-            max-width: 430px;
+            min-width: 200px;
+            max-width: 360px;
             overflow-y: scroll;
             font-size: smaller;
             position: sticky;
             top: 10em;
-            bottom: 0;
+            bottom: 3em;
             left: 0;
             margin-top: 5em;
+            margin-bottom: 5em;
             resize: horizontal;
         }
         div#journals div.journal.page div.lazy-visibility div.fade-enter-active {
@@ -293,6 +291,7 @@ function main() {
     }
 }
 /* Screen size Finish */
+
 
     `);
 }
