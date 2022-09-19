@@ -5,7 +5,7 @@ function main() {
 @supports (display: flex) {
     @media screen and (min-width: 1850px) {
         /* Images sizedown */
-        .asset-container img {
+        div.asset-container img {
             max-width: 600px !important;
         }
         div.flex-1.journal.page {
@@ -22,7 +22,7 @@ function main() {
             margin-right: 360px;
         }
         /* Journals */
-        .journal>div.flex.flex-col:first-child {
+        div.journal>div.flex.flex-col:first-child {
             margin-right: 0.5em;
             min-width: 750px;
             max-width: 1050px;
@@ -33,16 +33,16 @@ function main() {
             position: fixed;
             right: 410px;
             top: 0.1em;
-            z-index: calc(var(--ls-z-index-level-1) + 1);
+            z-index: calc(var(--ls-z-index-level-1) + 10);
             border-radius: 10px;
             padding: 0.5em;
             max-width: 410px;
         }
-        .light-theme div#today-queries+div.flex.flex-col {
+        div.light-theme div#today-queries+div.flex.flex-col {
             background: rgba(105,170,198,0.8);
             border: 1px;
         }
-        .dark-theme div#today-queries+div.flex.flex-col {
+        div.dark-theme div#today-queries+div.flex.flex-col {
             background-color: var(--ls-primary-background-color);
             border: 2px solid #69aac6;
         }
@@ -52,13 +52,19 @@ function main() {
         /* Linked References */
         div#journals div.references {
             visibility: visible;
-            min-height: 400px;
-            max-height: 1220px;
-            z-index: 1;
-            width: 360px;
-            overflow-y: auto;
+            max-height: 95vh;
+            z-index: var(--ls-z-index-level-1);
+            width: 380px;
+            margin: 2px;
+            overflow-y: scroll;
             overflow-x: hidden;
             font-size: smaller;
+            position: sticky;
+            top: 2em;
+            bottom: 2em;
+        }
+        div#journals div.journal.page div.lazy-visibility div.fade-enter-active {
+            height: 100%;
         }
         div.journal>div.lazy-visibility div.references-blocks div.flex.flex-col>div {
             padding-left: 0;
