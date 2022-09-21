@@ -11,7 +11,7 @@ function main() {
         div.flex-1.journal.page {
             display: flex;
             flex-wrap: nowrap;
-            justify-content: space-around;
+            justify-content: space-between;
         }
         /* content-size */
         :root {
@@ -243,9 +243,6 @@ function main() {
             z-index: var(--ls-z-index-level-3);
             border-radius: 10px;
         }
-    }
-
-    @media screen and (min-width: 1850px) and (max-width: 2259px) {
         div#journals div#today-queries:hover {
             position: fixed;
             top: 90px;
@@ -260,8 +257,9 @@ function main() {
         body:not(.is-tabs-loaded) div#root div#today-queries:hover {
             top:46px;
         }
-    }
-    @media screen and (min-width: 1850px) and (max-width: 2439px) {
+        div.journal>div.flex.flex-col:first-child {
+            max-width: 1200px;
+        }
         div#journals div.references:hover {
             transform:scale(1.1,1.1);
             border: 4px double;
@@ -273,8 +271,14 @@ function main() {
         }
     }
     @media screen and (min-width: 2260px) {
+        div.journal>div.flex.flex-col:first-child {
+            max-width: 1150px;
+        }
         div#journals div#today-queries {
             width: 520px;
+        }
+        div#journals div#today-queries:hover {
+            width: 600px;
         }
         div#journals {
             margin-right: 500px;
@@ -282,18 +286,21 @@ function main() {
     }
     @media screen and (min-width: 2440px) {
         div.journal>div.flex.flex-col:first-child {
-            min-width: 1200px;
-            max-width: 1200px;
+            min-width: 1050px;
+            max-width: 1300px;
         }
         div#journals div#today-queries {
             width: 620px;
+        }
+        div#journals div#today-queries:hover {
+            width: 680px;
         }
         /* Journal-queries space */
         div#journals {
             margin-right: 620px;
         }
          div#journals div.references {
-            max-width: 600px;
+            max-width: 500px;
         }
     }
     @media screen and (min-width: 2600px) {
