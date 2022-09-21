@@ -258,7 +258,7 @@ function main() {
             top:46px;
         }
         div.journal>div.flex.flex-col:first-child {
-            max-width: 1200px;
+            max-width: 1100px;
         }
         div#journals div.references:hover {
             transform:scale(1.1,1.1);
@@ -287,7 +287,7 @@ function main() {
     @media screen and (min-width: 2440px) {
         div.journal>div.flex.flex-col:first-child {
             min-width: 1050px;
-            max-width: 1300px;
+            max-width: 1200px;
         }
         div#journals div#today-queries {
             width: 620px;
