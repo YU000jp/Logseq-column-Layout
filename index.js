@@ -1,7 +1,6 @@
 function main() {
     logseq.provideStyle(String.raw`
 
-
 /* Screen size */
 @supports (display: flex) {
     @media screen and (min-width: 1850px) {
@@ -12,6 +11,7 @@ function main() {
         div.flex-1.journal.page {
             display: flex;
             flex-wrap: nowrap;
+            justify-content: space-around;
         }
         /* content-size */
         :root {
@@ -283,6 +283,7 @@ function main() {
     @media screen and (min-width: 2440px) {
         div.journal>div.flex.flex-col:first-child {
             min-width: 1200px;
+            max-width: 1200px;
         }
         div#journals div#today-queries {
             width: 620px;
@@ -296,16 +297,12 @@ function main() {
         }
     }
     @media screen and (min-width: 2600px) {
-        div.journal>div.flex.flex-col:first-child {
-            min-width: 1300px;
-        }
         div#journals div#today-queries {
             right: 30px;
         }
     }
 }
 /* Screen size Finish */
-
 
     `);
 }
