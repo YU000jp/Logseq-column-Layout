@@ -30,7 +30,8 @@ function main() {
         /* SCHEDULED AND DEADLINE */
         div#journals div#today-queries+div.flex.flex-col {
             position: absolute;
-            z-index: var(--ls-z-index-level-2);
+            right: 400px;
+            z-index: var(--ls-z-index-level-1);
             border-radius: 10px;
             padding: 0.5em;
             max-width: 410px;
@@ -274,6 +275,10 @@ function main() {
         div.journal>div.flex.flex-col:first-child {
             max-width: 1150px;
         }
+        /* SCHEDULED AND DEADLINE */
+        div#journals div#today-queries+div.flex.flex-col {
+            right: 530px;
+        }
         div#journals div#today-queries {
             width: 520px;
         }
@@ -288,6 +293,10 @@ function main() {
         div.journal>div.flex.flex-col:first-child {
             min-width: 1050px;
             max-width: 1200px;
+        }
+        /* SCHEDULED AND DEADLINE */
+        div#journals div#today-queries+div.flex.flex-col {
+            right: 660px;
         }
         div#journals div#today-queries {
             width: 620px;
