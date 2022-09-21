@@ -1,6 +1,7 @@
 function main() {
     logseq.provideStyle(String.raw`
 
+
 /* Screen size */
 @supports (display: flex) {
     @media screen and (min-width: 1850px) {
@@ -10,8 +11,6 @@ function main() {
         }
         div.flex-1.journal.page {
             display: flex;
-            flex-direction: row-reverse;
-            justify-content: flex-end;
             flex-wrap: nowrap;
         }
         /* content-size */
@@ -29,7 +28,7 @@ function main() {
             flex: 3;
         }
         /* SCHEDULED AND DEADLINE */
-        div#today-queries+div.flex.flex-col {
+        div#journals div#today-queries+div.flex.flex-col {
             position: absolute;
             z-index: var(--ls-z-index-level-2);
             border-radius: 10px;
@@ -48,7 +47,6 @@ function main() {
         div#journals div.references {
             visibility: visible;
             max-height: 83vh;
-            z-index: var(--ls-z-index-level-1);
             min-width: 200px;
             max-width: 360px;
             overflow-y: scroll;
@@ -59,7 +57,6 @@ function main() {
             left: 0;
             margin-top: 5em;
             margin-bottom: 5em;
-            resize: horizontal;
         }
         div#journals div.journal.page div.lazy-visibility div.fade-enter-active {
             height: 100%;
@@ -70,10 +67,10 @@ function main() {
             padding-right: 0;
         }
         div.max-w-7xl.mx-auto.pb-24 {
-            max-width: 2400px !important;
+            max-width: unset !important;
         }
         /* Journal-queries */
-        div#today-queries {
+        div#journals div#today-queries {
             width: 385px;
             position: fixed;
             right: 2px;
@@ -86,62 +83,49 @@ function main() {
             padding-bottom: 3em;
         }
         /* ELSE tabs-plugin */
-        body:not(.is-tabs-loaded) div#root div#today-queries {
+        body:not(.is-tabs-loaded) div#root div#journals div#today-queries {
             top:48px;
         }
-        div#today-queries:hover {
-            position: fixed;
-            top: 90px;
-            right: 0;
-            width: 480px;
-            border: 4px double;
-            z-index: 30;
-            margin: 2em;
-            padding: 1em;
-        }
-        body:not(.is-tabs-loaded) div#root div#today-queries:hover {
-            top:46px;
-        }
         /* Fix "Extra space when journal queries are not active #6773" */
-        div#today-queries>div.lazy-visibility {
+        div#journals div#today-queries>div.lazy-visibility {
             min-height: unset !important;
         }
         /* Fix Logseq a bug */
-        div#today-queries>div.lazy-visibility>div.shadow {
+        div#journals div#today-queries>div.lazy-visibility>div.shadow {
             display: none;
         }
-        div#today-queries>div.lazy-visibility div.custom-query {
+        div#journals div#today-queries>div.lazy-visibility div.custom-query {
             background: var(--color-level-1);
             margin-top: 0;
         } 
-        div#today-queries>div.lazy-visibility div.custom-query>div>div.content>div.foldable-title {
+        div#journals div#today-queries>div.lazy-visibility div.custom-query>div>div.content>div.foldable-title {
             height: 3em;
             background: var(--color-level-2);
         }
-        div#today-queries>div.lazy-visibility div.custom-query>div>div.content>div.foldable-title>div.items-center {
+        div#journals div#today-queries>div.lazy-visibility div.custom-query>div>div.content>div.foldable-title>div.items-center {
             height: 100%;
             padding: 2px;
         }          
-        div#today-queries.mt-10 {
+        div#journals div#today-queries.mt-10 {
             margin-top: 0.1em;
         }
-        div#today-queries div.flex.flex-col,
-        div#today-queries div.flex.flex-col div.initial {
+        div#journals div#today-queries div.flex.flex-col,
+        div#journals div#today-queries div.flex.flex-col div.initial {
             padding: 0;
         }
-        div#today-queries time {
+        div#journals div#today-queries time {
             font-size: medium;
         }
-        div#today-queries .sm\:px-7 {
+        div#journals div#today-queries .sm\:px-7 {
             padding-left: unset;
         }
-        div#today-queries a.block-marker {
+        div#journals div#today-queries a.block-marker {
             font-size: 22px;
         }
         /* Journal-queries h2-h4 header sizedown */
-        div#today-queries h2,
-        div#today-queries h3,
-        div#today-queries h4 {
+        div#journals div#today-queries h2,
+        div#journals div#today-queries h3,
+        div#journals div#today-queries h4 {
             font-size: 17px;
             padding: 5px;
         }
@@ -255,38 +239,68 @@ function main() {
             transform:scale(1.14,1.14);
             border: 2px double;
             left: 40px;
+            background: rgba(6,6,6,0.5);
             z-index: var(--ls-z-index-level-3);
             border-radius: 10px;
         }
     }
-    @media screen and (min-width: 2260px) {
-        div.journal>div.flex.flex-col:first-child {
-            max-width: 1000px;
+
+    @media screen and (min-width: 1850px) and (max-width: 2259px) {
+        div#journals div#today-queries:hover {
+            position: fixed;
+            top: 90px;
+            right: 0;
+            width: 480px;
+            border: 4px double;
+            z-index: 30;
+            margin: 2em;
+            padding: 1em;
+            background: rgba(6,6,6,0.5);
         }
-        div#today-queries {
+        body:not(.is-tabs-loaded) div#root div#today-queries:hover {
+            top:46px;
+        }
+    }
+    @media screen and (min-width: 1850px) and (max-width: 2439px) {
+        div#journals div.references:hover {
+            transform:scale(1.1,1.1);
+            border: 4px double;
+            z-index: var(--ls-z-index-level-2);
+            padding: 1em;
+            background: rgba(6,6,6,0.5);
+            max-width: 34vh;
+            border-radius: 10px;
+        }
+    }
+    @media screen and (min-width: 2260px) {
+        div#journals div#today-queries {
             width: 520px;
         }
-        div#today-queries:hover {
-            width: 580px;
+        div#journals {
+            margin-right: 500px;
         }
     }
-    @media screen and (min-width: 2360px) {
-        div#today-queries {
+    @media screen and (min-width: 2440px) {
+        div.journal>div.flex.flex-col:first-child {
+            min-width: 1200px;
+        }
+        div#journals div#today-queries {
             width: 620px;
         }
-        div#today-queries:hover {
-            width: 680px;
+        /* Journal-queries space */
+        div#journals {
+            margin-right: 620px;
         }
          div#journals div.references {
-            max-width: 30vh;
+            max-width: 600px;
         }
     }
-    @media screen and (min-width: 2520px) {
-        div#today-queries {
-            left: 1820px;
+    @media screen and (min-width: 2600px) {
+        div.journal>div.flex.flex-col:first-child {
+            min-width: 1300px;
         }
-        div#today-queries:hover {
-            right: 1820px;
+        div#journals div#today-queries {
+            right: 30px;
         }
     }
 }
