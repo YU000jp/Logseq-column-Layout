@@ -36,7 +36,7 @@
  - 
 
 
-# Change Jounal Queries (**OPTION**)
+# Change Journal Queries (**OPTION**)
 
  - Enhancing Journal Queries turns Logseq into an outliner task management tool.
 
