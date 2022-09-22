@@ -15,7 +15,8 @@ function main() {
         }
         /* content-size */
         :root {
-            --ls-main-content-max-width: auto !important;
+            --ls-main-content-max-width: 2000px !important;
+            --ls-main-content-max-width-wide:  auto !important;
         }
         /* Journal-queries space */
         div#journals {
@@ -48,7 +49,7 @@ function main() {
         div#journals div.references {
             visibility: visible;
             max-height: 83vh;
-            min-width: 200px;
+            min-width: 360px;
             max-width: 360px;
             overflow-y: scroll;
             font-size: smaller;
@@ -292,7 +293,7 @@ function main() {
     @media screen and (min-width: 2440px) {
         div.journal>div.flex.flex-col:first-child {
             min-width: 1050px;
-            max-width: 1200px;
+            max-width: 1280px;
         }
         /* SCHEDULED AND DEADLINE */
         div#journals div#today-queries+div.flex.flex-col {
