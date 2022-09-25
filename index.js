@@ -4,9 +4,12 @@ function main() {
 /* Screen size */
 @supports (display: flex) {
     @media screen and (min-width: 1850px) {
+        div#root blockquote {
+            font-size: unset;
+        }
         /* Images sizedown */
         div.asset-container img {
-            max-width: 600px !important;
+            max-width: 600px;
         }
         div.flex-1.journal.page {
             display: flex;
@@ -211,23 +214,67 @@ function main() {
         }
         /* ELSE Pages */
         div#main-content-container div.flex-1.page.relative {
-            margin-right: 400px;
-            padding: 6em;
+            margin-right: 390px;
         }
+        /* Linked References */
+        div#main-content-container div.references div.references-blocks div.content>div {
+            flex-direction: row;
+            align-items: stretch;
+            justify-content: flex-start;
+            flex-wrap: wrap;
+            gap: 0.2em;
+            padding-right: 50px;
+        }
+         div#main-content-container div.references div.references-blocks div.content>div>div.lazy-visibility {
+            font-size: 0.95em;
+            overflow-x: hidden;
+            border-radius: 1.5em;
+            max-height: 78vh;
+            flex: 28%;
+            max-width: 30vh;
+        }
+        div#main-content-container div.references div.references-blocks div.content>div>div.lazy-visibility div.fade-enter,
+        div#main-content-container div.references div.references-blocks div.content>div>div.lazy-visibility div.fade-enter>div,
+        div#main-content-container div.references div.references-blocks div.content>div>div.lazy-visibility div.fade-enter div.initial {
+            height: 100%;
+        }
+        iv#main-content-container div.references div.references-blocks div.content>div>div.lazy-visibility:hover div.fade-enter,
+        div#main-content-container div.references div.references-blocks div.content>div>div.lazy-visibility:hover div.fade-enter>div,
+        div#main-content-container div.references div.references-blocks div.content>div>div.lazy-visibility:hover div.fade-enter div.initial {
+            height: unset;
+        }
+        div#main-content-container div.references div.references-blocks div.content>div>div.lazy-visibility div.fade-enter>div {
+            background-color: var(--color-level-1);
+            padding: 0.4em;
+            margin: 0;
+        }
+
+        div#main-content-container div.references  div.references-blocks div.content>div>div.lazy-visibility {
+            width: 44vh;
+        }
+        div#main-content-container div.references  div.references-blocks div.content>div>div.lazy-visibility img {
+            max-width: 450px !important;
+        }
+        /* OFF :not(main.ls-wide-mode) */ 
+
         /* ELSE Pages Pages-tagged-with */
         div#main-content-container div.relative+div.references.mt-6.flex-1.flex-row {
             max-width: 370px;
             order: 2;
             position: fixed;
-            right: 2em;
-            top: 4em;
-            bottom: 4em;
+            right: 1em;
+            top: 5em;
+            bottom: 2em;
             overflow-y: auto;
             z-index: 0;
-            margin-right: 2em;
-            padding: 2em;
+            margin-right: 1em;
+            padding-top: 2em;
+            padding-right: 1.2em;
             background-color: var(--ls-primary-background-color);
             border-radius: 10px;
+        }
+        body:not(.is-tabs-loaded) div#main-content-container div.relative+div.references.mt-6.flex-1.flex-row {
+            top:2.75em;
         }
         /* #kanban */
          div#root [data-refs-self*="kanban"]>.block-children-container>.block-children {
