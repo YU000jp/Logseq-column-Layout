@@ -40,6 +40,10 @@ function main() {
             padding: 0.5em;
             max-width: 410px;
         }
+        /* CANCEL PDF-view */
+        body.is-pdf-active div#journals div#today-queries+div.flex.flex-col {
+            display: none;            
+        }
         div.light-theme div#today-queries+div.flex.flex-col {
             background: rgba(105,170,198,0.8);
             border: 1px;
@@ -48,7 +52,7 @@ function main() {
             background-color: var(--ls-primary-background-color);
             border: 2px solid #69aac6;
         }
-        /* Linked References */
+        /* a Journal Linked References */
         div#journals div.references {
             visibility: visible;
             max-height: 83vh;
@@ -62,6 +66,11 @@ function main() {
             left: 0;
             margin-top: 5em;
             margin-bottom: 5em;
+            transition: all 0.8s;
+        }
+        /* CANCEL PDF-view */
+        body.is-pdf-active div#journals div.references {
+            display: none;            
         }
         div#journals div.journal.page div.lazy-visibility div.fade-enter-active {
             height: 100%;
@@ -76,6 +85,7 @@ function main() {
         }
         /* Journal-queries */
         div#journals div#today-queries {
+            z-index: var(--ls-z-index-level-1);
             width: 385px;
             position: fixed;
             right: 2px;
@@ -86,10 +96,15 @@ function main() {
             background-color: var(--ls-primary-background-color);
             border-radius: 10px;
             padding-bottom: 3em;
+            transition: all 0.7s;
         }
         /* ELSE tabs-plugin */
         body:not(.is-tabs-loaded) div#root div#journals div#today-queries {
             top:48px;
+        }
+        /* CANCEL PDF-view */
+        body.is-pdf-active div#journals div#today-queries {
+            display: none;            
         }
         /* Fix "Extra space when journal queries are not active #6773" */
         div#journals div#today-queries>div.lazy-visibility {
@@ -217,7 +232,8 @@ function main() {
             margin-right: 390px;
         }
         /* Linked References */
-        div#main-content-container div.references div.references-blocks div.content>div {
+        div#main-content-container div.relative div.lazy-visibility div.references div.references-blocks div.content>div,
+        div#main-content-container div.relative+div+div+div div.references div.references-blocks div.content>div {
             flex-direction: row;
             align-items: stretch;
             justify-content: flex-start;
@@ -225,7 +241,8 @@ function main() {
             gap: 0.2em;
             padding-right: 50px;
         }
-         div#main-content-container div.references div.references-blocks div.content>div>div.lazy-visibility {
+        div#main-content-container div.relative div.lazy-visibility div.references div.references-blocks div.content>div>div.lazy-visibility,
+        div#main-content-container div.relative+div+div+div div.references div.references-blocks div.content>div>div.lazy-visibility {
             font-size: 0.95em;
             overflow-x: hidden;
             border-radius: 1.5em;
@@ -299,8 +316,8 @@ function main() {
             width: 480px;
             border: 4px double;
             z-index: 30;
-            margin: 2em;
-            padding: 1em;
+            margin: 1.5em;
+            padding: 1.5em;
             background: rgba(6,6,6,0.5);
         }
         body:not(.is-tabs-loaded) div#root div#today-queries:hover {
@@ -315,8 +332,9 @@ function main() {
             z-index: var(--ls-z-index-level-2);
             padding: 1em;
             background: rgba(6,6,6,0.5);
-            max-width: 34vh;
+            max-width: 40vh;
             border-radius: 10px;
+            margin-right: -200px;
         }
     }
     @media screen and (min-width: 2260px) {
