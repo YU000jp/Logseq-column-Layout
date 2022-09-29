@@ -25,16 +25,13 @@
 
  - Column layout applies only to journals.
 
- - Other pages display **page-tags** instead. "Linked References" other than journals side by side.
+ - Other pages display **page-tags** instead. ~~"Linked References" other than journals side by side.~~　(Next Update)
 
 ![スクリーンショット 2022-09-13 142137](https://user-images.githubusercontent.com/111847207/189815678-5d55e9b6-6d27-4c6e-983e-709d389f36c9.png)
 
 
- - 
 
 ---
-
- - 
 
 
 # Change Journal Queries (**OPTION**)
