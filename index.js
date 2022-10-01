@@ -240,8 +240,17 @@ function main() {
         div#main-content-container div.flex-1.page.relative {
             margin-right: 390px;
             margin-bottom: 2em;
+            margin-top: 2em;
+            margin-left: 1.5em;
+        }
+        div#main-content-container div.flex-1.page.relative div.relative {
+            max-width: 160tw0px;
         }
         /* ELSE-pages Linked References */
+        div#main-content-container div.relative div.lazy-visibility div.references {
+            margin-top: 8em;
+            margin-bottom: 4em;
+        }
         div#main-content-container div.relative div.lazy-visibility div.references div.references-blocks div.content>div,
         div#main-content-container div.relative+div+div div.references div.references-blocks div.content>div,
         div#main-content-container div.relative+div+div+div div.references div.references-blocks div.content>div {
@@ -249,13 +258,12 @@ function main() {
             align-items: stretch;
             justify-content: flex-start;
             flex-wrap: wrap;
-            gap: 0.2em;
+            gap: 0.8em;
             padding-right: 50px;
         }
         div#main-content-container div.relative div.lazy-visibility div.references div.references-blocks div.content>div>div.lazy-visibility,
         div#main-content-container div.relative+div+div div.references div.references-blocks div.content>div>div.lazy-visibility,
         div#main-content-container div.relative+div+div+div div.references div.references-blocks div.content>div>div.lazy-visibility {
-            font-size: 0.95em;
             overflow-x: hidden;
             border-radius: 1.5em;
             max-height: 78vh;
@@ -383,6 +391,9 @@ function main() {
         div#journals div.references {
             width: 700px;
             max-width: 500px;
+        }
+        div#journals div.references:hover {
+            margin-right: -200px;
         }
     }
     @media screen and (min-width: 2440px) {
