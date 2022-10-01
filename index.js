@@ -236,11 +236,12 @@ function main() {
         div#custom-context-menu {
             z-index: var(--ls-z-index-level-4);
         }
-        /* ELSE Pages */
+        /* ELSE-pages */
         div#main-content-container div.flex-1.page.relative {
             margin-right: 390px;
+            margin-bottom: 2em;
         }
-        /* Linked References */
+        /* ELSE-pages Linked References */
         div#main-content-container div.relative div.lazy-visibility div.references div.references-blocks div.content>div,
         div#main-content-container div.relative+div+div div.references div.references-blocks div.content>div,
         div#main-content-container div.relative+div+div+div div.references div.references-blocks div.content>div {
@@ -283,26 +284,39 @@ function main() {
         div#main-content-container div.references  div.references-blocks div.content>div>div.lazy-visibility img {
             max-width: 450px !important;
         }
-        /* OFF :not(main.ls-wide-mode) */ 
 
-        /* ELSE Pages Pages-tagged-with */
-        div#main-content-container div.relative+div.references.mt-6.flex-1.flex-row {
-            max-width: 370px;
-            order: 2;
+        /* :not(main.ls-wide-mode) */ 
+
+
+        /* ELSE Pages right-space */
+        div#main-content-container div.relative+div.references.mt-6.flex-1.flex-row,
+        div#main-content-container div.page-hierarchy {
             position: fixed;
-            right: 1em;
-            top: 5em;
-            bottom: 2em;
+            width: 390px;
+            max-height: 40vh;
             overflow-y: auto;
-            z-index: 0;
-            margin-right: 1em;
-            padding-top: 2em;
-            padding-right: 1.2em;
-            background-color: var(--ls-primary-background-color);
-            border-radius: 10px;
+            padding: 1.5em;
+            font-size: 0.95em;
+        }
+
+        /* Pages-tagged-with */
+        div#main-content-container div.relative+div.references.mt-6.flex-1.flex-row {
+            top: 6.5em;
+            right: 1em;
+
         }
         body:not(.is-tabs-loaded) div#main-content-container div.relative+div.references.mt-6.flex-1.flex-row {
-            top:2.75em;
+            top:4.5em;
+        }
+        /* page-hierarchy */
+        div#main-content-container div.page-hierarchy {
+            right: 1em;
+            bottom: 3em;
+        }
+        div#main-content-container div.relative+div.references.mt-6.flex-1.flex-row:hover,
+        div#main-content-container div.page-hierarchy:hover {
+            background-color: var(--ls-primary-background-color);
+            border-radius: 10px;
         }
         /* #kanban */
          div#root [data-refs-self*="kanban"]>.block-children-container>.block-children {
@@ -394,23 +408,6 @@ function main() {
     @media screen and (min-width: 2600px) {
         div#journals div#today-queries {
             right: 30px;
-        }
-    }
-    @media screen and (min-height: 1300px) {
-        /* page-hierarchy */
-        div#main-content-container div.page-hierarchy {
-            position: fixed;
-            left: 1em;
-            bottom: 3em;
-            z-index: var(--ls-z-index-level-5);
-            width: var(--ls-left-sidebar-width);
-            max-height: 700px;
-        }
-        div#main-content-container div.page-hierarchy:hover {
-            width: unset;
-            max-height: unset;
-            background-color: var(--ls-primary-background-color);
-            border-radius: 10px;
         }
     }
 }
