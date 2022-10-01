@@ -4,6 +4,10 @@ function main() {
 /* Screen size */
 @supports (display: flex) {
     @media screen and (min-width: 1850px) {
+        /* left-sidebar tweak */
+        div.nav-content-item-inner {
+            margin-top: 2em;
+        }
         div#root blockquote {
             font-size: unset;
         }
@@ -390,6 +394,23 @@ function main() {
     @media screen and (min-width: 2600px) {
         div#journals div#today-queries {
             right: 30px;
+        }
+    }
+    @media screen and (min-height: 1300px) {
+        /* page-hierarchy */
+        div#main-content-container div.page-hierarchy {
+            position: fixed;
+            left: 1em;
+            bottom: 3em;
+            z-index: var(--ls-z-index-level-5);
+            width: var(--ls-left-sidebar-width);
+            max-height: 700px;
+        }
+        div#main-content-container div.page-hierarchy:hover {
+            width: unset;
+            max-height: unset;
+            background-color: var(--ls-primary-background-color);
+            border-radius: 10px;
         }
     }
 }
