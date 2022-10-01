@@ -38,9 +38,11 @@ function main() {
         /* SCHEDULED AND DEADLINE */
         div#journals div#today-queries+div.flex.flex-col {
             transform:scale(0.85,0.85);
-            position: absolute;
-            right: 400px;
+            position: fixed;
+            bottom: 2em;
+            right: 364px;
             z-index: var(--ls-z-index-level-1);
+            border: 4px solid #69aac6;
             border-radius: 10px;
             padding: 0.5em;
             max-width: 410px;
@@ -48,34 +50,32 @@ function main() {
         }
         div#journals div#today-queries+div.flex.flex-col:hover {
             transform:scale(1.0,1.0);
-            margin: 1em;
+            max-width: 500px;
+            margin-right: -5em;
+            background: rgba(6,6,6,0.5);
+        }
+        div.light-theme div#today-queries+div.flex.flex-col {
+            background: var(--color-level-2)
+        }
+        div.dark-theme div#today-queries+div.flex.flex-col {
+            background-color: var(--ls-primary-background-color);
         }
         /* CANCEL PDF-view */
         body.is-pdf-active div#journals div#today-queries+div.flex.flex-col {
             display: none;            
         }
-        div.light-theme div#today-queries+div.flex.flex-col {
-            background: rgba(105,170,198,0.8);
-            border: 1px;
-        }
-        div.dark-theme div#today-queries+div.flex.flex-col {
-            background-color: var(--ls-primary-background-color);
-            border: 2px solid #69aac6;
-        }
         /* a Journal Linked References */
         div#journals div.references {
             max-height: 83vh;
-            min-width: 360px;
-            max-width: 360px;
+            min-width: 370px;
+            max-width: 370px;
             overflow-y: scroll;
             font-size: smaller;
             position: sticky;
             top: 10em;
             bottom: 3em;
-            left: 0;
-            margin-top: 5em;
-            margin-bottom: 5em;
             transition: all 0.6s;
+            margin-right: 4px;
         }
         /* CANCEL PDF-view */
         body.is-pdf-active div#journals div.references {
@@ -358,9 +358,9 @@ function main() {
             z-index: var(--ls-z-index-level-2);
             padding: 1em;
             background: rgba(6,6,6,0.5);
-            max-width: 860px;
+            max-width: 840px;
             border-radius: 10px;
-            margin-right: -340px;
+            margin-right: -300px;
         }
     }
     @media screen and (min-width: 2260px) {
