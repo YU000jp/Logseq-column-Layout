@@ -33,12 +33,18 @@ function main() {
         }
         /* SCHEDULED AND DEADLINE */
         div#journals div#today-queries+div.flex.flex-col {
+            transform:scale(0.85,0.85);
             position: absolute;
             right: 400px;
             z-index: var(--ls-z-index-level-1);
             border-radius: 10px;
             padding: 0.5em;
             max-width: 410px;
+            transition: all 0.4s;
+        }
+        div#journals div#today-queries+div.flex.flex-col:hover {
+            transform:scale(1.0,1.0);
+            margin: 1em;
         }
         /* CANCEL PDF-view */
         body.is-pdf-active div#journals div#today-queries+div.flex.flex-col {
@@ -54,7 +60,6 @@ function main() {
         }
         /* a Journal Linked References */
         div#journals div.references {
-            visibility: visible;
             max-height: 83vh;
             min-width: 360px;
             max-width: 360px;
@@ -66,7 +71,7 @@ function main() {
             left: 0;
             margin-top: 5em;
             margin-bottom: 5em;
-            transition: all 0.8s;
+            transition: all 0.6s;
         }
         /* CANCEL PDF-view */
         body.is-pdf-active div#journals div.references {
@@ -90,13 +95,13 @@ function main() {
             position: fixed;
             right: 2px;
             top: 92px;
-            bottom: 5px;
+            bottom: 3px;
             overflow-y: scroll;
             font-size: smaller;
             background-color: var(--ls-primary-background-color);
             border-radius: 10px;
-            padding-bottom: 3em;
-            transition: all 0.7s;
+            padding: 0.3em;
+            transition: all 0.4s;
         }
         /* ELSE tabs-plugin */
         body:not(.is-tabs-loaded) div#root div#journals div#today-queries {
@@ -233,6 +238,7 @@ function main() {
         }
         /* Linked References */
         div#main-content-container div.relative div.lazy-visibility div.references div.references-blocks div.content>div,
+        div#main-content-container div.relative+div+div div.references div.references-blocks div.content>div,
         div#main-content-container div.relative+div+div+div div.references div.references-blocks div.content>div {
             flex-direction: row;
             align-items: stretch;
@@ -242,6 +248,7 @@ function main() {
             padding-right: 50px;
         }
         div#main-content-container div.relative div.lazy-visibility div.references div.references-blocks div.content>div>div.lazy-visibility,
+        div#main-content-container div.relative+div+div div.references div.references-blocks div.content>div>div.lazy-visibility,
         div#main-content-container div.relative+div+div+div div.references div.references-blocks div.content>div>div.lazy-visibility {
             font-size: 0.95em;
             overflow-x: hidden;
@@ -316,8 +323,9 @@ function main() {
             width: 480px;
             border: 4px double;
             z-index: 30;
-            margin: 1.5em;
-            padding: 1.5em;
+            margin: 0.5em;
+            padding-left: 0.75em;
+            padding-right: 0.6em;
             background: rgba(6,6,6,0.5);
         }
         body:not(.is-tabs-loaded) div#root div#today-queries:hover {
@@ -327,14 +335,14 @@ function main() {
             max-width: 1100px;
         }
         div#journals div.references:hover {
-            transform:scale(1.1,1.1);
+            transform:scale(1.06,1.06);
             border: 4px double;
             z-index: var(--ls-z-index-level-2);
             padding: 1em;
             background: rgba(6,6,6,0.5);
-            max-width: 40vh;
+            max-width: 860px;
             border-radius: 10px;
-            margin-right: -200px;
+            margin-right: -340px;
         }
     }
     @media screen and (min-width: 2260px) {
@@ -353,6 +361,10 @@ function main() {
         }
         div#journals {
             margin-right: 500px;
+        }
+        div#journals div.references {
+            width: 700px;
+            max-width: 500px;
         }
     }
     @media screen and (min-width: 2440px) {
@@ -373,9 +385,6 @@ function main() {
         /* Journal-queries space */
         div#journals {
             margin-right: 620px;
-        }
-         div#journals div.references {
-            max-width: 500px;
         }
     }
     @media screen and (min-width: 2600px) {
