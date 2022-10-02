@@ -42,7 +42,7 @@ function main() {
             bottom: 2em;
             right: 364px;
             z-index: var(--ls-z-index-level-1);
-            border: 4px solid #69aac6;
+            border: 4px dashed #69aac6;
             border-radius: 10px;
             padding: 0.5em;
             max-width: 410px;
@@ -52,7 +52,8 @@ function main() {
             transform:scale(1.0,1.0);
             max-width: 500px;
             margin-right: -5em;
-            background: rgba(6,6,6,0.5);
+            background: rgba(6,6,6,0.3);
+            border-color: unset;
         }
         div.light-theme div#today-queries+div.flex.flex-col {
             background: var(--color-level-2)
@@ -244,7 +245,7 @@ function main() {
             margin-left: 1.5em;
         }
         div#main-content-container div.flex-1.page.relative div.relative {
-            max-width: 160tw0px;
+            max-width: 1600px;
         }
         /* ELSE-pages Linked References */
         div#main-content-container div.relative div.lazy-visibility div.references {
@@ -305,6 +306,8 @@ function main() {
             overflow-y: auto;
             padding: 1.5em;
             font-size: 0.95em;
+            background-color: var(--ls-primary-background-color);
+            border-radius: 10px;
         }
 
         /* Pages-tagged-with */
@@ -320,11 +323,6 @@ function main() {
         div#main-content-container div.page-hierarchy {
             right: 1em;
             bottom: 3em;
-        }
-        div#main-content-container div.relative+div.references.mt-6.flex-1.flex-row:hover,
-        div#main-content-container div.page-hierarchy:hover {
-            background-color: var(--ls-primary-background-color);
-            border-radius: 10px;
         }
         /* #kanban */
          div#root [data-refs-self*="kanban"]>.block-children-container>.block-children {
@@ -352,7 +350,7 @@ function main() {
             margin: 0.5em;
             padding-left: 0.75em;
             padding-right: 0.6em;
-            background: rgba(6,6,6,0.5);
+            background: rgba(6,6,6,0.3);
         }
         body:not(.is-tabs-loaded) div#root div#today-queries:hover {
             top:46px;
@@ -365,7 +363,7 @@ function main() {
             border: 4px double;
             z-index: var(--ls-z-index-level-2);
             padding: 1em;
-            background: rgba(6,6,6,0.5);
+            background: rgba(6,6,6,0.3);
             max-width: 840px;
             border-radius: 10px;
             margin-right: -300px;
@@ -394,6 +392,15 @@ function main() {
         }
         div#journals div.references:hover {
             margin-right: -200px;
+        }
+        /* ELSE pages */
+        div#main-content-container div.flex-1.page.relative {
+            margin-right: 500px;
+        }
+        /* ELSE Pages right-space */
+        div#main-content-container div.relative+div.references.mt-6.flex-1.flex-row,
+        div#main-content-container div.page-hierarchy {
+            width: 500px;
         }
     }
     @media screen and (min-width: 2440px) {
