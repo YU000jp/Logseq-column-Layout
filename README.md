@@ -10,40 +10,25 @@
 
 ![1662766493774-uanJkoieHO](https://user-images.githubusercontent.com/111847207/189498997-5d6f791b-2a6b-45d7-bcb2-d09bee36d431.png)
 
-
-
 ## INSTALL
-
  - the screen min-width: 1850px
-
  - This Plugin is available on the Logseq Market place.
-
  - Some plugins are not supported.
 
 
 ## Pattern
+ ### the page other than journals
+ - display "page-tags" and "page-hierarchy" 
+ - "Linked References" side by side
 
- - Column layout applies only to journals.
-
- - Other pages display **page-tags** instead.
- 
- - "Linked References" other than journals side by side.
-
-![スクリーンショット 2022-09-13 142137](https://user-images.githubusercontent.com/111847207/189815678-5d55e9b6-6d27-4c6e-983e-709d389f36c9.png)
-
-
+![スクリーンショット 2022-10-02 102232](https://user-images.githubusercontent.com/111847207/193434026-5595de15-2e40-42a2-95d4-ab0f1c2b55c3.png)
 
 ---
 
-
 # Change Journal Queries (**OPTION**)
-
  - Enhancing Journal Queries turns Logseq into an outliner task management tool.
-
  ![1662770461291-FhSBaJXekb](https://user-images.githubusercontent.com/111847207/189484746-8364ad0c-98d2-4117-b321-b79d7c56052c.png)
-
 ### Edit Logseq「config.edn」 (part of)
-
 ![1662772563325-tkA2Gj61wv](https://user-images.githubusercontent.com/111847207/189498869-2b99016d-a2b3-44cc-80ed-f9e0cb123d78.png)
 
 
@@ -165,8 +150,6 @@
  ---
  
 ## SUPPORT
-
   - If the plugin helps you, I'd really appreciate your support. You can buy me a coffee here.
- 
  <a href="https://www.buymeacoffee.com/yu000japan" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
  
