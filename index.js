@@ -4,36 +4,48 @@ function main() {
 /* Screen size */
 @supports (display: flex) {
     @media screen and (min-width: 1850px) {
-        /* Tweak checkbox */
-        div#root input.form-checkbox {
-            transform: scale(1.1);
-        }
-        div#root input.form-checkbox+div input.form-checkbox {
-            transform: scale(0.6);
-        }
-        div#root input.form-checkbox+div a {
-            font-size: medium;
-        }
-        /* Task */
-        div#root .now,
-        div#root .later,
-        div#root .doing,
-        div#root .todo {
-            font-weight: bold;
-            font-size: 1.08em;
-        }
         /* left-sidebar tweak */
         div.nav-content-item-inner {
             margin-top: 2em;
         }
-        div#root blockquote {
-            font-size: unset;
+        div#main-content-container blockquote {
+            font-size: 0.95em;
+        }
+        /* Tweak Link :hover */
+        div#main-content-container a:hover {
+            font-weight: 600;
+            font-size: 1.1em;
+        }
+        /* Tweak Task */
+        div#main-content-container .now,
+        div#main-content-container .doing,
+        div#main-content-container .later,
+        div#main-content-container .todo {
+            background: linear-gradient(transparent 80%,var(--ls-block-highlight-color) 30%);
+        }
+        /* Tweak checkbox */
+        div#main-content-container input.form-checkbox {
+            transform: scale(1.1);
+        }
+        div#main-content-container input.form-checkbox+div input.form-checkbox {
+            transform: scale(0.6);
+        }
+        div#main-content-container input.form-checkbox+div a {
+            font-size: medium;
+        }
+        /* Task */
+        div#main-content-container .now,
+        div#main-content-container .later,
+        div#main-content-container .doing,
+        div#main-content-container .todo {
+            font-weight: bold;
+            font-size: 1.1em;
         }
         /* Images sizedown */
-        div.asset-container img {
+        div#main-content-container div.asset-container img {
             max-width: 600px;
         }
-        div.flex-1.journal.page {
+        div#main-content-container div.flex-1.journal.page {
             display: flex;
             flex-wrap: nowrap;
             justify-content: space-between;
@@ -60,7 +72,7 @@ function main() {
             bottom: 2em;
             right: 364px;
             z-index: var(--ls-z-index-level-1);
-            border: 4px dashed #69aac6;
+            border: 3px dashed var(--ls-link-text-color);
             border-radius: 10px;
             padding: 0.5em;
             max-width: 410px;
@@ -139,7 +151,7 @@ function main() {
         div#journals div#today-queries .later,
         div#journals div#today-queries .doing,
         div#journals div#today-queries .todo {
-            text-decoration: underline;
+            font-weight: 700;
         }
         /* Fix "Extra space when journal queries are not active #6773" */
         div#journals div#today-queries>div.lazy-visibility {
