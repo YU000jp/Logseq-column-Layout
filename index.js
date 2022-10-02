@@ -4,6 +4,24 @@ function main() {
 /* Screen size */
 @supports (display: flex) {
     @media screen and (min-width: 1850px) {
+        /* Tweak checkbox */
+        div#root input.form-checkbox {
+            transform: scale(1.1);
+        }
+        div#root input.form-checkbox+div input.form-checkbox {
+            transform: scale(0.6);
+        }
+        div#root input.form-checkbox+div a {
+            font-size: medium;
+        }
+        /* Task */
+        div#root .now,
+        div#root .later,
+        div#root .doing,
+        div#root .todo {
+            font-weight: bold;
+            font-size: 1.08em;
+        }
         /* left-sidebar tweak */
         div.nav-content-item-inner {
             margin-top: 2em;
@@ -115,6 +133,13 @@ function main() {
         /* CANCEL PDF-view */
         body.is-pdf-active div#journals div#today-queries {
             display: none;            
+        }
+        /* Journal-queries Task */
+        div#journals div#today-queries .now,
+        div#journals div#today-queries .later,
+        div#journals div#today-queries .doing,
+        div#journals div#today-queries .todo {
+            text-decoration: underline;
         }
         /* Fix "Extra space when journal queries are not active #6773" */
         div#journals div#today-queries>div.lazy-visibility {
