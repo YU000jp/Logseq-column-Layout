@@ -1,9 +1,8 @@
-function main() {
-    logseq.provideStyle(String.raw`
+function main(){logseq.provideStyle(String.raw`
 
 /* Screen size */
 @supports (display: flex) {
-    @media screen and (min-width: 1850px) {
+    @media screen and (min-width: 2000px) {
         /* left-sidebar tweak */
         div.nav-content-item-inner {
             margin-top: 2em;
@@ -13,8 +12,7 @@ function main() {
         }
         /* Tweak Link :hover */
         div#main-content-container a:hover {
-            font-weight: 600;
-            font-size: 1.1em;
+            font-weight: 700;
         }
         /* Tweak Task */
         div#main-content-container .now,
@@ -57,11 +55,16 @@ function main() {
         }
         /* Journal-queries space */
         div#journals {
-            margin-right: 360px;
+            margin-right: 355px;
+        }
+        div#journals div.block-children-container {
+            max-width: 96%;
+            margin-right: 1em;
+            z-index: var(--ls-z-index-level-1);
         }
         /* Journals */
         div.journal>div.flex.flex-col:first-child {
-            margin-left: 1.4em;
+            margin-left: 1em;
             min-width: 750px;
             flex: 3;
         }
@@ -71,19 +74,22 @@ function main() {
             position: fixed;
             bottom: 2em;
             right: 364px;
-            z-index: var(--ls-z-index-level-1);
-            border: 3px dashed var(--ls-link-text-color);
-            border-radius: 10px;
+            border: 2px var(--ls-link-text-color);
+            border-radius: 5px;
             padding: 0.5em;
             max-width: 410px;
-            transition: all 0.4s;
+            backdrop-filter: blur(20px);
         }
         div#journals div#today-queries+div.flex.flex-col:hover {
-            transform:scale(1.0,1.0);
-            max-width: 500px;
-            margin-right: -5em;
-            background: rgba(6,6,6,0.3);
+            z-index: var(--ls-z-index-level-1);
+            transform:scale(0.95,0.95);
+            min-width: 600px;
+            max-width: 600px;
+            background: rgba(6,6,6,0.4);
             border-color: unset;
+        }
+        main.ls-left-sidebar-open div#journals div#today-queries+div.flex.flex-col:hover {
+            margin-right: -200px;
         }
         div.light-theme div#today-queries+div.flex.flex-col {
             background: var(--color-level-2)
@@ -98,15 +104,26 @@ function main() {
         /* a Journal Linked References */
         div#journals div.references {
             max-height: 83vh;
-            min-width: 370px;
-            max-width: 370px;
+            min-width: 340px;
+            max-width: 360px;
             overflow-y: scroll;
             font-size: smaller;
             position: sticky;
             top: 10em;
             bottom: 3em;
-            transition: all 0.6s;
+            padding: 0.7em;
             margin-right: 4px;
+            backdrop-filter: blur(20px);
+        }
+        div#journals div.references:hover {
+            background: rgba(6,6,6,0.4);
+            max-width: 670px;
+            overflow-x: visible;
+            z-index: var(--ls-z-index-level-1);
+            margin-right: -130px;
+        }
+        main.ls-wide-mode div#journals div.references:hover {
+            margin-right: -300px;
         }
         /* CANCEL PDF-view */
         body.is-pdf-active div#journals div.references {
@@ -125,22 +142,20 @@ function main() {
         }
         /* Journal-queries */
         div#journals div#today-queries {
-            z-index: var(--ls-z-index-level-1);
             width: 385px;
             position: fixed;
             right: 2px;
-            top: 92px;
+            top:  calc(var(--ls-headbar-height) + var(--ls-headbar-inner-top-padding) + 40px);
             bottom: 3px;
             overflow-y: scroll;
             font-size: smaller;
             background-color: var(--ls-primary-background-color);
             border-radius: 10px;
             padding: 0.3em;
-            transition: all 0.4s;
         }
         /* ELSE tabs-plugin */
         body:not(.is-tabs-loaded) div#root div#journals div#today-queries {
-            top:48px;
+            top: calc(var(--ls-headbar-height) + var(--ls-headbar-inner-top-padding));
         }
         /* CANCEL PDF-view */
         body.is-pdf-active div#journals div#today-queries {
@@ -200,17 +215,18 @@ function main() {
         div#right-sidebar {
             position: fixed;
             right: 0;
-            top: 0;
+            top: calc(var(--ls-headbar-height) + var(--ls-headbar-inner-top-padding));
+            bottom: 0;
             margin-top: 2em !important;
-            z-index: 10;
             border-radius: 0.25em;
             overflow-x: scroll;
             border: 4px double;
             margin-top: unset !important;
+            height: unset;
         }
-        /* ELSE tabs-plugin */
-        body:not(.is-tabs-loaded) div#root div#right-sidebar {
-            top:50px;
+        /* IF tabs-plugin */
+        body.is-tabs-loaded div#root div#right-sidebar {
+            top: calc(var(--ls-headbar-height) + var(--ls-headbar-inner-top-padding) + 40px);
         }
         /* right-sidebar-background */
         div#right-sidebar div.cp__right-sidebar-scrollable>div+div {
@@ -234,45 +250,49 @@ function main() {
             margin-top: 0;
             position: sticky !important;
             top: 0;
-            padding: 0.3rem;
-            z-index: 10;
+            padding: 0.2rem;
             backdrop-filter: blur(20px);
             font-size: small;
         }
         div#right-sidebar div.sidebar-item.content {
-            min-width: 560px;
-            max-width: 800px;
+            min-width: 550px;
+            max-width: 900px;
             overflow-y: scroll;
             resize: both;
             display: inline-block;
             align-self: flex-start;
             overflow-y: auto;
-            margin-bottom: 1em;
-            max-height: 91vh;
+            margin-bottom: 0.4em;
+            min-height: 20vh;
+            max-height: 96vh;
+            padding-bottom: 3em;
         }
-        div#right-sidebar div.sidebar-item-list.flex-1.scrollbar-spacing {
+        div#right-sidebar div.sidebar-item-list {
             display: flex;
             padding-bottom: 0;
             margin: unset;
+            height: 92.8vh;
         }
         div#right-sidebar div.sidebar-item-list div.sidebar-item.flex-col {
             width: 100% !important;
         }
         div#right-sidebar div.graph {
-            height: 500px !important;
+            height: 800px !important;
         }
         div#right-sidebar div.graph canvas {
             height: 100% !important;
             width: 100% !important;
             border: 2px double;
         }
-        div#right-sidebar ::-webkit-scrollbar {
-            width: 15px !important;
-            height: 20px !important;
+        div#right-sidebar div.sidebar-item {
+            overflow: auto;
         }
-        /* For right-sidebar menu */
-        div#custom-context-menu {
-            z-index: var(--ls-z-index-level-4);
+        div#right-sidebar div.sidebar-item::-webkit-scrollbar {
+            width: 15px;
+            height: 20px;
+        }
+        div.cp__right-sidebar {
+            transition: unset;
         }
         /* ELSE-pages */
         div#main-content-container div.flex-1.page.relative {
@@ -289,9 +309,9 @@ function main() {
             margin-top: 8em;
             margin-bottom: 4em;
         }
-        div#main-content-container div.relative div.lazy-visibility div.references div.references-blocks div.content>div,
-        div#main-content-container div.relative+div+div div.references div.references-blocks div.content>div,
-        div#main-content-container div.relative+div+div+div div.references div.references-blocks div.content>div {
+        main.ls-wide-mode div#main-content-container div.relative div.lazy-visibility div.references div.references-blocks div.content>div,
+        main.ls-wide-mode div#main-content-container div.relative+div+div div.references div.references-blocks div.content>div,
+        main.ls-wide-mode div#main-content-container div.relative+div+div+div div.references div.references-blocks div.content>div {
             flex-direction: row;
             align-items: stretch;
             justify-content: flex-start;
@@ -299,9 +319,9 @@ function main() {
             gap: 0.8em;
             padding-right: 50px;
         }
-        div#main-content-container div.relative div.lazy-visibility div.references div.references-blocks div.content>div>div.lazy-visibility,
-        div#main-content-container div.relative+div+div div.references div.references-blocks div.content>div>div.lazy-visibility,
-        div#main-content-container div.relative+div+div+div div.references div.references-blocks div.content>div>div.lazy-visibility {
+        main.ls-wide-mode div#main-content-container div.relative div.lazy-visibility div.references div.references-blocks div.content>div>div.lazy-visibility,
+        main.ls-wide-mode div#main-content-container div.relative+div+div div.references div.references-blocks div.content>div>div.lazy-visibility,
+        main.ls-wide-mode div#main-content-container div.relative+div+div+div div.references div.references-blocks div.content>div>div.lazy-visibility {
             overflow-x: hidden;
             border-radius: 1.5em;
             max-height: 78vh;
@@ -324,15 +344,12 @@ function main() {
             margin: 0;
         }
 
-        div#main-content-container div.references  div.references-blocks div.content>div>div.lazy-visibility {
+        main.ls-wide-mode div#main-content-container div.references  div.references-blocks div.content>div>div.lazy-visibility {
             width: 44vh;
         }
-        div#main-content-container div.references  div.references-blocks div.content>div>div.lazy-visibility img {
+        main.ls-wide-mode div#main-content-container div.references  div.references-blocks div.content>div>div.lazy-visibility img {
             max-width: 450px !important;
         }
-
-        /* :not(main.ls-wide-mode) */ 
-
 
         /* ELSE Pages right-space */
         div#main-content-container div.relative+div.references.mt-6.flex-1.flex-row,
@@ -361,6 +378,15 @@ function main() {
             right: 1em;
             bottom: 3em;
         }
+        main.ls-wide-mode div.cp__sidebar-help-btn::before {
+            content: "◇Wide-mode (Switch 「ESC」「tw」)";
+            position: fixed;
+            bottom: 0.5em;
+            right: 200px;
+            padding: 0.2em;
+            background-color: var(--ls-primary-background-color);
+            font-size: 0.95em;
+        }
         /* #kanban */
          div#root [data-refs-self*="kanban"]>.block-children-container>.block-children {
             overflow-x: scroll;
@@ -368,42 +394,40 @@ function main() {
             margin-top: 1em;
             font-size: smaller;
         }
-         div#root [data-refs-self*="kanban"]>.block-children-container>.block-children:hover {
-            visibility: visible;
-            transform:scale(1.14,1.14);
-            border: 2px double;
-            left: 40px;
-            background: rgba(6,6,6,0.5);
-            z-index: var(--ls-z-index-level-3);
-            border-radius: 10px;
+        main.ls-wide-mode div#main-content-container div.relative div.lazy-visibility div.references div.references-blocks div.content>div [data-refs-self*="kanban"]>.block-children-container>.block-children,
+        main.ls-wide-mode div#main-content-container div.relative+div+div div.references div.references-blocks div.content>div [data-refs-self*="kanban"]>.block-children-container>.block-children,
+        main.ls-wide-mode div#main-content-container div.relative+div+div+div div.references div.references-blocks div.content>div [data-refs-self*="kanban"]>.block-children-container>.block-children,
+        div#right-sidebar [data-refs-self*="kanban"]>.block-children-container>.block-children {
+            flex-wrap: wrap;
         }
-        div#journals div#today-queries:hover {
-            position: fixed;
-            top: 90px;
-            right: 0;
-            width: 480px;
-            border: 4px double;
-            z-index: 30;
-            margin: 0.5em;
-            padding-left: 0.75em;
-            padding-right: 0.6em;
-            background: rgba(6,6,6,0.3);
-        }
+
         body:not(.is-tabs-loaded) div#root div#today-queries:hover {
             top:46px;
         }
         div.journal>div.flex.flex-col:first-child {
             max-width: 1100px;
         }
-        div#journals div.references:hover {
-            transform:scale(1.06,1.06);
-            border: 4px double;
-            z-index: var(--ls-z-index-level-2);
-            padding: 1em;
-            background: rgba(6,6,6,0.3);
-            max-width: 840px;
-            border-radius: 10px;
-            margin-right: -300px;
+        div#journals div#today-queries:hover {
+            background: rgba(6,6,6,0.4);
+        }
+        main:not(.ls-left-sidebar-open) div#journals div#today-queries {
+            width: 520px;
+        }
+        main:not(.ls-left-sidebar-open) div#journals {
+            margin-right: 500px;
+        }
+        main:not(.ls-left-sidebar-open) div#journals div.references {
+            width: 480px;
+            max-width: 480px;
+        }
+        main:not(.ls-left-sidebar-open) div#journals div.references:hover {
+            margin-right: -190px;
+            width: 670px;
+            max-width: 670px;
+        }
+        main:not(.ls-left-sidebar-open) div#journals div#today-queries+div.flex.flex-col {
+            right: 510px;
+            min-width: 500px;
         }
     }
     @media screen and (min-width: 2260px) {
@@ -411,24 +435,25 @@ function main() {
             max-width: 1150px;
         }
         /* SCHEDULED AND DEADLINE */
-        div#journals div#today-queries+div.flex.flex-col {
-            right: 530px;
+        main.ls-left-sidebar-open div#journals div#today-queries+div.flex.flex-col {
+            right: 480px;
+            min-width: 500px;
         }
         div#journals div#today-queries {
             width: 520px;
         }
-        div#journals div#today-queries:hover {
-            width: 600px;
-        }
         div#journals {
-            margin-right: 500px;
+            margin-right: 485px;
         }
         div#journals div.references {
             width: 700px;
-            max-width: 500px;
+            max-width: 420px;
         }
-        div#journals div.references:hover {
-            margin-right: -200px;
+        main.ls-left-sidebar-open div#journals div.references:hover {
+            margin-right: -240px;
+        }
+        main.ls-left-sidebar-open div#journals div#today-queries+div.flex.flex-col:hover {
+            margin-right: unset;
         }
         /* ELSE pages */
         div#main-content-container div.flex-1.page.relative {
@@ -439,6 +464,11 @@ function main() {
         div#main-content-container div.page-hierarchy {
             width: 500px;
         }
+        /* a journal linked-references */
+        div#journals div.references:hover {
+            margin-right: -170px;
+        }
+
     }
     @media screen and (min-width: 2440px) {
         div.journal>div.flex.flex-col:first-child {
@@ -446,30 +476,31 @@ function main() {
             max-width: 1280px;
         }
         /* SCHEDULED AND DEADLINE */
-        div#journals div#today-queries+div.flex.flex-col {
-            right: 660px;
+        main.ls-left-sidebar-open div#journals div#today-queries+div.flex.flex-col {
+            right: 620px;
         }
         div#journals div#today-queries {
             width: 620px;
-        }
-        div#journals div#today-queries:hover {
-            width: 680px;
         }
         /* Journal-queries space */
         div#journals {
             margin-right: 620px;
         }
+        main.ls-wide-mode div#journals div.references:hover {
+            margin-right: -170px;
+        }
+
     }
-    @media screen and (min-width: 2600px) {
-        div#journals div#today-queries {
-            right: 30px;
+    @media screen and (min-width: 2620px) {
+        div#journals div.references {
+            max-width: 500px;
+        }
+        main:not(.ls-left-sidebar-open) div#journals div.references:hover {
+            margin-right: -185px;
         }
     }
 }
 /* Screen size Finish */
 
-    `);
-}
 
-// bootstrap
-logseq.ready(main).catch(console.error)
+`);}logseq.ready(main).catch(console.error)

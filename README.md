@@ -1,8 +1,6 @@
 # Logseq Column-Layout Plugin
 
- - Journals, linked references, and journal queries can be placed side by side if the minimum screen width is "1850px" or more.
-
- - Wide mode(shortcut: 「**tw**」) is recommended if you want to use them side by side. Journals will be left justified.
+ - Journals, linked references, and journal queries can be placed side by side if the minimum screen width is "2000px" or more.
 
  - Pages can be placed side by side in the sidebar.(Credit: [Logseq Vertical Panels for Sidebar](https://github.com/r-hegde/logseq-vertical-panels))
 
@@ -11,7 +9,7 @@
 ![1662766493774-uanJkoieHO](https://user-images.githubusercontent.com/111847207/189498997-5d6f791b-2a6b-45d7-bcb2-d09bee36d431.png)
 
 ## INSTALL
- - the screen min-width: 1850px
+ - the screen min-width: 2000px
  - This Plugin is available on the Logseq Market place.
  - Some plugins are not supported.
 
@@ -20,6 +18,7 @@
  ### the page other than journals
  - display "page-tags" and "page-hierarchy" 
  - "Linked References" side by side
+ - Wide mode(shortcut: 「**tw**」) is recommended if you want to use them side by side. Journals will be left justified.
 
 ![スクリーンショット 2022-10-02 102232](https://user-images.githubusercontent.com/111847207/193434026-5595de15-2e40-42a2-95d4-ab0f1c2b55c3.png)
 
