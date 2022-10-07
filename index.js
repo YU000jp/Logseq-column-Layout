@@ -60,7 +60,7 @@ function main(){logseq.provideStyle(String.raw`
         div#journals div.block-children-container {
             max-width: 96%;
             margin-right: 1em;
-            z-index: var(--ls-z-index-level-1);
+            z-index: 1;
         }
         /* Journals */
         div.journal>div.flex.flex-col:first-child {
@@ -114,6 +114,7 @@ function main(){logseq.provideStyle(String.raw`
             padding: 0.7em;
             margin-right: 4px;
             backdrop-filter: blur(20px);
+            z-index: 0;
         }
         div#journals div.references:hover {
             background: rgba(6,6,6,0.4);
