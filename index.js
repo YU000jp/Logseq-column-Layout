@@ -2,7 +2,7 @@ function main(){logseq.provideStyle(String.raw`
 
 /* Screen size */
 @supports (display: flex) {
-    @media screen and (min-width: 2000px) {
+    @media screen and (min-width: 1900px) {
         /* left-sidebar tweak */
         div.nav-content-item-inner {
             margin-top: 2em;
