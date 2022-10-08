@@ -91,7 +91,6 @@ function main(){logseq.provideStyle(String.raw`
             transform:scale(0.95,0.95);
             min-width: 600px;
             max-width: 600px;
-
             border-color: unset;
         }
         main.ls-left-sidebar-open div#journals div#today-queries+div.flex.flex-col:hover {
@@ -115,12 +114,27 @@ function main(){logseq.provideStyle(String.raw`
             margin-right: 4px;
             z-index: 0;
         }
+        main:not(.ls-left-sidebar-open) div#journals div.references {
+            width: 480px;
+            max-width: 480px;
+        }
         div#journals div.references:hover {
             backdrop-filter: blur(40px);
+            min-width: 670px;
             max-width: 670px;
             overflow-x: visible;
             z-index: var(--ls-z-index-level-1);
-            margin-right: -130px;
+            margin-right: -115px;
+        }
+        main.ls-wide-mode div#journals div.references:hover {
+            margin-right: -115px;
+        }
+
+        main:not(.ls-left-sidebar-open.ls-wide-mode) div#journals div.references:hover {
+            margin-right: -170px;
+        }
+        main.ls-left-sidebar-open:not(.ls-wide-mode) div#journals div.references:hover {
+            margin-right: -300px;
         }
         div#journals div.references div.hidden {
             width: 670px;
@@ -468,15 +482,6 @@ function main(){logseq.provideStyle(String.raw`
         main:not(.ls-left-sidebar-open) div#journals {
             margin-right: 500px;
         }
-        main:not(.ls-left-sidebar-open) div#journals div.references {
-            width: 480px;
-            max-width: 480px;
-        }
-        main:not(.ls-left-sidebar-open) div#journals div.references:hover {
-            margin-right: -190px;
-            width: 670px;
-            max-width: 670px;
-        }
         main:not(.ls-left-sidebar-open) div#journals div#today-queries+div.flex.flex-col {
             right: 510px;
             min-width: 500px;
@@ -520,7 +525,6 @@ function main(){logseq.provideStyle(String.raw`
         div#journals div.references:hover {
             margin-right: -170px;
         }
-
     }
     @media screen and (min-width: 2440px) {
         div.journal>div.flex.flex-col:first-child {
@@ -541,14 +545,19 @@ function main(){logseq.provideStyle(String.raw`
         main.ls-wide-mode div#journals div.references:hover {
             margin-right: -170px;
         }
-
     }
     @media screen and (min-width: 2620px) {
-        div#journals div.references {
+        main.ls-left-sidebar-open div#journals div.references {
             max-width: 500px;
         }
-        main:not(.ls-left-sidebar-open) div#journals div.references:hover {
+        main.ls-left-sidebar-open div#journals div.references:hover {
             margin-right: -185px;
+        }
+        main:not(.ls-left-sidebar-open) div#journals div.references {
+            max-width: 670px;
+        }
+        main:not(.ls-left-sidebar-open) div#journals div.references:hover {
+            margin-right: 0;
         }
     }
 }
