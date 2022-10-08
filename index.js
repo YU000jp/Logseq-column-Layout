@@ -3,6 +3,12 @@ function main(){logseq.provideStyle(String.raw`
 /* Screen size */
 @supports (display: flex) {
     @media screen and (min-width: 1900px) {
+        .block-content .asset-container .asset-overlay {
+            background-image: none;
+        }
+        .block-content .asset-container .asset-action-bar {
+            background-color: var(--ls-primary-background-color);
+        }
         /* left-sidebar tweak */
         div.nav-content-item-inner {
             margin-top: 2em;
@@ -78,24 +84,18 @@ function main(){logseq.provideStyle(String.raw`
             border-radius: 5px;
             padding: 0.5em;
             max-width: 410px;
-            backdrop-filter: blur(20px);
         }
         div#journals div#today-queries+div.flex.flex-col:hover {
+            backdrop-filter: blur(40px);
             z-index: var(--ls-z-index-level-1);
             transform:scale(0.95,0.95);
             min-width: 600px;
             max-width: 600px;
-            background: rgba(6,6,6,0.4);
+
             border-color: unset;
         }
         main.ls-left-sidebar-open div#journals div#today-queries+div.flex.flex-col:hover {
             margin-right: -200px;
-        }
-        div.light-theme div#today-queries+div.flex.flex-col {
-            background: var(--color-level-2)
-        }
-        div.dark-theme div#today-queries+div.flex.flex-col {
-            background-color: var(--ls-primary-background-color);
         }
         /* CANCEL PDF-view */
         body.is-pdf-active div#journals div#today-queries+div.flex.flex-col {
@@ -103,25 +103,28 @@ function main(){logseq.provideStyle(String.raw`
         }
         /* a Journal Linked References */
         div#journals div.references {
-            max-height: 83vh;
+            max-height: 60vh;
             min-width: 340px;
             max-width: 360px;
             overflow-y: scroll;
             font-size: smaller;
             position: sticky;
-            top: 10em;
+            top: 3em;
             bottom: 3em;
-            padding: 0.7em;
+            padding: 1em;
             margin-right: 4px;
-            backdrop-filter: blur(20px);
             z-index: 0;
         }
         div#journals div.references:hover {
-            background: rgba(6,6,6,0.4);
+            backdrop-filter: blur(40px);
             max-width: 670px;
             overflow-x: visible;
             z-index: var(--ls-z-index-level-1);
             margin-right: -130px;
+        }
+        div#journals div.references div.hidden {
+            width: 670px;
+            display: block;
         }
         main.ls-wide-mode div#journals div.references:hover {
             margin-right: -300px;
@@ -150,7 +153,7 @@ function main(){logseq.provideStyle(String.raw`
             bottom: 3px;
             overflow-y: scroll;
             font-size: smaller;
-            background-color: var(--ls-primary-background-color);
+            background-color: var(--ls-secondary-background-color);
             border-radius: 10px;
             padding: 0.3em;
         }
@@ -162,7 +165,10 @@ function main(){logseq.provideStyle(String.raw`
         body.is-pdf-active div#journals div#today-queries {
             display: none;            
         }
-        /* Journal-queries Task */
+        div#journals div#today-queries:hover {
+            background-color: var(--ls-guideline-color);
+        }
+        /* Journal-queries Task bold */
         div#journals div#today-queries .now,
         div#journals div#today-queries .later,
         div#journals div#today-queries .doing,
@@ -184,6 +190,7 @@ function main(){logseq.provideStyle(String.raw`
         div#journals div#today-queries>div.lazy-visibility div.custom-query>div>div.content>div.foldable-title {
             height: 3em;
             background: var(--color-level-2);
+            backdrop-filter: blur(40px);
         }
         div#journals div#today-queries>div.lazy-visibility div.custom-query>div>div.content>div.foldable-title>div.items-center {
             height: 100%;
@@ -218,12 +225,18 @@ function main(){logseq.provideStyle(String.raw`
             right: 0;
             top: calc(var(--ls-headbar-height) + var(--ls-headbar-inner-top-padding));
             bottom: 0;
-            margin-top: 2em !important;
+            border: 4px var(--ls-guideline-color);
             border-radius: 0.25em;
-            overflow-x: scroll;
-            border: 4px double;
-            margin-top: unset !important;
-            height: unset;
+            overflow: scroll;
+            background-color: unset;
+            height: fit-content;
+        }
+        div#right-sidebar div.resizer {
+            background: var(--ls-guideline-color);
+        }
+        div#right-sidebar::-webkit-scrollbar {
+            width: 12px;
+            background: var(--ls-guideline-color);
         }
         /* IF tabs-plugin */
         body.is-tabs-loaded div#root div#right-sidebar {
@@ -231,13 +244,12 @@ function main(){logseq.provideStyle(String.raw`
         }
         /* right-sidebar-background */
         div#right-sidebar div.cp__right-sidebar-scrollable>div+div {
-            background: rgba(6,6,6,0.8);
+            backdrop-filter: blur(40px);
         }
         div#right-sidebar div.cp__right-sidebar-scrollable>div.cp__right-sidebar-topbar {
             height: unset;
         }
         div#right-sidebar div.cp__right-sidebar div.sidebar-item {
-            min-height: 4em;
             padding-top: unset;
         }
         div#right-sidebar div.sidebar-item-list {
@@ -246,14 +258,19 @@ function main(){logseq.provideStyle(String.raw`
             flex-wrap: wrap;
             align-content: flex-start;
             overflow-x: scroll;
+            font-size: 0.96em;
+        }
+        div#right-sidebar div.sidebar-item-list::-webkit-scrollbar {
+            height: 12px;
         }
         div#right-sidebar div.sidebar-item.content>div>div:first-of-type {
             margin-top: 0;
+            margin-bottom: 0.4em;
             position: sticky !important;
-            top: 0;
-            padding: 0.2rem;
+            top: -1em;
             backdrop-filter: blur(20px);
-            font-size: small;
+            z-index: +1;
+            font-weight: 700;
         }
         div#right-sidebar div.sidebar-item.content {
             min-width: 550px;
@@ -264,15 +281,18 @@ function main(){logseq.provideStyle(String.raw`
             align-self: flex-start;
             overflow-y: auto;
             margin-bottom: 0.4em;
-            min-height: 20vh;
-            max-height: 96vh;
+            max-height: fit-content;
             padding-bottom: 3em;
         }
         div#right-sidebar div.sidebar-item-list {
             display: flex;
             padding-bottom: 0;
             margin: unset;
-            height: 92.8vh;
+            height: calc(99vh - var(--ls-headbar-height) + var(--ls-headbar-inner-top-padding) - 20px);
+        }
+        /* IF tabs-plugin */
+        body.is-tabs-loaded div#right-sidebar div.sidebar-item-list {
+            height: calc(99vh - var(--ls-headbar-height) + var(--ls-headbar-inner-top-padding) - 60px);
         }
         div#right-sidebar div.sidebar-item-list div.sidebar-item.flex-col {
             width: 100% !important;
@@ -295,7 +315,44 @@ function main(){logseq.provideStyle(String.raw`
         div.cp__right-sidebar {
             transition: unset;
         }
-        /* ELSE-pages */
+        /* right-sidebar Tables-Wrap */
+        div#right-sidebar .table-auto {
+            table-layout: fixed;
+            width: 90%;
+        }
+        div#right-sidebar .table-auto td.whitespace-nowrap {
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+        /* right-sidebar collapse */
+        div#right-sidebar div.sidebar-item.content span.rotating-arrow:first-child {
+            transform:scale(2.0,2.0);
+            margin-right: 0.6em;
+        }
+        /* hidden-bar */
+        div#right-sidebar div.hidden {
+            display: block;
+            margin-top: 1em;
+            margin-bottom: -2em;
+            padding: 0;
+            width: 100%;
+            height: 1em;
+            background-color: var(--color-level-3);
+            border-radius: 1.5em;
+        }
+        div#right-sidebar div.hidden div {
+            display: none;
+        }
+        /* right-sidebar topbar */
+        div#right-sidebar div.cp__right-sidebar-topbar {
+            flex-direction: row-reverse;
+        }
+        div#right-sidebar span.ls-icon-layout-sidebar-right svg {
+            width: 24px;
+            height: 24px;
+        }
+        /* ELSE-page */
         div#main-content-container div.flex-1.page.relative {
             margin-right: 390px;
             margin-bottom: 2em;
@@ -305,7 +362,7 @@ function main(){logseq.provideStyle(String.raw`
         div#main-content-container div.flex-1.page.relative div.relative {
             max-width: 1600px;
         }
-        /* ELSE-pages Linked References */
+        /* page Linked References */
         div#main-content-container div.relative div.lazy-visibility div.references {
             margin-top: 8em;
             margin-bottom: 4em;
@@ -323,36 +380,34 @@ function main(){logseq.provideStyle(String.raw`
         main.ls-wide-mode div#main-content-container div.relative div.lazy-visibility div.references div.references-blocks div.content>div>div.lazy-visibility,
         main.ls-wide-mode div#main-content-container div.relative+div+div div.references div.references-blocks div.content>div>div.lazy-visibility,
         main.ls-wide-mode div#main-content-container div.relative+div+div+div div.references div.references-blocks div.content>div>div.lazy-visibility {
-            overflow-x: hidden;
+            overflow: auto;
             border-radius: 1.5em;
-            max-height: 78vh;
+            max-height: 780px;
             flex: 28%;
-            max-width: 30vh;
+            max-width: 615px;
         }
         div#main-content-container div.references div.references-blocks div.content>div>div.lazy-visibility div.fade-enter,
         div#main-content-container div.references div.references-blocks div.content>div>div.lazy-visibility div.fade-enter>div,
         div#main-content-container div.references div.references-blocks div.content>div>div.lazy-visibility div.fade-enter div.initial {
             height: 100%;
         }
-        iv#main-content-container div.references div.references-blocks div.content>div>div.lazy-visibility:hover div.fade-enter,
-        div#main-content-container div.references div.references-blocks div.content>div>div.lazy-visibility:hover div.fade-enter>div,
-        div#main-content-container div.references div.references-blocks div.content>div>div.lazy-visibility:hover div.fade-enter div.initial {
-            height: unset;
-        }
-        div#main-content-container div.references div.references-blocks div.content>div>div.lazy-visibility div.fade-enter>div {
-            background-color: var(--color-level-1);
+        main.ls-wide-mode div#main-content-container div.references div.references-blocks div.content>div>div.lazy-visibility div.fade-enter>div {
             padding: 0.4em;
             margin: 0;
+            height: 100%;
         }
-
         main.ls-wide-mode div#main-content-container div.references  div.references-blocks div.content>div>div.lazy-visibility {
             width: 44vh;
         }
         main.ls-wide-mode div#main-content-container div.references  div.references-blocks div.content>div>div.lazy-visibility img {
             max-width: 450px !important;
         }
-
-        /* ELSE Pages right-space */
+        div#main-content-container div.relative h2.font-bold {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        /* ELSE Page right-space */
         div#main-content-container div.relative+div.references.mt-6.flex-1.flex-row,
         div#main-content-container div.page-hierarchy {
             position: fixed;
@@ -401,15 +456,11 @@ function main(){logseq.provideStyle(String.raw`
         div#right-sidebar [data-refs-self*="kanban"]>.block-children-container>.block-children {
             flex-wrap: wrap;
         }
-
         body:not(.is-tabs-loaded) div#root div#today-queries:hover {
             top:46px;
         }
         div.journal>div.flex.flex-col:first-child {
             max-width: 1100px;
-        }
-        div#journals div#today-queries:hover {
-            background: rgba(6,6,6,0.4);
         }
         main:not(.ls-left-sidebar-open) div#journals div#today-queries {
             width: 520px;
@@ -474,7 +525,7 @@ function main(){logseq.provideStyle(String.raw`
     @media screen and (min-width: 2440px) {
         div.journal>div.flex.flex-col:first-child {
             min-width: 1050px;
-            max-width: 1280px;
+            max-width: 1350px;
         }
         /* SCHEDULED AND DEADLINE */
         main.ls-left-sidebar-open div#journals div#today-queries+div.flex.flex-col {
