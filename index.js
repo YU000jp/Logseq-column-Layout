@@ -12,8 +12,9 @@ function main(){logseq.provideStyle(String.raw`
             background-image: none;
         }
         .block-content .asset-container .asset-action-bar {
-            backdrop-filter: blur(90px);
+            background: rgba(6,6,6,0.7);
             color: #fff;
+            font-size: small;
         }
         /* left-sidebar tweak */
         div.nav-content-item-inner {
@@ -566,6 +567,5 @@ function main(){logseq.provideStyle(String.raw`
     }
 }
 /* Screen size Finish */
-
 
 `);}logseq.ready(main).catch(console.error)
