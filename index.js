@@ -3,11 +3,17 @@ function main(){logseq.provideStyle(String.raw`
 /* Screen size */
 @supports (display: flex) {
     @media screen and (min-width: 1900px) {
+        div#root div.absolute {
+            position: absolute;
+            backdrop-filter: blur(40px);
+            z-index: var(--ls-z-index-level-5);
+        }
         .block-content .asset-container .asset-overlay {
             background-image: none;
         }
         .block-content .asset-container .asset-action-bar {
-            background-color: var(--ls-primary-background-color);
+            backdrop-filter: blur(90px);
+            color: #fff;
         }
         /* left-sidebar tweak */
         div.nav-content-item-inner {
@@ -65,8 +71,6 @@ function main(){logseq.provideStyle(String.raw`
         }
         div#journals div.block-children-container {
             max-width: 96%;
-            margin-right: 1em;
-            z-index: 1;
         }
         /* Journals */
         div.journal>div.flex.flex-col:first-child {
@@ -477,14 +481,14 @@ function main(){logseq.provideStyle(String.raw`
             max-width: 1100px;
         }
         main:not(.ls-left-sidebar-open) div#journals div#today-queries {
-            width: 520px;
+            width: 470px;
         }
         main:not(.ls-left-sidebar-open) div#journals {
-            margin-right: 500px;
+            margin-right: 430px;
         }
         main:not(.ls-left-sidebar-open) div#journals div#today-queries+div.flex.flex-col {
-            right: 510px;
-            min-width: 500px;
+            right: 470px;
+            min-width: 450px;
         }
     }
     @media screen and (min-width: 2260px) {
