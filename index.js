@@ -40,6 +40,11 @@ function main(){logseq.provideStyle(String.raw`
         }
         div#main-content-container input.form-checkbox+div input.form-checkbox {
             transform: scale(0.6);
+            pointer-events: none;
+        }
+        div#main-content-container input.form-checkbox+div input.form-checkbox+a {
+            text-decoration: line-through;
+            pointer-events: none;
         }
         div#main-content-container input.form-checkbox+div a {
             font-size: medium;
@@ -84,26 +89,41 @@ function main(){logseq.provideStyle(String.raw`
         }
         /* SCHEDULED AND DEADLINE */
         div#journals div#today-queries+div.flex.flex-col {
-            transform:scale(0.85,0.85);
             position: fixed;
             bottom: 2em;
-            right: 364px;
-            border: 2px var(--ls-link-text-color);
+            right: 395px;
             border-radius: 5px;
-            padding: 0.5em;
-            max-width: 420px;
+            padding: 0.6em;
+            max-width: 380px;
+            border: 2px solid var(--ls-guideline-color);
+            border-radius: 0.6em;
+            background: var(--color-level-1);
+            font-size: small;
+            max-height: 50vh;
+            overflow: auto;
+            z-index: 1;
+
+        }
+        main:not(.ls-left-sidebar-open) div#journals div#today-queries+div.flex.flex-col {
+            max-width: 460px;
         }
         div#journals div#today-queries+div.flex.flex-col:hover {
+            background: unset;
             backdrop-filter: blur(40px);
             z-index: var(--ls-z-index-level-1);
-            transform: unset;
-            min-width: 600px;
-            max-width: 600px;
-            margin-right: -160px;
+            min-width: 560px;
+            max-width: 560px;
+            min-height: 400px;
+            padding-right: 60px;
         }
         main:not(.ls-left-sidebar-open) div#journals div#today-queries+div.flex.flex-col {
             right: 470px;
-            min-width: 450px;
+        }
+        main.ls-left-sidebar-open div#journals div#today-queries+div.flex.flex-col:hover {
+            margin-right: -175px;
+        }
+        main:not(.ls-left-sidebar-open) div#journals div#today-queries+div.flex.flex-col:hover {
+            margin-right: -105px;
         }
         /* IF PDF-view CANCEL */
         body.is-pdf-active div#journals div#today-queries+div.flex.flex-col {
@@ -115,20 +135,25 @@ function main(){logseq.provideStyle(String.raw`
             min-width: 360px;
             max-width: 360px;
             overflow-y: scroll;
-            font-size: smaller;
+            font-size: small;
             position: sticky;
             top: 3em;
             bottom: 3em;
-            padding: 1em;
+            padding: 0.4em;
             margin-right: 5px;
             z-index: 0;
+            border: 2px solid var(--ls-guideline-color);
+            border-radius: 0.6em;
+            background: var(--color-level-1);
         }
         div#journals div.references:hover {
+            background: unset;
             backdrop-filter: blur(40px);
             min-width: 670px;
             max-width: 670px;
             overflow-x: visible;
             z-index: var(--ls-z-index-level-1);
+            padding-bottom: 4em;
         }
         /* --IF left-sidebar-open +100px */
         main:not(.ls-left-sidebar-open) div#journals div.references {
@@ -140,6 +165,9 @@ function main(){logseq.provideStyle(String.raw`
         }
         main.ls-left-sidebar-open div#journals div.references:hover {
             margin-right: -305px;
+        }
+        div#journals div.references div.pt-6{
+            padding: 0.1em;
         }
         div#journals div.references div.hidden {
             width: 670px;
@@ -169,8 +197,7 @@ function main(){logseq.provideStyle(String.raw`
             bottom: 3px;
             overflow-y: scroll;
             font-size: smaller;
-            background-color: var(--ls-secondary-background-color);
-            border-radius: 10px;
+            border-left: 2px solid var(--ls-guideline-color);
             padding: 0.3em;
         }
         /* --IF tabs-plugin */
@@ -184,9 +211,6 @@ function main(){logseq.provideStyle(String.raw`
         /* --IF left-sidebar-open */
         main:not(.ls-left-sidebar-open) div#journals div#today-queries {
             width: 470px;
-        }
-        div#journals div#today-queries:hover {
-            background-color: var(--ls-guideline-color);
         }
         /* Journal-queries Task bold */
         div#journals div#today-queries .now,
@@ -203,34 +227,49 @@ function main(){logseq.provideStyle(String.raw`
         div#journals div#today-queries>div.lazy-visibility>div.shadow {
             display: none;
         }
-        div#journals div#today-queries>div.lazy-visibility div.custom-query {
-            background: var(--color-level-1);
-            margin-top: 0;
-        } 
-        div#journals div#today-queries>div.lazy-visibility div.custom-query>div>div.content>div.foldable-title {
-            height: 3em;
-            background: var(--color-level-2);
-            backdrop-filter: blur(40px);
+        div#journals div#today-queries div.color-level div.blocks-container,
+        div#journals div#today-queries div.color-level {
+            background-color: unset;
         }
-        div#journals div#today-queries>div.lazy-visibility div.custom-query>div>div.content>div.foldable-title>div.items-center {
-            height: 100%;
-            padding: 2px;
-        }          
+        div#journals div#today-queries>div.lazy-visibility div.custom-query {
+            margin-top: 0.2em;
+            margin-bottom: 1.2em;
+        }
+        div#journals div#today-queries>div.lazy-visibility div.custom-query div.custom-query-title {
+            border-top: 2px solid var(--ls-guideline-color);
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+            padding-top: 0.4em;
+            padding-left: 2em;
+            text-shadow: 1px 1px var(--ls-block-highlight-color);
+            font-size: medium;
+            background: var(--ls-page-blockquote-bg-color);
+        }  
         div#journals div#today-queries.mt-10 {
             margin-top: 0.1em;
         }
-        div#journals div#today-queries div.flex.flex-col,
-        div#journals div#today-queries div.flex.flex-col div.initial {
-            padding: 0;
+        div#journals div#today-queries>div.lazy-visibility div.custom-query div.content {
+            padding-top: 0.4em;
         }
-        div#journals div#today-queries time {
-            font-size: medium;
+        div#journals div#today-queries>div.lazy-visibility div.custom-query div.content div.lazy-visibility:not(:last-of-type) {
+            border-bottom: 2px solid var(--ls-guideline-color);
+            padding: 0.8em;
+        }
+        div#journals div#today-queries>div.lazy-visibility div.custom-query div.content div.lazy-visibility {
+            border-right: 4px solid var(--ls-page-blockquote-bg-color);
+        }
+        
+        div#journals div#today-queries>div.lazy-visibility div.custom-query div.my-2 {
+            padding: 0.2em;
+            margin: 0.2em;
+        }
+        div#journals div#today-queries>div.lazy-visibility div.custom-query div.breadcrumb.block-parents {
+            color: var(--ct-external-link-color);
+            margin-bottom: 0.6em;
+v
         }
         div#journals div#today-queries .sm\:px-7 {
             padding-left: unset;
-        }
-        div#journals div#today-queries a.block-marker {
-            font-size: 22px;
         }
         /* Journal-queries h2-h4 header sizedown */
         div#journals div#today-queries h2,
@@ -300,6 +339,7 @@ function main(){logseq.provideStyle(String.raw`
             margin-bottom: 0.4em;
             max-height: fit-content;
             padding-bottom: 3em;
+            background: var(--ls-primary-background-color);
         }
         div#right-sidebar div.sidebar-item-list {
             display: flex;
@@ -462,15 +502,6 @@ function main(){logseq.provideStyle(String.raw`
             right: 1em;
             bottom: 3em;
         }
-        main.ls-wide-mode div.cp__sidebar-help-btn::before {
-            content: "◇Wide-mode (Switch 「ESC」「tw」)";
-            position: fixed;
-            bottom: 0.5em;
-            right: 200px;
-            padding: 0.2em;
-            background-color: var(--ls-primary-background-color);
-            font-size: 0.95em;
-        }
         /* #kanban */
          div#root [data-refs-self*="kanban"]>.block-children-container>.block-children {
             overflow-x: scroll;
@@ -497,8 +528,7 @@ function main(){logseq.provideStyle(String.raw`
         }
         /* SCHEDULED AND DEADLINE */
         main.ls-left-sidebar-open div#journals div#today-queries+div.flex.flex-col {
-            right: 485px;
-            max-width: 470px;
+            right: 525px;
         }
        div#journals div#today-queries {
             width: 520px;
@@ -526,7 +556,7 @@ function main(){logseq.provideStyle(String.raw`
         }
         /* SCHEDULED AND DEADLINE */
         main.ls-left-sidebar-open div#journals div#today-queries+div.flex.flex-col {
-            right: 585px;
+            right: 625px;
         }
         /* Journal-queries space */
         div#journals {
