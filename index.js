@@ -68,7 +68,10 @@ function main(){logseq.provideStyle(String.raw`
         }
         /* Journal-queries space */
         div#journals {
-            margin-right: 355px;
+            margin-right: 360px;
+        }
+        main:not(.ls-left-sidebar-open) div#journals {
+            margin-right: 430px;
         }
         div#journals div.block-children-container {
             max-width: 96%;
@@ -88,27 +91,28 @@ function main(){logseq.provideStyle(String.raw`
             border: 2px var(--ls-link-text-color);
             border-radius: 5px;
             padding: 0.5em;
-            max-width: 410px;
+            max-width: 420px;
         }
         div#journals div#today-queries+div.flex.flex-col:hover {
             backdrop-filter: blur(40px);
             z-index: var(--ls-z-index-level-1);
-            transform:scale(0.95,0.95);
+            transform: unset;
             min-width: 600px;
             max-width: 600px;
-            border-color: unset;
+            margin-right: -160px;
         }
-        main.ls-left-sidebar-open div#journals div#today-queries+div.flex.flex-col:hover {
-            margin-right: -200px;
+        main:not(.ls-left-sidebar-open) div#journals div#today-queries+div.flex.flex-col {
+            right: 470px;
+            min-width: 450px;
         }
-        /* CANCEL PDF-view */
+        /* IF PDF-view CANCEL */
         body.is-pdf-active div#journals div#today-queries+div.flex.flex-col {
             display: none;            
         }
         /* a Journal Linked References */
         div#journals div.references {
             max-height: 60vh;
-            min-width: 340px;
+            min-width: 360px;
             max-width: 360px;
             overflow-y: scroll;
             font-size: smaller;
@@ -116,12 +120,8 @@ function main(){logseq.provideStyle(String.raw`
             top: 3em;
             bottom: 3em;
             padding: 1em;
-            margin-right: 4px;
+            margin-right: 5px;
             z-index: 0;
-        }
-        main:not(.ls-left-sidebar-open) div#journals div.references {
-            width: 480px;
-            max-width: 480px;
         }
         div#journals div.references:hover {
             backdrop-filter: blur(40px);
@@ -129,24 +129,21 @@ function main(){logseq.provideStyle(String.raw`
             max-width: 670px;
             overflow-x: visible;
             z-index: var(--ls-z-index-level-1);
-            margin-right: -115px;
         }
-        main.ls-wide-mode div#journals div.references:hover {
-            margin-right: -115px;
+        /* --IF left-sidebar-open +100px */
+        main:not(.ls-left-sidebar-open) div#journals div.references {
+            width: 460px;
+            max-width: 460px;
         }
-
-        main:not(.ls-left-sidebar-open.ls-wide-mode) div#journals div.references:hover {
-            margin-right: -170px;
+        div#journals div.references:hover {
+            margin-right: -205px;
         }
-        main.ls-left-sidebar-open:not(.ls-wide-mode) div#journals div.references:hover {
-            margin-right: -300px;
+        main.ls-left-sidebar-open div#journals div.references:hover {
+            margin-right: -305px;
         }
         div#journals div.references div.hidden {
             width: 670px;
             display: block;
-        }
-        main.ls-wide-mode div#journals div.references:hover {
-            margin-right: -300px;
         }
         /* CANCEL PDF-view */
         body.is-pdf-active div#journals div.references {
@@ -160,8 +157,8 @@ function main(){logseq.provideStyle(String.raw`
             padding-left: 0;
             padding-right: 0;
         }
-        div.max-w-7xl.mx-auto.pb-24 {
-            max-width: unset !important;
+        main div#root div.max-w-7xl.mx-auto.pb-24 {
+            max-width: auto;
         }
         /* Journal-queries */
         div#journals div#today-queries {
@@ -176,13 +173,17 @@ function main(){logseq.provideStyle(String.raw`
             border-radius: 10px;
             padding: 0.3em;
         }
-        /* ELSE tabs-plugin */
+        /* --IF tabs-plugin */
         body:not(.is-tabs-loaded) div#root div#journals div#today-queries {
             top: calc(var(--ls-headbar-height) + var(--ls-headbar-inner-top-padding));
         }
-        /* CANCEL PDF-view */
+        /* --IF PDF-view CANCEL */
         body.is-pdf-active div#journals div#today-queries {
             display: none;            
+        }
+        /* --IF left-sidebar-open */
+        main:not(.ls-left-sidebar-open) div#journals div#today-queries {
+            width: 470px;
         }
         div#journals div#today-queries:hover {
             background-color: var(--ls-guideline-color);
@@ -240,9 +241,10 @@ function main(){logseq.provideStyle(String.raw`
         }
         /* right-sidebar */
         div#right-sidebar {
+            min-width: 24vw;
+            width: 60%;
             position: fixed;
             right: 0;
-            top: calc(var(--ls-headbar-height) + var(--ls-headbar-inner-top-padding));
             bottom: 0;
             border: 4px var(--ls-guideline-color);
             border-radius: 0.25em;
@@ -256,10 +258,6 @@ function main(){logseq.provideStyle(String.raw`
         div#right-sidebar::-webkit-scrollbar {
             width: 12px;
             background: var(--ls-guideline-color);
-        }
-        /* IF tabs-plugin */
-        body.is-tabs-loaded div#root div#right-sidebar {
-            top: calc(var(--ls-headbar-height) + var(--ls-headbar-inner-top-padding) + 40px);
         }
         /* right-sidebar-background */
         div#right-sidebar div.cp__right-sidebar-scrollable>div+div {
@@ -307,11 +305,11 @@ function main(){logseq.provideStyle(String.raw`
             display: flex;
             padding-bottom: 0;
             margin: unset;
-            height: calc(99vh - var(--ls-headbar-height) + var(--ls-headbar-inner-top-padding) - 20px);
+            height: calc(99vh - 20px);
         }
         /* IF tabs-plugin */
         body.is-tabs-loaded div#right-sidebar div.sidebar-item-list {
-            height: calc(99vh - var(--ls-headbar-height) + var(--ls-headbar-inner-top-padding) - 60px);
+            height: calc(99vh - 60px);
         }
         div#right-sidebar div.sidebar-item-list div.sidebar-item.flex-col {
             width: 100% !important;
@@ -370,6 +368,17 @@ function main(){logseq.provideStyle(String.raw`
         div#right-sidebar span.ls-icon-layout-sidebar-right svg {
             width: 24px;
             height: 24px;
+        }
+        main.ls-right-sidebar-open div#main-content-container {
+            justify-content: left;
+            padding-left: 1em;
+        }
+        main.ls-right-sidebar-open div#head {
+            width: 30vw;
+        }
+        div#right-sidebar.cp__right-sidebar.open {
+            max-width: 72vw;
+            top: 0;
         }
         /* ELSE-page */
         div#main-content-container div.flex-1.page.relative {
@@ -475,94 +484,53 @@ function main(){logseq.provideStyle(String.raw`
         div#right-sidebar [data-refs-self*="kanban"]>.block-children-container>.block-children {
             flex-wrap: wrap;
         }
-        body:not(.is-tabs-loaded) div#root div#today-queries:hover {
-            top:46px;
-        }
         div.journal>div.flex.flex-col:first-child {
-            max-width: 1100px;
-        }
-        main:not(.ls-left-sidebar-open) div#journals div#today-queries {
-            width: 470px;
-        }
-        main:not(.ls-left-sidebar-open) div#journals {
-            margin-right: 430px;
-        }
-        main:not(.ls-left-sidebar-open) div#journals div#today-queries+div.flex.flex-col {
-            right: 470px;
-            min-width: 450px;
+            max-width: 1170px;
         }
     }
     @media screen and (min-width: 2260px) {
         div.journal>div.flex.flex-col:first-child {
-            max-width: 1150px;
+            max-width: 1320px;
+        }
+        main:not(.ls-right-sidebar-open) div.journal>div.flex.flex-col:first-child {
+            margin-left: 4em;
         }
         /* SCHEDULED AND DEADLINE */
         main.ls-left-sidebar-open div#journals div#today-queries+div.flex.flex-col {
-            right: 480px;
-            min-width: 500px;
+            right: 485px;
+            max-width: 470px;
         }
-        div#journals div#today-queries {
+       div#journals div#today-queries {
             width: 520px;
         }
         div#journals {
-            margin-right: 485px;
-        }
-        div#journals div.references {
-            width: 700px;
-            max-width: 420px;
-        }
-        main.ls-left-sidebar-open div#journals div.references:hover {
-            margin-right: -240px;
-        }
-        main.ls-left-sidebar-open div#journals div#today-queries+div.flex.flex-col:hover {
-            margin-right: unset;
+            margin-right: 490px;
         }
         /* ELSE pages */
         div#main-content-container div.flex-1.page.relative {
-            margin-right: 500px;
+            margin-right: 520px;
         }
         /* ELSE Pages right-space */
         div#main-content-container div.relative+div.references.mt-6.flex-1.flex-row,
         div#main-content-container div.page-hierarchy {
-            width: 500px;
-        }
-        /* a journal linked-references */
-        div#journals div.references:hover {
-            margin-right: -170px;
+            width: 520px;
         }
     }
     @media screen and (min-width: 2440px) {
         div.journal>div.flex.flex-col:first-child {
             min-width: 1050px;
-            max-width: 1350px;
-        }
-        /* SCHEDULED AND DEADLINE */
-        main.ls-left-sidebar-open div#journals div#today-queries+div.flex.flex-col {
-            right: 620px;
+            max-width: 1430px;
         }
         div#journals div#today-queries {
             width: 620px;
         }
+        /* SCHEDULED AND DEADLINE */
+        main.ls-left-sidebar-open div#journals div#today-queries+div.flex.flex-col {
+            right: 585px;
+        }
         /* Journal-queries space */
         div#journals {
-            margin-right: 620px;
-        }
-        main.ls-wide-mode div#journals div.references:hover {
-            margin-right: -170px;
-        }
-    }
-    @media screen and (min-width: 2620px) {
-        main.ls-left-sidebar-open div#journals div.references {
-            max-width: 500px;
-        }
-        main.ls-left-sidebar-open div#journals div.references:hover {
-            margin-right: -185px;
-        }
-        main:not(.ls-left-sidebar-open) div#journals div.references {
-            max-width: 670px;
-        }
-        main:not(.ls-left-sidebar-open) div#journals div.references:hover {
-            margin-right: 0;
+            margin-right: 590px;
         }
     }
 }
