@@ -16,8 +16,8 @@
 
 ## Pattern
  ### the page other than journals
- - display "page-tags" and "page-hierarchy" 
- - "Linked References" side by side
+ - display "page-tags" and "page-hierarchy".(Credit: [logseq page-tags and hierarchy](https://github.com/YU000jp/logseq-page-tags-and-hierarchy))
+ - "Linked References" side by side (only Wide-mode)
  - Wide mode(shortcut: 「**tw**」) is recommended if you want to use them side by side. Journals will be left justified.
 
 ![スクリーンショット 2022-10-02 102232](https://user-images.githubusercontent.com/111847207/193434026-5595de15-2e40-42a2-95d4-ab0f1c2b55c3.png)
