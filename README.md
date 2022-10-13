@@ -8,17 +8,21 @@
 
 ![1662766493774-uanJkoieHO](https://user-images.githubusercontent.com/111847207/189498997-5d6f791b-2a6b-45d7-bcb2-d09bee36d431.png)
 
-## INSTALL
- - the screen min-width: 1900px
+## Install
  - This Plugin is available on the Logseq Market place.
- - Some plugins are not supported.
 
+## Attention⚠️
+ - the screen min-width: 1900px
+ - Some plugins are not supported. (Let me know on [GitHub](https://github.com/YU000jp/Logseq-column-Layout/issues).)
+ - The space is blank if there are no tasks in Logseq.
+ - Linked references are limited to dates other than today.
 
 ## Pattern
  ### the page other than journals
  - display "page-tags" and "page-hierarchy".(Credit: [logseq page-tags and hierarchy](https://github.com/YU000jp/logseq-page-tags-and-hierarchy))
  - "Linked References" side by side (only Wide-mode)
  - Wide mode(shortcut: 「**tw**」) is recommended if you want to use them side by side. Journals will be left justified.
+
 
 ![スクリーンショット 2022-10-02 102232](https://user-images.githubusercontent.com/111847207/193434026-5595de15-2e40-42a2-95d4-ab0f1c2b55c3.png)
 
