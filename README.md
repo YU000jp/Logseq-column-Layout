@@ -2,11 +2,13 @@
 
  - Journals, linked references, and journal queries can be placed side by side if the minimum screen width is "1900px" or more.
 
+![スクリーンショット 2022-10-14 0207414](https://user-images.githubusercontent.com/111847207/195663729-7c979e9e-9309-4f0b-9766-581778c5aaa7.png)
+
+![スクリーンショット 2022-10-14 0207412](https://user-images.githubusercontent.com/111847207/195662824-35aecadd-c404-42a8-82eb-54ffc628c321.png)
+
  - Pages can be placed side by side in the sidebar.(Credit: [Logseq Vertical Panels for Sidebar](https://github.com/r-hegde/logseq-vertical-panels))
 
-![1662768116823-So7NpcKumn](https://user-images.githubusercontent.com/111847207/189483249-87505a6e-29f5-4ee5-91f7-961be542da16.png)
-
-![1662766493774-uanJkoieHO](https://user-images.githubusercontent.com/111847207/189498997-5d6f791b-2a6b-45d7-bcb2-d09bee36d431.png)
+![スクリーンショット 2022-10-14 022234](https://user-images.githubusercontent.com/111847207/195664336-43845b98-7a45-4d78-884a-fa0048f49b47.png)
 
 ## Install
  - This Plugin is available on the Logseq Market place.
