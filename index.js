@@ -1,7 +1,6 @@
 function main(){logseq.provideStyle(String.raw`
 
 /* Screen size */
-@supports (display: flex) {
     @media screen and (min-width: 1900px) {
         div#root div.absolute {
             position: absolute;
@@ -266,7 +265,6 @@ function main(){logseq.provideStyle(String.raw`
         div#journals div#today-queries>div.lazy-visibility div.custom-query div.breadcrumb.block-parents {
             color: var(--ct-external-link-color);
             margin-bottom: 0.6em;
-v
         }
         div#journals div#today-queries .sm\:px-7 {
             padding-left: unset;
@@ -563,7 +561,6 @@ v
             margin-right: 590px;
         }
     }
-}
 /* Screen size Finish */
 
-`);}logseq.ready(main).catch(console.error)
+`);}logseq.ready(main).catch(console.error);
