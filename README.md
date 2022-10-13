@@ -8,10 +8,10 @@
 
 
 ## How to
- - You can see the table of contents of the web clips, which are lined up next to the journal, so it's easy to reference the journal from there.
  - It is effective as a log if you write an outline for the quotation.
 ### Linked Reference
  - Suitable for [Logseq-Omnivore plugin](https://github.com/omnivore-app/logseq-omnivore).　Omnivore is a webclipping tool that can be quoted to Logseq.
+ - You can see the table of contents of the web clips, which are lined up next to the journal, so it's easy to reference the journal from there.
 ### Journal Queries
  - Change the journal query to get more task management.　See the "Option" section below.
 
