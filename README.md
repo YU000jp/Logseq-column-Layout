@@ -1,6 +1,3 @@
-Sorry, Not compatible with Safari browser. Address the issue early
-
-
 # Logseq Column-Layout Plugin
 
  - Journals, linked references, and journal queries can be placed side by side if the minimum screen width is "1900px" or more.
