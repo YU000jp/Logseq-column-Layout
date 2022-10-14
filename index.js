@@ -1,7 +1,7 @@
 function main(){logseq.provideStyle(String.raw`
 
 /* Screen size */
-    @media screen and (min-width: 1900px) {
+    @media screen and (min-width: 1850px) {
         div#root div.absolute {
             position: absolute;
             backdrop-filter: blur(40px);
@@ -87,7 +87,7 @@ function main(){logseq.provideStyle(String.raw`
             flex: 3;
         }
         /* SCHEDULED AND DEADLINE */
-        div#journals div#today-queries+div.flex.flex-col {
+        main:not(.ls-right-sidebar-open) div#journals div#today-queries+div.flex.flex-col {
             position: fixed;
             bottom: 2em;
             right: 395px;
@@ -101,7 +101,10 @@ function main(){logseq.provideStyle(String.raw`
             max-height: 50vh;
             overflow: auto;
             z-index: 1;
-
+        }
+        /* IF right-sidebar CANCEL */
+        main.ls-right-sidebar-open div#journals div#today-queries+div.flex.flex-col {
+            display: none;
         }
         main:not(.ls-left-sidebar-open) div#journals div#today-queries+div.flex.flex-col {
             max-width: 460px;
@@ -129,7 +132,7 @@ function main(){logseq.provideStyle(String.raw`
             display: none;            
         }
         /* a Journal Linked References */
-        div#journals div.references {
+        main:not(.ls-right-sidebar-open) div#journals div.references {
             max-height: 60vh;
             min-width: 360px;
             max-width: 360px;
@@ -145,7 +148,7 @@ function main(){logseq.provideStyle(String.raw`
             border-radius: 0.6em;
             background: var(--color-level-1);
         }
-        div#journals div.references:hover {
+        main:not(.ls-right-sidebar-open) div#journals div.references:hover {
             background: unset;
             backdrop-filter: blur(40px);
             min-width: 670px;
@@ -153,6 +156,10 @@ function main(){logseq.provideStyle(String.raw`
             overflow-x: visible;
             z-index: var(--ls-z-index-level-1);
             padding-bottom: 4em;
+        }
+        /* IF right-sidebar CANCEL */
+        main.ls-right-sidebar-open div#journals div.references {
+            display: none;
         }
         /* --IF left-sidebar-open +100px */
         main:not(.ls-left-sidebar-open) div#journals div.references {
@@ -188,7 +195,7 @@ function main(){logseq.provideStyle(String.raw`
             max-width: auto;
         }
         /* Journal-queries */
-        div#journals div#today-queries {
+        main:not(.ls-right-sidebar-open) div#journals div#today-queries {
             width: 385px;
             position: fixed;
             right: 2px;
@@ -198,6 +205,10 @@ function main(){logseq.provideStyle(String.raw`
             font-size: smaller;
             border-left: 2px solid var(--ls-guideline-color);
             padding: 0.3em;
+        }
+        /* IF right-sidebar CANCEL */
+        main.ls-right-sidebar-open div#journals div#today-queries {
+            display: none;
         }
         /* --IF tabs-plugin */
         body:not(.is-tabs-loaded) div#root div#journals div#today-queries {
@@ -278,16 +289,10 @@ function main(){logseq.provideStyle(String.raw`
         }
         /* right-sidebar */
         div#right-sidebar {
-            min-width: 24vw;
-            width: 60%;
-            position: fixed;
-            right: 0;
-            bottom: 0;
             border: 4px var(--ls-guideline-color);
             border-radius: 0.25em;
             overflow: scroll;
             background-color: unset;
-            height: fit-content;
         }
         div#right-sidebar div.resizer {
             background: var(--ls-guideline-color);
@@ -298,7 +303,8 @@ function main(){logseq.provideStyle(String.raw`
         }
         /* right-sidebar-background */
         div#right-sidebar div.cp__right-sidebar-scrollable>div+div {
-            backdrop-filter: blur(40px);
+            background-image: linear-gradient(var(--color-level-1) 25%, transparent 25%);
+            background-size: 30px 30px;
         }
         div#right-sidebar div.cp__right-sidebar-scrollable>div.cp__right-sidebar-topbar {
             height: unset;
@@ -313,6 +319,7 @@ function main(){logseq.provideStyle(String.raw`
             align-content: flex-start;
             overflow-x: scroll;
             font-size: 0.96em;
+            scroll-snap-type: x;
         }
         div#right-sidebar div.sidebar-item-list::-webkit-scrollbar {
             height: 12px;
@@ -329,13 +336,11 @@ function main(){logseq.provideStyle(String.raw`
         div#right-sidebar div.sidebar-item.content {
             min-width: 550px;
             max-width: 900px;
-            overflow-y: scroll;
             resize: both;
-            display: inline-block;
             align-self: flex-start;
-            overflow-y: auto;
             margin-bottom: 0.4em;
             max-height: fit-content;
+            overflow-y: visible;
             padding-bottom: 3em;
             background: var(--ls-primary-background-color);
         }
@@ -385,6 +390,10 @@ function main(){logseq.provideStyle(String.raw`
             transform:scale(2.0,2.0);
             margin-right: 0.6em;
         }
+        div.cp__right-sidebar div.sidebar-item a.close {
+            transform: unset;
+            margin-left: 1em;
+        }
         /* hidden-bar */
         div#right-sidebar div.hidden {
             display: block;
@@ -399,6 +408,9 @@ function main(){logseq.provideStyle(String.raw`
         div#right-sidebar div.hidden div {
             display: none;
         }
+        div#right-sidebar div.sidebar-item.content div.initial {
+            min-height: 400px;
+        }
         /* right-sidebar topbar */
         div#right-sidebar div.cp__right-sidebar-topbar {
             flex-direction: row-reverse;
@@ -411,15 +423,16 @@ function main(){logseq.provideStyle(String.raw`
             justify-content: left;
             padding-left: 1em;
         }
-        main.ls-right-sidebar-open div#head {
-            width: 30vw;
+        @media (min-width: 640px){
+            #time-repeater {
+                min-width: 200px;
+            }
         }
-        div#right-sidebar.cp__right-sidebar.open {
-            max-width: 72vw;
-            top: 0;
+        div#right-sidebar div.sidebar-item div.is-journals div.relative+div.flex.flex-col {
+            display: none;
         }
         /* ELSE-page */
-        div#main-content-container div.flex-1.page.relative {
+        main:not(.ls-right-sidebar-open) div#main-content-container div.flex-1.page.relative {
             margin-right: 390px;
             margin-bottom: 2em;
             margin-top: 2em;
@@ -433,9 +446,9 @@ function main(){logseq.provideStyle(String.raw`
             margin-top: 8em;
             margin-bottom: 4em;
         }
-        main.ls-wide-mode div#main-content-container div.relative div.lazy-visibility div.references div.references-blocks div.content>div,
-        main.ls-wide-mode div#main-content-container div.relative+div+div div.references div.references-blocks div.content>div,
-        main.ls-wide-mode div#main-content-container div.relative+div+div+div div.references div.references-blocks div.content>div {
+        main.ls-wide-mode:not(.ls-right-sidebar-open)  div#main-content-container div.relative div.lazy-visibility div.references div.references-blocks div.content>div,
+        main.ls-wide-mode:not(.ls-right-sidebar-open)  div#main-content-container div.relative+div+div div.references div.references-blocks div.content>div,
+        main.ls-wide-mode:not(.ls-right-sidebar-open)  div#main-content-container div.relative+div+div+div div.references div.references-blocks div.content>div {
             flex-direction: row;
             align-items: stretch;
             justify-content: flex-start;
@@ -474,8 +487,8 @@ function main(){logseq.provideStyle(String.raw`
             margin-right: auto;
         }
         /* ELSE Page right-space */
-        div#main-content-container div.relative+div.references.mt-6.flex-1.flex-row,
-        div#main-content-container div.page-hierarchy {
+        main:not(.ls-right-sidebar-open) div#main-content-container div.relative+div.references.mt-6.flex-1.flex-row,
+        main:not(.ls-right-sidebar-open) div#main-content-container div.page-hierarchy {
             position: fixed;
             width: 390px;
             max-height: 40vh;
@@ -487,18 +500,26 @@ function main(){logseq.provideStyle(String.raw`
         }
 
         /* Pages-tagged-with */
-        div#main-content-container div.relative+div.references.mt-6.flex-1.flex-row {
+        main:not(.ls-right-sidebar-open) div#main-content-container div.relative+div.references.mt-6.flex-1.flex-row {
             top: 6.5em;
             right: 1em;
 
         }
-        body:not(.is-tabs-loaded) div#main-content-container div.relative+div.references.mt-6.flex-1.flex-row {
+        body:not(.is-tabs-loaded) main:not(.ls-right-sidebar-open) div#main-content-container div.relative+div.references.mt-6.flex-1.flex-row {
             top:4.5em;
         }
+        main.ls-right-sidebar-open  div#main-content-container div.relative+div.references.mt-6.flex-1.flex-row,
+        div#right-sidebar div.relative+div.references.mt-6.flex-1.flex-row {
+            display: none;
+        }
         /* page-hierarchy */
-        div#main-content-container div.page-hierarchy {
+        main:not(.ls-right-sidebar-open) div#main-content-container div.page-hierarchy {
             right: 1em;
             bottom: 3em;
+        }
+        main.ls-right-sidebar-open div#main-content-container div.page-hierarchy.page,
+        div#right-sidebar div.page-hierarchy {
+            display: none;
         }
         /* #kanban */
          div#root [data-refs-self*="kanban"]>.block-children-container>.block-children {
@@ -506,6 +527,7 @@ function main(){logseq.provideStyle(String.raw`
             padding: 1em;
             margin-top: 1em;
             font-size: smaller;
+            scroll-snap-type: x;
         }
         main.ls-wide-mode div#main-content-container div.relative div.lazy-visibility div.references div.references-blocks div.content>div [data-refs-self*="kanban"]>.block-children-container>.block-children,
         main.ls-wide-mode div#main-content-container div.relative+div+div div.references div.references-blocks div.content>div [data-refs-self*="kanban"]>.block-children-container>.block-children,
