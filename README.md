@@ -4,7 +4,7 @@
 
 ## How to
 ### Journals
- - It is effective as a log if you write an outline for the quotation.
+ - If you use the reference function and write the timeline, it is also effective as a log.
  ![スクリーンショット 2022-10-14 0207412](https://user-images.githubusercontent.com/111847207/195662824-35aecadd-c404-42a8-82eb-54ffc628c321.png)
 
 ### Linked Reference
