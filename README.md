@@ -47,7 +47,7 @@
 
  - See "[Logseq Default Query 6-pack](https://gist.github.com/psu/abf8d8c206f11d56c0e214d0bfcf065f)" or my sample.
 
-#### My sample
+### My sample
 
 ```clojure
  :default-queries{
@@ -147,8 +147,7 @@
     ]}
 ```
 
-
-### Contains the following 7 queries
+ - Contains the following 7 queries
 
 
  1. 🔨 Working Tasks #NOW
