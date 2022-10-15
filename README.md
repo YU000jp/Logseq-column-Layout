@@ -1,5 +1,5 @@
 # Logseq Column-Layout Plugin
- - Journals, linked references, and journal queries can be placed side by side if the minimum screen width is "1900px" or more.
+ - Journals, linked references, and journal queries can be placed side by side if the minimum screen width is "1850px" or more.
 ![スクリーンショット 2022-10-14 0207414](https://user-images.githubusercontent.com/111847207/195663729-7c979e9e-9309-4f0b-9766-581778c5aaa7.png)
 ![スクリーンショット 2022-10-14 0207412](https://user-images.githubusercontent.com/111847207/195662824-35aecadd-c404-42a8-82eb-54ffc628c321.png)
 
@@ -17,7 +17,7 @@
 
 
 ## Attention⚠️
- - the screen min-width: 1900px
+ - the screen min-width: 1850px
  - Some plugins are not supported. (Let me know on [GitHub](https://github.com/YU000jp/Logseq-column-Layout/issues).)
  - The space is blank if there are no tasks in Logseq.
  - Linked references are limited to dates other than today.
