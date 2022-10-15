@@ -447,9 +447,9 @@ function main(){logseq.provideStyle(String.raw`
             gap: 0.8em;
             padding-right: 50px;
         }
-        body:not(.is-pdf-active) main.ls-wide-mode div#main-content-container div.relative div.lazy-visibility div.references div.references-blocks div.content>div>div.lazy-visibility,
-        body:not(.is-pdf-active) main.ls-wide-mode div#main-content-container div.relative+div+div div.references div.references-blocks div.content>div>div.lazy-visibility,
-        body:not(.is-pdf-active) main.ls-wide-mode div#main-content-container div.relative+div+div+div div.references div.references-blocks div.content>div>div.lazy-visibility {
+        body:not(.is-pdf-active) main.ls-wide-mode:not(.ls-right-sidebar-open)  div#main-content-container div.relative div.lazy-visibility div.references div.references-blocks div.content>div>div.lazy-visibility,
+        body:not(.is-pdf-active) main.ls-wide-mode:not(.ls-right-sidebar-open)  div#main-content-container div.relative+div+div div.references div.references-blocks div.content>div>div.lazy-visibility,
+        body:not(.is-pdf-active) main.ls-wide-mode:not(.ls-right-sidebar-open)  div#main-content-container div.relative+div+div+div div.references div.references-blocks div.content>div>div.lazy-visibility {
             overflow: auto;
             border-radius: 1.5em;
             max-height: 780px;
@@ -466,7 +466,7 @@ function main(){logseq.provideStyle(String.raw`
             margin: 0;
             height: 100%;
         }
-        body:not(.is-pdf-active) main.ls-wide-mode div#main-content-container div.references  div.references-blocks div.content>div>div.lazy-visibility {
+        body:not(.is-pdf-active) main:not(.ls-right-sidebar-open)  main.ls-wide-mode div#main-content-container div.references  div.references-blocks div.content>div>div.lazy-visibility {
             width: 44vh;
         }
         main.ls-wide-mode div#main-content-container div.references  div.references-blocks div.content>div>div.lazy-visibility img {
