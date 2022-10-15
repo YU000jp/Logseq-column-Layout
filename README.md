@@ -5,11 +5,12 @@
 ## How to
 ### Journals
  - If you use the reference function and write the timeline, it is also effective as a log.
+ - Press 「cmd(win)」+「[alt」 at the same time to get the reference by mouse dragging.
  ![スクリーンショット 2022-10-14 0207412](https://user-images.githubusercontent.com/111847207/195662824-35aecadd-c404-42a8-82eb-54ffc628c321.png)
 
 ### Linked Reference
  - Suitable for [Logseq-Omnivore plugin](https://github.com/omnivore-app/logseq-omnivore).　Omnivore is a webclipping tool that can be quoted to Logseq.
- - You can see the table of contents of the web clips, which are lined up next to the journal, so it's easy to reference the journal from there.
+ - You can see the table of contents of the web clips next to the journal, so it's easy to browse to the journal from there.
 ### Journal Queries
  - Change the journal query to get more task management.　See the "Option" section below.
 ### Right Sidebar
@@ -43,6 +44,9 @@
  ### Edit Logseq「config.edn」 (part of)
 ![1662772563325-tkA2Gj61wv](https://user-images.githubusercontent.com/111847207/189498869-2b99016d-a2b3-44cc-80ed-f9e0cb123d78.png)
 
+
+
+ - See "[Logseq Default Query 6-pack](https://gist.github.com/psu/abf8d8c206f11d56c0e214d0bfcf065f)" or my sample.
 
 #### My sample
 
