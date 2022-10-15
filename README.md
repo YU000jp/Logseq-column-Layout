@@ -8,8 +8,11 @@
  - Press 「cmd(win)」+「alt」 at the same time to get the reference by mouse dragging.
  ![スクリーンショット 2022-10-14 0207412](https://user-images.githubusercontent.com/111847207/195662824-35aecadd-c404-42a8-82eb-54ffc628c321.png)
 ### Linked Reference
- - Suitable for [Logseq-Omnivore plugin](https://github.com/omnivore-app/logseq-omnivore).　Omnivore is a webclipping tool that can be quoted to Logseq.
- - You can see the table of contents of the web clips next to the journal, so it's easy to access.
+ #### Suitable for [Logseq-Omnivore plugin](https://github.com/omnivore-app/logseq-omnivore)
+  - Omnivore is a **webclipping tool** that can be quoted to Logseq.
+  - You can see the table of contents of the web clips next to the journal, so it's easy to access.
+ #### As a list for inclusion in the next journal
+  - Use [Logseq datenlp plugin](https://github.com/hkgnp/logseq-datenlp-plugin). Add @tomorrow or read past journals and add @today.
 ### Journal Queries
  - Change the journal query to get more task management.　See the "Option" section bottom.
 ### Right Sidebar
