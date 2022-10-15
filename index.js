@@ -2,11 +2,6 @@ function main(){logseq.provideStyle(String.raw`
 
 /* Screen size */
     @media screen and (min-width: 1850px) {
-        div#root div.absolute {
-            position: absolute;
-            backdrop-filter: blur(40px);
-            z-index: var(--ls-z-index-level-5);
-        }
         .block-content .asset-container .asset-overlay {
             background-image: none;
         }
@@ -21,10 +16,6 @@ function main(){logseq.provideStyle(String.raw`
         }
         div#main-content-container blockquote {
             font-size: 0.95em;
-        }
-        /* Tweak Link :hover */
-        div#main-content-container a:hover {
-            font-weight: 700;
         }
         /* Tweak Task */
         div#main-content-container .now,
@@ -432,7 +423,7 @@ function main(){logseq.provideStyle(String.raw`
             display: none;
         }
         /* ELSE-page */
-        main:not(.ls-right-sidebar-open) div#main-content-container div.flex-1.page.relative {
+        body:not(.is-pdf-active) main:not(.ls-right-sidebar-open) div#main-content-container div.flex-1.page.relative {
             margin-right: 390px;
             margin-bottom: 2em;
             margin-top: 2em;
@@ -446,9 +437,9 @@ function main(){logseq.provideStyle(String.raw`
             margin-top: 8em;
             margin-bottom: 4em;
         }
-        main.ls-wide-mode:not(.ls-right-sidebar-open)  div#main-content-container div.relative div.lazy-visibility div.references div.references-blocks div.content>div,
-        main.ls-wide-mode:not(.ls-right-sidebar-open)  div#main-content-container div.relative+div+div div.references div.references-blocks div.content>div,
-        main.ls-wide-mode:not(.ls-right-sidebar-open)  div#main-content-container div.relative+div+div+div div.references div.references-blocks div.content>div {
+        body:not(.is-pdf-active) main.ls-wide-mode:not(.ls-right-sidebar-open)  div#main-content-container div.relative div.lazy-visibility div.references div.references-blocks div.content>div,
+        body:not(.is-pdf-active) main.ls-wide-mode:not(.ls-right-sidebar-open)  div#main-content-container div.relative+div+div div.references div.references-blocks div.content>div,
+        body:not(.is-pdf-active) main.ls-wide-mode:not(.ls-right-sidebar-open)  div#main-content-container div.relative+div+div+div div.references div.references-blocks div.content>div {
             flex-direction: row;
             align-items: stretch;
             justify-content: flex-start;
@@ -456,9 +447,9 @@ function main(){logseq.provideStyle(String.raw`
             gap: 0.8em;
             padding-right: 50px;
         }
-        main.ls-wide-mode div#main-content-container div.relative div.lazy-visibility div.references div.references-blocks div.content>div>div.lazy-visibility,
-        main.ls-wide-mode div#main-content-container div.relative+div+div div.references div.references-blocks div.content>div>div.lazy-visibility,
-        main.ls-wide-mode div#main-content-container div.relative+div+div+div div.references div.references-blocks div.content>div>div.lazy-visibility {
+        body:not(.is-pdf-active) main.ls-wide-mode div#main-content-container div.relative div.lazy-visibility div.references div.references-blocks div.content>div>div.lazy-visibility,
+        body:not(.is-pdf-active) main.ls-wide-mode div#main-content-container div.relative+div+div div.references div.references-blocks div.content>div>div.lazy-visibility,
+        body:not(.is-pdf-active) main.ls-wide-mode div#main-content-container div.relative+div+div+div div.references div.references-blocks div.content>div>div.lazy-visibility {
             overflow: auto;
             border-radius: 1.5em;
             max-height: 780px;
@@ -475,7 +466,7 @@ function main(){logseq.provideStyle(String.raw`
             margin: 0;
             height: 100%;
         }
-        main.ls-wide-mode div#main-content-container div.references  div.references-blocks div.content>div>div.lazy-visibility {
+        body:not(.is-pdf-active) main.ls-wide-mode div#main-content-container div.references  div.references-blocks div.content>div>div.lazy-visibility {
             width: 44vh;
         }
         main.ls-wide-mode div#main-content-container div.references  div.references-blocks div.content>div>div.lazy-visibility img {
@@ -487,8 +478,8 @@ function main(){logseq.provideStyle(String.raw`
             margin-right: auto;
         }
         /* ELSE Page right-space */
-        main:not(.ls-right-sidebar-open) div#main-content-container div.relative+div.references.mt-6.flex-1.flex-row,
-        main:not(.ls-right-sidebar-open) div#main-content-container div.page-hierarchy {
+        body:not(.is-pdf-active) main:not(.ls-right-sidebar-open) div#main-content-container div.relative+div.references.mt-6.flex-1.flex-row,
+        body:not(.is-pdf-active) main:not(.ls-right-sidebar-open) div#main-content-container div.page-hierarchy {
             position: fixed;
             width: 390px;
             max-height: 40vh;
@@ -498,27 +489,26 @@ function main(){logseq.provideStyle(String.raw`
             background-color: var(--ls-primary-background-color);
             border-radius: 10px;
         }
-
         /* Pages-tagged-with */
-        main:not(.ls-right-sidebar-open) div#main-content-container div.relative+div.references.mt-6.flex-1.flex-row {
+        body:not(.is-pdf-active) main:not(.ls-right-sidebar-open) div#main-content-container div.relative+div.references.mt-6.flex-1.flex-row {
             top: 6.5em;
             right: 1em;
-
         }
-        body:not(.is-tabs-loaded) main:not(.ls-right-sidebar-open) div#main-content-container div.relative+div.references.mt-6.flex-1.flex-row {
-            top:4.5em;
-        }
-        main.ls-right-sidebar-open  div#main-content-container div.relative+div.references.mt-6.flex-1.flex-row,
-        div#right-sidebar div.relative+div.references.mt-6.flex-1.flex-row {
+        body.is-pdf-active div#main-content-container div.relative+div.references.mt-6.flex-1.flex-row,
+        main.ls-right-sidebar-open div#main-content-container div.relative+div.references.mt-6.flex-1.flex-row {
             display: none;
         }
+        body:not(.is-tabs-loaded.is-pdf-active) main:not(.ls-right-sidebar-open) div#main-content-container div.relative+div.references.mt-6.flex-1.flex-row {
+            top: 4.5em;
+        }
         /* page-hierarchy */
+        body:not(.is-pdf-active) div#main-content-container div.page-hierarchy,
         main:not(.ls-right-sidebar-open) div#main-content-container div.page-hierarchy {
             right: 1em;
             bottom: 3em;
         }
-        main.ls-right-sidebar-open div#main-content-container div.page-hierarchy.page,
-        div#right-sidebar div.page-hierarchy {
+        body.is-pdf-active div#main-content-container div.page-hierarchy,
+        main.ls-right-sidebar-open div#main-content-container div.page-hierarchy {
             display: none;
         }
         /* #kanban */
