@@ -543,11 +543,11 @@ function main(){logseq.provideStyle(String.raw`
        div#journals div#today-queries {
             width: 520px;
         }
-        div#journals {
+        main:not(.ls-right-sidebar-open) div#journals {
             margin-right: 490px;
         }
         /* ELSE pages */
-        div#main-content-container div.flex-1.page.relative {
+        main:not(.ls-right-sidebar-open) div#main-content-container div.flex-1.page.relative {
             margin-right: 520px;
         }
         /* ELSE Pages right-space */
@@ -569,7 +569,7 @@ function main(){logseq.provideStyle(String.raw`
             right: 625px;
         }
         /* Journal-queries space */
-        div#journals {
+        main:not(.ls-right-sidebar-open) div#journals {
             margin-right: 590px;
         }
     }
