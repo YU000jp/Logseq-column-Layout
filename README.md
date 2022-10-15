@@ -9,9 +9,9 @@
  ![スクリーンショット 2022-10-14 0207412](https://user-images.githubusercontent.com/111847207/195662824-35aecadd-c404-42a8-82eb-54ffc628c321.png)
 ### Linked Reference
  - Suitable for [Logseq-Omnivore plugin](https://github.com/omnivore-app/logseq-omnivore).　Omnivore is a webclipping tool that can be quoted to Logseq.
- - You can see the table of contents of the web clips next to the journal, so it's easy to browse to the journal from there.
+ - You can see the table of contents of the web clips next to the journal, so it's easy to access.
 ### Journal Queries
- - Change the journal query to get more task management.　See the "Option" section below.
+ - Change the journal query to get more task management.　See the "Option" section bottom.
 ### Right Sidebar
  - Pages can be placed side by side in the sidebar.(Credit: [Logseq Vertical Panels for Sidebar](https://github.com/r-hegde/logseq-vertical-panels))
  - You can adjust the size by selecting the bottom right of the block. But don't make it too small.
@@ -20,13 +20,13 @@
 ## Attention⚠️
  - the screen min-width: 1850px
  - Some plugins are not supported. (Let me know on [GitHub](https://github.com/YU000jp/Logseq-column-Layout/issues).)
- - The space is blank if there are no tasks in Logseq.
- - Linked references are limited to dates other than today.
+ - The Linked Reference space is blank if there are no tasks in Logseq.
+ - Linked reference from journal are limited to dates other than today.
 
 ### The page other than journals
  - display "page-tags" and "page-hierarchy" ([logseq page-tags and hierarchy plugin](https://github.com/YU000jp/logseq-page-tags-and-hierarchy))
  - "Linked References" side by side (only Wide-mode). If the display space is small, hold down "Shift" and click to open it in the right sidebar.
- - Wide mode(shortcut: 「**tw**」) is recommended if you want to use them side by side. Journals will be left justified.
+ - Wide mode(shortcut: 「**tw**」) is recommended if you want to use Linked References side by side. Journals will be left justified.
 ![スクリーンショット 2022-10-02 102232](https://user-images.githubusercontent.com/111847207/193434026-5595de15-2e40-42a2-95d4-ab0f1c2b55c3.png)
 
 ## Install
