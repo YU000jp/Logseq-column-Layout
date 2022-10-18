@@ -1,6 +1,16 @@
-function main(){logseq.provideStyle(String.raw`
-
-/* Screen size */
+async function main () {
+    logseq.Editor.registerBlockContextMenuItem('Link this reference (LATER)', async ({ uuid }) => {
+        let now = new Date();
+        let month = ("00" + (now.getMonth()+1)).slice(-2); 
+        let day = ("00" + now.getDate()).slice(-2);
+        let hours = ("00" + now.getHours()).slice(-2);
+        let minutes = ("00" + now.getMinutes()).slice(-2);
+        logseq.Editor.insertBlock(uuid,
+            `LATER ((`+uuid+`))` + "\n🔁[[" + now.getFullYear() + "/" + month + "/" + day + "]] **" + hours + ":" + minutes + "**"
+        );
+        logseq.Editor.setBlockCollapsed(uuid, true);
+    });
+    logseq.provideStyle(String.raw`
     @media screen and (min-width: 1850px) {
         .block-content .asset-container .asset-overlay {
             background-image: none;
@@ -32,8 +42,13 @@ function main(){logseq.provideStyle(String.raw`
             transform: scale(0.6);
             pointer-events: none;
         }
-        div#main-content-container input.form-checkbox+div input.form-checkbox+a {
+        div#main-content-container div:not(.page-blocks-inner) input.form-checkbox+a+div input.form-checkbox {
+            transform: scale(0.9);
+        }
+        div#main-content-container input.form-checkbox+div input.form-checkbox+a,
+        div#main-content-container div:not(.page-blocks-inner) input.form-checkbox+a+div input.form-checkbox+a {
             text-decoration: line-through;
+            font-size: small;
             pointer-events: none;
         }
         div#main-content-container input.form-checkbox+div a {
@@ -157,7 +172,7 @@ function main(){logseq.provideStyle(String.raw`
             width: 460px;
             max-width: 460px;
         }
-        div#journals div.references:hover {
+        main:not(.ls-left-sidebar-open) div#journals div.references:hover {
             margin-right: -205px;
         }
         main.ls-left-sidebar-open div#journals div.references:hover {
@@ -181,9 +196,6 @@ function main(){logseq.provideStyle(String.raw`
         div#journals div.references div.references-blocks div.lazy-visibility div.px-2 {
             padding-left: 0;
             padding-right: 0;
-        }
-        main div#root div.max-w-7xl.mx-auto.pb-24 {
-            max-width: auto;
         }
         /* Journal-queries */
         main:not(.ls-right-sidebar-open) div#journals div#today-queries {
@@ -573,6 +585,6 @@ function main(){logseq.provideStyle(String.raw`
             margin-right: 590px;
         }
     }
-/* Screen size Finish */
-
-`);}logseq.ready(main).catch(console.error);
+`);
+}
+logseq.ready(main).catch(console.error);

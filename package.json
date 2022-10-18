@@ -1,7 +1,6 @@
 {
   "name": "Column-Layout",
   "author": "YU000jp",
-  "version": "0.0.8",
   "description": "If you're using wide monitors, you can place journals, linked references, and journal queries side by side.",
   "main": "./index.html",
   "sponsors": ["https://www.buymeacoffee.com/yu000japan"],
