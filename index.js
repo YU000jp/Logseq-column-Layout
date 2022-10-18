@@ -1,14 +1,17 @@
 async function main () {
-    logseq.Editor.registerBlockContextMenuItem('Link this reference (LATER)', async ({ uuid }) => {
+    logseq.Editor.registerBlockContextMenuItem('Link this reference (LATER) ✅', async ({ uuid }) => {
         let now = new Date();
         let month = ("00" + (now.getMonth()+1)).slice(-2); 
         let day = ("00" + now.getDate()).slice(-2);
         let hours = ("00" + now.getHours()).slice(-2);
         let minutes = ("00" + now.getMinutes()).slice(-2);
         logseq.Editor.insertBlock(uuid,
-            `LATER ((`+uuid+`))` + "\n🔁[[" + now.getFullYear() + "/" + month + "/" + day + "]] **" + hours + ":" + minutes + "**"
+            `LATER ((`+uuid+`))` + "\n[[" + now.getFullYear() + "/" + month + "/" + day + "]] **" + hours + ":" + minutes + "** 🔁"
         );
         logseq.Editor.setBlockCollapsed(uuid, true);
+    });
+    logseq.Editor.registerBlockContextMenuItem('Delete this block ❎', async ({ uuid }) => {
+        logseq.Editor.removeBlock(uuid);
     });
     logseq.provideStyle(String.raw`
     @media screen and (min-width: 1850px) {
@@ -307,7 +310,7 @@ async function main () {
         /* right-sidebar-background */
         div#right-sidebar div.cp__right-sidebar-scrollable>div+div {
             background-image: linear-gradient(var(--color-level-1) 25%, transparent 25%);
-            background-size: 30px 30px;
+            background-size: 50px 15px;
         }
         div#right-sidebar div.cp__right-sidebar-scrollable>div.cp__right-sidebar-topbar {
             height: unset;
