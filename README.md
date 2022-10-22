@@ -14,12 +14,14 @@ Published on logseq marketplace.
 - Omnivore is a **webclipping tool** that can be quoted to Logseq.
 - You can see the table of contents of the web clips next to the journal, so it's easy to access.
 #### As a list for inclusion in the next journal
- - Use [Logseq datenlp plugin](https://github.com/hkgnp/logseq-datenlp-plugin). Add @tomorrow or read past journals and add @today.
+ - Use [Logseq datenlp plugin](https://github.com/hkgnp/logseq-datenlp-plugin). Add @tomorrow or read past journals and add @today. They become links.
+ #### You can view completed tasks.
+ - Try using [Logseq Task complete plugin](https://github.com/DimitryDushkin/logseq-plugin-task-check-date).
 #### You can link a reference and delete a block from the right-click context menu.
  - Incorporated the functionality of [Logseq repeat-task reference plugin](https://github.com/YU000jp/logseq-repeat-task-reference/blob/main/README.md)(For more details refer to this link).
  ![context](https://user-images.githubusercontent.com/111847207/196365538-e482a4a8-be75-4d93-9664-2e5a99c71e34.png)
 ### Journal Queries
- - Change the journal query to get more task management.　See the "Option" section bottom.
+ - Change the journal query to get more task management.　[For more details refer to this link](https://github.com/YU000jp/Logseq-default-queries-journals)
 ### Right Sidebar
  - Pages can be placed side by side in the sidebar.(Credit: [Logseq Vertical Panels for Sidebar](https://github.com/r-hegde/logseq-vertical-panels))
  - You can adjust the size by selecting the bottom right of the block. But don't make it too small.
@@ -39,138 +41,6 @@ Published on logseq marketplace.
 
 
 ---
-
-
-# Option
- ## Change Journal Queries
- - Enhancing Journal Queries turns Logseq into an outliner task management tool.
- ![1662770461291-FhSBaJXekb](https://user-images.githubusercontent.com/111847207/189484746-8364ad0c-98d2-4117-b321-b79d7c56052c.png)
-
- ### Edit Logseq「config.edn」 (part of)
-![1662772563325-tkA2Gj61wv](https://user-images.githubusercontent.com/111847207/189498869-2b99016d-a2b3-44cc-80ed-f9e0cb123d78.png)
-
-
-
- - See "[Logseq Default Query 6-pack](https://gist.github.com/psu/abf8d8c206f11d56c0e214d0bfcf065f)" or my sample.
-
-### My sample
-
-```clojure
- :default-queries{
-	 :journals[
-
-
-
-{:title "🔨 Working Tasks #NOW"
-    :query (task NOW)
-    :collapsed? false
- }
-
-
-
-{:title "📅  Scheduled to #LATER"
-    :query (task LATER)
-    :collapsed? false
- }
-
-
-
-{:title "⚠️ OVERDUE"
-   :query [:find (pull ?block [*])
-   :in $ ?start ?today
-   :where
-   [?block :block/marker ?marker]
-
-   (or
-     [?block :block/scheduled ?d]
-     [?block :block/deadline ?d])
-
-   [(>= ?d ?start)]
-   [(<   ?d ?today)]
-
-   [(contains? #{"NOW" "LATER" "TODO" "DOING" "WAITING"} ?marker)]]
-     :inputs [:180d :today]
-     :result-transform  (fn [result]
-             (sort-by  (fn [d]
-             (get d :block/deadline) ) result ))
-     :collapsed? true
-}
-
-
-
-{:title "Deadline within 10 days"
-  :query [:find (pull ?block [*])
-          :in $ ?start ?next
-          :where
-           (or
-            [?block :block/deadline ?d]
-           )
-           [(> ?d ?start)]
-           [(< ?d ?next)]
-         ]
-  :inputs [:7d :10d-after]
-      :result-transform  (fn [result]
-             (sort-by  (fn [h]
-             (get h :block/deadline) ) result ))
-  :collapsed? false
-}
-
-
-
-{:title "🐬 Project #DOING"
-    :query (task DOING)
-    :collapsed? true
- }
-
-
-
-{:title "⏳ Not Assigned #WAITING"
-    :query (task WAITING)
-    :collapsed? true
-}
-
-
-
-{:title "⏰ Scheduled appointments, 14 days #TODO"
- :query [:find (pull ?block [*])
-         :in $ ?start ?next
-         :where
-         (or
-           [?block :block/scheduled ?d]
-         )
-         [(> ?d ?start)]
-         [(< ?d ?next)]
-        ]
- :inputs [:7d :14d-after]
-      :result-transform  (fn [result]
-             (sort-by  (fn [d]
-             (get d :block/scheduled) ) result ))
- :collapsed? false
-}
-
-
-
-    ]}
-```
-
- - Contains the following 7 queries
-
-
- 1. 🔨 Working Tasks #NOW
-
- 1. 📅 Scheduled to #LATER
-
- 1. ⚠️ OVERDUE
-
- 1. Deadline within 10 days
-
- 1. 🐬 Project #DOING
-
- 1. ⏳ Not Assigned #WAITING
-
- 1. ⏰ Scheduled appointments, 14 days #TODO
- 
- ---
  
 
 ## SUPPORT
