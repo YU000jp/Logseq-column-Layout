@@ -80,14 +80,17 @@ async function main () {
             --ls-main-content-max-width-wide:  auto !important;
         }
         /* Journal-queries space */
-        div#journals {
+        main:not(.ls-right-sidebar-open) div#journals {
             margin-right: 360px;
         }
         main:not(.ls-left-sidebar-open) div#journals {
             margin-right: 430px;
         }
-        div#journals div.block-children-container {
-            max-width: 96%;
+        main.ls-right-sidebar-open div#journals {
+            margin-right: unset;
+        }
+        main:not(.ls-right-sidebar-open) div#journals div.block-children-container {
+            display: block;
         }
         /* Journals */
         div.journal>div.flex.flex-col:first-child {
@@ -146,7 +149,6 @@ async function main () {
             min-width: 360px;
             max-width: 360px;
             overflow-y: scroll;
-            font-size: small;
             position: sticky;
             top: 3em;
             bottom: 3em;
