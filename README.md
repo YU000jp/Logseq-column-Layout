@@ -21,7 +21,12 @@ Published on logseq marketplace.
  - Incorporated the functionality of [Logseq repeat-task reference plugin](https://github.com/YU000jp/logseq-repeat-task-reference/blob/main/README.md)(For more details refer to this link).
  ![context](https://user-images.githubusercontent.com/111847207/196365538-e482a4a8-be75-4d93-9664-2e5a99c71e34.png)
 ### Journal Queries
- - Change the journal query to get more task management.　[For more details refer to this link](https://github.com/YU000jp/Logseq-default-queries-journals)
+ - Change the journal query to get more task management.
+ - On Logseq, edit config.edn file. Once you've done that, create your own task and try it out.
+ - [For more details refer to this link](https://github.com/YU000jp/Logseq-default-queries-journals)
+
+https://user-images.githubusercontent.com/111847207/197335149-1a1f4261-d58d-4466-8077-135d3b92229a.mp4
+
 ### Right Sidebar
  - Pages can be placed side by side in the sidebar.(Credit: [Logseq Vertical Panels for Sidebar](https://github.com/r-hegde/logseq-vertical-panels))
  - You can adjust the size by selecting the bottom right of the block. But don't make it too small.
