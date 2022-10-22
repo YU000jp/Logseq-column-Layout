@@ -22,8 +22,7 @@ Published on logseq marketplace.
  ![context](https://user-images.githubusercontent.com/111847207/196365538-e482a4a8-be75-4d93-9664-2e5a99c71e34.png)
 ### Journal Queries
  - Change the journal query to get more task management.
- - On Logseq, edit config.edn file. Once you've done that, create your own task and try it out.
- - [For more details refer to this link](https://github.com/YU000jp/Logseq-default-queries-journals)
+ - On Logseq, edit config.edn file. [For more details refer to this link](https://github.com/YU000jp/Logseq-default-queries-journals)
 
 https://user-images.githubusercontent.com/111847207/197335149-1a1f4261-d58d-4466-8077-135d3b92229a.mp4
 
