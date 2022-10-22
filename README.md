@@ -19,7 +19,7 @@ Published on logseq marketplace.
 #### As a list for inclusion in the next journal
  - Use [Logseq datenlp plugin](https://github.com/hkgnp/logseq-datenlp-plugin). Add @tomorrow or read past journals and add @today. They become links.
  #### You can view completed tasks.
- - Try using [Logseq Task complete plugin](https://github.com/DimitryDushkin/logseq-plugin-task-check-date).
+ - Try using [Logseq task completion tracker plugin](https://github.com/DimitryDushkin/logseq-plugin-task-check-date).
 #### You can link a reference and delete a block from the right-click context menu.
  - [For more details refer to this link](https://github.com/YU000jp/logseq-repeat-task-reference/blob/main/README.md).
 
