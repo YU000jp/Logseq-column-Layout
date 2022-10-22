@@ -402,6 +402,10 @@ async function main () {
             transform: unset;
             margin-left: 1em;
         }
+        div#right-sidebar div.relative+div.references.mt-6.flex-1.flex-row,
+        div#right-sidebar div.page-hierarchy {
+            display: none;
+        }
         /* hidden-bar */
         div#right-sidebar div.hidden {
             display: block;
