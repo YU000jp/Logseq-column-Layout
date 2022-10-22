@@ -25,6 +25,7 @@ Published on logseq marketplace.
 ### Right Sidebar
  - Pages can be placed side by side in the sidebar.(Credit: [Logseq Vertical Panels for Sidebar](https://github.com/r-hegde/logseq-vertical-panels))
  - You can adjust the size by selecting the bottom right of the block. But don't make it too small.
+ - Changed not to display page-tags and Hierarchy in the right sidebar. Clearly display the right sidebar.
 ![スクリーンショット 2022-10-14 022234](https://user-images.githubusercontent.com/111847207/195664336-43845b98-7a45-4d78-884a-fa0048f49b47.png)
 
 ## Attention⚠️
