@@ -35,6 +35,7 @@ Published on logseq marketplace.
  - Pages can be placed side by side in the sidebar.(Credit: [Logseq Vertical Panels for Sidebar](https://github.com/r-hegde/logseq-vertical-panels))
  - You can adjust the size by selecting the bottom right of the block. But don't make it too small.
  - Changed not to display page-tags and Hierarchy in the right sidebar. Clearly display the right sidebar.
+ - If you have an ultrawide monitor, or if you want to display multiple screens side by side, you can display several pages side by side in right sidebar.
  
 [sidebar.webm](https://user-images.githubusercontent.com/111847207/197365040-62f13573-0926-4768-80a2-13a6604123dc.webm)
 
