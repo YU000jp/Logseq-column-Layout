@@ -105,12 +105,12 @@ async function main () {
             right: 395px;
             border-radius: 5px;
             padding: 0.6em;
-            max-width: 380px;
+            max-width: 410px;
             border: 2px solid var(--ls-guideline-color);
             border-radius: 0.6em;
             background: var(--color-level-1);
             font-size: small;
-            max-height: 50vh;
+            max-height: 24vh;
             overflow: auto;
             z-index: 1;
         }
@@ -128,6 +128,7 @@ async function main () {
             min-width: 560px;
             max-width: 560px;
             min-height: 400px;
+            max-height: 50vh;
             padding-right: 60px;
         }
         main:not(.ls-left-sidebar-open) div#journals div#today-queries+div.flex.flex-col {
@@ -147,10 +148,10 @@ async function main () {
         main:not(.ls-right-sidebar-open) div#journals div.references {
             max-height: 60vh;
             min-width: 360px;
-            max-width: 360px;
+            max-width: 400px;
             overflow-y: scroll;
             position: sticky;
-            top: 3em;
+            top: 0.5em;
             bottom: 3em;
             padding: 0.4em;
             margin-right: 5px;
@@ -174,14 +175,13 @@ async function main () {
         }
         /* --IF left-sidebar-open +100px */
         main:not(.ls-left-sidebar-open) div#journals div.references {
-            width: 460px;
             max-width: 460px;
         }
         main:not(.ls-left-sidebar-open) div#journals div.references:hover {
             margin-right: -205px;
         }
         main.ls-left-sidebar-open div#journals div.references:hover {
-            margin-right: -305px;
+            margin-right: -265px;
         }
         div#journals div.references div.pt-6{
             padding: 0.1em;
@@ -559,13 +559,10 @@ async function main () {
         }
         /* SCHEDULED AND DEADLINE */
         main.ls-left-sidebar-open div#journals div#today-queries+div.flex.flex-col {
-            right: 525px;
+            right: 425px;
         }
        div#journals div#today-queries {
             width: 520px;
-        }
-        main:not(.ls-right-sidebar-open) div#journals {
-            margin-right: 490px;
         }
         /* ELSE pages */
         main:not(.ls-right-sidebar-open) div#main-content-container div.flex-1.page.relative {
@@ -584,14 +581,6 @@ async function main () {
         }
         div#journals div#today-queries {
             width: 620px;
-        }
-        /* SCHEDULED AND DEADLINE */
-        main.ls-left-sidebar-open div#journals div#today-queries+div.flex.flex-col {
-            right: 625px;
-        }
-        /* Journal-queries space */
-        main:not(.ls-right-sidebar-open) div#journals {
-            margin-right: 590px;
         }
     }
 `);
