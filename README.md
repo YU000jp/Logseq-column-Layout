@@ -16,6 +16,7 @@ Published on logseq marketplace.
 #### Suitable for [Logseq-Omnivore plugin](https://github.com/omnivore-app/logseq-omnivore) 🚩
 - Omnivore is a **webclipping tool** that can be quoted to Logseq.
 - You can see the table of contents of the web clips next to the journal, so it's easy to access.
+- You can get newsletter notifications from substack.com and others on Logseq.
 #### As a list for inclusion in the next journal 📅
  - Use [Logseq datenlp plugin](https://github.com/hkgnp/logseq-datenlp-plugin). Add @tomorrow or read past journals and add @today. They become links.
  #### You can view completed tasks. ✅
