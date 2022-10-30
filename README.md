@@ -1,8 +1,7 @@
 Published on logseq marketplace. 
 
 # Logseq Column-Layout Plugin
- - Journals, linked references, and journal queries can be placed side by side if the minimum screen width is "1850px" or more.
- 
+ - Cancel if the screen width is less than "1850px". Journals, linked references, and journal queries can be placed side by side.
  ![スクリーンショット 2022-10-14 0207414](https://user-images.githubusercontent.com/111847207/195663729-7c979e9e-9309-4f0b-9766-581778c5aaa7.png)
 
 ## How to
