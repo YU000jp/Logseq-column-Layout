@@ -6,7 +6,7 @@ async function main () {
         let hours = ("00" + now.getHours()).slice(-2);
         let minutes = ("00" + now.getMinutes()).slice(-2);
         logseq.Editor.insertBlock(uuid,
-            `LATER ((`+uuid+`))` + "\n[[" + now.getFullYear() + "/" + month + "/" + day + "]] **" + hours + ":" + minutes + "** 🔁"
+            `LATER ((`+uuid+`))` + "\n" + "referenced:: [[" + now.getFullYear() + "/" + month + "/" + day + "]] **" + hours + ":" + minutes + "** 🔁"
         );
         logseq.Editor.setBlockCollapsed(uuid, true);
     });
@@ -101,16 +101,16 @@ async function main () {
         /* SCHEDULED AND DEADLINE */
         main:not(.ls-right-sidebar-open) div#journals div#today-queries+div.flex.flex-col {
             position: fixed;
-            bottom: 2em;
+            bottom: 1em;
             right: 395px;
-            border-radius: 5px;
-            padding: 0.6em;
-            max-width: 410px;
-            border: 2px solid var(--ls-guideline-color);
-            border-radius: 0.6em;
-            background: var(--color-level-1);
+            padding: 0.3em;
+            width: 400px;
+            border: 4px double var(--ls-guideline-color);
+            border-radius: 1.2em;
+            background: unset;
+            backdrop-filter: blur(40px);
             font-size: small;
-            max-height: 24vh;
+            max-height: 30vh;
             overflow: auto;
             z-index: 1;
         }
@@ -119,26 +119,21 @@ async function main () {
             display: none;
         }
         main:not(.ls-left-sidebar-open) div#journals div#today-queries+div.flex.flex-col {
-            max-width: 460px;
+            width: 460px;
         }
-        div#journals div#today-queries+div.flex.flex-col:hover {
-            background: unset;
-            backdrop-filter: blur(40px);
+        main div#journals div#today-queries+div.flex.flex-col:hover {
             z-index: var(--ls-z-index-level-1);
-            min-width: 560px;
-            max-width: 560px;
-            min-height: 400px;
-            max-height: 50vh;
-            padding-right: 60px;
+        }
+        main:not(.ls-left-sidebar-open) div#journals div#today-queries+div.flex.flex-col:hover {
+            width: 560px;
+            margin-right: -100px;
+        }
+        main.ls-left-sidebar-open div#journals div#today-queries+div.flex.flex-col:hover {
+            width: 560px;
+            margin-right: -160px;
         }
         main:not(.ls-left-sidebar-open) div#journals div#today-queries+div.flex.flex-col {
             right: 470px;
-        }
-        main.ls-left-sidebar-open div#journals div#today-queries+div.flex.flex-col:hover {
-            margin-right: -175px;
-        }
-        main:not(.ls-left-sidebar-open) div#journals div#today-queries+div.flex.flex-col:hover {
-            margin-right: -105px;
         }
         /* IF PDF-view CANCEL */
         body.is-pdf-active div#journals div#today-queries+div.flex.flex-col {
@@ -476,11 +471,7 @@ async function main () {
             max-height: 780px;
             flex: 28%;
             max-width: 615px;
-        }
-        div#main-content-container div.references div.references-blocks div.content>div>div.lazy-visibility div.fade-enter,
-        div#main-content-container div.references div.references-blocks div.content>div>div.lazy-visibility div.fade-enter>div,
-        div#main-content-container div.references div.references-blocks div.content>div>div.lazy-visibility div.fade-enter div.initial {
-            height: 100%;
+            display: block;
         }
         main.ls-wide-mode div#main-content-container div.references div.references-blocks div.content>div>div.lazy-visibility div.fade-enter>div {
             padding: 0.4em;
