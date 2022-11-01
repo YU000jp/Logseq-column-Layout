@@ -40,11 +40,6 @@ Published on logseq marketplace.
  
 [sidebar.webm](https://user-images.githubusercontent.com/111847207/197365040-62f13573-0926-4768-80a2-13a6604123dc.webm)
 
-## Attention⚠️
- - Some plugins are not supported. (Let me know on [GitHub](https://github.com/YU000jp/Logseq-column-Layout/issues).)
- - The Linked Reference space is blank if there are no tasks in Logseq.
- - Linked reference from journal are limited to dates other than today.
-
 ### The page other than journals
  - display "page-tags" and "page-hierarchy" ([logseq page-tags and hierarchy plugin](https://github.com/YU000jp/logseq-page-tags-and-hierarchy))
  - "Linked References" side by side (only Wide-mode). If the display space is small, hold down ⌨️`Shift` and click to open it in the right sidebar.
@@ -52,6 +47,11 @@ Published on logseq marketplace.
  
 ![スクリーンショット 2022-10-02 102232](https://user-images.githubusercontent.com/111847207/193434026-5595de15-2e40-42a2-95d4-ab0f1c2b55c3.png)
 
+
+## Attention⚠️
+ - Some plugins are not supported. (Let me know on [GitHub](https://github.com/YU000jp/Logseq-column-Layout/issues).)
+ - The Linked Reference space is blank if there are no tasks in Logseq.
+ - Linked reference from journal are limited to dates other than today.
 
 ---
 
