@@ -27,9 +27,7 @@ Published on logseq marketplace.
 ### Journal Queries
  - Change the journal query to get more task management.
  - On Logseq, edit `config.edn` file. [For more details refer to this link](https://github.com/YU000jp/Logseq-default-queries-journals)
-
-![How to update Journal queries (Animation)](https://user-images.githubusercontent.com/111847207/200146222-066163ad-f2a7-408e-8070-5a68453c1c05.gif)
-
+![Animation1](https://user-images.githubusercontent.com/111847207/200155115-0344d96b-5982-43ed-b3cb-f40107b5b858.gif)
 
 ### Right Sidebar
  - Pages can be placed side by side in the sidebar.(Credit: [Logseq Vertical Panels for Sidebar](https://github.com/r-hegde/logseq-vertical-panels))
