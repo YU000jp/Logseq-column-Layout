@@ -3,9 +3,11 @@
   "author": "YU000jp",
   "description": "If you're using wide monitors, you can place journals, linked references, and journal queries side by side.",
   "main": "./index.html",
-  "sponsors": ["https://www.buymeacoffee.com/yu000japan"],
-  "repository":"https://github.com/YU000jp/Logseq-column-Layout.git",
-  "repo":"YU000jp/Logseq-column-Layout",
+  "sponsors": [
+    "https://www.buymeacoffee.com/yu000japan"
+  ],
+  "repository": "https://github.com/YU000jp/Logseq-column-Layout.git",
+  "repo": "YU000jp/Logseq-column-Layout",
   "logseq": {
     "id": "logseq-column-Layout",
     "icon": "./icon.svg"
