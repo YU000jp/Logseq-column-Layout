@@ -22,7 +22,7 @@ Published on logseq marketplace.
  #### You can view completed tasks. ✅
  - Try using [Logseq task completion tracker plugin](https://github.com/DimitryDushkin/logseq-plugin-task-check-date).
 #### You can link a reference and delete a block from the right-click context menu. 🖱️
- - [For more details refer to this link](https://github.com/YU000jp/logseq-repeat-task-reference/blob/main/README.md).
+ - Take a reference to a repeat task. It records when you run it. [For more details refer to this link](https://github.com/YU000jp/logseq-repeat-task-reference/blob/main/README.md).
 
 ### Journal Queries
  - Change the journal query to get more task management.
