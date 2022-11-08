@@ -19,10 +19,8 @@ Published on logseq marketplace.
 - You can get newsletter notifications from `substack.com` and others on Logseq.
 #### As a list for inclusion in the next journal 📅
  - Use [Logseq datenlp plugin](https://github.com/hkgnp/logseq-datenlp-plugin). Add `@tomorrow` or read past journals and add `@today`. They become links.
- #### You can view completed tasks. ✅
+ #### View completed tasks ✅
  - Try using [Logseq task completion tracker plugin](https://github.com/DimitryDushkin/logseq-plugin-task-check-date).
-#### You can link a reference and delete a block from the right-click context menu. 🖱️
- - Take a reference to a repeat task. It records when you run it. [For more details refer to this link](https://github.com/YU000jp/logseq-repeat-task-reference/blob/main/README.md).
 
 ### Journal Queries
  - Change the journal query to get more task management.
@@ -43,6 +41,11 @@ Published on logseq marketplace.
  - "Linked References" side by side (only Wide-mode). If the display space is small, hold down ⌨️`Shift` and click to open it in the right sidebar.
  - Wide mode(⌨️`t w`) is recommended if you want to use Linked References side by side. Journals will be left justified.
  ![image](https://user-images.githubusercontent.com/111847207/200147083-f2ff65dd-0ba4-49eb-986c-c384178f9354.png)
+
+### right-click context menu 🖱️
+#### Link a reference (LATER task)
+ - Take a reference for a repeat task. It records when you run it. [For more details refer to this link](https://github.com/YU000jp/logseq-repeat-task-reference/blob/main/README.md).
+#### delete a block
 
 ## Attention⚠️
  - Some plugins are not supported. (Let me know on [GitHub](https://github.com/YU000jp/Logseq-column-Layout/issues).)
