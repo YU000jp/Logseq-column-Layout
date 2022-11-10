@@ -51,6 +51,7 @@ Published on logseq marketplace.
  - Some plugins are not supported. (Let me know on [GitHub](https://github.com/YU000jp/Logseq-column-Layout/issues).)
  - The Linked Reference space is blank if there are no tasks in Logseq.
  - Linked reference from journal are limited to dates other than today.
+ - If you find it difficult to see the image in a reduced view, please use the zoom function or open it in sidebar.
 
 ---
 
