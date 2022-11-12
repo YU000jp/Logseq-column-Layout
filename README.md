@@ -28,23 +28,23 @@ Published on logseq marketplace.
 
 ### Right Sidebar
  - Pages can be placed side by side in the sidebar.(Credit: [Logseq Vertical Panels for Sidebar](https://github.com/r-hegde/logseq-vertical-panels))
- - You can adjust the size by selecting the bottom right of the block. But don't make it too small.
+ - Adjust the size by selecting the bottom right of the block. But don't make it too small.
  - Changed not to display page-tags and Hierarchy in the right sidebar. Clearly display the right sidebar.
- - You can display several pages side by side in right sidebar.
+ - Display several pages side by side in right sidebar.
  
 ![Animation2](https://user-images.githubusercontent.com/111847207/200146804-e0e53c12-933a-417e-b19a-e9e782e1c492.gif)
 
 ### The page other than journals
- - display "page-tags" and "page-hierarchy" ([logseq page-tags and hierarchy plugin](https://github.com/YU000jp/logseq-page-tags-and-hierarchy))
+ - Display "page-tags" and "page-hierarchy" ([logseq page-tags and hierarchy plugin](https://github.com/YU000jp/logseq-page-tags-and-hierarchy))
  
  - "Linked References" side by side (only Wide-mode). If the display space is small, hold down ⌨️`Shift` and click to open it in the right sidebar.
  - Wide mode(⌨️`t w`) is recommended if you want to use Linked References side by side. Journals will be left justified.
  ![image](https://user-images.githubusercontent.com/111847207/200147083-f2ff65dd-0ba4-49eb-986c-c384178f9354.png)
 
-### right-click context menu 🖱️
+### Right-click context menu 🖱️
 #### Link a reference (LATER task)
  - Take a reference for a repeat task. It records when you run it. [For more details refer to this link](https://github.com/YU000jp/logseq-repeat-task-reference/blob/main/README.md).
-#### delete a block
+#### Delete a block
 
 ## Attention⚠️
  - Some plugins are not supported. (Let me know on [GitHub](https://github.com/YU000jp/Logseq-column-Layout/issues).)
