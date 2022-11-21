@@ -17,9 +17,9 @@ Published on logseq marketplace.
 - Omnivore is a **webclipping tool** that can be quoted to Logseq.
 - You can see the table of web clips for the day next to the journal, so it's easy to access. (View `substack.com` newsletter)
 #### As a list for inclusion in the next journal 📅
- - Use [Logseq datenlp plugin](https://github.com/hkgnp/logseq-datenlp-plugin). Add `@wednesday` or read past journals and add `@today`. They become links.
+ - Use [logseq datenlp plugin](https://github.com/hkgnp/logseq-datenlp-plugin). Add `@wednesday` or read past journals and add `@today`. They become links.
  #### View completed tasks ✅
- - Try using [Logseq task completion tracker plugin](https://github.com/DimitryDushkin/logseq-plugin-task-check-date).
+ - Try using [logseq task completion tracker plugin](https://github.com/DimitryDushkin/logseq-plugin-task-check-date).
 
 ### Journal Queries
  - Change the journal query to get more task management.
