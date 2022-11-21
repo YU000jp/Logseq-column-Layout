@@ -1,15 +1,30 @@
 {
-  "name": "Column-Layout",
-  "author": "YU000jp",
+  "name": "logseq-column-layout",
   "description": "If you're using wide monitors, you can place journals, linked references, and journal queries side by side.",
-  "main": "./index.html",
+  "author": "YU000jp",
+  "main": "dist/index.html",
+  "targets": {
+    "main": false
+  },
+  "scripts": {
+    "build": "parcel build --no-source-maps src/index.html --public-url ./"
+  },
+  "license": "MIT",
   "sponsors": [
     "https://www.buymeacoffee.com/yu000japan"
   ],
-  "repository": "https://github.com/YU000jp/Logseq-column-Layout.git",
+  "dependencies": {
+    "@logseq/libs": "latest",
+    "logseq-dateutils": "^0.0.26"
+  },
+  "repository": "https://github.com/YU000jp/Logseq-column-Layout",
   "repo": "YU000jp/Logseq-column-Layout",
   "logseq": {
-    "id": "logseq-column-Layout",
+    "id": "logseq-column-layout",
+    "title": "Column Layout",
     "icon": "./icon.svg"
+  },
+  "devDependencies": {
+    "parcel": "latest"
   }
 }
