@@ -27,7 +27,7 @@ Published on logseq marketplace.
 ![Animation1](img/journal-queries-demo.gif)
 
 ### Right Sidebar
- - Pages can be placed side by side in the sidebar.(Credit: [Logseq Vertical Panels for Sidebar](https://github.com/r-hegde/logseq-vertical-panels))
+ - Pages can be placed side by side in the sidebar.([Credit: Logseq Vertical Panels for Sidebar](https://github.com/r-hegde/logseq-vertical-panels))
  - Adjust the size by selecting the bottom right of the block. But don't make it too small.
  - Changed not to display page-tags and Hierarchy in the right sidebar. Clearly display the right sidebar.
  - Display several pages side by side in right sidebar.
@@ -35,16 +35,19 @@ Published on logseq marketplace.
 ![Animation2](https://user-images.githubusercontent.com/111847207/200146804-e0e53c12-933a-417e-b19a-e9e782e1c492.gif)
 
 ### The page other than journals
- - Display "page-tags" and "page-hierarchy" ([logseq page-tags and hierarchy plugin](https://github.com/YU000jp/logseq-page-tags-and-hierarchy))
+ - Display "page-tags" and "page-hierarchy" ([logseq-page-tags-and-hierarchy](https://github.com/YU000jp/logseq-page-tags-and-hierarchy))
  
  - "Linked References" side by side (only Wide-mode). If the display space is small, hold down ⌨️`Shift` and click to open it in the right sidebar.
  - Wide mode(⌨️`t w`) is recommended if you want to use Linked References side by side. Journals will be left justified.
  ![image](https://user-images.githubusercontent.com/111847207/200147083-f2ff65dd-0ba4-49eb-986c-c384178f9354.png)
 
-### Right-click context menu 🖱️
-#### Link a reference (LATER task)
- - Take a reference for a repeat task. It records when you run it. [For more details refer to this link](https://github.com/YU000jp/logseq-repeat-task-reference/blob/main/README.md).
-#### Delete a block
+### Right-click context menu🖱️
+#### ✔️ DONE with completed
+ - Add a completed property with DONE [Credit: logseq-plugin-task-check-date](https://github.com/DimitryDushkin/logseq-plugin-task-check-date)
+#### 🔵🟣Link as reference
+ - Mouse drag the block to move it to the journal.
+#### 🔵🟣LATER as reference
+#### ❌ Delete this block
 
 ## Attention⚠️
  - Some plugins are not supported. (Let me know on [GitHub](https://github.com/YU000jp/Logseq-column-Layout/issues).)
@@ -54,5 +57,4 @@ Published on logseq marketplace.
 
 ---
 
- <a href="https://www.buymeacoffee.com/yu000japan" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
- 
+<a href="https://www.buymeacoffee.com/yu000japan" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-violet.png" alt="🍌Buy Me A Coffee" style="height: 42px;width: 152px" ></a>
