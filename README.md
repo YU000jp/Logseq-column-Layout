@@ -3,7 +3,8 @@ Published on logseq marketplace.
 # logseq-plugin-column-layout
  - Cancel if the screen width is less than `1850px`.
  - Journals, linked references, and journal queries can be placed side by side.
- ![スクリーンショット 2022-10-14 0207414](https://user-images.githubusercontent.com/111847207/195663729-7c979e9e-9309-4f0b-9766-581778c5aaa7.png)
+ 
+![スクリーンショット 2022-10-14 0207414](https://user-images.githubusercontent.com/111847207/195663729-7c979e9e-9309-4f0b-9766-581778c5aaa7.png)
 
 ## How to
 ### Journals 📚
@@ -24,6 +25,7 @@ Published on logseq marketplace.
 ### Journal Queries
  - Change the journal query to get more task management.
  - On Logseq, edit `config.edn` file. [For more details refer to this link(sample code)](https://github.com/YU000jp/logseq-default-queries-journals)
+ 
 ![Animation1](img/journal-queries-demo.gif)
 
 ### Right Sidebar
@@ -39,6 +41,7 @@ Published on logseq marketplace.
  
  - "Linked References" side by side (only Wide-mode). If the display space is small, hold down ⌨️`Shift` and click to open it in the right sidebar.
  - Wide mode(⌨️`t w`) is recommended if you want to use Linked References side by side. Journals will be left justified.
+ 
  ![image](https://user-images.githubusercontent.com/111847207/200147083-f2ff65dd-0ba4-49eb-986c-c384178f9354.png)
 
 ### Right-click context menu🖱️
