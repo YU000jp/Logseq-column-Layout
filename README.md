@@ -6,14 +6,13 @@ Published on logseq marketplace.
  
 ![スクリーンショット 2022-10-14 0207414](https://user-images.githubusercontent.com/111847207/195663729-7c979e9e-9309-4f0b-9766-581778c5aaa7.png)
 
-## How to
 ### Journals 📚
  - If you use the reference function and write the timeline, it is also effective as a log.
  - Press ⌨️`cmd(win) + alt` at the same time to get the reference by mouse dragging.
 
 ![スクリーンショット 2022-10-14 0207412](https://user-images.githubusercontent.com/111847207/195662824-35aecadd-c404-42a8-82eb-54ffc628c321.png)
 
-### Linked Reference
+### Linked reference
 #### Suitable for [logseq Omnivore plugin](https://github.com/omnivore-app/logseq-omnivore) 🚩
 - Omnivore is a **webclipping tool** that can be quoted to Logseq.
 - You can see the table of web clips for the day next to the journal, so it's easy to access. (View `substack.com` newsletter)
@@ -22,13 +21,13 @@ Published on logseq marketplace.
  #### View completed tasks ✅
  - Try using [logseq task completion tracker plugin](https://github.com/DimitryDushkin/logseq-plugin-task-check-date).
 
-### Journal Queries
+### Journal queries
  - Change the journal query to get more task management.
  - On Logseq, edit `config.edn` file. [For more details refer to this link(sample code)](https://github.com/YU000jp/logseq-default-queries-journals)
  
 ![Animation1](img/journal-queries-demo.gif)
 
-### Right Sidebar
+### Right sidebar
  - Pages can be placed side by side in the sidebar.([Credit: Logseq Vertical Panels for Sidebar](https://github.com/r-hegde/logseq-vertical-panels))
  - Adjust the size by selecting the bottom right of the block. But don't make it too small.
  - Changed not to display page-tags and Hierarchy in the right sidebar. Clearly display the right sidebar.
@@ -36,7 +35,7 @@ Published on logseq marketplace.
  
 ![Animation2](https://user-images.githubusercontent.com/111847207/200146804-e0e53c12-933a-417e-b19a-e9e782e1c492.gif)
 
-### The page other than journals
+### Content page (non-journal)
  - Display "page-tags" and "page-hierarchy" ([logseq-page-tags-and-hierarchy](https://github.com/YU000jp/logseq-page-tags-and-hierarchy))
  
  - "Linked References" side by side (only Wide-mode). If the display space is small, hold down ⌨️`Shift` and click to open it in the right sidebar.
@@ -52,7 +51,7 @@ Published on logseq marketplace.
 #### 🔵🟣LATER as reference
 #### ❌ Delete this block
 
-## Attention⚠️
+## ⚠️Attentionally
  - Some plugins are not supported. (Let me know on [GitHub](https://github.com/YU000jp/Logseq-column-Layout/issues).)
  - The Linked Reference space is blank if there are no tasks in Logseq.
  - Linked reference from journal are limited to dates other than today.
