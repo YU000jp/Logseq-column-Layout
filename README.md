@@ -1,6 +1,6 @@
 Published on logseq marketplace. 
 
-# Logseq Column-Layout Plugin
+# logseq-plugin-column-layout
  - Cancel if the screen width is less than `1850px`.
  - Journals, linked references, and journal queries can be placed side by side.
  ![スクリーンショット 2022-10-14 0207414](https://user-images.githubusercontent.com/111847207/195663729-7c979e9e-9309-4f0b-9766-581778c5aaa7.png)
@@ -13,7 +13,7 @@ Published on logseq marketplace.
 ![スクリーンショット 2022-10-14 0207412](https://user-images.githubusercontent.com/111847207/195662824-35aecadd-c404-42a8-82eb-54ffc628c321.png)
 
 ### Linked Reference
-#### Suitable for [Logseq-Omnivore plugin](https://github.com/omnivore-app/logseq-omnivore) 🚩
+#### Suitable for [logseq Omnivore plugin](https://github.com/omnivore-app/logseq-omnivore) 🚩
 - Omnivore is a **webclipping tool** that can be quoted to Logseq.
 - You can see the table of web clips for the day next to the journal, so it's easy to access. (View `substack.com` newsletter)
 #### As a list for inclusion in the next journal 📅
@@ -23,7 +23,7 @@ Published on logseq marketplace.
 
 ### Journal Queries
  - Change the journal query to get more task management.
- - On Logseq, edit `config.edn` file. [For more details refer to this link(sample code)](https://github.com/YU000jp/Logseq-default-queries-journals)
+ - On Logseq, edit `config.edn` file. [For more details refer to this link(sample code)](https://github.com/YU000jp/logseq-default-queries-journals)
 ![Animation1](img/journal-queries-demo.gif)
 
 ### Right Sidebar
