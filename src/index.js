@@ -289,7 +289,8 @@ const main = () => {
 
     //switch linked References
 
-    if ( JournalQueries !== "Side" &&  LinkedReferences === "Side") {
+    //journal queries bottom & LinkedReferences Side
+    if (JournalQueries !== "Side" && LinkedReferences === "Side") {
         logseq.provideStyle(String.raw`
         @media screen and (min-width: 1850px) {
             /* journals */
@@ -302,23 +303,25 @@ const main = () => {
             div.journal>div.flex.flex-col:first-child {
                 margin-left: 1em;
                 min-width: 1000px;
-                flex: none;
+                flex: 1;
             }
     }
     `);
-    }else if (LinkedReferences === undefined || LinkedReferences === "Side") {
+
+        //journal queries Side & Linked References Side
+    } else if (LinkedReferences === undefined || LinkedReferences === "Side") {
         logseq.provideStyle(String.raw`
             @media screen and (min-width: 1850px) {
                 /* journals */
                 div#main-content-container div.flex-1.journal.page {
                     display: flex;
-                    justify-content: space-between;
+                    justify-content: flex-start;
                 }
 
                 div.journal>div.flex.flex-col:first-child {
                     margin-left: 1em;
                     min-width: 1000px;
-                    flex: none;
+                    flex: 1;
                 }
                 /*
     
@@ -349,7 +352,7 @@ const main = () => {
                 main:not(.ls-right-sidebar-open) div#journals div.references {
                     max-height: 60vh;
                     min-width: 360px;
-                    max-width: 400px;
+                    max-width: 670px;
                     overflow-y: scroll;
                     position: sticky;
                     top: 0.5em;
@@ -389,19 +392,9 @@ const main = () => {
                     max-width: 460px;
                 }
             
-                /* IF Not left sidebar */
-                main:not(.ls-left-sidebar-open) div#journals div.references:hover {
-                    margin-right: -205px;
-                }
-            
-                /* IF left sidebar */
-                main.ls-left-sidebar-open div#journals div.references:hover {
-                    margin-right: -265px;
-                }
-            
             }
     `);
-    }else{
+    } else {
         //Not Side
         logseq.provideStyle(String.raw`
         @media screen and (min-width: 1850px) {
@@ -420,27 +413,18 @@ const main = () => {
     }
     `);
     }
-    
 
 
-        //switch journal queries
-        //Side
-        if (JournalQueries === undefined || JournalQueries === "Side") {
-            logseq.provideStyle(String.raw`
+
+    //switch journal queries
+    //Side
+    if (JournalQueries === undefined || JournalQueries === "Side") {
+        logseq.provideStyle(String.raw`
                 @media screen and (min-width: 1850px) {
                     /*
                     Journal-queries space
                     */
-                    /* IF Not right sidebar */
-                    main:not(.ls-right-sidebar-open) div#journals {
-                        margin-right: 360px;
-                    }
-                
-                    /* IF Not left sidebar*/
-                    main:not(.ls-left-sidebar-open) div#journals {
-                        margin-right: 430px;
-                    }
-                
+
                     /* IF right sidebar */
                     main.ls-right-sidebar-open div#journals {
                         margin-right: unset;
@@ -456,12 +440,10 @@ const main = () => {
                     
                     */
                 
-                    main:not(.ls-right-sidebar-open) div#journals div#today-queries+div.flex.flex-col {
+                    main:not(.ls-right-sidebar-open) div#today-queries+div.flex.flex-col {
                         position: fixed;
                         bottom: 1em;
-                        right: 395px;
                         padding: 0.3em;
-                        width: 400px;
                         outline: 3px solid var(--ls-guideline-color);
                         outline-offset: 3px;
                         border-radius: 1.2em;
@@ -474,39 +456,12 @@ const main = () => {
                     }
                 
                     /* CANCEL IF right sidebar */
-                    main.ls-right-sidebar-open div#journals div#today-queries+div.flex.flex-col {
+                    main.ls-right-sidebar-open div#today-queries+div.flex.flex-col {
                         display: none;
                     }
                 
-                    /* IF not left sidebar */
-                    main:not(.ls-left-sidebar-open) div#journals div#today-queries+div.flex.flex-col {
-                        width: 460px;
-                    }
-                
-                    /* hover */
-                    main div#journals div#today-queries+div.flex.flex-col:hover {
-                        z-index: var(--ls-z-index-level-1);
-                    }
-                
-                    /* IF Not left sidebar */
-                    main:not(.ls-left-sidebar-open) div#journals div#today-queries+div.flex.flex-col:hover {
-                        width: 560px;
-                        margin-right: -100px;
-                    }
-                
-                    /* IF left sidebar */
-                    main.ls-left-sidebar-open div#journals div#today-queries+div.flex.flex-col:hover {
-                        width: 560px;
-                        margin-right: -160px;
-                    }
-                
-                    /* IF not left sidebar*/
-                    main:not(.ls-left-sidebar-open) div#journals div#today-queries+div.flex.flex-col {
-                        right: 470px;
-                    }
-                
                     /* CANCEL IF PDF-view CANCEL */
-                    body.is-pdf-active div#journals div#today-queries+div.flex.flex-col {
+                    body.is-pdf-active div#today-queries+div.flex.flex-col {
                         display: none;
                     }
 
@@ -517,7 +472,7 @@ const main = () => {
                     */
                 
                     /* IF Not right sidebar */
-                    main:not(.ls-right-sidebar-open) div#journals div#today-queries {
+                    main:not(.ls-right-sidebar-open) div#today-queries {
                         width: 390px;
                         position: fixed;
                         right: 0;
@@ -528,14 +483,14 @@ const main = () => {
                         border-left: 2px solid var(--ls-guideline-color);
                         padding: 0.12em;
                     }
-                
+
                     /* CANCEL IF right-sidebar */
-                    main.ls-right-sidebar-open div#journals div#today-queries {
+                    main.ls-right-sidebar-open div#root div#journals div#today-queries {
                         display: none;
                     }
                 
                     /* CANCEL IF PDF-view */
-                    body.is-pdf-active div#journals div#today-queries {
+                    body.is-pdf-active div#root div#journals div#today-queries {
                         display: none;
                     }
                 
@@ -545,68 +500,68 @@ const main = () => {
                     }
                 
                     /* IF left-sidebar */
-                    main:not(.ls-left-sidebar-open) div#journals div#today-queries {
+                    main:not(.ls-left-sidebar-open) div#today-queries {
                         width: 470px;
                     }
                 
                     /* Task in query --> bold */
-                    div#journals div#today-queries .now,
-                    div#journals div#today-queries .later,
-                    div#journals div#today-queries .doing,
-                    div#journals div#today-queries .todo {
+                    div#today-queries .now,
+                    div#today-queries .later,
+                    div#today-queries .doing,
+                    div#today-queries .todo {
                         font-weight: 600;
                     }
                 
-                    div#journals div#today-queries>div.lazy-visibility div.custom-query {
+                    div#today-queries>div.lazy-visibility div.custom-query {
                         margin-top: 0.1em;
                         margin-bottom: 0.8em;
                     }
                 
-                    div#journals div#today-queries>div.lazy-visibility div.custom-query div.custom-query-title {
+                    div#today-queries>div.lazy-visibility div.custom-query div.custom-query-title {
                         outline: 2px solid var(--ls-guideline-color);
                         font-size: medium;
                         background: var(--ls-page-blockquote-bg-color);
                     }
                 
-                    div#journals div#today-queries>div.lazy-visibility div.custom-query div.custom-query-title:hover {
+                    div#today-queries>div.lazy-visibility div.custom-query div.custom-query-title:hover {
                         outline: 4px;
                     }
                 
-                    div#journals div#today-queries.mt-10 {
+                    div#today-queries.mt-10 {
                         margin-top: 0.1em;
                     }
                 
-                    div#journals div#today-queries>div.lazy-visibility div.custom-query div.content {
+                    div#today-queries>div.lazy-visibility div.custom-query div.content {
                         padding-top: 0.15em;
                     }
                 
-                    div#journals div#today-queries>div.lazy-visibility div.custom-query div.content div.lazy-visibility:not(:last-of-type) {
+                    div#today-queries>div.lazy-visibility div.custom-query div.content div.lazy-visibility:not(:last-of-type) {
                         border-bottom: 3px dotted var(--ls-guideline-color);
                         padding: 0.6em;
                     }
                 
-                    div#journals div#today-queries>div.lazy-visibility div.custom-query div.content div.lazy-visibility {
+                    div#today-queries>div.lazy-visibility div.custom-query div.content div.lazy-visibility {
                         border-right: 4px solid var(--ls-page-blockquote-bg-color);
                     }
                 
-                    div#journals div#today-queries>div.lazy-visibility div.custom-query div.my-2 {
+                    div#today-queries>div.lazy-visibility div.custom-query div.my-2 {
                         padding: 0.2em;
                         margin: 0.2em;
                     }
                 
-                    div#journals div#today-queries>div.lazy-visibility div.custom-query div.breadcrumb.block-parents {
+                    div#today-queries>div.lazy-visibility div.custom-query div.breadcrumb.block-parents {
                         color: var(--ct-external-link-color);
                         margin-bottom: 0.6em;
                     }
                 
-                    div#journals div#today-queries .sm\:px-7 {
+                    div#today-queries .sm\:px-7 {
                         padding-left: unset;
                     }
                 
                     /* Journal-queries h2-h4 header */
-                    div#journals div#today-queries h2,
-                    div#journals div#today-queries h3,
-                    div#journals div#today-queries h4 {
+                    div#today-queries h2,
+                    div#today-queries h3,
+                    div#today-queries h4 {
                         font-size: 16px;
                         padding: 4px;
                     }
@@ -618,55 +573,109 @@ const main = () => {
                     }
                 }
                 
+                @media screen and (min-width: 1850px) and (max-width: 2259px) {
+                    /* SCHEDULED AND DEADLINE */
 
-                @media screen and (min-width: 2260px) {
-                    div.journal>div.flex.flex-col:first-child {
-                        max-width: 1320px;
+                    /* IF left sidebar */
+                    main.ls-left-sidebar-open div#today-queries+div.flex.flex-col:hover {
+                        width: 560px;
+                        margin-right: -160px;
                     }
                 
-                    main:not(.ls-right-sidebar-open) div.journal>div.flex.flex-col:first-child {
+                    /* IF not left sidebar*/
+                    main:not(.ls-left-sidebar-open) div#today-queries+div.flex.flex-col {
+                        right: 470px;
+                    }
+
+                    main:not(.ls-right-sidebar-open) div#today-queries+div.flex.flex-col {
+                        right: 395px;
+                        width: 400px;
+                    }
+                
+                    /* IF not left sidebar */
+                    main:not(.ls-left-sidebar-open) div#today-queries+div.flex.flex-col {
+                        width: 460px;
+                    }
+                
+                    /* IF Not left sidebar */
+                    main:not(.ls-left-sidebar-open) div#today-queries+div.flex.flex-col:hover {
+                        width: 560px;
+                        margin-right: -100px;
+                        z-index: var(--ls-z-index-level-1);
+                    }
+                    /* journal queries space */
+                    /* IF Not right sidebar */
+                    main:not(.ls-right-sidebar-open) div#journals {
+                        margin-right: 360px;
+                    }
+                
+                    /* IF Not left sidebar*/
+                    main:not(.ls-left-sidebar-open) div#journals {
+                        margin-right: 430px;
+                    }
+                
+                }
+
+                @media screen and (min-width: 2260px) {
+                    main div#journals div.journal>div.flex.flex-col:first-child {
+                        max-width: 1250px;
+                    }
+                
+                    main:not(.ls-right-sidebar-open) div#journals div.journal>div.flex.flex-col:first-child {
                         margin-left: 4em;
                     }
                 
                     /* SCHEDULED AND DEADLINE */
-                    main.ls-left-sidebar-open div#journals div#today-queries+div.flex.flex-col {
-                        right: 425px;
+                    main div#journals div#today-queries+div.flex.flex-col {
+                        right: 525px;
+                    }
+                    
+                    /* journal queries space */
+
+                    main div#journals div#today-queries {
+                        width: 500px;
+                    }
+
+                    /* IF Not right sidebar */
+                    main:not(.ls-right-sidebar-open) div#journals {
+                        margin-right: 500px;
                     }
                 
-                    div#journals div#today-queries {
-                        width: 520px;
-                    }
-                
-                    /* ELSE pages */
-                    main:not(.ls-right-sidebar-open) div#main-content-container div.flex-1.page.relative {
-                        margin-right: 520px;
-                    }
-                
-                    /* ELSE Pages right-space */
-                    div#main-content-container div.relative+div.references.mt-6.flex-1.flex-row,
-                    div#main-content-container div.page-hierarchy {
-                        width: 520px;
+                    /* IF Not left sidebar*/
+                    main:not(.ls-left-sidebar-open) div#journals {
+                        margin-right: 560px;
                     }
                 }
                 
-                @media screen and (min-width: 2440px) {
-                    div.journal>div.flex.flex-col:first-child {
-                        min-width: 1050px;
+                @media screen and (min-width: 2800px) {
+                    main div#journals div.journal>div.flex.flex-col:first-child {
+                        min-width: 1200px;
                         max-width: 1430px;
                     }
-                
-                    div#journals div#today-queries {
+                    /* journal queries space */
+
+                    main div#journals div#today-queries {
                         width: 620px;
+                    }
+
+                    /* IF Not right sidebar */
+                    main:not(.ls-right-sidebar-open) div#journals {
+                        margin-right: 600px;
+                    }
+                
+                    /* IF Not left sidebar*/
+                    main:not(.ls-left-sidebar-open) div#journals {
+                        margin-right: 680px;
                     }
                 }
         `);
 
 
-        }else{
+    } else {
 
-            //journal queries Not Side
+        //journal queries Not Side
 
-            logseq.provideStyle(String.raw`
+        logseq.provideStyle(String.raw`
             @media screen and (min-width: 1850px) {
             /*
         
@@ -724,7 +733,7 @@ const main = () => {
             }
         }
             `);
-        }
+    }
 
     //switch right sidebar
 
@@ -964,12 +973,24 @@ const main = () => {
                     display: none;
                 }            
             }
+            @media screen and (min-width: 2260px) {
+                /* ELSE pages */
+                main:not(.ls-right-sidebar-open) div#main-content-container div.flex-1.page.relative {
+                    margin-right: 520px;
+                }
+            
+                /* ELSE Pages right-space */
+                div#main-content-container div.relative+div.references.mt-6.flex-1.flex-row,
+                div#main-content-container div.page-hierarchy {
+                    width: 520px;
+                }
+            }
     `);
 
 
-    //Page-tags and Hierarchy
-    //Bottom
-    }else if (TagsHierarchy === "Bottom") {
+        //Page-tags and Hierarchy
+        //Bottom
+    } else if (TagsHierarchy === "Bottom") {
         logseq.provideStyle(String.raw`
             @media screen and (min-width: 1850px) {
                 body:not(.is-pdf-active) main:not(.ls-right-sidebar-open) div#main-content-container div.flex-1.page.relative {
