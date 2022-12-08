@@ -648,9 +648,13 @@ const main = () => {
                 }
                 
                 @media screen and (min-width: 2800px) {
-                    main div#journals div.journal>div.flex.flex-col:first-child {
+                    div#journals div.journal>div.flex.flex-col:first-child {
                         min-width: 1200px;
                         max-width: 1430px;
+                    }
+                    /* SCHEDULED AND DEADLINE */
+                    main div#journals div#today-queries+div.flex.flex-col {
+                        right: 620px;
                     }
                     /* journal queries space */
 
@@ -660,7 +664,7 @@ const main = () => {
 
                     /* IF Not right sidebar */
                     main:not(.ls-right-sidebar-open) div#journals {
-                        margin-right: 600px;
+                        margin-right: 620px;
                     }
                 
                     /* IF Not left sidebar*/
@@ -916,7 +920,6 @@ const main = () => {
             
                 /* ELSE PDF view & right sidebar */
                 body:not(.is-pdf-active) main:not(.ls-right-sidebar-open) div#main-content-container div.flex-1.page.relative {
-                    margin-right: 390px;
                     margin-bottom: 2em;
                     margin-top: 2em;
                     margin-left: 1.5em;
@@ -930,13 +933,13 @@ const main = () => {
     //Side
     if (TagsHierarchy === undefined || TagsHierarchy === "Side") {
         logseq.provideStyle(String.raw`
+
             @media screen and (min-width: 1850px) {
 
                 /* ELSE Page right-space */
                 body:not(.is-pdf-active) main:not(.ls-right-sidebar-open) div#main-content-container div.relative+div.references.mt-6.flex-1.flex-row,
                 body:not(.is-pdf-active) main:not(.ls-right-sidebar-open) div#main-content-container div.page-hierarchy {
                     position: fixed;
-                    width: 390px;
                     max-height: 40vh;
                     overflow-y: auto;
                     padding: 1.5em;
@@ -944,7 +947,7 @@ const main = () => {
                     background-color: var(--ls-primary-background-color);
                     border-radius: 10px;
                     z-index: 1;
-                }
+                }  
             
                 /* Pages-tagged-with */
                 body:not(.is-pdf-active) main:not(.ls-right-sidebar-open) div#main-content-container div.relative+div.references.mt-6.flex-1.flex-row {
@@ -971,19 +974,32 @@ const main = () => {
                 body.is-pdf-active div#main-content-container div.page-hierarchy,
                 main.ls-right-sidebar-open div#main-content-container div.page-hierarchy {
                     display: none;
-                }            
+                }    
+
             }
-            @media screen and (min-width: 2260px) {
+            @media screen and (min-width: 1850px) and (max-width: 2259px) {
+                /* ELSE Page right-space */
+                body:not(.is-pdf-active) main:not(.ls-right-sidebar-open) div#main-content-container div.relative+div.references.mt-6.flex-1.flex-row,
+                body:not(.is-pdf-active) main:not(.ls-right-sidebar-open) div#main-content-container div.page-hierarchy {
+                    width: 400px;
+                }
+
                 /* ELSE pages */
                 main:not(.ls-right-sidebar-open) div#main-content-container div.flex-1.page.relative {
-                    margin-right: 520px;
+                    margin-right: 404px;
                 }
-            
-                /* ELSE Pages right-space */
+            }
+            @media screen and (min-width: 2260px) {
+
+                main:not(.ls-right-sidebar-open) div#main-content-container div.flex-1.page.relative {
+                    margin-right: 680px;
+                }
+
                 div#main-content-container div.relative+div.references.mt-6.flex-1.flex-row,
                 div#main-content-container div.page-hierarchy {
-                    width: 520px;
+                    width: 680px;
                 }
+
             }
     `);
 
