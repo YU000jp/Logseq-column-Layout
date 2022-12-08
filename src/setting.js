@@ -48,7 +48,7 @@ export const settingUI = () => {
             key: "switchLinkedReferences",
             title: "Linked References Side by side  *",
             type: "enum",
-            enumChoices: ["Side"], //normal
+            enumChoices: ["Side","Normal"],
             enumPicker: "radio",
             default: "Side",
             description: "",
