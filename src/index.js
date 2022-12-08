@@ -83,7 +83,7 @@ const main = () => {
     const RightSidebar = logseq.settings.switchRightSidebar || "";
     const TagsHierarchy = logseq.settings.switchTagsHierarchy || "";
     const LinkedReferences = logseq.settings.switchLinkedReferences || "";
-    const JournalQueries = logseq.settings.switchJournalQueries || "";
+    const pageLinkedReferences = logseq.settings.switchPageLinkedReferences || "";
 
     //require CSS
 
@@ -94,23 +94,24 @@ const main = () => {
             Fix bugs
             
             */
-            
+    
             /* Fix "Extra space when journal queries are not active #6773" */
-            div#journals div#today-queries>div.lazy-visibility {
+            body[data-page="home"] div#today-queries>div.lazy-visibility {
                 min-height: unset !important;
             }
             
-            /* journal queries */
-            div#journals div#today-queries>div.lazy-visibility>div.shadow {
+            /* journal queries No shadow */
+            body[data-page="home"] div#today-queries>div.lazy-visibility>div.shadow {
                 display: none;
             }
             
             /* background conflict journal queries */
-            div#journals div#today-queries div.color-level div.blocks-container,
-            div#journals div#today-queries div.color-level {
+            body[data-page="home"] div#today-queries div.color-level div.blocks-container,
+            body[data-page="home"] div#today-queries div.color-level {
                 background-color: unset;
             }
             
+            /* Non fix (TODO) */
             /* CANCEL double time picker */
             div#right-sidebar div#date-time-picker {
                 display: block;
@@ -139,7 +140,7 @@ const main = () => {
             */
             
             /* image toolbar */
-            .block-content .asset-container .asset-overlay {
+            div.block-content div.asset-container div.asset-overlay {
                 background-image: none;
             }
             
@@ -216,109 +217,23 @@ const main = () => {
             div#right-sidebar [data-refs-self*="kanban"]>.block-children-container>.block-children {
                 flex-wrap: wrap;
             }
-
-            /* content-size */
-            :root {
-                --ls-main-content-max-width: 2000px !important;
-                --ls-main-content-max-width-wide: auto !important;
-            }
-
-            main div#main-content-container div.flex-1.page.relative div.relative {
-                max-width: 1600px;
-            }
-
-            div.journal>div.flex.flex-col:first-child {
-                max-width: 1170px;
-            }
-
-            /*
-            
-            page Linked References
-            
-            */
-
-            div#main-content-container div.relative div.lazy-visibility div.references {
-                margin-top: 8em;
-                margin-bottom: 4em;
-            }
-        
-            body:not(.is-pdf-active) main.ls-wide-mode:not(.ls-right-sidebar-open) div#main-content-container div.relative div.lazy-visibility div.references div.references-blocks div.content>div,
-            body:not(.is-pdf-active) main.ls-wide-mode:not(.ls-right-sidebar-open) div#main-content-container div.relative+div+div div.references div.references-blocks div.content>div,
-            body:not(.is-pdf-active) main.ls-wide-mode:not(.ls-right-sidebar-open) div#main-content-container div.relative+div+div+div div.references div.references-blocks div.content>div {
-                flex-direction: row;
-                align-items: stretch;
-                justify-content: flex-start;
-                flex-wrap: wrap;
-                gap: 0.8em;
-                padding-right: 50px;
-            }
-        
-            body:not(.is-pdf-active) main.ls-wide-mode:not(.ls-right-sidebar-open) div#main-content-container div.relative div.lazy-visibility div.references div.references-blocks div.content>div>div.lazy-visibility,
-            body:not(.is-pdf-active) main.ls-wide-mode:not(.ls-right-sidebar-open) div#main-content-container div.relative+div+div div.references div.references-blocks div.content>div>div.lazy-visibility,
-            body:not(.is-pdf-active) main.ls-wide-mode:not(.ls-right-sidebar-open) div#main-content-container div.relative+div+div+div div.references div.references-blocks div.content>div>div.lazy-visibility {
-                overflow: auto;
-                border-radius: 1.5em;
-                max-height: 780px;
-                flex: 28%;
-                max-width: 615px;
-                display: block;
-            }
-        
-            main.ls-wide-mode div#main-content-container div.references div.references-blocks div.content>div>div.lazy-visibility div.fade-enter>div {
-                padding: 0.4em;
-                margin: 0;
-                height: 100%;
-            }
-        
-            body:not(.is-pdf-active) main:not(.ls-right-sidebar-open) main.ls-wide-mode div#main-content-container div.references div.references-blocks div.content>div>div.lazy-visibility {
-                width: 44vh;
-            }
-        
-            main.ls-wide-mode div#main-content-container div.references div.references-blocks div.content>div>div.lazy-visibility img {
-                max-width: 450px !important;
-            }
-        
-            div#main-content-container div.relative h2.font-bold {
-                display: block;
-                margin-left: auto;
-                margin-right: auto;
-            }
         }
     `);
 
 
     //switch linked References
 
-    //journal queries bottom & LinkedReferences Side
-    if (JournalQueries !== "Side" && LinkedReferences === "Side") {
-        logseq.provideStyle(String.raw`
-        @media screen and (min-width: 1850px) {
-            /* journals */
-            div#main-content-container div.flex-1.journal.page {
-                display: flex;
-                wrap: nowrap;
-                justify-content: space-between;
-            }
-
-            div.journal>div.flex.flex-col:first-child {
-                margin-left: 1em;
-                min-width: 1000px;
-                flex: 1;
-            }
-    }
-    `);
-
-        //journal queries Side & Linked References Side
-    } else if (LinkedReferences === undefined || LinkedReferences === "Side") {
+    //journal queries Side & Linked References Side
+    if (LinkedReferences === undefined || LinkedReferences === "Side") {
         logseq.provideStyle(String.raw`
             @media screen and (min-width: 1850px) {
                 /* journals */
-                div#main-content-container div.flex-1.journal.page {
+                body[data-page="home"] div#main-content-container div.flex-1.journal.page {
                     display: flex;
                     justify-content: flex-start;
                 }
 
-                div.journal>div.flex.flex-col:first-child {
+                body[data-page="home"] div.journal>div.flex.flex-col:first-child {
                     margin-left: 1em;
                     min-width: 1000px;
                     flex: 1;
@@ -329,27 +244,27 @@ const main = () => {
                 
                 */
             
-                div#journals div.references div.pt-6 {
+                body[data-page="home"] div#journals div.references div.pt-6 {
                     padding: 0.1em;
                 }
             
-                div#journals div.references div.hidden {
+                body[data-page="home"] div#journals div.references div.hidden {
                     width: 670px;
                     display: block;
                 }
             
-                div#journals div.journal.page div.lazy-visibility div.fade-enter-active {
+                body[data-page="home"] div#journals div.journal.page div.lazy-visibility div.fade-enter-active {
                     height: 100%;
                 }
             
-                div#journals div.journal>div.lazy-visibility div.references-blocks div.flex.flex-col>div,
-                div#journals div.references div.references-blocks div.lazy-visibility div.px-2 {
+                body[data-page="home"] div#journals div.journal>div.lazy-visibility div.references-blocks div.flex.flex-col>div,
+                body[data-page="home"] div#journals div.references div.references-blocks div.lazy-visibility div.px-2 {
                     padding-left: 0;
                     padding-right: 0;
                 }
             
                 /* IF not right sidebar */
-                main:not(.ls-right-sidebar-open) div#journals div.references {
+                body[data-page="home"] main:not(.ls-right-sidebar-open) div#journals div.references {
                     max-height: 60vh;
                     min-width: 360px;
                     max-width: 670px;
@@ -367,7 +282,7 @@ const main = () => {
                 }
             
                 /* IF not right sidebar */
-                main:not(.ls-right-sidebar-open) div#journals div.references:hover {
+                body[data-page="home"] main:not(.ls-right-sidebar-open) div#journals div.references:hover {
                     background: unset;
                     backdrop-filter: blur(40px);
                     min-width: 670px;
@@ -378,17 +293,17 @@ const main = () => {
                 }
             
                 /* CANCEL IF right-sidebar */
-                main.ls-right-sidebar-open div#journals div.references {
+                body[data-page="home"] main.ls-right-sidebar-open div#journals div.references {
                     display: none;
                 }
             
                 /* CANCEL IF PDF-view */
-                body.is-pdf-active div#journals div.references {
+                body[data-page="home"] body.is-pdf-active div#journals div.references {
                     display: none;
                 }
             
                 /* IF left-sidebar --> +100px */
-                main:not(.ls-left-sidebar-open) div#journals div.references {
+                body[data-page="home"] main:not(.ls-left-sidebar-open) div#journals div.references {
                     max-width: 460px;
                 }
             
@@ -399,7 +314,7 @@ const main = () => {
         logseq.provideStyle(String.raw`
         @media screen and (min-width: 1850px) {
             /* IF not right sidebar */
-            main:not(.ls-right-sidebar-open) div#journals div.references {
+            body[data-page="home"] main:not(.ls-right-sidebar-open) div#journals div.references {
                 max-width: 900px;
                 max-height: 800px;
                 overflow-y: auto;
@@ -415,23 +330,73 @@ const main = () => {
     }
 
 
+    //page Linked References
+    if (pageLinkedReferences === "Enable") {
+        logseq.provideStyle(String.raw`
+        @media screen and (min-width: 1850px) {
+            /*
+            
+            page Linked References
+            
+            */
+            body[data-page="page"] div#main-content-container div.relative div.lazy-visibility div.references {
+                margin-top: 4em;
+                margin-bottom: 4em;
+            }
+            
+            body[data-page="page"]:not(.is-pdf-active) main:not(.ls-right-sidebar-open) div#main-content-container div.relative div.lazy-visibility div.references div.references-blocks div.content>div,
+            body[data-page="page"]:not(.is-pdf-active) main:not(.ls-right-sidebar-open) div#main-content-container div.relative+div+div div.references div.references-blocks div.content>div,
+            body[data-page="page"]:not(.is-pdf-active) main:not(.ls-right-sidebar-open) div#main-content-container div.relative+div+div+div div.references div.references-blocks div.content>div {
+                gap: 1.2em;
+            }
+            
+            body[data-page="page"]:not(.is-pdf-active) main:not(.ls-right-sidebar-open) div#main-content-container div.relative div.lazy-visibility div.references div.references-blocks div.content>div>div.lazy-visibility,
+            body[data-page="page"]:not(.is-pdf-active) main:not(.ls-right-sidebar-open) div#main-content-container div.relative+div+div div.references div.references-blocks div.content>div>div.lazy-visibility,
+            body[data-page="page"]:not(.is-pdf-active) main:not(.ls-right-sidebar-open) div#main-content-container div.relative+div+div+div div.references div.references-blocks div.content>div>div.lazy-visibility {
+                overflow: auto;
+                border-radius: 1em;
+                max-height: 450px;
+                font-size: smaller;
+                display: block;
+            }
+            
+            body[data-page="page"] div#main-content-container div.relative h2.font-bold {
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+    `);
+    }
+
 
     //switch journal queries
     //Side
-    if (JournalQueries === undefined || JournalQueries === "Side") {
         logseq.provideStyle(String.raw`
+        
                 @media screen and (min-width: 1850px) {
+
+                    /* content-size */
+                    :root {
+                        --ls-main-content-max-width: auto !important;
+                        --ls-main-content-max-width-wide: auto !important;
+                    }
+        
+                    body[data-page="home"] div.journal>div.flex.flex-col:first-child {
+                        max-width: 1170px;
+                    }
+
                     /*
                     Journal-queries space
                     */
 
                     /* IF right sidebar */
-                    main.ls-right-sidebar-open div#journals {
+                    body[data-page="home"] main.ls-right-sidebar-open div#journals {
                         margin-right: unset;
                     }
                 
                     /* IF Not right sidebar */
-                    main:not(.ls-right-sidebar-open) div#journals div.block-children-container {
+                    body[data-page="home"] main:not(.ls-right-sidebar-open) div#journals div.block-children-container {
                         display: block;
                     }
                     /*
@@ -440,7 +405,7 @@ const main = () => {
                     
                     */
                 
-                    main:not(.ls-right-sidebar-open) div#today-queries+div.flex.flex-col {
+                    body[data-page="home"] main:not(.ls-right-sidebar-open) div#today-queries+div.flex.flex-col {
                         position: fixed;
                         bottom: 1em;
                         padding: 0.3em;
@@ -456,12 +421,12 @@ const main = () => {
                     }
                 
                     /* CANCEL IF right sidebar */
-                    main.ls-right-sidebar-open div#today-queries+div.flex.flex-col {
+                    body[data-page="home"] main.ls-right-sidebar-open div#today-queries+div.flex.flex-col {
                         display: none;
                     }
                 
                     /* CANCEL IF PDF-view CANCEL */
-                    body.is-pdf-active div#today-queries+div.flex.flex-col {
+                    body[data-page="home"] body.is-pdf-active div#today-queries+div.flex.flex-col {
                         display: none;
                     }
 
@@ -472,7 +437,7 @@ const main = () => {
                     */
                 
                     /* IF Not right sidebar */
-                    main:not(.ls-right-sidebar-open) div#today-queries {
+                    body[data-page="home"] main:not(.ls-right-sidebar-open) div#today-queries {
                         width: 390px;
                         position: fixed;
                         right: 0;
@@ -485,89 +450,89 @@ const main = () => {
                     }
 
                     /* CANCEL IF right-sidebar */
-                    main.ls-right-sidebar-open div#root div#journals div#today-queries {
+                    body[data-page="home"] main.ls-right-sidebar-open div#root div#journals div#today-queries {
                         display: none;
                     }
                 
                     /* CANCEL IF PDF-view */
-                    body.is-pdf-active div#root div#journals div#today-queries {
+                    body[data-page="home"].is-pdf-active div#root div#journals div#today-queries {
                         display: none;
                     }
                 
                     /* IF tabs-plugin */
-                    body.is-tabs-loaded div#root div#journals div#today-queries {
+                    body[data-page="home"].is-tabs-loaded div#root div#journals div#today-queries {
                         top: calc(var(--ls-headbar-height) + var(--ls-headbar-inner-top-padding) + 40px);
                     }
                 
                     /* IF left-sidebar */
-                    main:not(.ls-left-sidebar-open) div#today-queries {
+                    body[data-page="home"] main:not(.ls-left-sidebar-open) div#today-queries {
                         width: 470px;
                     }
                 
                     /* Task in query --> bold */
-                    div#today-queries .now,
-                    div#today-queries .later,
-                    div#today-queries .doing,
-                    div#today-queries .todo {
+                    body[data-page="home"] div#today-queries .now,
+                    body[data-page="home"] div#today-queries .later,
+                    body[data-page="home"] div#today-queries .doing,
+                    body[data-page="home"] div#today-queries .todo {
                         font-weight: 600;
                     }
                 
-                    div#today-queries>div.lazy-visibility div.custom-query {
+                    body[data-page="home"] div#today-queries>div.lazy-visibility div.custom-query {
                         margin-top: 0.1em;
                         margin-bottom: 0.8em;
                     }
                 
-                    div#today-queries>div.lazy-visibility div.custom-query div.custom-query-title {
+                    body[data-page="home"] div#today-queries>div.lazy-visibility div.custom-query div.custom-query-title {
                         outline: 2px solid var(--ls-guideline-color);
                         font-size: medium;
                         background: var(--ls-page-blockquote-bg-color);
                     }
                 
-                    div#today-queries>div.lazy-visibility div.custom-query div.custom-query-title:hover {
+                    body[data-page="home"] div#today-queries>div.lazy-visibility div.custom-query div.custom-query-title:hover {
                         outline: 4px;
                     }
                 
-                    div#today-queries.mt-10 {
+                    body[data-page="home"] div#today-queries.mt-10 {
                         margin-top: 0.1em;
                     }
                 
-                    div#today-queries>div.lazy-visibility div.custom-query div.content {
+                    body[data-page="home"] div#today-queries>div.lazy-visibility div.custom-query div.content {
                         padding-top: 0.15em;
                     }
                 
-                    div#today-queries>div.lazy-visibility div.custom-query div.content div.lazy-visibility:not(:last-of-type) {
+                    body[data-page="home"] div#today-queries>div.lazy-visibility div.custom-query div.content div.lazy-visibility:not(:last-of-type) {
                         border-bottom: 3px dotted var(--ls-guideline-color);
                         padding: 0.6em;
                     }
                 
-                    div#today-queries>div.lazy-visibility div.custom-query div.content div.lazy-visibility {
+                    body[data-page="home"] div#today-queries>div.lazy-visibility div.custom-query div.content div.lazy-visibility {
                         border-right: 4px solid var(--ls-page-blockquote-bg-color);
                     }
                 
-                    div#today-queries>div.lazy-visibility div.custom-query div.my-2 {
+                    body[data-page="home"] div#today-queries>div.lazy-visibility div.custom-query div.my-2 {
                         padding: 0.2em;
                         margin: 0.2em;
                     }
                 
-                    div#today-queries>div.lazy-visibility div.custom-query div.breadcrumb.block-parents {
+                    body[data-page="home"] div#today-queries>div.lazy-visibility div.custom-query div.breadcrumb.block-parents {
                         color: var(--ct-external-link-color);
                         margin-bottom: 0.6em;
                     }
                 
-                    div#today-queries .sm\:px-7 {
+                    body[data-page="home"] div#today-queries .sm\:px-7 {
                         padding-left: unset;
                     }
                 
                     /* Journal-queries h2-h4 header */
-                    div#today-queries h2,
-                    div#today-queries h3,
-                    div#today-queries h4 {
+                    body[data-page="home"] div#today-queries h2,
+                    body[data-page="home"] div#today-queries h3,
+                    body[data-page="home"] div#today-queries h4 {
                         font-size: 16px;
                         padding: 4px;
                     }
 
                     /* remove space */
-                    main div#main-content-container {
+                    body[data-page="home"] main div#main-content-container {
                         margin : 0;
                         padding-top:unset;
                     }
@@ -577,167 +542,102 @@ const main = () => {
                     /* SCHEDULED AND DEADLINE */
 
                     /* IF left sidebar */
-                    main.ls-left-sidebar-open div#today-queries+div.flex.flex-col:hover {
+                    body[data-page="home"] main.ls-left-sidebar-open div#today-queries+div.flex.flex-col:hover {
                         width: 560px;
                         margin-right: -160px;
                     }
                 
                     /* IF not left sidebar*/
-                    main:not(.ls-left-sidebar-open) div#today-queries+div.flex.flex-col {
+                    body[data-page="home"] main:not(.ls-left-sidebar-open) div#today-queries+div.flex.flex-col {
                         right: 470px;
                     }
 
-                    main:not(.ls-right-sidebar-open) div#today-queries+div.flex.flex-col {
+                    body[data-page="home"] main:not(.ls-right-sidebar-open) div#today-queries+div.flex.flex-col {
                         right: 395px;
                         width: 400px;
                     }
                 
                     /* IF not left sidebar */
-                    main:not(.ls-left-sidebar-open) div#today-queries+div.flex.flex-col {
+                    body[data-page="home"] main:not(.ls-left-sidebar-open) div#today-queries+div.flex.flex-col {
                         width: 460px;
                     }
                 
                     /* IF Not left sidebar */
-                    main:not(.ls-left-sidebar-open) div#today-queries+div.flex.flex-col:hover {
+                    body[data-page="home"] main:not(.ls-left-sidebar-open) div#today-queries+div.flex.flex-col:hover {
                         width: 560px;
                         margin-right: -100px;
                         z-index: var(--ls-z-index-level-1);
                     }
                     /* journal queries space */
                     /* IF Not right sidebar */
-                    main:not(.ls-right-sidebar-open) div#journals {
+                    body[data-page="home"] main:not(.ls-right-sidebar-open) div#journals {
                         margin-right: 360px;
                     }
                 
                     /* IF Not left sidebar*/
-                    main:not(.ls-left-sidebar-open) div#journals {
+                    body[data-page="home"] main:not(.ls-left-sidebar-open) div#journals {
                         margin-right: 430px;
                     }
                 
                 }
 
                 @media screen and (min-width: 2260px) {
-                    main div#journals div.journal>div.flex.flex-col:first-child {
+                    body[data-page="home"] main div#journals div.journal>div.flex.flex-col:first-child {
                         max-width: 1250px;
                     }
                 
-                    main:not(.ls-right-sidebar-open) div#journals div.journal>div.flex.flex-col:first-child {
+                    body[data-page="home"] main:not(.ls-right-sidebar-open) div#journals div.journal>div.flex.flex-col:first-child {
                         margin-left: 4em;
                     }
                 
                     /* SCHEDULED AND DEADLINE */
-                    main div#journals div#today-queries+div.flex.flex-col {
+                    body[data-page="home"] main div#journals div#today-queries+div.flex.flex-col {
                         right: 525px;
                     }
                     
                     /* journal queries space */
 
-                    main div#journals div#today-queries {
+                    body[data-page="home"] main div#journals div#today-queries {
                         width: 500px;
                     }
 
                     /* IF Not right sidebar */
-                    main:not(.ls-right-sidebar-open) div#journals {
+                    body[data-page="home"] main:not(.ls-right-sidebar-open) div#journals {
                         margin-right: 500px;
                     }
                 
                     /* IF Not left sidebar*/
-                    main:not(.ls-left-sidebar-open) div#journals {
+                    body[data-page="home"] main:not(.ls-left-sidebar-open) div#journals {
                         margin-right: 560px;
                     }
                 }
                 
                 @media screen and (min-width: 2800px) {
-                    div#journals div.journal>div.flex.flex-col:first-child {
+                    body[data-page="home"] div#journals div.journal>div.flex.flex-col:first-child {
                         min-width: 1200px;
                         max-width: 1430px;
                     }
                     /* SCHEDULED AND DEADLINE */
-                    main div#journals div#today-queries+div.flex.flex-col {
+                    body[data-page="home"] main div#journals div#today-queries+div.flex.flex-col {
                         right: 620px;
                     }
                     /* journal queries space */
 
-                    main div#journals div#today-queries {
+                    body[data-page="home"] main div#journals div#today-queries {
                         width: 620px;
                     }
 
                     /* IF Not right sidebar */
-                    main:not(.ls-right-sidebar-open) div#journals {
+                    body[data-page="home"] main:not(.ls-right-sidebar-open) div#journals {
                         margin-right: 620px;
                     }
                 
                     /* IF Not left sidebar*/
-                    main:not(.ls-left-sidebar-open) div#journals {
+                    body[data-page="home"] main:not(.ls-left-sidebar-open) div#journals {
                         margin-right: 680px;
                     }
                 }
         `);
-
-
-    } else {
-
-        //journal queries Not Side
-
-        logseq.provideStyle(String.raw`
-            @media screen and (min-width: 1850px) {
-            /*
-        
-            SCHEDULED AND DEADLINE
-            
-            */
-        
-            main:not(.ls-right-sidebar-open) div#journals div#today-queries+div.flex.flex-col {
-                position: fixed;
-                bottom: 1em;
-                right: 1em;
-                padding: 0.3em;
-                width: 560px;
-                outline: 3px solid var(--ls-guideline-color);
-                outline-offset: 3px;
-                border-radius: 1.2em;
-                background: unset;
-                backdrop-filter: blur(40px);
-                font-size: small;
-                max-height: 30vh;
-                overflow: auto;
-                z-index: 1;
-            }
-        
-            /* CANCEL IF right sidebar */
-            main.ls-right-sidebar-open div#journals div#today-queries+div.flex.flex-col {
-                display: none;
-            }
-
-            /* hover */
-            main div#journals div#today-queries+div.flex.flex-col:hover {
-                z-index: var(--ls-z-index-level-1);
-            }
-
-            /* CANCEL IF PDF-view CANCEL */
-            body.is-pdf-active div#journals div#today-queries+div.flex.flex-col {
-                display: none;
-            }
-            /*
-    
-            Journal queries
-            
-            */
-            /* IF Not right sidebar */
-            main:not(.ls-right-sidebar-open) div#journals div#today-queries {
-                max-width: 900px;
-                max-height: 800px;
-                overflow-y: auto;
-                font-size: smaller;
-                outline: 3px solid var(--ls-guideline-color);
-                outline-offset: 2px;
-                border-radius: 0.6em;
-                padding-left: 3em;
-                margin-left: 9em;
-            }
-        }
-            `);
-    }
 
     //switch right sidebar
 
@@ -936,70 +836,74 @@ const main = () => {
 
             @media screen and (min-width: 1850px) {
 
-                /* ELSE Page right-space */
-                body:not(.is-pdf-active) main:not(.ls-right-sidebar-open) div#main-content-container div.relative+div.references.mt-6.flex-1.flex-row,
-                body:not(.is-pdf-active) main:not(.ls-right-sidebar-open) div#main-content-container div.page-hierarchy {
+                body[data-page="page"] main.ls-wide-mode div#main-content-container div.cp__sidebar-main-content {
+                    max-width: 1450px;
+                }
+
+                body[data-page="page"]:not(.is-pdf-active) main:not(.ls-right-sidebar-open) div#main-content-container div.flex-1.page.relative {
+                    margin-bottom: 2em;
+                    margin-top: 2em;
+                    margin-left: 1.5em;
+                }
+            
+                /* right-space */
+                body[data-page="page"]:not(.is-pdf-active) main:not(.ls-right-sidebar-open) div#main-content-container div.relative+div.references.mt-6.flex-1.flex-row,
+                body[data-page="page"]:not(.is-pdf-active) main:not(.ls-right-sidebar-open) div#main-content-container div.page-hierarchy {
                     position: fixed;
+                    width: 390px;
                     max-height: 40vh;
                     overflow-y: auto;
                     padding: 1.5em;
                     font-size: 0.95em;
                     background-color: var(--ls-primary-background-color);
                     border-radius: 10px;
-                    z-index: 1;
-                }  
+                }
             
                 /* Pages-tagged-with */
-                body:not(.is-pdf-active) main:not(.ls-right-sidebar-open) div#main-content-container div.relative+div.references.mt-6.flex-1.flex-row {
+                body[data-page="page"]:not(.is-pdf-active) main:not(.ls-right-sidebar-open) div#main-content-container div.relative+div.references.mt-6.flex-1.flex-row {
                     top: 6.5em;
                     right: 1em;
                 }
             
-                body.is-pdf-active div#main-content-container div.relative+div.references.mt-6.flex-1.flex-row,
-                main.ls-right-sidebar-open div#main-content-container div.relative+div.references.mt-6.flex-1.flex-row {
-                    display: none;
-                }
-            
-                body:not(.is-tabs-loaded.is-pdf-active) main:not(.ls-right-sidebar-open) div#main-content-container div.relative+div.references.mt-6.flex-1.flex-row {
+                body[data-page="page"]:not(.is-tabs-loaded.is-pdf-active) main:not(.ls-right-sidebar-open) div#main-content-container div.relative+div.references.mt-6.flex-1.flex-row {
                     top: 4.5em;
                 }
             
                 /* page-hierarchy */
-                body:not(.is-pdf-active) div#main-content-container div.page-hierarchy,
-                main:not(.ls-right-sidebar-open) div#main-content-container div.page-hierarchy {
+                body[data-page="page"]:not(.is-pdf-active) div#main-content-container div.page-hierarchy,
+                body[data-page="page"]:not(.ls-right-sidebar-open) div#main-content-container div.page-hierarchy {
                     right: 1em;
                     bottom: 3em;
-                }
-            
-                body.is-pdf-active div#main-content-container div.page-hierarchy,
-                main.ls-right-sidebar-open div#main-content-container div.page-hierarchy {
-                    display: none;
                 }    
-
+            
             }
-            @media screen and (min-width: 1850px) and (max-width: 2259px) {
-                /* ELSE Page right-space */
-                body:not(.is-pdf-active) main:not(.ls-right-sidebar-open) div#main-content-container div.relative+div.references.mt-6.flex-1.flex-row,
-                body:not(.is-pdf-active) main:not(.ls-right-sidebar-open) div#main-content-container div.page-hierarchy {
-                    width: 400px;
-                }
 
-                /* ELSE pages */
-                main:not(.ls-right-sidebar-open) div#main-content-container div.flex-1.page.relative {
-                    margin-right: 404px;
+            
+            @media screen and (min-width: 1850px) and (max-width: 2259px) {
+
+                body[data-page="page"]:not(.is-pdf-active) main:not(.ls-right-sidebar-open) div#main-container {
+                    padding-right: 424px;
                 }
+        
+                /* Contents Page */
+                body[data-page="page"]:not(.is-pdf-active) main:not(.ls-right-sidebar-open) div#main-content-container div.relative+div.references.mt-6.flex-1.flex-row,
+                body[data-page="page"]:not(.is-pdf-active) main:not(.ls-right-sidebar-open) div#main-content-container div.page-hierarchy {
+                    width: 420px;
+                }
+        
             }
             @media screen and (min-width: 2260px) {
-
-                main:not(.ls-right-sidebar-open) div#main-content-container div.flex-1.page.relative {
-                    margin-right: 680px;
+        
+                body[data-page="page"]:not(.is-pdf-active) main:not(.ls-right-sidebar-open) div#main-container {
+                    padding-right: 684px;
                 }
-
-                div#main-content-container div.relative+div.references.mt-6.flex-1.flex-row,
-                div#main-content-container div.page-hierarchy {
+        
+                /* Contents Page */
+                body[data-page="page"]:not(.is-pdf-active) main:not(.ls-right-sidebar-open) div#main-content-container div.relative+div.references.mt-6.flex-1.flex-row,
+                body[data-page="page"]:not(.is-pdf-active) main:not(.ls-right-sidebar-open) div#main-content-container div.page-hierarchy {
                     width: 680px;
                 }
-
+            
             }
     `);
 
@@ -1008,15 +912,23 @@ const main = () => {
         //Bottom
     } else if (TagsHierarchy === "Bottom") {
         logseq.provideStyle(String.raw`
+
+            /* Bottom < 1624 */
             @media screen and (min-width: 1850px) {
-                body:not(.is-pdf-active) main:not(.ls-right-sidebar-open) div#main-content-container div.flex-1.page.relative {
+                
+                body[data-page="page"] div#main-content-container div.cp__sidebar-main-content {
+                    max-width: 1450px;
+                }
+
+                body[data-page="page"]:not(.is-pdf-active) main:not(.ls-right-sidebar-open) div#main-content-container div.flex-1.page.relative {
                     margin-bottom: 2em;
                     margin-top: 2em;
                     margin-left: 1.5em;
                 }
+            
                 /* right-space */
-                body:not(.is-pdf-active) main:not(.ls-right-sidebar-open) div#main-content-container div.relative+div.references.mt-6.flex-1.flex-row,
-                body:not(.is-pdf-active) main:not(.ls-right-sidebar-open) div#main-content-container div.page-hierarchy {
+                body[data-page="page"]:not(.is-pdf-active) main:not(.ls-right-sidebar-open) div#main-content-container div.relative+div.references.mt-6.flex-1.flex-row,
+                body[data-page="page"]:not(.is-pdf-active) main:not(.ls-right-sidebar-open) div#main-content-container div.page-hierarchy {
                     position: fixed;
                     max-height: 210px;
                     width: 42vw;
@@ -1027,18 +939,21 @@ const main = () => {
                     border-radius: 10px;
                     z-index: var(--ls-z-index-level-3);
                 }
+            
                 /* Pages-tagged-with */
-                body:not(.is-pdf-active) main:not(.ls-right-sidebar-open) div#main-content-container div.relative+div.references.mt-6.flex-1.flex-row {
+                body[data-page="page"]:not(.is-pdf-active) main:not(.ls-right-sidebar-open) div#main-content-container div.relative+div.references.mt-6.flex-1.flex-row {
                     bottom: 0;
                     right: 0.3em;
                 }
+            
                 /* page-hierarchy */
-                body:not(.is-pdf-active) div#main-content-container div.page-hierarchy,
-                main:not(.ls-right-sidebar-open) div#main-content-container div.page-hierarchy {
+                body[data-page="page"]:not(.is-pdf-active) div#main-content-container div.page-hierarchy,
+                body[data-page="page"] main:not(.ls-right-sidebar-open) div#main-content-container div.page-hierarchy {
                     right: 42vw;
                     bottom: 0;
                 }
             }
+    
     `);
     }
 

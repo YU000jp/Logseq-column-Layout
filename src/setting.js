@@ -36,17 +36,17 @@ export const settingUI = () => {
             description: "",
         },
         {
-            key: "switchLinkedReferences",
-            title: "Linked References Side by side  *",
+            key: "switchPageLinkedReferences",
+            title: "Page Linked References height limit  *",
             type: "enum",
-            enumChoices: ["Side"], //normal
+            enumChoices: ["Enable","Normal"],
             enumPicker: "radio",
-            default: "Side",
+            default: "Enable",
             description: "",
         },
         {
-            key: "switchJournalQueries",
-            title: "Journal Queries Side by side  *",
+            key: "switchLinkedReferences",
+            title: "Linked References Side by side  *",
             type: "enum",
             enumChoices: ["Side"], //normal
             enumPicker: "radio",
