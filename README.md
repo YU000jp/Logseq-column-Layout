@@ -8,6 +8,9 @@
 
 ![スクリーンショット 2022-10-14 0207414](https://user-images.githubusercontent.com/111847207/195663729-7c979e9e-9309-4f0b-9766-581778c5aaa7.png)
 
+![image](https://user-images.githubusercontent.com/111847207/206630653-c12bb5da-c0df-4f1b-8819-09d5090fd593.png)
+
+
 ## What can do
 
 ### Journals 📚
