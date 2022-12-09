@@ -227,6 +227,11 @@ const main = () => {
             body[data-page="page"] div#right-sidebar div.page-hierarchy {
                 display: none;
             }
+
+            div#main-container div.cp__sidebar-main-content {
+                max-width: unset;
+            }
+        
         }
     `);
 
@@ -601,10 +606,6 @@ const main = () => {
         logseq.provideStyle(String.raw`
 
         @media screen and (min-width: 1850px) {
-
-            div#main-container div.cp__sidebar-main-content {
-                max-width: unset;
-            }
         
             /* Contents Page */
             body[data-page="home"]:not(.is-pdf-active) main:not(.ls-right-sidebar-open) div#main-content-container div.relative+div.references.mt-6.flex-1.flex-row,
