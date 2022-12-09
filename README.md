@@ -51,14 +51,9 @@
 
 ![Animation2](https://user-images.githubusercontent.com/111847207/200146804-e0e53c12-933a-417e-b19a-e9e782e1c492.gif)
 
-### Content page (non-journal)
+### Content page (non-journals)
 
 - Display "page-tags" and "page-hierarchy" ([logseq-page-tags-and-hierarchy](https://github.com/YU000jp/logseq-page-tags-and-hierarchy))
-
-- "Linked References" side by side (only Wide-mode). If the display space is small, hold down ⌨️`Shift` and click to open it in the right sidebar.
-- Wide mode(⌨️`t w`) is recommended if you want to use Linked References side by side. Journals will be left justified.
-
- ![image](https://user-images.githubusercontent.com/111847207/200147083-f2ff65dd-0ba4-49eb-986c-c384178f9354.png)
 
 ### Right-click context menu🖱️
 
@@ -73,6 +68,8 @@
 #### 🔵🟣LATER as reference
 
 #### ❌ Delete this block
+
+#### 🟢 Open on right sidebar
 
 ## ⚠️Attentionally
 
