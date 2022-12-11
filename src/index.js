@@ -253,7 +253,6 @@ const main = () => {
         
             body[data-page="home"] div.journal>div.flex.flex-col:first-child {
                 margin-left: 1em;
-                min-width: 1000px;
                 flex: 1;
             }
         
@@ -308,7 +307,6 @@ const main = () => {
                 max-width: 670px;
                 overflow-x: visible;
                 z-index: var(--ls-z-index-level-1);
-                padding-bottom: 4em;
             }
         
             /* CANCEL IF right-sidebar */
@@ -320,12 +318,6 @@ const main = () => {
             body[data-page="home"] body.is-pdf-active div#journals div.references {
                 display: none;
             }
-        
-            /* IF left-sidebar --> +100px */
-            body[data-page="home"] main:not(.ls-left-sidebar-open) div#journals div.references {
-                max-width: 460px;
-            }
-        
         
             //switch journal queries
             //Side
@@ -375,11 +367,8 @@ const main = () => {
             }
         
             /* CANCEL IF right sidebar */
-            body[data-page="home"] main.ls-right-sidebar-open div#today-queries+div.flex.flex-col {
-                display: none;
-            }
-        
             /* CANCEL IF PDF-view CANCEL */
+            body[data-page="home"] main.ls-right-sidebar-open div#today-queries+div.flex.flex-col,
             body[data-page="home"] body.is-pdf-active div#today-queries+div.flex.flex-col {
                 display: none;
             }
@@ -404,11 +393,8 @@ const main = () => {
             }
         
             /* CANCEL IF right-sidebar */
-            body[data-page="home"] main.ls-right-sidebar-open div#root div#journals div#today-queries {
-                display: none;
-            }
-        
             /* CANCEL IF PDF-view */
+            body[data-page="home"] main.ls-right-sidebar-open div#root div#journals div#today-queries,
             body[data-page="home"].is-pdf-active div#root div#journals div#today-queries {
                 display: none;
             }
@@ -416,11 +402,6 @@ const main = () => {
             /* IF tabs-plugin */
             body[data-page="home"].is-tabs-loaded div#root div#journals div#today-queries {
                 top: calc(var(--ls-headbar-height) + var(--ls-headbar-inner-top-padding) + 40px);
-            }
-        
-            /* IF left-sidebar */
-            body[data-page="home"] main:not(.ls-left-sidebar-open) div#today-queries {
-                width: 470px;
             }
         
             /* Task in query --> bold */
@@ -492,35 +473,41 @@ const main = () => {
             }
         }
         
-        @media screen and (min-width: 1850px) and (max-width: 2259px) {
+
+
+        @media screen and (min-width: 1850px) and (max-width: 1910px) {
+            body[data-page="home"] div.journal>div.flex.flex-col:first-child {
+                min-width: 850px;
+            }
             /* SCHEDULED AND DEADLINE */
-        
-            /* IF left sidebar */
-            body[data-page="home"] main.ls-left-sidebar-open div#today-queries+div.flex.flex-col:hover {
-                width: 560px;
-                margin-right: -160px;
-            }
-        
-            /* IF not left sidebar*/
-            body[data-page="home"] main:not(.ls-left-sidebar-open) div#today-queries+div.flex.flex-col {
-                right: 470px;
-            }
-        
-            body[data-page="home"] main:not(.ls-right-sidebar-open) div#today-queries+div.flex.flex-col {
-                right: 395px;
+            body[data-page="home"] div#today-queries+div.flex.flex-col {
                 width: 400px;
             }
-        
-            /* IF not left sidebar */
-            body[data-page="home"] main:not(.ls-left-sidebar-open) div#today-queries+div.flex.flex-col {
+        }
+        @media screen and (min-width: 1911px) and (max-width: 2019px) {
+            body[data-page="home"] div.journal>div.flex.flex-col:first-child {
+                min-width: 920px;
+            }
+            /* SCHEDULED AND DEADLINE */
+            body[data-page="home"] div#today-queries+div.flex.flex-col {
                 width: 460px;
             }
-        
-            /* IF Not left sidebar */
-            body[data-page="home"] main:not(.ls-left-sidebar-open) div#today-queries+div.flex.flex-col:hover {
-                width: 560px;
-                margin-right: -100px;
-                z-index: var(--ls-z-index-level-1);
+        }
+        @media screen and (min-width: 2020px) {
+            body[data-page="home"] div.journal>div.flex.flex-col:first-child {
+                min-width: 1000px;
+            }
+            /* SCHEDULED AND DEADLINE */
+            body[data-page="home"] div#today-queries+div.flex.flex-col {
+                width: 520px;
+            }
+        }
+
+        @media screen and (min-width: 1850px) and (max-width: 2259px) {
+
+            /* SCHEDULED AND DEADLINE */
+            body[data-page="home"] div#today-queries+div.flex.flex-col {
+                right: 400px;
             }
         
             /* journal queries space */
@@ -529,8 +516,7 @@ const main = () => {
                 margin-right: 360px;
             }
         
-            /* IF Not left sidebar*/
-            body[data-page="home"] main:not(.ls-left-sidebar-open) div#journals {
+            body[data-page="home"] div#journals {
                 margin-right: 430px;
             }
         
@@ -561,8 +547,7 @@ const main = () => {
                 margin-right: 500px;
             }
         
-            /* IF Not left sidebar*/
-            body[data-page="home"] main:not(.ls-left-sidebar-open) div#journals {
+            body[data-page="home"] div#journals {
                 margin-right: 560px;
             }
         }
@@ -575,7 +560,7 @@ const main = () => {
         
             /* SCHEDULED AND DEADLINE */
             body[data-page="home"] main div#journals div#today-queries+div.flex.flex-col {
-                right: 620px;
+                right: 640px;
             }
         
             /* journal queries space */
@@ -589,8 +574,7 @@ const main = () => {
                 margin-right: 620px;
             }
         
-            /* IF Not left sidebar*/
-            body[data-page="home"] main:not(.ls-left-sidebar-open) div#journals {
+            body[data-page="home"] div#journals {
                 margin-right: 680px;
             }
         }
