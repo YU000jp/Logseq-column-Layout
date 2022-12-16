@@ -973,7 +973,9 @@ const main = () => {
                 }
             
                 div#right-sidebar div.relative+div.references.mt-6.flex-1.flex-row,
-                div#right-sidebar div.page-hierarchy {
+                div#right-sidebar div.page-hierarchy,
+                div#right-sidebar div.sidebar-item div.is-journals div.relative+div.flex.flex-col,
+                main.ls-right-sidebar-open div#today-queries {
                     display: none;
                 }
             
@@ -1011,10 +1013,12 @@ const main = () => {
                     justify-content: left;
                     padding-left: 1em;
                 }
-            
-                div#right-sidebar div.sidebar-item div.is-journals div.relative+div.flex.flex-col {
-                    display: none;
+
+                main.ls-right-sidebar-open div[data-modal-name="page-search"] {
+                    transform: unset !important;
+                    left: unset;
                 }
+            
             
                 /* ELSE PDF view & right sidebar */
                 body:not(.is-pdf-active) main:not(.ls-right-sidebar-open) div#main-content-container div.flex-1.page.relative {
