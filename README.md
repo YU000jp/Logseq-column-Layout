@@ -63,9 +63,11 @@
 
 #### 🔵🟣Link as reference
 
-- Mouse drag the block to move it to the journal.
+- Mouse drag a bullet for the block to move it into the journal.
 
 #### 🔵🟣LATER as reference
+
+- As a LATER task, do the repeat task to record in the journal,
 
 #### ❌ Delete this block
 
