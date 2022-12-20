@@ -711,7 +711,7 @@ const main = () => {
         
             /* journal queries */
             body[data-page="home"]:not(.is-pdf-active) main:not(.ls-right-sidebar-open) div#today-queries {
-                width: 704px;
+                width: 620px;
             }
         
             /* SCHEDULED AND DEADLINE */
