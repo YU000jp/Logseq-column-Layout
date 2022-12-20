@@ -71,8 +71,6 @@
 
 #### ❌ Delete this block
 
-#### 🟢 Open on right sidebar
-
 ## ⚠️Attentionally
 
 - Some plugins are not supported. (Let me know on [GitHub](https://github.com/YU000jp/Logseq-column-Layout/issues).)

@@ -70,12 +70,6 @@ const main = () => {
             console.log(`#${pluginId}: delete the block`);
         });
 
-        /* ContextMenuItem right-sidebar */
-        logseq.Editor.registerBlockContextMenuItem('🟢Open at right sidebar', async ({ uuid }) => {
-            logseq.App.openInRightSidebar(uuid);
-            logseq.UI.showMsg("🟢Open at right sidebar");
-            console.log(`#${pluginId}: 🟢Open at right sidebar`);
-        });
     }
 
 
@@ -332,7 +326,6 @@ const main = () => {
         Journal-queries space
         */
         
-            /* IF Not right sidebar */
             body[data-page="home"]:not(.is-pdf-active) main:not(.ls-right-sidebar-open) div#journals div.block-children-container {
                 display: block;
             }
@@ -512,9 +505,6 @@ const main = () => {
         @media screen and (min-width: 2260px) {
             body[data-page="home"]:not(.is-pdf-active) main:not(.ls-right-sidebar-open) div#journals div.journal>div.flex.flex-col:first-child {
                 max-width: 1250px;
-            }
-        
-            body[data-page="home"]:not(.is-pdf-active) main:not(.ls-right-sidebar-open) div#journals div.journal>div.flex.flex-col:first-child {
                 margin-left: 4em;
             }
         
