@@ -105,24 +105,6 @@ const main = () => {
                 background-color: unset;
             }
             
-            /* Non fix (TODO) */
-            /* CANCEL double time picker */
-            div#right-sidebar div#date-time-picker {
-                display: block;
-                position: fixed;
-                width: 300px;
-                background: var(--color-level-1);
-                z-index: var(--ls-z-index-level-4);
-            }
-            
-            div.timestamp div#date-time-picker:nth-of-type(2),
-            div.timestamp div#date-time-picker:nth-of-type(3) {
-                display: block;
-                position: absolute;
-                width: 400px;
-                background: var(--color-level-1);
-            }
-            
             div#time-repeater {
                 min-width: 200px;
             }
@@ -225,9 +207,17 @@ const main = () => {
             div#main-container div.cp__sidebar-main-content {
                 max-width: unset;
             }
+            
+            div.timestamp div#date-time-picker:nth-of-type(2),
+            div.timestamp div#date-time-picker:nth-of-type(3) {
+                display: block;
+                position: absolute;
+                width: 400px;
+                background: var(--color-level-1);
+            }
 
             /* date-picker issue https://github.com/YU000jp/Logseq-column-Layout/issues/4 */
-            div#main-content-container div.timestamp div#date-time-picker {
+            div.timestamp div#date-time-picker {
                 top: 3.8em;
                 z-index: 11;
             }
@@ -991,7 +981,16 @@ const main = () => {
                     margin-bottom: 2em;
                     margin-top: 2em;
                     margin-left: 1.5em;
-                }            
+                }           
+                
+                /* Non fix (TODO) */
+                /* CANCEL double time picker */
+                div#right-sidebar div#date-time-picker {
+                    width: 300px;
+                    background: var(--color-level-1);
+                    z-index: var(--ls-z-index-level-4);
+                }
+
             }
     `);
     }
