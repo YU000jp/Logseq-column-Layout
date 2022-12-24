@@ -225,7 +225,12 @@ const main = () => {
             div#main-container div.cp__sidebar-main-content {
                 max-width: unset;
             }
-        
+
+            /* date-picker issue https://github.com/YU000jp/Logseq-column-Layout/issues/4 */
+            div#main-content-container div.timestamp div#date-time-picker {
+                top: 3.8em;
+                z-index: 11;
+            }
         }
     `);
 
