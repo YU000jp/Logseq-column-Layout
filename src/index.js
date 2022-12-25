@@ -219,6 +219,10 @@ const main = () => {
                 top: 3.8em;
                 z-index: 11;
             }
+
+            div.date-picker {
+                width: 280px;
+            }
         }
     `);
 
