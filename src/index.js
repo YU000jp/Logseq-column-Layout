@@ -195,12 +195,12 @@ const main = () => {
             }
 
             /* page-tags and hierarchy CANCEL PDF view & right sidebar */
-            body[data-page="page"].is-pdf-active div#main-content-container div.relative+div.references.mt-6.flex-1.flex-row,
-            body[data-page="page"] main.ls-right-sidebar-open div#main-content-container div.relative+div.references.mt-6.flex-1.flex-row,
-            body[data-page="page"].is-pdf-active div#main-content-container div.page-hierarchy,
-            body[data-page="page"] main.ls-right-sidebar-open div#main-content-container div.page-hierarchy,
-            body[data-page="page"] div#right-sidebar div.relative+div.references.mt-6.flex-1.flex-row,
-            body[data-page="page"] div#right-sidebar div.page-hierarchy {
+            body.is-pdf-active div#main-content-container div.relative+div.references.mt-6.flex-1.flex-row,
+            main.ls-right-sidebar-open div#main-content-container div.relative+div.references.mt-6.flex-1.flex-row,
+            body.is-pdf-active div#main-content-container div.page-hierarchy,
+            main.ls-right-sidebar-open div#main-content-container div.page-hierarchy,
+            div#right-sidebar div.relative+div.references.mt-6.flex-1.flex-row,
+            div#right-sidebar div.page-hierarchy {
                 display: none;
             }
 
@@ -210,8 +210,6 @@ const main = () => {
             
             div.timestamp div#date-time-picker:nth-of-type(2),
             div.timestamp div#date-time-picker:nth-of-type(3) {
-                display: block;
-                position: absolute;
                 width: 400px;
                 background: var(--color-level-1);
             }
