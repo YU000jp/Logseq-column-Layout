@@ -15,7 +15,7 @@ export const settingUI = () => {
             enumChoices: ["enable", "disable"],
             enumPicker: "radio",
             default: "enable",
-            description: "`DONE with completed`,`Link as reference`,`LATER as reference`,`Delete this block`",
+            description: "`Link as reference`,`LATER as reference`,`Delete this block`",
         },
         {
             key: "switchRightSidebar",

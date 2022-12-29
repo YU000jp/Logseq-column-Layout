@@ -51,7 +51,7 @@ const main = () => {
         });
         //end
 
-        /* ContextMenuItem for DONE */
+        /* ContextMenuItem for DONE
         logseq.Editor.registerBlockContextMenuItem('✔️ DONE (completed property)', async (e) => {
             const uuid = e.uuid;
             const block = await logseq.Editor.getBlock(uuid);
@@ -64,10 +64,10 @@ const main = () => {
             const newRawContent = block.content.replace(new RegExp(`^${block.marker}`), `DONE`);
             await logseq.Editor.updateBlock(uuid, newRawContent);
             logseq.Editor.upsertBlockProperty(uuid, `completed`, todayDateInUserFormat);
-            /* (scheduled deadline remove) -----TODO*/
+            //(scheduled deadline remove)
             logseq.UI.showMsg(`${block.marker} → ✔️ DONE (completed property)`, 'success');
             console.log(`#${pluginId}: ✔️ DONE (completed property)`);
-        });
+        }); */
 
         /* ContextMenuItem reference */
         logseq.Editor.registerBlockContextMenuItem('🔵🟣Link as reference', async (e) => {

@@ -56,10 +56,6 @@
 
 ### Right-click context menu🖱️
 
-#### ✔️ DONE with completed
-
-- Add a completed property with DONE [Credit: logseq-plugin-task-check-date](https://github.com/DimitryDushkin/logseq-plugin-task-check-date)
-
 #### 🔵🟣Link as reference
 
 - Mouse drag a bullet for the block to move it into the journal.
