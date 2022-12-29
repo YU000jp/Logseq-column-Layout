@@ -37,7 +37,7 @@
 
 ### Journal queries
 
-- Change the journal query to get more task management.
+- To get more task management
 - On Logseq, edit `config.edn` file. [For more details refer to this link(sample code)](https://github.com/YU000jp/logseq-default-queries-journals)
 
 ![Animation1](img/journal-queries-demo.gif)
