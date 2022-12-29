@@ -10,7 +10,7 @@ export const settingUI = () => {
         },
         {
             key: "switchContext",
-            title: "Add functionality context menu *",
+            title: "Add functionality context menu && Turn on DONE task completed (date) property *",
             type: "enum",
             enumChoices: ["enable", "disable"],
             enumPicker: "radio",

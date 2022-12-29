@@ -10,7 +10,6 @@
 
 ![image](https://user-images.githubusercontent.com/111847207/206630653-c12bb5da-c0df-4f1b-8819-09d5090fd593.png)
 
-
 ## What can do
 
 ### Journals 📚
@@ -22,9 +21,9 @@
 
 ### Linked reference
 
-#### Suitable for [logseq Omnivore plugin](https://github.com/omnivore-app/logseq-omnivore) 🚩
+#### Suitable for [logseq Omnivore plugin](https://github.com/omnivore-app/logseq-omnivore)
 
-- Omnivore is a **webclipping tool** that can be quoted to Logseq.
+- Omnivore is a **WebClipping tool** that can be quoted to Logseq.
 - You can see the table of web clips for the day next to the journal, so it's easy to access. (View `substack.com` newsletter)
 
 #### As a list for inclusion in the next journal 📅
@@ -33,7 +32,9 @@
 
 #### View completed tasks ✅
 
-- Try using [logseq task completion tracker plugin](https://github.com/DimitryDushkin/logseq-plugin-task-check-date).
+- After DONE, a dialog will appear asking if you want to add a completed property.
+
+- Credit [logseq task completion tracker plugin](https://github.com/DimitryDushkin/logseq-plugin-task-check-date).
 
 ### Journal queries
 
@@ -71,7 +72,7 @@
 
 #### ❌ Delete this block
 
-## ⚠️Attentionally
+## ⚠️Remarks
 
 - The Linked Reference space is blank if there are no tasks in Logseq.
 - Linked reference from journal are limited to dates other than today.
