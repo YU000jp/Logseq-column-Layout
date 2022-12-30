@@ -1,0 +1,119 @@
+import { getDateForPage } from 'logseq-dateutils';
+
+export const TurnOnFunction = () => {
+
+    //switch contextmenu
+    const switchCompletedDialog = logseq.settings.switchCompletedDialog || "";
+    if (switchCompletedDialog === undefined || switchCompletedDialog === "enable") {
+
+        //add completed property to done task
+        //https://github.com/DimitryDushkin/logseq-plugin-task-check-date
+        const TASK_MARKERS = new Set(["DONE", "NOW", "LATER", "TODO", "DOING"]);//require
+        logseq.DB.onChanged(async (e) => {
+
+            const taskBlock = e.blocks.find((block) => TASK_MARKERS.has(block.marker));//find task block
+            if (!taskBlock) {
+                return;
+            }
+            const hasCompletedProperty = taskBlock.properties?.completed;
+            if (taskBlock.marker === "DONE") {
+                if (hasCompletedProperty === undefined) {
+                    const userConfigs = await logseq.App.getUserConfigs();
+                    const preferredDateFormat = userConfigs.preferredDateFormat;
+                    const datePage = getDateForPage(new Date(), preferredDateFormat);
+                    setTimeout(function () {
+                        if (window.confirm('Turn on completed (date) property?')) {
+                            logseq.Editor.restoreEditingCursor();
+                            logseq.Editor.upsertBlockProperty(taskBlock.uuid, "completed", datePage);
+                        } else {
+                            //user cancel in dialog
+                        }
+                    }, 500);
+                } else {
+                    //done && undefined
+                }
+            } else {
+                logseq.Editor.removeBlockProperty(taskBlock.uuid, "completed");
+            }
+
+        });
+        //end
+
+    }
+
+    //switch contextmenu
+    const SwitchContextMenu = logseq.settings.switchContext || "";
+    if (SwitchContextMenu === undefined || SwitchContextMenu === "enable") {
+
+        /* ContextMenuItem for DONE
+        logseq.Editor.registerBlockContextMenuItem('✔️ DONE (completed property)', async (e) => {
+            const uuid = e.uuid;
+            const block = await logseq.Editor.getBlock(uuid);
+            if (!block?.marker) return logseq.UI.showMsg('This block is not a task', 'error');
+            const userConfigs = await logseq.App.getUserConfigs();
+            const preferredDateFormat = userConfigs.preferredDateFormat;
+            const today = new Date();
+            const todayDateInUserFormat = getDateForPage(today, preferredDateFormat);
+            console.log(`#${pluginId}: ${todayDateInUserFormat}`);
+            const newRawContent = block.content.replace(new RegExp(`^${block.marker}`), `DONE`);
+            await logseq.Editor.updateBlock(uuid, newRawContent);
+            logseq.Editor.upsertBlockProperty(uuid, `completed`, todayDateInUserFormat);
+            //(scheduled deadline remove)
+            logseq.UI.showMsg(`${block.marker} → ✔️ DONE (completed property)`, 'success');
+            console.log(`#${pluginId}: ✔️ DONE (completed property)`);
+        }); */
+
+        /* ContextMenuItem reference */
+        logseq.Editor.registerBlockContextMenuItem('🔵🟣Link as reference', async (e) => {
+            const uuid = e.uuid;
+            const userConfigs = await logseq.App.getUserConfigs();
+            const preferredDateFormat = userConfigs.preferredDateFormat;
+            const today = new Date();
+            const todayDateInUserFormat = getDateForPage(today, preferredDateFormat);
+            console.log(`#${pluginId}: ${todayDateInUserFormat}`);
+            setTimeout(function () {
+                const insertObj = logseq.Editor.insertBlock(uuid, `🔵🟣 ((` + uuid + `))`);
+                if (window.confirm('Turn on referenced (date) property?')) {
+                    logseq.Editor.upsertBlockProperty(insertObj.uuid, "referenced", todayDateInUserFormat);
+                } else {
+                    //user cancel in dialog
+                }
+                logseq.App.openInRightSidebar(insertObj.uuid);
+                logseq.UI.showMsg("🔵🟣 Mouse drag the block to move it to the journal.", 'info');
+            }, 500);
+            console.log(`#${pluginId}: Link as reference`);
+        });
+
+        /* ContextMenuItem LATER  */
+        logseq.Editor.registerBlockContextMenuItem('🔵🟣LATER as reference', async (e) => {
+            const uuid = e.uuid;
+            const block = await logseq.Editor.getBlock(uuid);
+            if (block?.marker == "LATER") return logseq.UI.showMsg('This block is LATER', 'error');
+            const userConfigs = await logseq.App.getUserConfigs();
+            const preferredDateFormat = userConfigs.preferredDateFormat;
+            const today = new Date();
+            const todayDateInUserFormat = getDateForPage(today, preferredDateFormat);
+            console.log(`#${pluginId}: ${todayDateInUserFormat}`);
+            const insertObj = await logseq.Editor.insertBlock(uuid, `LATER 🔵🟣 ((` + uuid + `))`);
+            logseq.App.openInRightSidebar(insertObj.uuid);
+            logseq.UI.showMsg("🔵🟣 Mouse drag the block to move it to the journal.", 'info');
+            console.log(`#${pluginId}: 🔵🟣LATER as reference`);
+        });
+
+        /* ContextMenuItem Delete */
+        logseq.Editor.registerBlockContextMenuItem('❌ Delete this block', async (e) => {
+            const uuid = e.uuid;
+            setTimeout(function () {
+                if (window.confirm('Delete the block?')) {
+                    logseq.Editor.removeBlock(uuid);
+                    logseq.UI.showMsg("delete the block");
+                    console.log(`#${pluginId}: delete the block`);
+                } else {
+                    //user cancel in dialog
+                }
+            }, 500);
+        });
+
+    }
+
+};

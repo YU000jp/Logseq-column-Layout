@@ -1,5 +1,7 @@
 export const settingUI = () => {
-    /* https://logseq.github.io/plugins/types/SettingSchemaDesc.html */
+
+    //https://logseq.github.io/plugins/types/SettingSchemaDesc.html
+
     const settingsTemplate = [
         {
             key: "heading00",
@@ -9,8 +11,17 @@ export const settingUI = () => {
             description: "",
         },
         {
+            key: "switchCompletedDialog",
+            title: "Turn on DONE task completed (date) property *",
+            type: "enum",
+            enumChoices: ["enable", "disable"],
+            enumPicker: "radio",
+            default: "enable",
+            description: "Confirm in dialog",
+        },
+        {
             key: "switchContext",
-            title: "Add functionality context menu && Turn on DONE task completed (date) property *",
+            title: "Turn on functionality context menu *",
             type: "enum",
             enumChoices: ["enable", "disable"],
             enumPicker: "radio",
@@ -48,12 +59,13 @@ export const settingUI = () => {
             key: "switchLinkedReferences",
             title: "Linked References Side by side  *",
             type: "enum",
-            enumChoices: ["Side","Normal"],
+            enumChoices: ["Side","Bottom"],
             enumPicker: "radio",
             default: "Side",
             description: "",
         }
     ];
+
     logseq.useSettingsSchema(settingsTemplate);
+    
 };
-/* inputAs: 'textarea', */
