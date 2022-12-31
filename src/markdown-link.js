@@ -38,7 +38,7 @@ async function getTitle(url) {
 
         //https://github.com/polygonplanet/encoding.js
         //title convert UTF-8
-        const matches = Encoding.convert(String, 'UTF8', 'AUTO');
+        const matches = await Encoding.convert(String, 'UTF8', 'AUTO');
 
         if (matches !== null && matches.length > 1 && matches[2] !== null) {
             return decodeHTML(matches[2].trim());
@@ -51,10 +51,15 @@ async function getTitle(url) {
 }
 
 async function convertUrlToMarkdownLink(url, text, urlStartIndex, offset, applyFormat) {
-    const title = await getTitle(url);
+    let title = await getTitle(url);
     if (title === '') {
         return { text, offset };
     }
+    title = title.replace("\n", '');
+    title = title.replace("(", '');
+    title = title.replace(")", '');
+    title = title.replace("[", '');
+    title = title.replace("]", '');
 
     const startSection = text.slice(0, urlStartIndex);
     const wrappedUrl = applyFormat(title, url);
@@ -131,8 +136,8 @@ async function parseBlockForLink(uuid) {
         //dialog
         logseq.showMainUI();
         swal({
-            title: "Convert to markdown link?",
-            text: "",
+            title: "Are you sure?",
+            text: "Convert to markdown link",
             icon: "info",
             buttons: true,
         })
