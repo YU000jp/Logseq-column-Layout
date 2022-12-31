@@ -22,7 +22,7 @@ export const TurnOnFunction = () => {
                     const preferredDateFormat = userConfigs.preferredDateFormat;
                     const datePage = getDateForPage(new Date(), preferredDateFormat);
                     setTimeout(function () {
-                        if (window.confirm('Turn on completed (date) property?')) {
+                        if (confirm('Turn on completed (date) property?')) {
                             logseq.Editor.restoreEditingCursor();
                             logseq.Editor.upsertBlockProperty(taskBlock.uuid, "completed", datePage);
                         } else {
@@ -73,7 +73,7 @@ export const TurnOnFunction = () => {
             console.log(`#${pluginId}: ${todayDateInUserFormat}`);
             setTimeout(function () {
                 const insertObj = logseq.Editor.insertBlock(uuid, `🔵🟣 ((` + uuid + `))`);
-                if (window.confirm('Turn on referenced (date) property?')) {
+                if (confirm('Turn on referenced (date) property?')) {
                     logseq.Editor.upsertBlockProperty(insertObj.uuid, "referenced", todayDateInUserFormat);
                 } else {
                     //user cancel in dialog
@@ -104,13 +104,9 @@ export const TurnOnFunction = () => {
         logseq.Editor.registerBlockContextMenuItem('❌ Delete this block', async (e) => {
             const uuid = e.uuid;
             setTimeout(function () {
-                if (window.confirm('Delete the block?')) {
                     logseq.Editor.removeBlock(uuid);
                     logseq.UI.showMsg("delete the block");
                     console.log(`#${pluginId}: delete the block`);
-                } else {
-                    //user cancel in dialog
-                }
             }, 500);
         });
 
