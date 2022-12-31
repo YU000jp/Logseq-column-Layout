@@ -126,8 +126,8 @@ export const TurnOnFunction = () => {
             const today = new Date();
             const todayDateInUserFormat = getDateForPage(today, preferredDateFormat);
             await logseq.Editor.insertBlock(uuid, `LATER 🔵🟣 ((` + uuid + `))`).then((ee) => {
-            logseq.App.openInRightSidebar(ee.uuid);
-            logseq.UI.showMsg("🔵🟣 Mouse drag the block to move it to the journal.", 'info');
+                logseq.App.openInRightSidebar(ee.uuid);
+                logseq.UI.showMsg("🔵🟣 Mouse drag the block to move it to the journal.", 'info');
             });
         });
 
@@ -152,7 +152,6 @@ export const TurnOnFunction = () => {
                     })
                     .finally(() => {
                         logseq.hideMainUI();
-                        console.log(`#${pluginId}: delete the block`);
                     });
             }, 50);
         });
