@@ -1,4 +1,10 @@
+import '@logseq/libs';
+import { logseq as PL } from "../package.json";
+const pluginId = PL.id;
+
 import { getDateForPage } from 'logseq-dateutils';
+import swal from 'sweetalert';
+
 
 export const TurnOnFunction = () => {
 
@@ -22,13 +28,27 @@ export const TurnOnFunction = () => {
                     const preferredDateFormat = userConfigs.preferredDateFormat;
                     const datePage = getDateForPage(new Date(), preferredDateFormat);
                     setTimeout(function () {
-                        if (confirm('Turn on completed (date) property?')) {
-                            logseq.Editor.restoreEditingCursor();
-                            logseq.Editor.upsertBlockProperty(taskBlock.uuid, "completed", datePage);
-                        } else {
-                            //user cancel in dialog
-                        }
-                    }, 500);
+                        //dialog
+                        logseq.showMainUI();
+                        swal({
+                            title: "Turn on completed (date) property?",
+                            text: "",
+                            icon: "info",
+                            buttons: true,
+                        })
+                            .then((answer) => {
+                                if (answer) {//OK
+                                    logseq.Editor.upsertBlockProperty(taskBlock.uuid, "completed", datePage);
+                                } else {//Cancel
+                                    //user cancel in dialog
+                                }
+                            })
+                            .finally(() => {
+                                logseq.hideMainUI();
+                            });
+                        //dialog end
+                    }, 50);
+
                 } else {
                     //done && undefined
                 }
@@ -70,18 +90,30 @@ export const TurnOnFunction = () => {
             const preferredDateFormat = userConfigs.preferredDateFormat;
             const today = new Date();
             const todayDateInUserFormat = getDateForPage(today, preferredDateFormat);
-            console.log(`#${pluginId}: ${todayDateInUserFormat}`);
-            setTimeout(function () {
-                const insertObj = logseq.Editor.insertBlock(uuid, `🔵🟣 ((` + uuid + `))`);
-                if (confirm('Turn on referenced (date) property?')) {
-                    logseq.Editor.upsertBlockProperty(insertObj.uuid, "referenced", todayDateInUserFormat);
-                } else {
-                    //user cancel in dialog
-                }
-                logseq.App.openInRightSidebar(insertObj.uuid);
-                logseq.UI.showMsg("🔵🟣 Mouse drag the block to move it to the journal.", 'info');
-            }, 500);
-            console.log(`#${pluginId}: Link as reference`);
+            //dialog
+            logseq.showMainUI();
+            swal({
+                title: "Turn on referenced (date) property?",
+                text: "",
+                icon: "info",
+                buttons: true,
+            })
+                .then((answer) => {
+                    logseq.Editor.insertBlock(uuid, `🔵🟣 ((` + uuid + `))`).then((ee) => {
+                        const insertUUID = ee.uuid;
+                        if (answer) {
+                            logseq.Editor.upsertBlockProperty(insertUUID, "referenced", todayDateInUserFormat);
+                        } else {
+                            //user cancel in dialog
+                        }
+                        logseq.App.openInRightSidebar(insertUUID);
+                        logseq.UI.showMsg("🔵🟣 Mouse drag the block to move it to the journal.", 'info');
+                    });
+                })
+                .finally(() => {
+                    logseq.hideMainUI();
+                });
+            //dialog end
         });
 
         /* ContextMenuItem LATER  */
@@ -93,21 +125,36 @@ export const TurnOnFunction = () => {
             const preferredDateFormat = userConfigs.preferredDateFormat;
             const today = new Date();
             const todayDateInUserFormat = getDateForPage(today, preferredDateFormat);
-            console.log(`#${pluginId}: ${todayDateInUserFormat}`);
-            const insertObj = await logseq.Editor.insertBlock(uuid, `LATER 🔵🟣 ((` + uuid + `))`);
-            logseq.App.openInRightSidebar(insertObj.uuid);
+            await logseq.Editor.insertBlock(uuid, `LATER 🔵🟣 ((` + uuid + `))`).then((ee) => {
+            logseq.App.openInRightSidebar(ee.uuid);
             logseq.UI.showMsg("🔵🟣 Mouse drag the block to move it to the journal.", 'info');
-            console.log(`#${pluginId}: 🔵🟣LATER as reference`);
+            });
         });
 
         /* ContextMenuItem Delete */
         logseq.Editor.registerBlockContextMenuItem('❌ Delete this block', async (e) => {
             const uuid = e.uuid;
             setTimeout(function () {
-                    logseq.Editor.removeBlock(uuid);
-                    logseq.UI.showMsg("delete the block");
-                    console.log(`#${pluginId}: delete the block`);
-            }, 500);
+                logseq.showMainUI();
+                swal({
+                    title: "Are you sure?",
+                    text: "delete the block",
+                    icon: "warning",
+                    buttons: true,
+                    dangerMode: true,
+                })
+                    .then((willDelete) => {
+                        if (willDelete) {
+                            logseq.Editor.removeBlock(uuid);
+                        } else {
+                            //user cancel in dialog
+                        }
+                    })
+                    .finally(() => {
+                        logseq.hideMainUI();
+                        console.log(`#${pluginId}: delete the block`);
+                    });
+            }, 50);
         });
 
     }

@@ -1,5 +1,7 @@
 import '@logseq/libs';
+import swal from 'sweetalert';
 import Encoding from 'encoding-japanese';
+
 
 const DEFAULT_REGEX = {
     wrappedInCommand: /(\{\{(video)\s*(https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9]+\.[^\s]{2,}|www\.[a-zA-Z0-9]+\.[^\s]{2,})\s*\}\})/gi,
@@ -126,15 +128,26 @@ async function parseBlockForLink(uuid) {
     }
 
     setTimeout(function () {
-        //ダイアログをつかうと、そのあとフォーカスが元に戻らず文字入力ができなくなる(バグ)
-        //いろいろ試したけど、ダメ
-        //const dialog = confirm("Convert to markdown link?");
-        //    if (dialog === true) {
-                logseq.Editor.updateBlock(uuid, text);
-        //    } else {
-                //done && undefined
-        //    }
-    }, 300);
+        //dialog
+        logseq.showMainUI();
+        swal({
+            title: "Convert to markdown link?",
+            text: "",
+            icon: "info",
+            buttons: true,
+        })
+            .then((answer) => {
+                if (answer) {//OK
+                    logseq.Editor.updateBlock(uuid, text);
+                } else {//Cancel
+                    //user cancel in dialog
+                }
+            })
+            .finally(() => {
+                logseq.hideMainUI();
+            });
+        //dialog end
+    }, 50);
 
 }
 

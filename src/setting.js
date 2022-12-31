@@ -47,6 +47,13 @@ export const settingUI = () => {
             description: "",
         },
         {
+            key: "heading01",
+            title: "Option",
+            type: "heading",
+            default: "",
+            description: "",
+        },
+        {
             key: "switchCompletedDialog",
             title: "Turn on DONE task completed (date) property *",
             type: "enum",
@@ -66,7 +73,7 @@ export const settingUI = () => {
         },
         {
             key: "switchContext",
-            title: "Turn on functionality context menu *",
+            title: "Turn on context menu items *",
             type: "enum",
             enumChoices: ["enable", "disable"],
             enumPicker: "radio",
