@@ -1,4 +1,3 @@
-import '@logseq/libs';
 import swal from 'sweetalert';
 import Encoding from 'encoding-japanese';
 
@@ -159,6 +158,7 @@ async function parseBlockForLink(uuid) {
 
 export const MarkdownLink = () => {
     const blockSet = new Set();
+
     logseq.DB.onChanged(async (e) => {
         if (e.txMeta?.outlinerOp !== 'insertBlocks') {
             blockSet.add(e.blocks[0]?.uuid);
@@ -167,4 +167,17 @@ export const MarkdownLink = () => {
         await blockSet.forEach((uuid) => parseBlockForLink(uuid));
         blockSet.clear();
     });
+
+    /* Block slash command */
+    logseq.Editor.registerSlashCommand('🌐Convert to markdown link (get webpage title)', async (e) => {
+        await blockSet.forEach((uuid) => parseBlockForLink(uuid));
+        blockSet.clear();
+    });
+
+    /* Block ContextMenuItem  */
+    logseq.Editor.registerBlockContextMenuItem('🌐Convert to markdown link', async (e) => {
+        await blockSet.forEach((uuid) => parseBlockForLink(uuid));
+        blockSet.clear();
+    });
+
 };

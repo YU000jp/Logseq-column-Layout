@@ -1,6 +1,3 @@
-import '@logseq/libs';
-
-
 export const ColumnLayoutStyle = () => {
 
 const RightSidebar = logseq.settings.switchRightSidebar || "";

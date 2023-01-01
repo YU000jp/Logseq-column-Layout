@@ -1,4 +1,3 @@
-import '@logseq/libs';
 import { logseq as PL } from "../package.json";
 const pluginId = PL.id;
 
