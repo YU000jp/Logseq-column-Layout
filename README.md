@@ -32,6 +32,10 @@
 
 #### View completed tasks ✅
 
+- The date contained in the completed property acts as a link.
+
+#### DONE dialog for add a completed property
+
 - After DONE a task, a dialog will appear asking if you want to add a completed property. (Credit [logseq task completion tracker plugin](https://github.com/DimitryDushkin/logseq-plugin-task-check-date))
 
 ### Journal queries
