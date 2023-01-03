@@ -6,9 +6,14 @@
 [![latest release version](https://img.shields.io/github/v/release/YU000jp/Logseq-column-Layout)](https://github.com/YU000jp/Logseq-column-Layout/releases)
 [![License](https://img.shields.io/github/license/YU000jp/Logseq-column-Layout?color=blue)](https://github.com/YU000jp/Logseq-column-Layout/blob/main/LICENSE)
 
+## Changelog
+- page-tags and hierarchy display function in content page (non-journals) separate as a plugin [logseq-page-tags-and-hierarchy](https://github.com/YU000jp/logseq-page-tags-and-hierarchy)
+
+## Screenshot
+
 ![スクリーンショット 2022-10-14 0207414](https://user-images.githubusercontent.com/111847207/195663729-7c979e9e-9309-4f0b-9766-581778c5aaa7.png)
 
-![image](https://user-images.githubusercontent.com/111847207/210128570-e0cb6097-ac21-416a-a1a6-69b7be5a2f0b.png)
+![image](https://user-images.githubusercontent.com/111847207/210301409-92ac71e1-3e41-4d5e-836d-303092d5f513.png)
 
 ## What can do
 
@@ -53,10 +58,6 @@
 - Display several pages side by side in right sidebar.
 
 ![Animation2](https://user-images.githubusercontent.com/111847207/200146804-e0e53c12-933a-417e-b19a-e9e782e1c492.gif)
-
-### Content page (non-journals)
-
-- Display "page-tags" and "page-hierarchy" ([logseq-page-tags-and-hierarchy](https://github.com/YU000jp/logseq-page-tags-and-hierarchy))
 
 ### Right-click context menu🖱️
 
