@@ -17,7 +17,7 @@ async function main() {
 
 async function after() {
     console.info(`#${pluginId}: AFTER`); /* -plugin-id */
-    
+
     //lazy loading
     setTimeout(function () {
         TurnOnFunction();
@@ -27,7 +27,28 @@ async function after() {
         settingUI();
     }, 3000);
 
+    parent.document.body.classList.add('is-plugin-column-layout-enabled');
+    logseq.beforeunload(async () => {
+        parent.document.body.classList.remove('is-plugin-column-layout-enabled');
+    });
+    logseq.onSettingsChanged((settings, oldSettings) => {
+        onSettingsChangedCallback(settings, oldSettings);
+    });
     console.info(`#${pluginId}: loaded`);
+}
+
+// Setting changed
+const onSettingsChangedCallback = (newSettings, oldSettings) => {
+    if (oldSettings.switchLinkedReferences !== "Bottom" && newSettings.switchLinkedReferences === "Bottom") {
+        parent.document.body.classList.remove('cl-side');
+    } else if (oldSettings.switchLinkedReferences !== "Side" && newSettings.switchLinkedReferences === "Side") {
+        parent.document.body.classList.add('cl-side');
+    }
+    if (oldSettings.switchRightSidebar !== "normal" && newSettings.switchRightSidebar === "normal") {
+        parent.document.body.classList.remove('cl-switchRightSidebar');
+    } else if (oldSettings.switchRightSidebar !== "original" && newSettings.switchRightSidebar === "original") {
+        parent.document.body.classList.add('cl-switchRightSidebar');
+    }
 }
 
 logseq.ready(main).then(after).catch(console.error);

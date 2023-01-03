@@ -4,15 +4,8 @@ export const settingUI = () => {
 
     const settingsTemplate = [
         {
-            key: "heading00",
-            title: "*Please reboot Logseq to reflect styles.",
-            type: "heading",
-            default: "",
-            description: "",
-        },
-        {
             key: "switchLinkedReferences",
-            title: "[Journals] Linked References *",
+            title: "[Journals] Linked References",
             type: "enum",
             enumChoices: ["Side","Bottom"],
             enumPicker: "radio",
@@ -21,30 +14,12 @@ export const settingUI = () => {
         },
         {
             key: "switchRightSidebar",
-            title: "Side by side in right sidebar *",
+            title: "Side by side in right sidebar",
             type: "enum",
             enumChoices: ["original", "normal"],
             enumPicker: "radio",
             default: "original",
             description: "enable: Pages can be placed side by side in the sidebar",
-        },
-        {
-            key: "switchTagsHierarchy",
-            title: "Page tags and Hierarchy  *",
-            type: "enum",
-            enumChoices: ["Side","Bottom", "normal"],
-            enumPicker: "radio",
-            default: "Side",
-            description: "",
-        },
-        {
-            key: "switchPageLinkedReferences",
-            title: "Page Linked References *",
-            type: "enum",
-            enumChoices: ["Enable","Normal"],
-            enumPicker: "radio",
-            default: "Enable",
-            description: "height limit",
         },
         {
             key: "heading01",
@@ -55,7 +30,7 @@ export const settingUI = () => {
         },
         {
             key: "switchCompletedDialog",
-            title: "Turn on DONE task completed (date) property *",
+            title: "Turn on DONE task completed (date) property",
             type: "enum",
             enumChoices: ["enable", "disable"],
             enumPicker: "radio",
@@ -64,21 +39,12 @@ export const settingUI = () => {
         },
         {
             key: "switchMarkdownLink",
-            title: "Turn on automatic Markdown link *",
+            title: "Turn on automatic Markdown link",
             type: "enum",
             enumChoices: ["enable", "disable"],
             enumPicker: "radio",
             default: "disable",
             description: "Confirm in dialog",
-        },
-        {
-            key: "switchContext",
-            title: "Turn on context menu items *",
-            type: "enum",
-            enumChoices: ["enable", "disable"],
-            enumPicker: "radio",
-            default: "enable",
-            description: "`Link as reference`,`LATER as reference`,`Delete this block`",
         },
     ];
 

@@ -157,7 +157,7 @@ packages:
     dependencies:
       '@lezer/common': 0.15.12
       '@lezer/lr': 0.15.8
-      json5: 2.2.2
+      json5: 2.2.3
     dev: true
 
   /@msgpackr-extract/msgpackr-extract-darwin-arm64/2.2.0:
@@ -321,7 +321,7 @@ packages:
       clone: 2.1.2
       dotenv: 7.0.0
       dotenv-expand: 5.1.0
-      json5: 2.2.2
+      json5: 2.2.3
       msgpackr: 1.8.1
       nullthrows: 1.1.1
       semver: 5.7.1
@@ -665,7 +665,7 @@ packages:
       '@parcel/source-map': 2.1.1
       '@parcel/utils': 2.8.2
       browserslist: 4.21.4
-      json5: 2.2.2
+      json5: 2.2.3
       nullthrows: 1.1.1
       semver: 5.7.1
     transitivePeerDependencies:
@@ -741,7 +741,7 @@ packages:
     engines: {node: '>= 12.0.0', parcel: ^2.8.2}
     dependencies:
       '@parcel/plugin': 2.8.2_@parcel+core@2.8.2
-      json5: 2.2.2
+      json5: 2.2.3
     transitivePeerDependencies:
       - '@parcel/core'
     dev: true
@@ -1260,8 +1260,8 @@ packages:
     resolution: {integrity: sha512-xyFwyhro/JEof6Ghe2iz2NcXoj2sloNsWr/XsERDK/oiPCfaNhl5ONfp+jQdAZRQQ0IJWNzH9zIZF7li91kh2w==}
     dev: true
 
-  /json5/2.2.2:
-    resolution: {integrity: sha512-46Tk9JiOL2z7ytNQWFLpj99RZkVgeHf87yGQKsIkaPz1qSH9UczKH1rO7K3wgRselo0tYMUNfecYpm/p1vC7tQ==}
+  /json5/2.2.3:
+    resolution: {integrity: sha512-XmOWe7eyHYH14cLdVPoyg+GOH3rYX++KpzrylJwSW98t3Nk+U8XOl8FWKOgwtzdb8lXGf6zYwDUzeHMWfxasyg==}
     engines: {node: '>=6'}
     hasBin: true
     dev: true

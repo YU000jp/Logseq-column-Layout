@@ -160,12 +160,14 @@ export const MarkdownLink = () => {
     const blockSet = new Set();
 
     logseq.DB.onChanged(async (e) => {
-        if (e.txMeta?.outlinerOp !== 'insertBlocks') {
-            blockSet.add(e.blocks[0]?.uuid);
-            return;
+        if (logseq.settings.switchMarkdownLink === "enable") {
+            if (e.txMeta?.outlinerOp !== 'insertBlocks') {
+                blockSet.add(e.blocks[0]?.uuid);
+                return;
+            }
+            await blockSet.forEach((uuid) => parseBlockForLink(uuid));
+            blockSet.clear();
         }
-        await blockSet.forEach((uuid) => parseBlockForLink(uuid));
-        blockSet.clear();
     });
 
     /* Block slash command */
