@@ -4,6 +4,8 @@ export const ColumnLayoutStyle = () => {
 /* Fix "Extra space when journal queries are not active #6773" */
 /* journal queries No shadow */
 /* background conflict journal queries */
+
+//CSS minify https://csscompressor.com/
 logseq.provideStyle(String.raw`
 @media screen and (min-width: 1850px) {
     body[data-page="home"] div#today-queries>div.lazy-visibility{min-height:unset!important}
@@ -161,13 +163,6 @@ logseq.provideStyle(String.raw`
     body:not(.cl-side)[data-page="home"]:not(.is-pdf-active) main:not(.ls-right-sidebar-open) div#journals div#today-queries+div.flex.flex-col{right:720px}
     }
 `);
-
-const link = document.createElement('link');
-link.href = '/layout.css';
-link.rel = 'stylesheet';
-link.type = 'text/css';
-const h = document.getElementsByTagName('head')[0];
-h.appendChild(link);
 
 //switch linked References
 //journal queries Side & Linked References Side

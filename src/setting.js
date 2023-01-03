@@ -19,7 +19,7 @@ export const settingUI = () => {
             enumChoices: ["original", "normal"],
             enumPicker: "radio",
             default: "original",
-            description: "enable: Pages can be placed side by side in the sidebar",
+            description: "Pages can be placed side by side in the sidebar",
         },
         {
             key: "heading01",
