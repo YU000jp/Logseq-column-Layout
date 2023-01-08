@@ -33,11 +33,9 @@ async function getTitle(url) {
     try {
         const response = await fetch(url);
         const responseText = await response.text();
-        const String = responseText.match(DEFAULT_REGEX.htmlTitleTag);
-
         //https://github.com/polygonplanet/encoding.js
         //title convert UTF-8
-        const matches = await Encoding.convert(String, 'UTF8', 'AUTO');
+        const matches = await Encoding.convert(responseText.match(DEFAULT_REGEX.htmlTitleTag), 'UTF8', 'AUTO');
 
         if (matches !== null && matches.length > 1 && matches[2] !== null) {
             return decodeHTML(matches[2].trim());
@@ -156,11 +154,11 @@ async function parseBlockForLink(uuid) {
 }
 
 
-export const MarkdownLink = () => {
+export const MarkdownLink = (UserSettings) => {
     const blockSet = new Set();
 
     logseq.DB.onChanged(async (e) => {
-        if (logseq.settings.switchMarkdownLink === "enable") {
+        if (UserSettings.switchMarkdownLink === "enable") {
             if (e.txMeta?.outlinerOp !== 'insertBlocks') {
                 blockSet.add(e.blocks[0]?.uuid);
                 return;

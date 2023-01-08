@@ -1,19 +1,18 @@
-import { logseq as PL } from "../package.json";
-const pluginId = PL.id;
+import '@logseq/libs';
 
 import { getDateForPage } from 'logseq-dateutils';
-import swal from 'sweetalert';
+import swal from 'sweetalert';//https://sweetalert.js.org/guides/
 
 
-export const TurnOnFunction = () => {
+export const TurnOnFunction = async (UserSettings) => {
 
     //switch contextmenu
-    if (logseq.settings.switchCompletedDialog === "enable") {
+    if (UserSettings.switchCompletedDialog === "enable") {
 
         //add completed property to done task
         //https://github.com/DimitryDushkin/logseq-plugin-task-check-date
         logseq.DB.onChanged(async (e) => {
-            if (logseq.settings.switchCompletedDialog === "enable") {
+            if (UserSettings.switchCompletedDialog === "enable") {
                 const TASK_MARKERS = new Set(["DONE", "NOW", "LATER", "TODO", "DOING"]);//require
                 const taskBlock = e.blocks.find((block) => TASK_MARKERS.has(block.marker));//find task block
                 if (!taskBlock) {
@@ -24,7 +23,7 @@ export const TurnOnFunction = () => {
                     if (hasCompletedProperty === undefined) {
                         const userConfigs = await logseq.App.getUserConfigs();
                         const preferredDateFormat = userConfigs.preferredDateFormat;
-                        const datePage = getDateForPage(new Date(), preferredDateFormat);
+                        const datePage = await getDateForPage(new Date(), preferredDateFormat);
                         setTimeout(function () {
                             //dialog
                             logseq.showMainUI();
@@ -32,7 +31,10 @@ export const TurnOnFunction = () => {
                                 title: "Turn on completed (date) property?",
                                 text: "",
                                 icon: "info",
-                                buttons: true,
+                                buttons: {
+                                    cancel: true,
+                                    confirm: true,
+                                },
                             })
                                 .then((answer) => {
                                     if (answer) {//OK
@@ -78,31 +80,29 @@ export const TurnOnFunction = () => {
         console.log(`#${pluginId}: ✔️ DONE (completed property)`);
     }); */
 
+    const userConfigs = await logseq.App.getUserConfigs();
+    const todayDateInUserFormat = await getDateForPage(new Date(), await userConfigs.preferredDateFormat);
     /* ContextMenuItem reference */
     logseq.Editor.registerBlockContextMenuItem('🔵🟣Link as reference', async (e) => {
-        const uuid = e.uuid;
-        const userConfigs = await logseq.App.getUserConfigs();
-        const preferredDateFormat = userConfigs.preferredDateFormat;
-        const today = new Date();
-        const todayDateInUserFormat = getDateForPage(today, preferredDateFormat);
         //dialog
         logseq.showMainUI();
         swal({
-            title: "Turn on referenced (date) property?",
-            text: "",
+            text: "Turn on referenced (date) property?",
             icon: "info",
-            buttons: true,
+            buttons: {
+                cancel: true,
+                confirm: true,
+            },
         })
             .then((answer) => {
-                logseq.Editor.insertBlock(uuid, `🔵🟣 ((` + uuid + `))`).then((ee) => {
-                    const insertUUID = ee.uuid;
+                logseq.Editor.insertBlock(e.uuid, `🔵🟣 ((` + e.uuid + `))`).then((block: any) => {
                     if (answer) {
-                        logseq.Editor.upsertBlockProperty(insertUUID, "referenced", todayDateInUserFormat);
+                        logseq.Editor.upsertBlockProperty(block.uuid, "referenced", todayDateInUserFormat);
                     } else {
                         //user cancel in dialog
                     }
-                    logseq.App.openInRightSidebar(insertUUID);
-                    logseq.UI.showMsg("🔵🟣 Mouse drag the block to move it to the journal.", 'info');
+                    logseq.App.openInRightSidebar(block.uuid);
+                    logseq.UI.showMsg("🔵🟣 Mouse drag the block to move it to the journal", 'info');
                 });
             })
             .finally(() => {
@@ -113,34 +113,34 @@ export const TurnOnFunction = () => {
 
     /* ContextMenuItem LATER  */
     logseq.Editor.registerBlockContextMenuItem('🔵🟣LATER as reference', async (e) => {
-        const uuid = e.uuid;
-        const block = await logseq.Editor.getBlock(uuid);
-        if (block?.marker == "LATER") return logseq.UI.showMsg('This block is LATER', 'error');
-        const userConfigs = await logseq.App.getUserConfigs();
-        const preferredDateFormat = userConfigs.preferredDateFormat;
-        const today = new Date();
-        const todayDateInUserFormat = getDateForPage(today, preferredDateFormat);
-        await logseq.Editor.insertBlock(uuid, `LATER 🔵🟣 ((` + uuid + `))`).then((ee) => {
-            logseq.App.openInRightSidebar(ee.uuid);
-            logseq.UI.showMsg("🔵🟣 Mouse drag the block to move it to the journal.", 'info');
-        });
+        const block = await logseq.Editor.getBlock(e.uuid);
+        if (block?.marker == "LATER") {
+            logseq.UI.showMsg('This block is LATER', 'error');
+        } else {
+            await logseq.Editor.insertBlock(e.uuid, `LATER 🔵🟣 ((` + e.uuid + `))`).then((block: any) => {
+                logseq.App.openInRightSidebar(block.uuid);
+                logseq.UI.showMsg("🔵🟣 Mouse drag the block to move it to the journal.", 'info');
+            });
+        }
     });
 
     /* ContextMenuItem Delete */
     logseq.Editor.registerBlockContextMenuItem('❌ Delete this block', async (e) => {
-        const uuid = e.uuid;
         setTimeout(function () {
             logseq.showMainUI();
             swal({
                 title: "Are you sure?",
                 text: "delete the block",
                 icon: "warning",
-                buttons: true,
+                buttons: {
+                    cancel: true,
+                    confirm: true,
+                },
                 dangerMode: true,
             })
                 .then((willDelete) => {
                     if (willDelete) {
-                        logseq.Editor.removeBlock(uuid);
+                        logseq.Editor.removeBlock(e.uuid);
                     } else {
                         //user cancel in dialog
                     }
@@ -151,4 +151,64 @@ export const TurnOnFunction = () => {
         }, 50);
     });
 
+    /* ContextMenuItem right sidebar open new page  */
+    logseq.Editor.registerBlockContextMenuItem('🟢Right sidebar open new page', async (block) => {
+        newPage(block);
+    });
+
+    /* SlashCommand right sidebar open new page  */
+    logseq.Editor.registerSlashCommand('🟢Right sidebar open new page', async (block) => {
+        newPage(block);
+    });
+
 };
+
+
+function newPage(block) {
+    //dialog
+    logseq.UI.showMsg("🟢Right sidebar open new page", 'info');
+    logseq.showMainUI();
+    swal({
+        text: "Turn on a link to new page?",
+        icon: "info",
+        buttons: {
+            cancel: true,
+            confirm: true,
+        },
+    })
+        .then((answer) => {
+            swal({
+                text: "Choose new page name",
+                icon: "info",
+                buttons: {
+                    closeModal: false,
+                    cancel: true,
+                    confirm: true,
+                },
+                content: {
+                    element: "input",
+                    attributes: {
+                        placeholder: "new page name",
+                        value: "",
+                    },
+                },
+            }).then((NewPageName) => {
+                if (NewPageName) {
+                    logseq.Editor.createPage(NewPageName, "", { createFirstBlock: false,redirect: false, }).then((createPage) => {
+                        if (createPage) {
+                            if (answer) {
+                                logseq.Editor.prependBlockInPage(NewPageName, `((${block.uuid}))`);
+                                logseq.Editor.insertBlock(block.uuid,  `[[${NewPageName}]]`);
+                            }
+                            logseq.App.openInRightSidebar(createPage.uuid);
+                            logseq.UI.showMsg("🟢create new page", 'info');
+                        } else {
+                            logseq.UI.showMsg("🟢not create new page", 'warming');
+                        }
+                    });
+                }
+                logseq.hideMainUI();
+            });
+        });
+    //dialog end
+}

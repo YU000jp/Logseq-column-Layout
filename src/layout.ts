@@ -1,5 +1,5 @@
+import '@logseq/libs';
 export const ColumnLayoutStyle = () => {
-
 //Fix bugs
 /* Fix "Extra space when journal queries are not active #6773" */
 /* journal queries No shadow */
@@ -63,8 +63,8 @@ logseq.provideStyle(String.raw`
     body.cl-switchRightSidebar main.ls-right-sidebar-open div[data-modal-name="page-search"]{transform:unset!important;left:unset}
     body.cl-switchRightSidebar:not(.is-pdf-active) main:not(.ls-right-sidebar-open) div#main-content-container div.flex-1.page.relative{margin-bottom:2em;margin-top:2em;margin-left:1.5em}
     body.cl-switchRightSidebar div#right-sidebar div#date-time-picker{width:300px;background:var(--color-level-1);z-index:var(--ls-z-index-level-4)}
-    body.cl-side[data-page="home"]:not(.is-pdf-active) main:not(.ls-right-sidebar-open) div#main-content-container div.flex-1.journal.page{display:flex;justify-content:flex-start}
-    body.cl-side[data-page="home"]:not(.is-pdf-active) main:not(.ls-right-sidebar-open) div.journal>div.flex.flex-col:first-child{margin-left:1em;flex:1}
+    body.cl-side[data-page="home"]:not(.is-pdf-active) main:not(.ls-right-sidebar-open) div#journals div.flex-1.journal.page{display:flex;justify-content:flex-start}
+    body.cl-side[data-page="home"]:not(.is-pdf-active) main:not(.ls-right-sidebar-open) div#journals div.journal>div.flex.flex-col:first-child{margin-left:1em;flex:1}
     body.cl-side[data-page="home"] div#journals div.references div.pt-6{padding:.1em}
     body.cl-side[data-page="home"]:not(.is-pdf-active) main:not(.ls-right-sidebar-open) div#journals div.references div.hidden{width:670px;display:block}
     body.cl-side[data-page="home"] div#journals div.journal.page div.lazy-visibility div.fade-enter-active{height:100%}
@@ -163,15 +163,5 @@ logseq.provideStyle(String.raw`
     body:not(.cl-side)[data-page="home"]:not(.is-pdf-active) main:not(.ls-right-sidebar-open) div#journals div#today-queries+div.flex.flex-col{right:720px}
     }
 `);
-
-//switch linked References
-//journal queries Side & Linked References Side
-if (logseq.settings.switchLinkedReferences === "Side") {
-    parent.document.body.classList.add('cl-side');
-}
-//switch right sidebar
-if (logseq.settings.switchRightSidebar === "original") {
-    parent.document.body.classList.add('cl-switchRightSidebar');
-}
 
 };
