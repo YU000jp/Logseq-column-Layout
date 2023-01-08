@@ -80,11 +80,11 @@
 
 #### ❌ Delete this block
 
+- Right click to remove block
+
 #### 🟢 Right sidebar open new page
 
-- Right sidebar open new page
-
-・Select context menu on the block, a new page open in the right sidebar
+- Select context menu on the block, a new page open in the right sidebar
 
 ## 🚧 Troubleshoot
 
