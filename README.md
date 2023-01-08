@@ -57,10 +57,18 @@
 - Linked reference from journal are limited to dates other than today.
 - If you find it difficult to see the image in a reduced view, please use the zoom function or open it in sidebar.
 
+## 🚧 Troubleshoot
+
+- Please let me know on [GitHub](https://github.com/YU000jp/Logseq-column-Layout/issues).
+- It would be helpful if you could take a screenshot.
 
 ## Test Function
 
-#### DONE dialog for add a completed property
+### dialog for automatic markdown link
+
+- anti-garbled japanese website (日本語ウェブサイトの文字化け対策済み)
+
+### DONE dialog for add a completed property
 
 #### ✅ View completed tasks in Journal Linked References
 
@@ -86,10 +94,7 @@
 
 - Select context menu on the block, a new page open in the right sidebar
 
-## 🚧 Troubleshoot
-
-- Please let me know on [GitHub](https://github.com/YU000jp/Logseq-column-Layout/issues).
-- It would be helpful if you could take a screenshot.
+https://user-images.githubusercontent.com/111847207/211194329-fbe0faec-c2a6-422d-a5ef-5a225c8d9421.mp4
 
 ## Credit
 
