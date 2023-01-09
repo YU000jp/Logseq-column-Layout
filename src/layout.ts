@@ -24,7 +24,7 @@ logseq.provideStyle(String.raw`
     div#main-content-container div:not(.page-blocks-inner) input.form-checkbox+a+div input.form-checkbox{transform:scale(0.9)}
     div#main-content-container input.form-checkbox+div input.form-checkbox+a,div#main-content-container div:not(.page-blocks-inner) input.form-checkbox+a+div input.form-checkbox+a{text-decoration:line-through;font-size:small;pointer-events:none}
     div#main-content-container input.form-checkbox+div a{font-size:medium}
-    div#root [data-refs-self*="kanban"]>.block-children-container>.block-children{overflow-x:scroll;padding:1em;margin-top:1em;font-size:smaller;scroll-snap-type:x}
+    div#root [data-refs-self*="kanban"]>.block-children-container>.block-children{overflow-x:scroll;font-size:.98em;scroll-snap-type:x}
     main.ls-wide-mode div#main-content-container div.relative div.lazy-visibility div.references div.references-blocks div.content>div [data-refs-self*="kanban"]>.block-children-container>.block-children,main.ls-wide-mode div#main-content-container div.relative+div+div div.references div.references-blocks div.content>div [data-refs-self*="kanban"]>.block-children-container>.block-children,main.ls-wide-mode div#main-content-container div.relative+div+div+div div.references div.references-blocks div.content>div [data-refs-self*="kanban"]>.block-children-container>.block-children,div#right-sidebar [data-refs-self*="kanban"]>.block-children-container>.block-children{flex-wrap:wrap}
     body.is-pdf-active div#main-content-container div.relative+div.references.mt-6.flex-1.flex-row,main.ls-right-sidebar-open div#main-content-container div.relative+div.references.mt-6.flex-1.flex-row,body.is-pdf-active div#main-content-container div.page-hierarchy,main.ls-right-sidebar-open div#main-content-container div.page-hierarchy,div#right-sidebar div.relative+div.references.mt-6.flex-1.flex-row,div#right-sidebar div.page-hierarchy{display:none}
     div#main-container div.cp__sidebar-main-content{max-width:unset}
@@ -63,12 +63,13 @@ logseq.provideStyle(String.raw`
     body.cl-switchRightSidebar main.ls-right-sidebar-open div[data-modal-name="page-search"]{transform:unset!important;left:unset}
     body.cl-switchRightSidebar:not(.is-pdf-active) main:not(.ls-right-sidebar-open) div#main-content-container div.flex-1.page.relative{margin-bottom:2em;margin-top:2em;margin-left:1.5em}
     body.cl-switchRightSidebar div#right-sidebar div#date-time-picker{width:300px;background:var(--color-level-1);z-index:var(--ls-z-index-level-4)}
-    body.cl-side[data-page="home"]:not(.is-pdf-active) main:not(.ls-right-sidebar-open) div#journals div.flex-1.journal.page{display:flex;justify-content:flex-start}
-    body.cl-side[data-page="home"]:not(.is-pdf-active) main:not(.ls-right-sidebar-open) div#journals div.journal>div.flex.flex-col:first-child{margin-left:1em;flex:1}
+    body.cl-side[data-page="home"]:not(.is-pdf-active) main:not(.ls-right-sidebar-open) div#journals div.flex-1.journal.page{display:flex}
+    body.cl-side[data-page="home"]:not(.is-pdf-active) main:not(.ls-right-sidebar-open) div.journal>div.flex.flex-col:first-child{margin-left:1em;flex:1}
     body.cl-side[data-page="home"] div#journals div.references div.pt-6{padding:.1em}
     body.cl-side[data-page="home"]:not(.is-pdf-active) main:not(.ls-right-sidebar-open) div#journals div.references div.hidden{width:670px;display:block}
     body.cl-side[data-page="home"] div#journals div.journal.page div.lazy-visibility div.fade-enter-active{height:100%}
     body.cl-side[data-page="home"] div#journals div.journal>div.lazy-visibility div.references-blocks div.flex.flex-col>div,body.cl-side[data-page="home"] div#journals div.references div.references-blocks div.lazy-visibility div.px-2{padding-left:0;padding-right:0}
+    body.cl-side[data-page="home"]:not(.is-pdf-active) main:not(.ls-right-sidebar-open) div#journals div.lazy-visibility:has(*div.references){margin-right:.4em}
     body.cl-side[data-page="home"]:not(.is-pdf-active) main:not(.ls-right-sidebar-open) div#journals div.references{max-height:60vh;overflow-y:scroll;position:sticky;top:.5em;bottom:3em;padding:.4em;margin-right:5px;z-index:0;border-radius:.6em;background:var(--color-level-1);outline:3px solid var(--ls-guideline-color);outline-offset:3px}
     body.cl-side[data-page="home"]:not(.is-pdf-active) main:not(.ls-right-sidebar-open) div#journals div.references:hover{background:unset;backdrop-filter:blur(40px);min-width:670px;max-width:670px;overflow-x:visible;z-index:var(--ls-z-index-level-1)}
     body.cl-side[data-page="home"] main.ls-right-sidebar-open div#journals div.references,body.cl-side[data-page="home"].is-pdf-active div#journals div.references{display:none}
@@ -92,12 +93,11 @@ logseq.provideStyle(String.raw`
     body.cl-side[data-page="home"] div#today-queries>div.lazy-visibility div.custom-query div.breadcrumb.block-parents{color:var(--ct-external-link-color);margin-bottom:.6em}
     body.cl-side[data-page="home"] div#today-queries .sm\:px-7{padding-left:unset}
     body.cl-side[data-page="home"] div#today-queries h2,body.cl-side[data-page="home"] div#today-queries h3,body.cl-side[data-page="home"] div#today-queries h4{font-size:16px;padding:4px}
-    body.cl-side[data-page="home"]:not(.is-pdf-active) main:not(.ls-right-sidebar-open) div#main-content-container{margin:0;padding-top:unset}
+    body.cl-side[data-page="home"]:not(.is-pdf-active) main:not(.ls-right-sidebar-open) div#main-content-container{margin:0;padding-top:unset;padding-left:0}
     }
     @media screen and (min-width: 1850px) and (max-width: 1910px) {
-    body.cl-side[data-page="home"]:not(.is-pdf-active) main:not(.ls-right-sidebar-open) div#main-content-container,body.cl-side[data-page="home"]:not(.is-pdf-active) main:not(.ls-left-sidebar-open) div#main-content-container{padding-left:1em}
     body.cl-side[data-page="home"]:not(.is-pdf-active) main:not(.ls-right-sidebar-open) div#today-queries,body.cl-side[data-page="home"]:not(.is-pdf-active) main:not(.ls-left-sidebar-open) div#today-queries{width:360px}
-    body.cl-side[data-page="home"]:not(.is-pdf-active) main:not(.ls-right-sidebar-open) div.journal>div.flex.flex-col:first-child{min-width:850px}
+    body.cl-side[data-page="home"]:not(.is-pdf-active) main:not(.ls-right-sidebar-open) div.journal>div.flex.flex-col:first-child{min-width:820px}
     body.cl-side[data-page="home"]:not(.is-pdf-active) main:not(.ls-right-sidebar-open) div#today-queries+div.flex.flex-col{width:380px}
     }
     @media screen and (min-width: 1911px) and (max-width: 2019px) {
