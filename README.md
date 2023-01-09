@@ -9,9 +9,14 @@
 ## Changelog
 - page-tags and hierarchy display function in content page (non-journals) separate as a plugin [logseq-page-tags-and-hierarchy](https://github.com/YU000jp/logseq-page-tags-and-hierarchy)
 
-## Unsupported
+## Supported plugins
 
-- 「Awesome Styler」plugin
+- 「Awesome UI」
+- 「Awesome Links」
+
+## Unsupported plugin
+
+- 「Awesome Styler」
 
 ## Screenshot
 
