@@ -11,7 +11,7 @@
 
 ## Unsupported
 
-- 「Awesome UI」plugin
+- 「Awesome Styler」plugin
 
 ## Screenshot
 
