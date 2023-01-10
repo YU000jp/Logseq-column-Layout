@@ -1,4 +1,6 @@
 import '@logseq/libs';
+
+//https://github.com/hkgnp/logseq-localassets-plugin
 interface Files {
   name: string;
   type: string;
