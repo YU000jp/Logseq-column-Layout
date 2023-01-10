@@ -73,9 +73,9 @@
 
 ## Test Function
 
-### multiple Embed files from other folder (non asset) : ファイルの複数選択
+### multiple Embed files from other folder (non asset)
 
-- do not duplicate files
+- do not duplicate files (⚠ Since it is direct links to files, it cannot be displayed on other computers.)
 
 ### dialog for automatic markdown link
 
