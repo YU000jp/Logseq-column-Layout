@@ -24,8 +24,8 @@ export default async function embedHelper(
 
   fileInput.type = "file";
   fileInput.multiple = true;
+  fileInput.accept="*";
   fileInput.onchange = async (e) => {
-
 
     const files = (e.target as HTMLInputElement).files;
     if (files) {
