@@ -6,6 +6,7 @@ const pluginId = PL.id;
 import { ColumnLayoutStyle } from './layout';
 import { TurnOnFunction } from './function';
 import { MarkdownLink } from './markdown-link';
+import embedHelper from "./embedHelper";
 
 
 /* main */
@@ -37,6 +38,15 @@ async function after() {
         if (UserSettings.switchMarkdownLink === "enable") {
             MarkdownLink(UserSettings);
         }
+
+        logseq.Editor.registerBlockContextMenuItem(" multiple Embed file from other folder", async function (e) {
+            embedHelper(e.uuid, "non-asset");
+        });
+
+        logseq.Editor.registerSlashCommand(" multiple Embed file from other folder", async function (e) {
+            embedHelper(e.uuid, "non-asset");
+        });
+
 
         //https://logseq.github.io/plugins/types/SettingSchemaDesc.html
         const settingsTemplate: SettingSchemaDesc[] = [
