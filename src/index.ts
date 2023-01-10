@@ -39,11 +39,11 @@ async function after() {
             MarkdownLink(UserSettings);
         }
 
-        logseq.Editor.registerBlockContextMenuItem("multiple Embed file from other folder", async function (e) {
+        logseq.Editor.registerBlockContextMenuItem("multiple embed files from other folder (non-asset)", async function (e) {
             embedHelper(e.uuid, "non-asset");
         });
 
-        logseq.Editor.registerSlashCommand("multiple Embed file from other folder", async function (e) {
+        logseq.Editor.registerSlashCommand("multiple embed files from other folder (non-asset)", async function (e) {
             embedHelper(e.uuid, "non-asset");
         });
 

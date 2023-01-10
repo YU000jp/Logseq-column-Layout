@@ -115,7 +115,7 @@ async function parseBlockForLink(uuid) {
     if (!formatSettings) {
         return;
     }
-
+    let factUrl = Boolean;
     let offset = 0;
     for (const url of urls) {
         const urlIndex = text.indexOf(url, offset);
@@ -127,30 +127,32 @@ async function parseBlockForLink(uuid) {
         const updatedTitle = await convertUrlToMarkdownLink(url, text, urlIndex, offset, formatSettings.applyFormat);
         text = updatedTitle.text;
         offset = updatedTitle.offset;
+        factUrl = true;
     }
 
-    setTimeout(function () {
-        //dialog
-        logseq.showMainUI();
-        swal({
-            title: "Are you sure?",
-            text: "Convert to markdown link",
-            icon: "info",
-            buttons: true,
-        })
-            .then((answer) => {
-                if (answer) {//OK
-                    logseq.Editor.updateBlock(uuid, text);
-                } else {//Cancel
-                    //user cancel in dialog
-                }
+    if (factUrl === true) {
+        setTimeout(function () {
+            //dialog
+            logseq.showMainUI();
+            swal({
+                title: "Are you sure?",
+                text: "Convert to markdown link",
+                icon: "info",
+                buttons: true,
             })
-            .finally(() => {
-                logseq.hideMainUI();
-            });
-        //dialog end
-    }, 50);
-
+                .then((answer) => {
+                    if (answer) {//OK
+                        logseq.Editor.updateBlock(uuid, text);
+                    } else {//Cancel
+                        //user cancel in dialog
+                    }
+                })
+                .finally(() => {
+                    logseq.hideMainUI();
+                });
+            //dialog end
+        }, 50);
+    }
 }
 
 
