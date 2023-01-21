@@ -20,40 +20,38 @@ export const TurnOnFunction = async (UserSettings) => {
                 }
                 const hasCompletedProperty = taskBlock.properties?.completed;
                 if (taskBlock.marker === "DONE") {
-                    if (hasCompletedProperty === undefined) {
-                        const userConfigs = await logseq.App.getUserConfigs();
-                        const preferredDateFormat = userConfigs.preferredDateFormat;
-                        const datePage = await getDateForPage(new Date(), preferredDateFormat);
-                        setTimeout(function () {
-                            //dialog
-                            logseq.showMainUI();
-                            swal({
-                                title: "Turn on completed (date) property?",
-                                text: "",
-                                icon: "info",
-                                buttons: {
-                                    cancel: true,
-                                    confirm: true,
-                                },
-                            })
-                                .then((answer) => {
-                                    if (answer) {//OK
-                                        logseq.Editor.upsertBlockProperty(taskBlock.uuid, "completed", datePage);
-                                    } else {//Cancel
-                                        //user cancel in dialog
-                                    }
-                                })
-                                .finally(() => {
-                                    logseq.hideMainUI();
-                                });
-                            //dialog end
-                        }, 50);
-
-                    } else {
-                        //done && undefined
+                    if (hasCompletedProperty) {
+                        return;
                     }
+                    const userConfigs = await logseq.App.getUserConfigs();
+                    const datePage = await getDateForPage(new Date(), userConfigs.preferredDateFormat);
+                    //dialog
+                    logseq.showMainUI();
+                    swal({
+                        title: "Turn on completed (date) property?",
+                        text: "",
+                        icon: "info",
+                        buttons: {
+                            cancel: true,
+                            confirm: true,
+                        },
+                    })
+                        .then((answer) => {
+                            if (answer) {//OK
+                                logseq.Editor.upsertBlockProperty(taskBlock.uuid, "completed", datePage);
+                            } else {//Cancel
+                                //user cancel in dialog
+                            }
+                        })
+                        .finally(() => {
+                            logseq.hideMainUI();
+                        });
+                    //dialog end
                 } else {
-                    logseq.Editor.removeBlockProperty(taskBlock.uuid, "completed");
+                    if (!hasCompletedProperty) {
+                        return;
+                    }
+                        logseq.Editor.removeBlockProperty(taskBlock.uuid, "completed");
                 }
             }
         });
@@ -194,11 +192,11 @@ function newPage(block) {
                 },
             }).then((NewPageName) => {
                 if (NewPageName) {
-                    logseq.Editor.createPage(NewPageName, "", { createFirstBlock: false,redirect: false, }).then((createPage) => {
+                    logseq.Editor.createPage(NewPageName, "", { createFirstBlock: false, redirect: false, }).then((createPage) => {
                         if (createPage) {
                             if (answer) {
                                 logseq.Editor.prependBlockInPage(NewPageName, `((${block.uuid}))`);
-                                logseq.Editor.insertBlock(block.uuid,  `[[${NewPageName}]]`);
+                                logseq.Editor.insertBlock(block.uuid, `[[${NewPageName}]]`);
                             }
                             logseq.App.openInRightSidebar(createPage.uuid);
                             logseq.UI.showMsg("🟢create new page", 'info');
