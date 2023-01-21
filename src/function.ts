@@ -53,9 +53,6 @@ export const TurnOnFunction = async (UserSettings) => {
                         //done && undefined
                     }
                 } else {
-                    if (!hasCompletedProperty) {
-                        return;
-                    }
                     logseq.Editor.removeBlockProperty(taskBlock.uuid, "completed");
                 }
             }
@@ -197,11 +194,11 @@ function newPage(block) {
                 },
             }).then((NewPageName) => {
                 if (NewPageName) {
-                    logseq.Editor.createPage(NewPageName, "", { createFirstBlock: false, redirect: false, }).then((createPage) => {
+                    logseq.Editor.createPage(NewPageName, "", { createFirstBlock: false,redirect: false, }).then((createPage) => {
                         if (createPage) {
                             if (answer) {
                                 logseq.Editor.prependBlockInPage(NewPageName, `((${block.uuid}))`);
-                                logseq.Editor.insertBlock(block.uuid, `[[${NewPageName}]]`);
+                                logseq.Editor.insertBlock(block.uuid,  `[[${NewPageName}]]`);
                             }
                             logseq.App.openInRightSidebar(createPage.uuid);
                             logseq.UI.showMsg("🟢create new page", 'info');
