@@ -58,9 +58,7 @@ export const TurnOnFunction = async (UserSettings) => {
         const block = await logseq.Editor.getBlock(uuid);
         if (!block?.marker) return logseq.UI.showMsg('This block is not a task', 'error');
         const userConfigs = await logseq.App.getUserConfigs();
-        const preferredDateFormat = userConfigs.preferredDateFormat;
-        const today = new Date();
-        const todayDateInUserFormat = getDateForPage(today, preferredDateFormat);
+        const todayDateInUserFormat = await getDateForPage(new Date(), await userConfigs.preferredDateFormat);
         console.log(`#${pluginId}: ${todayDateInUserFormat}`);
         const newRawContent = block.content.replace(new RegExp(`^${block.marker}`), `DONE`);
         await logseq.Editor.updateBlock(uuid, newRawContent);
@@ -114,91 +112,4 @@ export const TurnOnFunction = async (UserSettings) => {
         }
     });
 
-    /* ContextMenuItem Delete */
-    logseq.Editor.registerBlockContextMenuItem('❌ Delete this block', async (e) => {
-        setTimeout(function () {
-            logseq.showMainUI();
-            swal({
-                title: "Are you sure?",
-                text: "delete the block",
-                icon: "warning",
-                buttons: {
-                    cancel: true,
-                    confirm: true,
-                },
-                dangerMode: true,
-            })
-                .then((willDelete) => {
-                    if (willDelete) {
-                        logseq.Editor.removeBlock(e.uuid);
-                    } else {
-                        //user cancel in dialog
-                    }
-                })
-                .finally(() => {
-                    logseq.hideMainUI();
-                });
-        }, 50);
-    });
-
-    /* ContextMenuItem right sidebar open new page  */
-    logseq.Editor.registerBlockContextMenuItem('🟢Right sidebar open new page', async (block) => {
-        newPage(block);
-    });
-
-    /* SlashCommand right sidebar open new page  */
-    logseq.Editor.registerSlashCommand('🟢Right sidebar open new page', async (block) => {
-        newPage(block);
-    });
-
 };
-
-
-function newPage(block) {
-    //dialog
-    logseq.UI.showMsg("🟢Right sidebar open new page", 'info');
-    logseq.showMainUI();
-    swal({
-        text: "Turn on a link to new page?",
-        icon: "info",
-        buttons: {
-            cancel: true,
-            confirm: true,
-        },
-    })
-        .then((answer) => {
-            swal({
-                text: "Choose new page name",
-                icon: "info",
-                buttons: {
-                    closeModal: false,
-                    cancel: true,
-                    confirm: true,
-                },
-                content: {
-                    element: "input",
-                    attributes: {
-                        placeholder: "new page name",
-                        value: "",
-                    },
-                },
-            }).then((NewPageName) => {
-                if (NewPageName) {
-                    logseq.Editor.createPage(NewPageName, "", { createFirstBlock: false, redirect: false, }).then((createPage) => {
-                        if (createPage) {
-                            if (answer) {
-                                logseq.Editor.prependBlockInPage(NewPageName, `((${block.uuid}))`);
-                                logseq.Editor.insertBlock(block.uuid, `[[${NewPageName}]]`);
-                            }
-                            logseq.App.openInRightSidebar(createPage.uuid);
-                            logseq.UI.showMsg("🟢create new page", 'info');
-                        } else {
-                            logseq.UI.showMsg("🟢not create new page", 'warming');
-                        }
-                    });
-                }
-                logseq.hideMainUI();
-            });
-        });
-    //dialog end
-}

@@ -6,7 +6,6 @@ const pluginId = PL.id;
 import { ColumnLayoutStyle } from './layout';
 import { TurnOnFunction } from './function';
 import { MarkdownLink } from './markdown-link';
-import embedHelper from "./embedHelper";
 
 
 /* main */
@@ -38,14 +37,6 @@ async function after() {
         if (UserSettings.switchMarkdownLink === "enable") {
             MarkdownLink(UserSettings);
         }
-
-        logseq.Editor.registerBlockContextMenuItem("multiple embed files from other folder (non-asset)", async function (e) {
-            embedHelper(e.uuid, "non-asset");
-        });
-
-        logseq.Editor.registerSlashCommand("multiple embed files from other folder (non-asset)", async function (e) {
-            embedHelper(e.uuid, "non-asset");
-        });
 
 
         //https://logseq.github.io/plugins/types/SettingSchemaDesc.html
@@ -96,28 +87,28 @@ async function after() {
         ];
         logseq.useSettingsSchema(settingsTemplate);
 
-    }, 3000);
+    }, 2000);
 
     parent.document.body.classList.add('is-plugin-column-layout-enabled');
     logseq.beforeunload(async () => {
         parent.document.body.classList.remove('is-plugin-column-layout-enabled');
     });
-    logseq.onSettingsChanged((settings, oldSettings) => {
-        onSettingsChangedCallback(settings, oldSettings);
+    logseq.onSettingsChanged((newSettings, oldSettings) => {
+        onSettingsChangedCallback(newSettings, oldSettings);
     });
     console.info(`#${pluginId}: loaded`);
 }
 
 // Setting changed
-const onSettingsChangedCallback = (newSettings, oldSettings) => {
-    if (oldSettings.switchLinkedReferences !== "Bottom" && newSettings.switchLinkedReferences === "Bottom") {
+const onSettingsChangedCallback = (newSet, oldSet) => {
+    if (oldSet.switchLinkedReferences !== "Bottom" && newSet.switchLinkedReferences === "Bottom") {
         parent.document.body.classList.remove('cl-side');
-    } else if (oldSettings.switchLinkedReferences !== "Side" && newSettings.switchLinkedReferences === "Side") {
+    } else if (oldSet.switchLinkedReferences !== "Side" && newSet.switchLinkedReferences === "Side") {
         parent.document.body.classList.add('cl-side');
     }
-    if (oldSettings.switchRightSidebar !== "normal" && newSettings.switchRightSidebar === "normal") {
+    if (oldSet.switchRightSidebar !== "normal" && newSet.switchRightSidebar === "normal") {
         parent.document.body.classList.remove('cl-switchRightSidebar');
-    } else if (oldSettings.switchRightSidebar !== "original" && newSettings.switchRightSidebar === "original") {
+    } else if (oldSet.switchRightSidebar !== "original" && newSet.switchRightSidebar === "original") {
         parent.document.body.classList.add('cl-switchRightSidebar');
     }
 }
