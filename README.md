@@ -73,10 +73,6 @@
 
 ## Test Function
 
-### multiple Embed files from other folder (non asset)
-
-- do not duplicate files (⚠ Since it is direct links to files, it cannot be displayed on other computers.)
-
 ### dialog for automatic markdown link
 
 - anti-garbled japanese website : 日本語ウェブサイトの文字化け対策済み
@@ -99,19 +95,7 @@
 
 - As a LATER task, do the repeat task to record in the journal,
 
-#### ❌ Delete this block
-
-- Right click to remove block
-
-#### 🟢 Right sidebar open new page
-
-- Select context menu on the block, a new page open in the right sidebar
-
-https://user-images.githubusercontent.com/111847207/211194329-fbe0faec-c2a6-422d-a5ef-5a225c8d9421.mp4
-
 ## Credit
-
-- [logseq local assets plugin](https://github.com/hkgnp/logseq-localassets-plugin)
 
 - [logseq task completion tracker plugin](https://github.com/DimitryDushkin/logseq-plugin-task-check-date)
 
