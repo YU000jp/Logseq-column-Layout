@@ -13,47 +13,37 @@ export const TurnOnFunction = async (UserSettings) => {
         //https://github.com/DimitryDushkin/logseq-plugin-task-check-date
         logseq.DB.onChanged(async (e) => {
             if (UserSettings.switchCompletedDialog === "enable") {
-                const TASK_MARKERS = new Set(["DONE", "NOW", "LATER", "TODO", "DOING"]);//require
+                const TASK_MARKERS = new Set(["DONE"]);//require
                 const taskBlock = e.blocks.find((block) => TASK_MARKERS.has(block.marker));//find task block
                 if (!taskBlock) {
-                    return;
-                }
-                const hasCompletedProperty = taskBlock.properties?.completed;
-                if (taskBlock.marker === "DONE") {
-                    if (hasCompletedProperty === undefined) {
-                        const userConfigs = await logseq.App.getUserConfigs();
-                        const preferredDateFormat = userConfigs.preferredDateFormat;
-                        const datePage = await getDateForPage(new Date(), preferredDateFormat);
-                        setTimeout(function () {
-                            //dialog
-                            logseq.showMainUI();
-                            swal({
-                                title: "Turn on completed (date) property?",
-                                text: "",
-                                icon: "info",
-                                buttons: {
-                                    cancel: true,
-                                    confirm: true,
-                                },
-                            })
-                                .then((answer) => {
-                                    if (answer) {//OK
-                                        logseq.Editor.upsertBlockProperty(taskBlock.uuid, "completed", datePage);
-                                    } else {//Cancel
-                                        //user cancel in dialog
-                                    }
-                                })
-                                .finally(() => {
-                                    logseq.hideMainUI();
-                                });
-                            //dialog end
-                        }, 50);
-
-                    } else {
-                        //done && undefined
-                    }
+                    //
                 } else {
-                    logseq.Editor.removeBlockProperty(taskBlock.uuid, "completed");
+                    if (!taskBlock.properties?.completed && taskBlock.marker === "DONE") {
+                        const userConfigs = await logseq.App.getUserConfigs();
+                        const datePage = await getDateForPage(new Date(), userConfigs.preferredDateFormat);
+                        //dialog
+                        logseq.showMainUI();
+                        swal({
+                            title: "Turn on completed (date) property?",
+                            text: "",
+                            icon: "info",
+                            buttons: {
+                                cancel: true,
+                                confirm: true,
+                            },
+                        })
+                            .then((answer) => {
+                                if (answer) {//OK
+                                    logseq.Editor.upsertBlockProperty(taskBlock.uuid, "completed", datePage);
+                                } else {//Cancel
+                                    //user cancel in dialog
+                                }
+                            })
+                            .finally(() => {
+                                logseq.hideMainUI();
+                            });
+                        //dialog end
+                    }
                 }
             }
         });
@@ -194,11 +184,11 @@ function newPage(block) {
                 },
             }).then((NewPageName) => {
                 if (NewPageName) {
-                    logseq.Editor.createPage(NewPageName, "", { createFirstBlock: false,redirect: false, }).then((createPage) => {
+                    logseq.Editor.createPage(NewPageName, "", { createFirstBlock: false, redirect: false, }).then((createPage) => {
                         if (createPage) {
                             if (answer) {
                                 logseq.Editor.prependBlockInPage(NewPageName, `((${block.uuid}))`);
-                                logseq.Editor.insertBlock(block.uuid,  `[[${NewPageName}]]`);
+                                logseq.Editor.insertBlock(block.uuid, `[[${NewPageName}]]`);
                             }
                             logseq.App.openInRightSidebar(createPage.uuid);
                             logseq.UI.showMsg("🟢create new page", 'info');
