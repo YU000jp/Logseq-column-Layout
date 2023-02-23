@@ -44,6 +44,9 @@
 
 - Use [logseq datenlp plugin](https://github.com/hkgnp/logseq-datenlp-plugin). Add `@wednesday` or read past journals and add `@today`. They become links.
 
+#### PDF highlights
+- Logseq has the ability to read and highlight PDF file. If you add a date link to highlights, it will be included in the list of linked references.
+
 ### Journal queries
 
 - To get more task management
