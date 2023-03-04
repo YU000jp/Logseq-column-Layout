@@ -29,7 +29,7 @@
 ### Journals
 
 - If you use the reference function and write the timeline, it is also effective as a log.
-- Press ⌨️`cmd(win) + alt` at the same time to get the reference by mouse dragging.
+- Press ⌨️`cmd(win) + alt` at the same time to get the reference by mouse dragging on the bullet.
 
 ![スクリーンショット 2022-10-14 0207412](https://user-images.githubusercontent.com/111847207/195662824-35aecadd-c404-42a8-82eb-54ffc628c321.png)
 
