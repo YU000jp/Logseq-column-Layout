@@ -96,11 +96,18 @@
 
 #### 🔵🟣 LATER as reference
 
-- As a LATER task, do the repeat task to record in the journal,
+- As a LATER task, do the repeat task to record in the journal.
+
+### Year List Calendar
+
+- Using Year List Calendar, all the dates for a full year are generated as date links. When written as child elements, they are displayed in the Linked References section.
+
+![Animation6w19](https://user-images.githubusercontent.com/111847207/222906514-30b7967e-c84d-4d0e-9f34-7639a1e344f6.gif)
 
 ## Other my plugins
 
 - [panel-coloring](https://github.com/YU000jp/logseq-plugin-panel-coloring)
+
 - [page-tags-and-hierarchy](https://github.com/YU000jp/logseq-page-tags-and-hierarchy)
 
 ## Credit
