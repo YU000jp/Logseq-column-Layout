@@ -1,4 +1,4 @@
-import swal from 'sweetalert';
+import swal from 'sweetalert';////https://sweetalert.js.org/guides/
 import Encoding from 'encoding-japanese';
 
 
@@ -131,27 +131,27 @@ async function parseBlockForLink(uuid) {
     }
 
     if (factUrl === true) {
-        setTimeout(function () {
-            //dialog
-            logseq.showMainUI();
-            swal({
-                title: "Are you sure?",
-                text: "Convert to markdown link",
-                icon: "info",
-                buttons: true,
+        //dialog
+        logseq.showMainUI();
+        swal({
+            title: "Are you sure?",
+            text: "Convert to markdown link",
+            icon: "info",
+            buttons: true,
+            closeOnClickOutside: false,
+            closeOnEsc: false,
+        })
+            .then((answer) => {
+                if (answer) {//OK
+                    logseq.Editor.updateBlock(uuid, text);
+                } else {//Cancel
+                    //user cancel in dialog
+                }
             })
-                .then((answer) => {
-                    if (answer) {//OK
-                        logseq.Editor.updateBlock(uuid, text);
-                    } else {//Cancel
-                        //user cancel in dialog
-                    }
-                })
-                .finally(() => {
-                    logseq.hideMainUI();
-                });
-            //dialog end
-        }, 50);
+            .finally(() => {
+                logseq.hideMainUI();
+            });
+        //dialog end
     }
 }
 
