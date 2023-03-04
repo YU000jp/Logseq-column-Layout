@@ -88,7 +88,7 @@
 - The date contained in the completed property acts as a link.
 - After DONE a task, a dialog will appear asking if you want to add a completed property.
 
-### 🖱️ Right-click context menu
+### 🖱️ Right-click context menu (into right sidebar)
 
 #### 🔵🟣 Link as reference
 
