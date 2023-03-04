@@ -7,7 +7,7 @@
 [![License](https://img.shields.io/github/license/YU000jp/Logseq-column-Layout?color=blue)](https://github.com/YU000jp/Logseq-column-Layout/blob/main/LICENSE)
 
 ## Changelog
-- page-tags and hierarchy display function in content page (non-journals) separate as a plugin [logseq-page-tags-and-hierarchy](https://github.com/YU000jp/logseq-page-tags-and-hierarchy)
+- page-tags and hierarchy display function in content page (non-journals) separate as a plugin [page-tags-and-hierarchy](https://github.com/YU000jp/logseq-page-tags-and-hierarchy)
 
 ## Supported plugins
 
@@ -35,14 +35,14 @@
 
 ### Linked reference
 
-#### Suitable for [logseq Omnivore plugin](https://github.com/omnivore-app/logseq-omnivore)
+#### Suitable for [Omnivore plugin](https://github.com/omnivore-app/logseq-omnivore)
 
 - Omnivore is a **WebClipping tool** that can be quoted to Logseq.
 - You can see the table of web clips for the day next to the journal, so it's easy to access. (View `substack.com` newsletter)
 
 #### 📅 As a list for inclusion in the next journal
 
-- Use [logseq datenlp plugin](https://github.com/hkgnp/logseq-datenlp-plugin). Add `@wednesday` or read past journals and add `@today`. They become links.
+- Use [datenlp plugin](https://github.com/hkgnp/logseq-datenlp-plugin). Add `@wednesday` or read past journals and add `@today`. They become links.
 
 #### PDF highlights
 - Logseq has the ability to read and highlight PDF file. If you add a date link to highlights, it will be included in the list of linked references.
@@ -100,13 +100,13 @@
 
 ## Other my plugins
 
-- [logseq-plugin-panel-coloring](https://github.com/YU000jp/logseq-plugin-panel-coloring)
-- [logseq-page-tags-and-hierarchy](https://github.com/YU000jp/logseq-page-tags-and-hierarchy)
+- [panel-coloring](https://github.com/YU000jp/logseq-plugin-panel-coloring)
+- [page-tags-and-hierarchy](https://github.com/YU000jp/logseq-page-tags-and-hierarchy)
 
 ## Credit
 
-- [logseq task completion tracker plugin](https://github.com/DimitryDushkin/logseq-plugin-task-check-date)
-- [Logseq Vertical Panels for Sidebar](https://github.com/r-hegde/logseq-vertical-panels)
+- [task completion tracker plugin](https://github.com/DimitryDushkin/logseq-plugin-task-check-date)
+- [Vertical Panels for Sidebar](https://github.com/r-hegde/logseq-vertical-panels)
 
 ---
 
