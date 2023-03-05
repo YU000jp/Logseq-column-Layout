@@ -99,7 +99,7 @@
 
 - Using Year List Calendar, all the dates for a full year are generated as date links. When written as child elements, they are displayed in the Linked References section.
 
-![Animation6w20](https://user-images.githubusercontent.com/111847207/222936659-67c5eb7a-5771-4503-89e8-6ffdf072d6eb.gif)
+![Animation6w21](https://user-images.githubusercontent.com/111847207/222945226-f8e031cf-9e49-4c98-a5e8-ee360c931050.gif)
 
 ## Other my plugins
 
