@@ -98,11 +98,11 @@
 
 - As a LATER task, do the repeat task to record in the journal.
 
-### Year List Calendar
+### Year List Calendar <slash command : `create Year List Calendar`>
 
 - Using Year List Calendar, all the dates for a full year are generated as date links. When written as child elements, they are displayed in the Linked References section.
 
-![Animation6w19](https://user-images.githubusercontent.com/111847207/222906514-30b7967e-c84d-4d0e-9f34-7639a1e344f6.gif)
+![Animation6w20](https://user-images.githubusercontent.com/111847207/222936659-67c5eb7a-5771-4503-89e8-6ffdf072d6eb.gif)
 
 ## Other my plugins
 
