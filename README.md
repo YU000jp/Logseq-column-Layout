@@ -88,15 +88,12 @@
 - The date contained in the completed property acts as a link.
 - After DONE a task, a dialog will appear asking if you want to add a completed property.
 
-### 🖱️ Right-click context menu (open into right sidebar)
+### 🖱️ Right-click context menu
 
-#### 🔵🟣 Link as reference
+#### 🔁 repeat-task as LATER
 
-- Mouse drag a bullet for the block to move it into the journal.
-
-#### 🔵🟣 LATER as reference
-
-- As a LATER task, do the repeat task to record in the journal.
+- A block open into right sidebar. Drag that bullet and place it in the journal.
+- The repeat task is for a notification. To place in the journal as a LATER task for marking "DONE". 
 
 ### Year List Calendar <slash command : `create Year List Calendar`>
 
