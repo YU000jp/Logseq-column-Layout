@@ -88,21 +88,18 @@
 - The date contained in the completed property acts as a link.
 - After DONE a task, a dialog will appear asking if you want to add a completed property.
 
-### 🖱️ Right-click context menu (open into right sidebar)
+### 🖱️ Right-click context menu
 
-#### 🔵🟣 Link as reference
+#### 🔁 repeat-task as LATER
 
-- Mouse drag a bullet for the block to move it into the journal.
+- A block open into right sidebar. Drag that bullet and place it in the journal.
+- The repeat task is for a notification. To place in the journal as a LATER task for marking "DONE". 
 
-#### 🔵🟣 LATER as reference
-
-- As a LATER task, do the repeat task to record in the journal.
-
-### Year List Calendar
+### Year List Calendar <slash command : `create Year List Calendar`>
 
 - Using Year List Calendar, all the dates for a full year are generated as date links. When written as child elements, they are displayed in the Linked References section.
 
-![Animation6w19](https://user-images.githubusercontent.com/111847207/222906514-30b7967e-c84d-4d0e-9f34-7639a1e344f6.gif)
+![Animation6w21](https://user-images.githubusercontent.com/111847207/222945226-f8e031cf-9e49-4c98-a5e8-ee360c931050.gif)
 
 ## Other my plugins
 
