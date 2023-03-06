@@ -55,9 +55,9 @@
 
 ![Animation1](img/journal-queries-demo.gif)
 
-### 🖱️ Right-click on the bullet for context menu
+### 🖱️ Right-click on the bullet
 
-#### 🔁`repeat-task as LATER`
+#### context menu 🔁`repeat-task as LATER`
 
 - A block open into right sidebar. Drag that bullet and place it in the journal.
 - The repeat task is for a notification. To place in the journal as a LATER task for marking "DONE". 
