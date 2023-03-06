@@ -55,7 +55,14 @@
 
 ![Animation1](img/journal-queries-demo.gif)
 
-### Right sidebar
+### 🖱️ Right-click on the bullet for context menu
+
+#### 🔁`repeat-task as LATER`
+
+- A block open into right sidebar. Drag that bullet and place it in the journal.
+- The repeat task is for a notification. To place in the journal as a LATER task for marking "DONE". 
+
+### original right sidebar
 
 - Pages can be placed side by side in right sidebar.
 - Adjust the size by selecting the bottom right of the block. But don't make it too small.
@@ -87,13 +94,6 @@
 
 - The date contained in the completed property acts as a link.
 - After DONE a task, a dialog will appear asking if you want to add a completed property.
-
-### 🖱️ Right-click context menu
-
-#### 🔁 repeat-task as LATER
-
-- A block open into right sidebar. Drag that bullet and place it in the journal.
-- The repeat task is for a notification. To place in the journal as a LATER task for marking "DONE". 
 
 ### Year List Calendar <slash command : `create Year List Calendar`>
 
