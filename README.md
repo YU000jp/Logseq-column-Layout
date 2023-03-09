@@ -7,7 +7,7 @@
 [![License](https://img.shields.io/github/license/YU000jp/Logseq-column-Layout?color=blue)](https://github.com/YU000jp/Logseq-column-Layout/blob/main/LICENSE)
 
 ## Changelog
-- page-tags and hierarchy display function in content page (non-journals) separate as a plugin [page-tags-and-hierarchy](https://github.com/YU000jp/logseq-page-tags and hierarchy)
+- page-tags and hierarchy display function in content page (non-journals) separate as a plugin [page-tags and hierarchy](https://github.com/YU000jp/logseq-page-tags-and-hierarchy)
 
 ## Supported plugins
 
