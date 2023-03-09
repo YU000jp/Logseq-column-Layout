@@ -7,7 +7,7 @@
 [![License](https://img.shields.io/github/license/YU000jp/Logseq-column-Layout?color=blue)](https://github.com/YU000jp/Logseq-column-Layout/blob/main/LICENSE)
 
 ## Changelog
-- page-tags and hierarchy display function in content page (non-journals) separate as a plugin [page-tags-and-hierarchy](https://github.com/YU000jp/logseq-page-tags-and-hierarchy)
+- page-tags and hierarchy display function in content page (non-journals) separate as a plugin [page-tags-and-hierarchy](https://github.com/YU000jp/logseq-page-tags and hierarchy)
 
 ## Supported plugins
 
@@ -57,12 +57,12 @@
 
 ### 🖱️ Right-click on the bullet
 
-#### context menu 🔁`repeat-task as LATER`
+#### Context menu 🔁`repeat-task as LATER`
 
 - A block open into right sidebar. Drag that bullet and place it in the journal.
 - The repeat task is for a notification. To place in the journal as a LATER task for marking "DONE". 
 
-### original right sidebar
+### Original right sidebar
 
 - Pages can be placed side by side in right sidebar.
 - Adjust the size by selecting the bottom right of the block. But don't make it too small.
@@ -84,7 +84,7 @@
 
 ## Test Function
 
-### dialog for automatic markdown link
+### Dialog for automatic markdown link
 
 - anti-garbled japanese website : 日本語ウェブサイトの文字化け対策済み
 
@@ -103,9 +103,9 @@
 
 ## Other my plugins
 
-- [panel-coloring](https://github.com/YU000jp/logseq-plugin-panel-coloring)
+- [panel coloring](https://github.com/YU000jp/logseq-plugin-panel-coloring)
 
-- [page-tags-and-hierarchy](https://github.com/YU000jp/logseq-page-tags-and-hierarchy)
+- [page-tags and hierarchy](https://github.com/YU000jp/logseq-page-tags-and-hierarchy)
 
 ## Credit
 
