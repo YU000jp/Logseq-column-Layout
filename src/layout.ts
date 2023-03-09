@@ -14,7 +14,9 @@ logseq.provideStyle(String.raw`
     body[data-page="home"] main.ls-wide-mode div#main-content-container div.cp__sidebar-main-content{max-width:unset}
     div#time-repeater{min-width:200px}
     div.block-content div.asset-container div.asset-overlay{background-image:none}
-    div#main-content-container div.asset-container img{max-width:600px}
+    div#main-content-container div.asset-container has(img){overflow-x:scroll}
+    body[data-page="home"] div#main-content-container div.asset-container img{max-width:660px}
+    body[data-page="page"] div#main-content-container div.asset-container img{max-width:1050px}
     .block-content .asset-container .asset-action-bar{background:rgba(6,6,6,0.7);color:#fff;font-size:small}
     div.nav-content-item-inner{margin-top:2em}
     div#main-content-container blockquote{font-size:.95em}
