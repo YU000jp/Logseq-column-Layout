@@ -6,6 +6,7 @@
   "targets": {
     "main": false
   },
+  "effect": true,
   "scripts": {
     "build": "parcel build --no-source-maps src/index.html --public-url ./"
   },
