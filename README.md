@@ -1,22 +1,23 @@
 # logseq-plugin-column-layout
 
-- Cancel if the screen width is less than `1850px`.
 - Journals, linked references, and journal queries can be placed side by side.
+
+> ⚠️Cancel if the screen width is less than `1850px`
 
 [![latest release version](https://img.shields.io/github/v/release/YU000jp/Logseq-column-Layout)](https://github.com/YU000jp/Logseq-column-Layout/releases)
 [![License](https://img.shields.io/github/license/YU000jp/Logseq-column-Layout?color=blue)](https://github.com/YU000jp/Logseq-column-Layout/blob/main/LICENSE)
 
 ## Changelog
-- page-tags and hierarchy display function in content page (non-journals) separate as a plugin [page-tags and hierarchy](https://github.com/YU000jp/logseq-page-tags-and-hierarchy)
+> page-tags and hierarchy display function in content page (non-journals) separate as a plugin [page-tags and hierarchy](https://github.com/YU000jp/logseq-page-tags-and-hierarchy)
 
 ## Supported plugins
 
-- [Awesome UI](https://github.com/yoyurec/logseq-awesome-ui)
-- [Awesome Links](https://github.com/yoyurec/logseq-awesome-links)
+> [Awesome UI](https://github.com/yoyurec/logseq-awesome-ui)
+> [Awesome Links](https://github.com/yoyurec/logseq-awesome-links)
 
 ## Unsupported plugin
 
-- [Awesome Styler](https://github.com/yoyurec/logseq-awesome-styler)
+> [Awesome Styler](https://github.com/yoyurec/logseq-awesome-styler)
 
 ## Screenshot
 
@@ -89,18 +90,23 @@
 
 ### Dialog for automatic markdown link
 
-- [Problem] URL is converted inadvertently, Garbled characters occur
+- [Problem] URL is converted inadvertently / Garbled characters occur.
 
-- [Solution] Confirm in dialog, anti-garbled japanese website : 日本語ウェブサイトの文字化け対策済み
+- [Solution] Confirm in dialog / anti-garbled japanese website : 日本語ウェブサイトの文字化け対策済み
 
 - [Usage] Paste URL, then press Enter to bring up a dialog.
 
+- [Result] Keep repeat tasks in journals.
+
 ### DONE dialog for add a completed property
 
-#### ✅ View completed tasks in Journal Linked References
+- [Problem] Logseq does not record the DONE date.
 
-- The date contained in the completed property acts as a link.
-- After DONE a task, a dialog will appear asking if you want to add a completed property.
+- [Solution] After the task DONE, add completed property to the block.
+
+- [Usage] After DONE a task, a dialog will appear asking if you want to add a completed property.
+
+- [Result] The date contained in the completed property acts as a link. View completed tasks in Journal Linked References.
 
 ### Year List Calendar <slash command : `create Year List Calendar`>
 
