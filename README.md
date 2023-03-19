@@ -59,8 +59,11 @@
 
 #### Context menu 🔁`repeat-task as LATER`
 
-- A block open into right sidebar. Drag that bullet and place it in the journal.
-- The repeat task is for a notification. To place in the journal as a LATER task for marking "DONE". 
+- [Problem] Repeat task is for a notification. Not for journaling.
+
+- [Solution] To place in the journal as a LATER task and block reference. For marking "DONE". 
+
+- [Usage] A block open into right sidebar. Drag that bullet and place it in the journal. After executing the task, click the repeat-task checkbox first, then the LATER task checkbox.
 
 ### Original right sidebar
 
@@ -86,7 +89,11 @@
 
 ### Dialog for automatic markdown link
 
-- anti-garbled japanese website : 日本語ウェブサイトの文字化け対策済み
+- [Problem] URL is converted inadvertently, Garbled characters occur
+
+- [Solution] Confirm in dialog, anti-garbled japanese website : 日本語ウェブサイトの文字化け対策済み
+
+- [Usage] Paste URL, then press Enter to bring up a dialog.
 
 ### DONE dialog for add a completed property
 
