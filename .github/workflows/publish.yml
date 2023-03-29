@@ -1,4 +1,4 @@
-name: Release (Build plugin)
+name: Build plugin
 
 on:
   push:
@@ -14,11 +14,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v2
       - name: Use Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v1
         with:
-          node-version: '18'
+          node-version: '16.x' # You might need to adjust this value to your own version
       - name: Build
         id: build
         run: |
@@ -35,30 +35,18 @@ jobs:
         uses: ncipollo/release-action@v1
         id: create_release
         env:
-          GITHUB_TOKEN: ${{ github.token }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           VERSION: ${{ github.ref }}
         with:
           allowUpdates: true
           draft: false
           prerelease: false
-- name: release
-uses: actions/create-release@v1
-id: create_release
-with:
-draft: false
-prerelease: false
-release_name: ${{ steps.version.outputs.version }}
-tag_name: ${{ github.ref }}
-body_path: CHANGELOG.md
-env:
-GITHUB_TOKEN: ${{ github.token }}
-- name: upload artifact
-uses: actions/upload-release-asset@v1
+
       - name: Upload zip file
         id: upload_zip
         uses: actions/upload-release-asset@v1
         env:
-          GITHUB_TOKEN: ${{ github.token }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: ./${{ env.PLUGIN_NAME }}.zip
@@ -69,7 +57,7 @@ uses: actions/upload-release-asset@v1
         id: upload_metadata
         uses: actions/upload-release-asset@v1
         env:
-          GITHUB_TOKEN: ${{ github.token }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: ./package.json
