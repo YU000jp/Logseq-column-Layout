@@ -23,7 +23,7 @@ jobs:
         id: build
         run: |
           npm install -g pnpm
-          pnpm install --no-frozen-lockfile
+          pnpm install
           pnpm build
           mkdir ${{ env.PLUGIN_NAME }}
           cp README.md package.json icon.svg ${{ env.PLUGIN_NAME }}
