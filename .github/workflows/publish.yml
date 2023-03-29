@@ -41,19 +41,6 @@ jobs:
           allowUpdates: true
           draft: false
           prerelease: false
-- name: release
-uses: actions/create-release@v1
-id: create_release
-with:
-draft: false
-prerelease: false
-release_name: ${{ steps.version.outputs.version }}
-tag_name: ${{ github.ref }}
-body_path: CHANGELOG.md
-env:
-GITHUB_TOKEN: ${{ github.token }}
-- name: upload artifact
-uses: actions/upload-release-asset@v1
       - name: Upload zip file
         id: upload_zip
         uses: actions/upload-release-asset@v1
