@@ -29,6 +29,6 @@
   },
   "devDependencies": {
     "@types/encoding-japanese": "^2.0.1",
-    "parcel": "^2.8.2"
+    "parcel": "^2.8.3"
   }
 }

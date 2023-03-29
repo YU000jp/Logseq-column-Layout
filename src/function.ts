@@ -1,5 +1,4 @@
 import '@logseq/libs';
-
 import { getDateForPage } from 'logseq-dateutils';
 import swal from 'sweetalert';//https://sweetalert.js.org/guides/
 
@@ -11,38 +10,36 @@ export const TurnOnFunction = async (UserSettings) => {
         //add completed property to done task
         //https://github.com/DimitryDushkin/logseq-plugin-task-check-date
         logseq.DB.onChanged(async (e) => {
-            if (UserSettings.switchCompletedDialog === "enable") {
-                const TASK_MARKERS = new Set(["DONE"]);//require
-                const taskBlock = e.blocks.find((block) => TASK_MARKERS.has(block.marker));//find task block
-                if (!taskBlock) {
-                    //
-                } else {
-                    if (!taskBlock.properties?.completed && taskBlock.marker === "DONE") {
-                        const userConfigs = await logseq.App.getUserConfigs();
-                        const datePage = await getDateForPage(new Date(), userConfigs.preferredDateFormat);
-                        //dialog
-                        logseq.showMainUI();
-                        swal({
-                            title: "Turn on completed (date) property?",
-                            text: "",
-                            icon: "info",
-                            buttons: {
-                                cancel: true,
-                                confirm: true,
-                            },
+            const TASK_MARKERS = new Set(["DONE"]);//require
+            const taskBlock = e.blocks.find((block) => TASK_MARKERS.has(block.marker));//find task block
+            if (!taskBlock) {
+                //
+            } else {
+                if (!taskBlock.properties?.completed && taskBlock.marker === "DONE") {
+                    const userConfigs = await logseq.App.getUserConfigs();
+                    const datePage = await getDateForPage(new Date(), userConfigs.preferredDateFormat);
+                    //dialog
+                    logseq.showMainUI();
+                    swal({
+                        title: "Turn on completed (date) property?",
+                        text: "",
+                        icon: "info",
+                        buttons: {
+                            cancel: true,
+                            confirm: true,
+                        },
+                    })
+                        .then((answer) => {
+                            if (answer) {//OK
+                                logseq.Editor.upsertBlockProperty(taskBlock.uuid, "completed", datePage);
+                            } else {//Cancel
+                                //user cancel in dialog
+                            }
                         })
-                            .then((answer) => {
-                                if (answer) {//OK
-                                    logseq.Editor.upsertBlockProperty(taskBlock.uuid, "completed", datePage);
-                                } else {//Cancel
-                                    //user cancel in dialog
-                                }
-                            })
-                            .finally(() => {
-                                logseq.hideMainUI();
-                            });
-                        //dialog end
-                    }
+                        .finally(() => {
+                            logseq.hideMainUI();
+                        });
+                    //dialog end
                 }
             }
         });
@@ -65,14 +62,34 @@ export const TurnOnFunction = async (UserSettings) => {
         }
     });
 
-    /* SlashCommand  */
+    /* ContextMenuItem Copy block reference and embed  */
+    logseq.Editor.registerBlockContextMenuItem('Copy block reference and embed', async (event) => {
+        const block = await logseq.Editor.getBlock(event.uuid);
+        //ブロックのtimestampsはオプション機能
+        //let timestamps = "";
+        //if(block?.meta?.timestamps){
+        //    timestamps = block?.meta?.timestamps;
+        //}
+        // necessary to have the window focused in order to copy the content of the code block to the clipboard
+        //https://github.com/vyleung/logseq-copy-code-plugin/blob/main/src/index.js#L219
+        window.focus();
+        navigator.clipboard.writeText(`{{embed ((${event.uuid}))}}\n(from ((${event.uuid})) )`);
+        logseq.UI.showMsg("Copied to clipboard\n(block reference and embed)", "info");
+    });
+
+    /* ContextMenuItem Make to next line blank  */
+    logseq.Editor.registerBlockContextMenuItem('Make to next line blank', async (event) => {
+        const block = await logseq.Editor.insertBlock(event.uuid, "", { focus: true, sibling: true });
+        logseq.UI.showMsg("Done! (Make to next line blank)", "info");
+    });
+
+    /* SlashCommand Year List Calendar */
     logseq.Editor.registerSlashCommand('Create Year List Calendar', async (e) => {
         const userConfigs = await logseq.App.getUserConfigs();
         const ThisDate: any = new Date();
         const ThisYear = ThisDate.getFullYear();
         const ThisMonth = ThisDate.getMonth() + 1;
         const displayThisMonth = String(ThisMonth).padStart(2, '0');
-        //logseq-dateutilsでは月Dataからは取得できない
         logseq.Editor.insertBlock(e.uuid, `Year List Calendar`).then(async (b) => {
             if (b) {
                 //年間タスクリスト作成
@@ -134,9 +151,8 @@ async function createCalendar(year, ThisYear, ThisMonth, selectBlock, preferredD
             }
         });
     }
-}
-
-// うるう年かどうかを判定する関数
-function isLeapYear(year) {
-    return year % 4 === 0 && (year % 100 !== 0 || year % 400 === 0);
+    // うるう年かどうかを判定する関数
+    function isLeapYear(year) {
+        return year % 4 === 0 && (year % 100 !== 0 || year % 400 === 0);
+    }
 }

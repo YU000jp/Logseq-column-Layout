@@ -60,8 +60,8 @@ async function after() {
                 description: "Pages can be placed side by side in the sidebar",
             },
             {
-                key: "heading01",
-                title: "Test Option",
+                key: "",
+                title: "Test Function",
                 type: "heading",
                 default: "",
                 description: "",

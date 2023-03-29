@@ -1,3 +1,4 @@
+import '@logseq/libs';
 import swal from 'sweetalert';////https://sweetalert.js.org/guides/
 import Encoding from 'encoding-japanese';
 
@@ -35,7 +36,7 @@ async function getTitle(url) {
         const responseText = await response.text();
         //https://github.com/polygonplanet/encoding.js
         //title convert UTF-8
-        const matches = await Encoding.convert(responseText.match(DEFAULT_REGEX.htmlTitleTag), 'UTF8', 'AUTO');
+        const matches = await Encoding.convert(responseText.match(DEFAULT_REGEX.htmlTitleTag), 'UTF8', 'AUTO');//エンコード処理(文字化け対策)
 
         if (matches !== null && matches.length > 1 && matches[2] !== null) {
             return decodeHTML(matches[2].trim());
@@ -115,37 +116,32 @@ async function parseBlockForLink(uuid) {
     if (!formatSettings) {
         return;
     }
-    let factUrl = Boolean;
+
     let offset = 0;
     for (const url of urls) {
         const urlIndex = text.indexOf(url, offset);
-
         if (isAlreadyFormatted(text, url, urlIndex, formatSettings.formatBeginning) || isImage(url) || isWrappedInCommand(text, url)) {
             continue;
         }
-
-        const updatedTitle = await convertUrlToMarkdownLink(url, text, urlIndex, offset, formatSettings.applyFormat);
-        text = updatedTitle.text;
-        offset = updatedTitle.offset;
-        factUrl = true;
-    }
-
-    if (factUrl === true) {
         //dialog
         logseq.showMainUI();
-        swal({
+        await swal({
             title: "Are you sure?",
-            text: "Convert to markdown link",
+            text: `Convert to markdown link\n(${url})`,
             icon: "info",
             buttons: true,
             closeOnClickOutside: false,
             closeOnEsc: false,
         })
-            .then((answer) => {
+            .then(async (answer) => {
                 if (answer) {//OK
+                    const updatedTitle = await convertUrlToMarkdownLink(url, text, urlIndex, offset, formatSettings.applyFormat);
+                    text = updatedTitle.text;
+                    offset = updatedTitle.offset;
                     logseq.Editor.updateBlock(uuid, text);
                 } else {//Cancel
                     //user cancel in dialog
+                    return uuid;
                 }
             })
             .finally(() => {
@@ -157,29 +153,29 @@ async function parseBlockForLink(uuid) {
 
 
 export const MarkdownLink = (UserSettings) => {
-    const blockSet = new Set();
 
-    logseq.DB.onChanged(async (e) => {
-        if (UserSettings.switchMarkdownLink === "enable") {
-            if (e.txMeta?.outlinerOp !== 'insertBlocks') {
-                blockSet.add(e.blocks[0]?.uuid);
-                return;
+    if (UserSettings.switchMarkdownLink === "enable") {
+        const blockSet = new Set();
+        logseq.DB.onChanged(async (e) => {
+            const currentBlock = await logseq.Editor.getCurrentBlock();
+            if (currentBlock) {
+                if (!blockSet.has(currentBlock.uuid)) {//ほかのブロックを触ったら解除する
+                    blockSet.clear();
+                }
+                const uuidUserCancel = parseBlockForLink(currentBlock.uuid);
+                if (uuidUserCancel) {//cancel
+                    blockSet.add(uuidUserCancel);//キャンセルだったらブロックをロックする
+                }
+
             }
-            await blockSet.forEach((uuid) => parseBlockForLink(uuid));
-            blockSet.clear();
-        }
-    });
-
-    /* Block slash command */
-    logseq.Editor.registerSlashCommand('🌐Convert to markdown link (get webpage title)', async (e) => {
-        await blockSet.forEach((uuid) => parseBlockForLink(uuid));
-        blockSet.clear();
-    });
-
-    /* Block ContextMenuItem  */
-    logseq.Editor.registerBlockContextMenuItem('🌐Convert to markdown link', async (e) => {
-        await blockSet.forEach((uuid) => parseBlockForLink(uuid));
-        blockSet.clear();
-    });
-
+        });
+        /* Block slash command */
+        logseq.Editor.registerSlashCommand('🌐Convert to markdown link (get webpage title)', (e) => {
+            parseBlockForLink(uuid);
+        });
+        /* Block ContextMenuItem  */
+        logseq.Editor.registerBlockContextMenuItem('🌐Convert to markdown link', (e) => {
+            parseBlockForLink(uuid);
+        });
+    }
 };
