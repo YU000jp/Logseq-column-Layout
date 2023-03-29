@@ -66,6 +66,28 @@
 
 - [Usage] A block open into right sidebar. Drag that bullet and place it in the journal. After executing the task, click the repeat-task checkbox first, then the LATER task checkbox.
 
+- [Result] Keep repeat task as a recode in journals.
+
+#### Context menu `Copy block reference and embed`
+
+- [Problem] no link in embed
+
+- [Solution] insert block reference and embed together
+
+- [Usage] Copy to clipboard
+
+- [Result] Enables access to reference source
+
+#### Context menu `Make to next line blank`
+
+- [Problem] For blocks with content, line breaks can be annoying.
+
+- [Solution] Select in context menu and work
+
+- [Usage] Open context menu at the bullet for above block
+
+- [Result] Create a line break without breaking outlines
+
 ### Original right sidebar
 
 - Pages can be placed side by side in right sidebar.
@@ -95,8 +117,6 @@
 - [Solution] Confirm in dialog / anti-garbled japanese website : 日本語ウェブサイトの文字化け対策済み
 
 - [Usage] Paste URL, then press Enter to bring up a dialog.
-
-- [Result] Keep repeat tasks in journals.
 
 ### DONE dialog for add a completed property
 
