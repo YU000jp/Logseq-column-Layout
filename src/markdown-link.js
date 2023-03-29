@@ -3,6 +3,8 @@ import swal from 'sweetalert';////https://sweetalert.js.org/guides/
 import Encoding from 'encoding-japanese';
 
 
+//https://github.com/0x7b1/logseq-plugin-automatic-url-title
+
 const DEFAULT_REGEX = {
     wrappedInCommand: /(\{\{(video)\s*(https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9]+\.[^\s]{2,}|www\.[a-zA-Z0-9]+\.[^\s]{2,})\s*\}\})/gi,
     htmlTitleTag: /<title(\s[^>]+)*>([^<]*)<\/title>/,
