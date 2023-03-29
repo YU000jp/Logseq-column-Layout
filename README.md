@@ -143,6 +143,7 @@
 ## Credit
 
 - [task completion tracker plugin](https://github.com/DimitryDushkin/logseq-plugin-task-check-date)
+- [automatic-url-title](https://github.com/0x7b1/logseq-plugin-automatic-url-title)
 - [Vertical Panels for Sidebar](https://github.com/r-hegde/logseq-vertical-panels)
 
 ---
