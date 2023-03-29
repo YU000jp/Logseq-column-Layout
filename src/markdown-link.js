@@ -1,6 +1,6 @@
 import '@logseq/libs';
 import swal from 'sweetalert';////https://sweetalert.js.org/guides/
-import Encoding from 'encoding-japanese';
+import Encoding from 'encoding-japanese';//https://github.com/polygonplanet/encoding.js
 
 
 //https://github.com/0x7b1/logseq-plugin-automatic-url-title
@@ -36,7 +36,6 @@ async function getTitle(url) {
     try {
         const response = await fetch(url);
         const responseText = await response.text();
-        //https://github.com/polygonplanet/encoding.js
         //title convert UTF-8
         const matches = await Encoding.convert(responseText.match(DEFAULT_REGEX.htmlTitleTag), 'UTF8', 'AUTO');//エンコード処理(文字化け対策)
 
@@ -163,12 +162,11 @@ export const MarkdownLink = (UserSettings) => {
             if (currentBlock) {
                 if (!blockSet.has(currentBlock.uuid)) {//ほかのブロックを触ったら解除する
                     blockSet.clear();
+                    const uuidUserCancel = parseBlockForLink(currentBlock.uuid);
+                    if (uuidUserCancel) {//cancel
+                        blockSet.add(uuidUserCancel);//キャンセルだったらブロックをロックする
+                    }
                 }
-                const uuidUserCancel = parseBlockForLink(currentBlock.uuid);
-                if (uuidUserCancel) {//cancel
-                    blockSet.add(uuidUserCancel);//キャンセルだったらブロックをロックする
-                }
-
             }
         });
         /* Block slash command */

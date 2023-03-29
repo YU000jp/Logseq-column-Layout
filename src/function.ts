@@ -1,5 +1,5 @@
 import '@logseq/libs';
-import { getDateForPage } from 'logseq-dateutils';
+import { getDateForPage } from 'logseq-dateutils';//https://github.com/hkgnp/logseq-dateutils
 import swal from 'sweetalert';//https://sweetalert.js.org/guides/
 
 
@@ -13,37 +13,36 @@ export const TurnOnFunction = async (UserSettings) => {
         logseq.DB.onChanged(async (e) => {
             const currentBlock = await logseq.Editor.getCurrentBlock();
             if (currentBlock) {
-                if (!blockSet.has(currentBlock.uuid)) {//ほかのブロックを触ったら解除する
-                    blockSet.clear();
-                }
-                if (!currentBlock.properties?.completed && currentBlock.marker === "DONE") {
-                    const userConfigs = await logseq.App.getUserConfigs();
-                    const datePage = await getDateForPage(new Date(), userConfigs.preferredDateFormat);
-                    //dialog
-                    logseq.showMainUI();
-                    swal({
-                        title: "Turn on completed (date) property?",
-                        text: "",
-                        icon: "info",
-                        buttons: {
-                            cancel: true,
-                            confirm: true,
-                        },
-                    })
-                        .then((answer) => {
-                            if (answer) {//OK
-                                logseq.Editor.upsertBlockProperty(currentBlock.uuid, "completed", datePage);
-                            } else {//Cancel
-                                //user cancel in dialog
-                                blockSet.add(currentBlock.uuid);//キャンセルだったらブロックをロックする
-                            }
+                if (!blockSet.has(currentBlock.uuid)) {
+                    blockSet.clear();//ほかのブロックを触ったら解除する
+                    if (!currentBlock.properties?.completed && currentBlock.marker === "DONE") {
+                        const userConfigs = await logseq.App.getUserConfigs();
+                        const datePage = await getDateForPage(new Date(), userConfigs.preferredDateFormat);
+                        //dialog
+                        logseq.showMainUI();
+                        swal({
+                            title: "Turn on completed (date) property?",
+                            text: "",
+                            icon: "info",
+                            buttons: {
+                                cancel: true,
+                                confirm: true,
+                            },
                         })
-                        .finally(() => {
-                            logseq.hideMainUI();
-                        });
-                    //dialog end
+                            .then((answer) => {
+                                if (answer) {//OK
+                                    logseq.Editor.upsertBlockProperty(currentBlock.uuid, "completed", datePage);
+                                } else {//Cancel
+                                    //user cancel in dialog
+                                    blockSet.add(currentBlock.uuid);//キャンセルだったらブロックをロックする
+                                }
+                            })
+                            .finally(() => {
+                                logseq.hideMainUI();
+                            });
+                        //dialog end
+                    }
                 }
-
             }
         });
         //end
