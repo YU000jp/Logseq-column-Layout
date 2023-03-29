@@ -9,13 +9,14 @@ export const TurnOnFunction = async (UserSettings) => {
     if (UserSettings.switchCompletedDialog === "enable") {
         //add completed property to done task
         //https://github.com/DimitryDushkin/logseq-plugin-task-check-date
+        const blockSet = new Set();
         logseq.DB.onChanged(async (e) => {
-            const TASK_MARKERS = new Set(["DONE"]);//require
-            const taskBlock = e.blocks.find((block) => TASK_MARKERS.has(block.marker));//find task block
-            if (!taskBlock) {
-                //
-            } else {
-                if (!taskBlock.properties?.completed && taskBlock.marker === "DONE") {
+            const currentBlock = await logseq.Editor.getCurrentBlock();
+            if (currentBlock) {
+                if (!blockSet.has(currentBlock.uuid)) {//ほかのブロックを触ったら解除する
+                    blockSet.clear();
+                }
+                if (!currentBlock.properties?.completed && currentBlock.marker === "DONE") {
                     const userConfigs = await logseq.App.getUserConfigs();
                     const datePage = await getDateForPage(new Date(), userConfigs.preferredDateFormat);
                     //dialog
@@ -31,9 +32,10 @@ export const TurnOnFunction = async (UserSettings) => {
                     })
                         .then((answer) => {
                             if (answer) {//OK
-                                logseq.Editor.upsertBlockProperty(taskBlock.uuid, "completed", datePage);
+                                logseq.Editor.upsertBlockProperty(currentBlock.uuid, "completed", datePage);
                             } else {//Cancel
                                 //user cancel in dialog
+                                blockSet.add(currentBlock.uuid);//キャンセルだったらブロックをロックする
                             }
                         })
                         .finally(() => {
@@ -41,6 +43,7 @@ export const TurnOnFunction = async (UserSettings) => {
                         });
                     //dialog end
                 }
+
             }
         });
         //end
