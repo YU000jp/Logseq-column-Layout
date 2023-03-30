@@ -1,5 +1,7 @@
 # Changelog
 
+## [v1.5.5](https://github.com/YU000jp/Logseq-column-Layout/compare/v1.5.4...v1.5.5) - 2023-03-30
+
 ## [v1.5.4](https://github.com/YU000jp/Logseq-column-Layout/compare/v1.5.3...v1.5.4) - 2023-03-30
 ### Other Changes
 - Bump actions/setup-node from 1 to 3 by @dependabot in https://github.com/YU000jp/Logseq-column-Layout/pull/5
