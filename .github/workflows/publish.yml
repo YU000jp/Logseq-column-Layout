@@ -4,7 +4,7 @@ on:
   push:
     # Sequence of patterns matched against refs/tags
     tags:
-      - "*"
+      - "v*"
 
 env:
   PLUGIN_NAME: ${{ github.event.repository.name }}
