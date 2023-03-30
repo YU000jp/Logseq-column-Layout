@@ -15,6 +15,14 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
+      - name: Update Changelog
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          TAG=$(git tag --sort version:refname | tail -n 1)
+          CHANGELOG=$(git log $(git describe --tags --abbrev=0 HEAD^)..HEAD --pretty=format:"%h %s (%an)")
+          echo "## $TAG" >> CHANGELOG.md
+          echo "$CHANGELOG" >> CHANGELOG.md
       - name: Use Node.js
         uses: actions/setup-node@v3
         with:
@@ -53,3 +61,39 @@ jobs:
           asset_path: ./package.json
           asset_name: package.json
           asset_content_type: application/json
+      - name: Update Changelog
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          TAG=$(git tag --sort version:refname | tail -n 1)
+          CHANGELOG=$(git log $(git describe --tags --abbrev=0 HEAD^)..HEAD --pretty=format:"%h %s (%an)")
+          echo "## $TAG" >> CHANGELOG.md
+          echo "$CHANGELOG" >> CHANGELOG.md
+      - name: Use Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14.x'
+      - name: Install Dependencies
+        run: npm install
+      - name: Build
+        run: npm run build
+      - name: Create Release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        uses: actions/create-release@v1
+        with:
+          tag_name: ${{ github.ref }}
+          release_name: Release ${{ github.ref }}
+          draft: false
+          prerelease: false
+          body: |
+            $(cat CHANGELOG.md)
+      - name: Upload Assets
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: './dist/*.js'
+          asset_name: '${{ env.PLUGIN_NAME }}-${{ github.ref }}.js'
+          asset_content_type: 'text/javascript'
