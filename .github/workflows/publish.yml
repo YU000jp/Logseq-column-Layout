@@ -24,6 +24,7 @@ jobs:
       - name: Build
         id: build
         run: |
+          npm install -g pnpm
           pnpm install
           pnpm build
           mkdir ${{ env.PLUGIN_NAME }}
