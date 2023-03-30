@@ -20,10 +20,10 @@ jobs:
         with:
           persist-credentials: false
           node-version: '18'
+          cache: 'pnpm'
       - name: Build
         id: build
         run: |
-          npm install -g pnpm
           pnpm install
           pnpm build
           mkdir ${{ env.PLUGIN_NAME }}
