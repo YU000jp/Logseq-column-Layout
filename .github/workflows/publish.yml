@@ -14,12 +14,12 @@ jobs:
     runs-on: ubuntu-22.04
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: Use Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
           persist-credentials: false
-          node-version: '14.x' # Node.js 14.x
+          node-version: '18'
       - name: Build
         id: build
         run: |
@@ -32,22 +32,12 @@ jobs:
           zip -r ${{ env.PLUGIN_NAME }}.zip ${{ env.PLUGIN_NAME }}
           ls
           echo "::set-output name=tag_name::$(git tag --sort version:refname | tail -n 1)"
-      - name: Create Release
-        uses: ncipollo/release-action@v1.12.0
-        id: create_release
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          VERSION: ${{ github.ref }}
-        with:
-          allowUpdates: true
-          draft: false
-          prerelease: false
 
       - name: Upload zip file
         id: upload_zip
         uses: actions/upload-release-asset@v1
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: ./${{ env.PLUGIN_NAME }}.zip
@@ -58,7 +48,7 @@ jobs:
         id: upload_metadata
         uses: actions/upload-release-asset@v1
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: ./package.json
