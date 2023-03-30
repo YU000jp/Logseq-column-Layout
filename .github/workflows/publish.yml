@@ -14,11 +14,12 @@ jobs:
     runs-on: ubuntu-22.04
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v2
       - name: Use Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v2
         with:
-          node-version: '16.x' # Node.js 16.x
+          persist-credentials: false
+          node-version: '14.x' # Node.js 14.x
       - name: Build
         id: build
         run: |
