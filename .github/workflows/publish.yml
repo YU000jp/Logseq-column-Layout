@@ -15,18 +15,16 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-      - name: Update Changelog
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          TAG=$(git tag --sort version:refname | tail -n 1)
-          CHANGELOG=$(git log $(git describe --tags --abbrev=0 HEAD^)..HEAD --pretty=format:"%h %s (%an)")
-          echo "## $TAG" >> CHANGELOG.md
-          echo "$CHANGELOG" >> CHANGELOG.md
       - name: Use Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '18'
+
+      # Check if a release already exists for the tag
+      - name: Check for Existing Release
+        id: check_release
+        run: echo ::set-output name=exists::$(curl -s -o /dev/null -w "%{http_code}" -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" https://api.github.com/repos/${{ github.repository }}/releases/tags/${{ github.ref }})
+
       - name: Build
         id: build
         run: |
@@ -40,60 +38,111 @@ jobs:
           ls
           echo "::set-output name=tag_name::$(git tag --sort version:refname | tail -n 1)"
 
+      # Upload the ZIP file to the existing release or create a new release
       - name: Upload zip file
         id: upload_zip
         uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          upload_url: ${{ steps.check_release.outputs.exists == '200' && format('https://api.github.com/repos/{0}/releases/tags/{1}', github.repository, github.ref) || steps.create_release.outputs.upload_url }}
           asset_path: ./${{ env.PLUGIN_NAME }}.zip
           asset_name: ${{ env.PLUGIN_NAME }}-${{ steps.build.outputs.tag_name }}.zip
           asset_content_type: application/zip
 
+      # Upload the package.json file to the existing release or create a new release
       - name: Upload package.json
         id: upload_metadata
         uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          upload_url: ${{ steps.check_release.outputs.exists == '200' && format('https://api.github.com/repos/{0}/releases/tags/{1}', github.repository, github.ref) || steps.create_release.outputs.upload_url }}
           asset_path: ./package.json
           asset_name: package.json
           asset_content_type: application/json
-      - name: Update Changelog
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          TAG=$(git tag --sort version:refname | tail -n 1)
-          CHANGELOG=$(git log $(git describe --tags --abbrev=0 HEAD^)..HEAD --pretty=format:"%h %s (%an)")
-          echo "## $TAG" >> CHANGELOG.md
-          echo "$CHANGELOG" >> CHANGELOG.md
+name: Build plugin
+
+on:
+  push:
+    # Sequence of patterns matched against refs/tags
+    tags:
+      - '*' # Push events to matching any tag format, i.e. 1.0, 20.15.10
+
+env:
+  PLUGIN_NAME: ${{ github.event.repository.name }}
+
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+
+    steps:
+      - uses: actions/checkout@v3
       - name: Use Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
-          node-version: '14.x'
-      - name: Install Dependencies
-        run: npm install
-      - name: Build
-        run: npm run build
+          node-version: '18'
+
+      # Check if a release already exists for the tag
+      - name: Check for Existing Release
+        id: check_release
+        run: echo ::set-output name=exists::$(curl -s -o /dev/null -w "%{http_code}" -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" https://api.github.com/repos/${{ github.repository }}/releases/tags/${{ github.ref }})
+
+      # If the release already exists, get its upload URL
+      - name: Get Release Upload URL
+        id: get_upload_url
+        if: steps.check_release.outputs.exists == '200'
+        run: echo ::set-output name=url::$(curl -s -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" https://api.github.com/repos/${{ github.repository }}/releases/tags/${{ github.ref }} | jq -r '.upload_url')
+
+      # If the release doesn't exist, create it and get its upload URL
       - name: Create Release
+        id: create_release
+        if: steps.check_release.outputs.exists != '200'
+        uses: actions/create-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        uses: actions/create-release@v1
         with:
           tag_name: ${{ github.ref }}
           release_name: Release ${{ github.ref }}
           draft: false
-          prerelease: false
-          body: |
-            $(cat CHANGELOG.md)
-      - name: Upload Assets
+          prerelease: true
+        # Get the upload URL for the new release
+        outputs:
+          url: ${{ steps.create_release.outputs.upload_url }}
+
+      - name: Build
+        id: build
+        run: |
+          npm install -g pnpm
+          pnpm install --no-frozen-lockfile
+          pnpm build
+          mkdir ${{ env.PLUGIN_NAME }}
+          cp README.md package.json icon.svg ${{ env.PLUGIN_NAME }}
+          mv dist ${{ env.PLUGIN_NAME }}
+          zip -r ${{ env.PLUGIN_NAME }}.zip ${{ env.PLUGIN_NAME }}
+          ls
+          echo "::set-output name=tag_name::$(git tag --sort version:refname | tail -n 1)"
+
+      # Upload the ZIP file to the existing release or create a new release
+      - name: Upload zip file
+        id: upload_zip
         uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: './dist/*.js'
-          asset_name: '${{ env.PLUGIN_NAME }}-${{ github.ref }}.js'
-          asset_content_type: 'text/javascript'
+          upload_url: ${{ steps.get_upload_url.outputs.url }} # Use the existing upload URL if the release exists, otherwise use the new upload URL
+          asset_path: ./${{ env.PLUGIN_NAME }}.zip
+          asset_name: ${{ env.PLUGIN_NAME }}-${{ steps.build.outputs.tag_name }}.zip
+          asset_content_type: application/zip
+
+      # Upload the package.json file to the existing release or create a new release
+      - name: Upload package.json
+        id: upload_metadata
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.get_upload_url.outputs.url }} # Use the existing upload URL if the release exists, otherwise use the new upload URL
+          asset_path: ./package.json
+          asset_name: package.json
+          asset_content_type: application/json
