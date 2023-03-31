@@ -15,10 +15,7 @@
     "https://www.buymeacoffee.com/yu000japan"
   ],
   "dependencies": {
-    "@logseq/libs": "^0.0.14",
-    "encoding-japanese": "^2.0.0",
-    "logseq-dateutils": "^0.0.26",
-    "sweetalert": "^2.1.2"
+    "@logseq/libs": "^0.0.14"
   },
   "repository": "https://github.com/YU000jp/Logseq-column-Layout",
   "repo": "YU000jp/Logseq-column-Layout",

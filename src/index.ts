@@ -4,14 +4,34 @@ import { logseq as PL } from "../package.json";
 const pluginId = PL.id;
 
 import { ColumnLayoutStyle } from './layout';
-import { TurnOnFunction } from './function';
-import { MarkdownLink } from './markdown-link';
-
 
 /* main */
 function main() {
     const UserSettings: any = logseq.settings;
     console.info(`#${pluginId}: MAIN`); /* -plugin-id */
+
+    //https://logseq.github.io/plugins/types/SettingSchemaDesc.html
+    const settingsTemplate: SettingSchemaDesc[] = [
+        {
+            key: "switchLinkedReferences",
+            title: "[Journals] Linked References",
+            type: "enum",
+            enumChoices: ["Side", "Bottom"],
+            enumPicker: "radio",
+            default: "Side",
+            description: "Side by side",
+        },
+        {
+            key: "switchRightSidebar",
+            title: "Side by side in right sidebar",
+            type: "enum",
+            enumChoices: ["original", "normal"],
+            enumPicker: "radio",
+            default: "original",
+            description: "Pages can be placed side by side in the sidebar",
+        },
+    ];
+    logseq.useSettingsSchema(settingsTemplate);
 
     //switch linked References
     //journal queries Side & Linked References Side
@@ -23,71 +43,6 @@ function main() {
         parent.document.body.classList.add("cl-switchRightSidebar");
     }
     ColumnLayoutStyle();
-};/* end_main */
-
-
-async function after() {
-    console.info(`#${pluginId}: AFTER`); /* -plugin-id */
-    const UserSettings: any = logseq.settings;
-    //lazy loading
-    setTimeout(function () {
-
-        TurnOnFunction(UserSettings);
-
-        if (UserSettings.switchMarkdownLink === "enable") {
-            MarkdownLink(UserSettings);
-        }
-
-
-        //https://logseq.github.io/plugins/types/SettingSchemaDesc.html
-        const settingsTemplate: SettingSchemaDesc[] = [
-            {
-                key: "switchLinkedReferences",
-                title: "[Journals] Linked References",
-                type: "enum",
-                enumChoices: ["Side", "Bottom"],
-                enumPicker: "radio",
-                default: "Side",
-                description: "Side by side",
-            },
-            {
-                key: "switchRightSidebar",
-                title: "Side by side in right sidebar",
-                type: "enum",
-                enumChoices: ["original", "normal"],
-                enumPicker: "radio",
-                default: "original",
-                description: "Pages can be placed side by side in the sidebar",
-            },
-            {
-                key: "",
-                title: "Test Function",
-                type: "heading",
-                default: "",
-                description: "",
-            },
-            {
-                key: "switchCompletedDialog",
-                title: "Turn on DONE task completed (date) property",
-                type: "enum",
-                enumChoices: ["enable", "disable"],
-                enumPicker: "radio",
-                default: "disable",
-                description: "Confirm in dialog",
-            },
-            {
-                key: "switchMarkdownLink",
-                title: "Turn on automatic Markdown link",
-                type: "enum",
-                enumChoices: ["enable", "disable"],
-                enumPicker: "radio",
-                default: "disable",
-                description: "Confirm in dialog / Anti-garbled for japanese website",
-            },
-        ];
-        logseq.useSettingsSchema(settingsTemplate);
-
-    }, 2000);
 
     parent.document.body.classList.add('is-plugin-column-layout-enabled');
     logseq.beforeunload(async () => {
@@ -96,8 +51,10 @@ async function after() {
     logseq.onSettingsChanged((newSettings, oldSettings) => {
         onSettingsChangedCallback(newSettings, oldSettings);
     });
+
     console.info(`#${pluginId}: loaded`);
-}
+};/* end_main */
+
 
 // Setting changed
 const onSettingsChangedCallback = (newSet, oldSet) => {
@@ -113,4 +70,4 @@ const onSettingsChangedCallback = (newSet, oldSet) => {
     }
 }
 
-logseq.ready(main).then(after).catch(console.error);
+logseq.ready(main).catch(console.error);

@@ -21,11 +21,6 @@ logseq.provideStyle(String.raw`
     div.nav-content-item-inner{margin-top:2em}
     div#main-content-container blockquote{font-size:.95em}
     div#main-content-container .now,div#main-content-container .doing,div#main-content-container .later,div#main-content-container .todo{background:linear-gradient(transparent 80%,var(--ls-block-highlight-color) 30%);font-weight:700;font-size:1.1em}
-    div#main-content-container input.form-checkbox{transform:scale(1.1)}
-    div#main-content-container input.form-checkbox+div input.form-checkbox{transform:scale(0.6);pointer-events:none}
-    div#main-content-container div:not(.page-blocks-inner) input.form-checkbox+a+div input.form-checkbox{transform:scale(0.9)}
-    div#main-content-container input.form-checkbox+div input.form-checkbox+a,div#main-content-container div:not(.page-blocks-inner) input.form-checkbox+a+div input.form-checkbox+a{text-decoration:line-through;font-size:small;pointer-events:none}
-    div#main-content-container input.form-checkbox+div a{font-size:medium}
     div#root [data-refs-self*="kanban"]>.block-children-container>.block-children{overflow-x:scroll;font-size:.98em;scroll-snap-type:x}
     main.ls-wide-mode div#main-content-container div.relative div.lazy-visibility div.references div.references-blocks div.content>div [data-refs-self*="kanban"]>.block-children-container>.block-children,main.ls-wide-mode div#main-content-container div.relative+div+div div.references div.references-blocks div.content>div [data-refs-self*="kanban"]>.block-children-container>.block-children,main.ls-wide-mode div#main-content-container div.relative+div+div+div div.references div.references-blocks div.content>div [data-refs-self*="kanban"]>.block-children-container>.block-children,div#right-sidebar [data-refs-self*="kanban"]>.block-children-container>.block-children{flex-wrap:wrap}
     body.is-pdf-active div#main-content-container div.relative+div.references.mt-6.flex-1.flex-row,main.ls-right-sidebar-open div#main-content-container div.relative+div.references.mt-6.flex-1.flex-row,body.is-pdf-active div#main-content-container div.page-hierarchy,main.ls-right-sidebar-open div#main-content-container div.page-hierarchy,div#right-sidebar div.relative+div.references.mt-6.flex-1.flex-row,div#right-sidebar div.page-hierarchy{display:none}
