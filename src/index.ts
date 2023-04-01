@@ -7,39 +7,34 @@ import { ColumnLayoutStyle } from './layout';
 
 /* main */
 function main() {
-    const UserSettings: any = logseq.settings;
     console.info(`#${pluginId}: MAIN`); /* -plugin-id */
 
     //https://logseq.github.io/plugins/types/SettingSchemaDesc.html
     const settingsTemplate: SettingSchemaDesc[] = [
         {
-            key: "switchLinkedReferences",
+            key: "booleanLinkedReferences",
             title: "[Journals] Linked References",
-            type: "enum",
-            enumChoices: ["Side", "Bottom"],
-            enumPicker: "radio",
-            default: "Side",
+            type: "boolean",
+            default: true,
             description: "Side by side",
         },
         {
-            key: "switchRightSidebar",
+            key: "booleanRightSidebar",
             title: "Side by side in right sidebar",
-            type: "enum",
-            enumChoices: ["original", "normal"],
-            enumPicker: "radio",
-            default: "original",
+            type: "boolean",
+            default: true,
             description: "Pages can be placed side by side in the sidebar",
         },
     ];
     logseq.useSettingsSchema(settingsTemplate);
 
-    //switch linked References
+    //linked References
     //journal queries Side & Linked References Side
-    if (UserSettings.switchLinkedReferences === "Side") {
+    if (logseq.settings?.booleanLinkedReferences === true) {
         parent.document.body.classList.add("cl-side");
     }
     //switch right sidebar
-    if (UserSettings.switchRightSidebar === "original") {
+    if (logseq.settings?.booleanRightSidebar === true) {
         parent.document.body.classList.add("cl-switchRightSidebar");
     }
     ColumnLayoutStyle();
@@ -58,14 +53,14 @@ function main() {
 
 // Setting changed
 const onSettingsChangedCallback = (newSet, oldSet) => {
-    if (oldSet.switchLinkedReferences !== "Bottom" && newSet.switchLinkedReferences === "Bottom") {
+    if (oldSet.booleanLinkedReferences !== false && newSet.booleanLinkedReferences === false) {
         parent.document.body.classList.remove('cl-side');
-    } else if (oldSet.switchLinkedReferences !== "Side" && newSet.switchLinkedReferences === "Side") {
+    } else if (oldSet.booleanLinkedReferences !== true && newSet.booleanLinkedReferences === true) {
         parent.document.body.classList.add('cl-side');
     }
-    if (oldSet.switchRightSidebar !== "normal" && newSet.switchRightSidebar === "normal") {
+    if (oldSet.booleanRightSidebar !== false && newSet.booleanRightSidebar === false) {
         parent.document.body.classList.remove('cl-switchRightSidebar');
-    } else if (oldSet.switchRightSidebar !== "original" && newSet.switchRightSidebar === "original") {
+    } else if (oldSet.booleanRightSidebar !== true && newSet.booleanRightSidebar === true) {
         parent.document.body.classList.add('cl-switchRightSidebar');
     }
 }

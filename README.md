@@ -1,4 +1,4 @@
-# logseq-plugin-column-layout
+# Logseq Plugin: Column Layout
 
 - Journals, linked references, and journal queries can be placed side by side.
 
@@ -8,16 +8,10 @@
 [![License](https://img.shields.io/github/license/YU000jp/Logseq-column-Layout?color=blue)](https://github.com/YU000jp/Logseq-column-Layout/blob/main/LICENSE)
 
 ## Changelog
-> page-tags and hierarchy display function in content page (non-journals) separate as a plugin [page-tags and hierarchy](https://github.com/YU000jp/logseq-page-tags-and-hierarchy)
 
-## Supported plugins
+- ContextMenu functions separate as a plugin => [SomeMenuExtender](https://github.com/YU000jp/logseq-plugin-some-menu-extender) #2023/04/01
 
-> [Awesome UI](https://github.com/yoyurec/logseq-awesome-ui)
-> [Awesome Links](https://github.com/yoyurec/logseq-awesome-links)
-
-## Unsupported plugin
-
-> [Awesome Styler](https://github.com/yoyurec/logseq-awesome-styler)
+- page-tags and hierarchy display function in content page (non-journals) separate as a plugin => [Page-tags and Hierarchy](https://github.com/YU000jp/logseq-page-tags-and-hierarchy)
 
 ## Screenshot
 
@@ -46,6 +40,7 @@
 - Use [datenlp plugin](https://github.com/hkgnp/logseq-datenlp-plugin). Add `@wednesday` or read past journals and add `@today`. They become links.
 
 #### PDF highlights
+
 - Logseq has the ability to read and highlight PDF file. If you add a date link to highlights, it will be included in the list of linked references.
 - [PDF highlights (docs.logseq.com)](https://docs.logseq.com/#/page/pdf%20highlights)
 
@@ -55,38 +50,6 @@
 - On Logseq, edit `config.edn` file. [For more details refer to this link(sample code)](https://github.com/YU000jp/logseq-default-queries-journals)
 
 ![Animation1](img/journal-queries-demo.gif)
-
-### 🖱️ Right-click on the bullet
-
-#### Context menu 🔁`repeat-task as LATER`
-
-- [Problem] Repeat task is for a notification. Not for journaling.
-
-- [Solution] To place in the journal as a LATER task and block reference. For marking "DONE". 
-
-- [Usage] A block open into right sidebar. Drag that bullet and place it in the journal. After executing the task, click the repeat-task checkbox first, then the LATER task checkbox.
-
-- [Result] Keep repeat task as a recode in journals.
-
-#### Context menu `Copy block reference and embed`
-
-- [Problem] no link in embed
-
-- [Solution] insert block reference and embed together
-
-- [Usage] Copy to clipboard
-
-- [Result] Enables access to reference source
-
-#### Context menu `Make to next line blank`
-
-- [Problem] For blocks with content, line breaks can be annoying.
-
-- [Solution] Select in context menu and work
-
-- [Usage] Open context menu at the bullet for above block
-
-- [Result] Create a line break without breaking outlines
 
 ### Original right sidebar
 
@@ -108,41 +71,24 @@
 - Please let me know on [GitHub](https://github.com/YU000jp/Logseq-column-Layout/issues).
 - It would be helpful if you could take a screenshot.
 
-## Test Function
-
-### Dialog for automatic markdown link
-
-- [Problem] URL is converted inadvertently / Garbled characters occur.
-
-- [Solution] Confirm in dialog / anti-garbled japanese website : 日本語ウェブサイトの文字化け対策済み
-
-- [Usage] Paste URL, then press Enter to bring up a dialog.
-
-### DONE dialog for add a completed property
-
-- [Problem] Logseq does not record the DONE date.
-
-- [Solution] After the task DONE, add completed property to the block.
-
-- [Usage] After DONE a task, a dialog will appear asking if you want to add a completed property.
-
-- [Result] The date contained in the completed property acts as a link. View completed tasks in Journal Linked References.
-
-### Year List Calendar <slash command : `create Year List Calendar`>
-
-- Using Year List Calendar, all the dates for a full year are generated as date links. When written as child elements, they are displayed in the Linked References section.
-
-![Animation6w21](https://user-images.githubusercontent.com/111847207/222945226-f8e031cf-9e49-4c98-a5e8-ee360c931050.gif)
-
 ## Other my plugins
 
-- [panel coloring](https://github.com/YU000jp/logseq-plugin-panel-coloring)
+- [Panel Coloring](https://github.com/YU000jp/logseq-plugin-panel-coloring)
 
-- [page-tags and hierarchy](https://github.com/YU000jp/logseq-page-tags-and-hierarchy)
+- [Page-tags and Hierarchy](https://github.com/YU000jp/logseq-page-tags-and-hierarchy)
+
+### Supported plugins
+
+- [Awesome UI](https://github.com/yoyurec/logseq-awesome-ui)
+- [Awesome Links](https://github.com/yoyurec/logseq-awesome-links)
+
+### Unsupported plugin
+
+- [Awesome Styler](https://github.com/yoyurec/logseq-awesome-styler)
 
 ## Credit
 
-- [task completion tracker plugin](https://github.com/DimitryDushkin/logseq-plugin-task-check-date)
+- [task completion tracker](https://github.com/DimitryDushkin/logseq-plugin-task-check-date)
 - [automatic-url-title](https://github.com/0x7b1/logseq-plugin-automatic-url-title)
 - [Vertical Panels for Sidebar](https://github.com/r-hegde/logseq-vertical-panels)
 
