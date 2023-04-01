@@ -17,7 +17,7 @@
 
 ![スクリーンショット 2022-10-14 0207414](https://user-images.githubusercontent.com/111847207/195663729-7c979e9e-9309-4f0b-9766-581778c5aaa7.png)
 
-![image](https://user-images.githubusercontent.com/111847207/211182685-4f5f7600-786f-4d5c-80f3-0e6d0b9d4239.png)
+![image](https://user-images.githubusercontent.com/111847207/229287018-f99c3a07-4f39-40a1-8bce-f6ee6ae17a78.png)
 
 ## What can do
 
