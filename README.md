@@ -60,6 +60,14 @@
 
 ![Animation2](https://user-images.githubusercontent.com/111847207/200146804-e0e53c12-933a-417e-b19a-e9e782e1c492.gif)
 
+## Install from Marketplace
+
+- Press [---] on the top right toolbar to open [Plugins]
+- Select marketplace
+- Type 'column' in the search field, select it from the search results and install
+
+![image](https://user-images.githubusercontent.com/111847207/229359128-8a35bc00-b9ab-4048-be6f-5026bf0980a5.png)
+
 ## ⚠️ Remarks
 
 - Linked References space is blank if there are no tasks in Logseq.
