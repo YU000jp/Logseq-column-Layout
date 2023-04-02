@@ -77,8 +77,8 @@
 - [Column Layout](https://github.com/YU000jp/Logseq-column-Layout)
 - [Panel Coloring](https://github.com/YU000jp/logseq-plugin-panel-coloring)
 - [Page-tags and Hierarchy](https://github.com/YU000jp/logseq-page-tags-and-hierarchy)
-- [Rakuten-books](https://github.com/YU000jp/logseq-plugin-rakuten-books)
-- [booklog-jp-import](https://github.com/YU000jp/logseq-plugin-booklog-jp-import)
+- [Rakuten-books](https://github.com/YU000jp/logseq-plugin-rakuten-books) (Only for Japanese site)
+- [booklog-jp-import](https://github.com/YU000jp/logseq-plugin-booklog-jp-import) (Only for Japanese site)
 
 ### Supported plugins
 
