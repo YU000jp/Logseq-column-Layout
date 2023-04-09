@@ -6,6 +6,9 @@ dependencies:
     version: 0.0.14
 
 devDependencies:
+  '@types/encoding-japanese':
+    specifier: ^2.0.1
+    version: 2.0.1
   parcel:
     specifier: ^2.8.3
     version: 2.8.3
@@ -868,6 +871,10 @@ packages:
   /@trysound/sax@0.2.0:
     resolution: {integrity: sha512-L7z9BgrNEcYyUYtF+HaEfiS5ebkh9jXqbszz7pC0hRBPaatV0XjSD3+eHrpqFemQfgwiFF0QPIarnIihIDn7OA==}
     engines: {node: '>=10.13.0'}
+    dev: true
+
+  /@types/encoding-japanese@2.0.1:
+    resolution: {integrity: sha512-JaCXs2HLniKY8xXeWlg8MAtd4iKhNh8LwutW3yDMWY4usEdTZ2va1x9kd8V3179OAIUTgGQVA63XJrHettpVFQ==}
     dev: true
 
   /@types/parse-json@4.0.0:

@@ -2,13 +2,13 @@
   "name": "logseq-column-layout",
   "description": "If you're using wide monitors, you can place journals, linked references, and journal queries side by side.",
   "author": "YU000jp",
-  "main": "dist/index.ts",
+  "main": "dist/index.html",
   "targets": {
     "main": false
   },
   "effect": true,
   "scripts": {
-    "build": "parcel build --no-source-maps src/index.ts --public-url ./"
+    "build": "parcel build --no-source-maps src/index.html --public-url ./"
   },
   "license": "MIT",
   "sponsors": [
@@ -25,6 +25,7 @@
     "icon": "./icon.svg"
   },
   "devDependencies": {
+    "@types/encoding-japanese": "^2.0.1",
     "parcel": "^2.8.3"
   }
 }
