@@ -1,11 +1,8 @@
 import '@logseq/libs';
 import { SettingSchemaDesc } from "@logseq/libs/dist/LSPlugin.user";
-import { logseq as PL } from "../package.json";
-const pluginId = PL.id;
 
 /* main */
 function main() {
-    console.info(`#${pluginId}: MAIN`); /* -plugin-id */
 
     //https://logseq.github.io/plugins/types/SettingSchemaDesc.html
     const settingsTemplate: SettingSchemaDesc[] = [
@@ -204,7 +201,6 @@ function main() {
         onSettingsChangedCallback(newSettings, oldSettings);
     });
 
-    console.info(`#${pluginId}: loaded`);
 };/* end_main */
 
 
