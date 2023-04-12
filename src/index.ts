@@ -118,8 +118,8 @@ function main() {
     body.cl-side[data-page="home"] div#today-queries>div.lazy-visibility div.custom-query div.content{padding-top:.15em}
     body.cl-side[data-page="home"] div#today-queries>div.lazy-visibility div.custom-query div.content div.lazy-visibility:not(:last-of-type){border-bottom:3px dotted var(--ls-guideline-color);padding:.6em}
     body.cl-side[data-page="home"] div#today-queries>div.lazy-visibility div.custom-query div.content div.lazy-visibility{border-right:4px solid var(--ls-page-blockquote-bg-color)}
-    body.cl-side[data-page="home"] div#today-queries>div.lazy-visibility div.custom-query div.my-2{padding:.2em;margin:.2em}
-    body.cl-side[data-page="home"] div#today-queries>div.lazy-visibility div.custom-query div.breadcrumb.block-parents{color:var(--ct-external-link-color);margin-bottom:.6em}
+    body.cl-side[data-page="home"] div#today-queries>div.lazy-visibility div.custom-query div.my-2{padding:.2em;margin:.2em;height:unset!important}
+    body.cl-side[data-page="home"] div#today-queries>div.lazy-visibility div.custom-query div.breadcrumb.block-parents{color:var(--ct-external-link-color)}
     body.cl-side[data-page="home"] div#today-queries .sm\:px-7{padding-left:unset}
     body.cl-side[data-page="home"] div#today-queries h2,body.cl-side[data-page="home"] div#today-queries h3,body.cl-side[data-page="home"] div#today-queries h4{font-size:16px;padding:4px}
     body.cl-side[data-page="home"]:not(.is-pdf-active) main:not(.ls-right-sidebar-open) div#main-content-container{margin:0;padding-top:unset;padding-left:0}
