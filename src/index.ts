@@ -105,8 +105,8 @@ function main() {
     :root{--ls-main-content-max-width:auto!important;--ls-main-content-max-width-wide:auto!important}
     body.cl-side[data-page="home"]:not(.is-pdf-active) main:not(.ls-right-sidebar-open) div.journal>div.flex.flex-col:first-child{max-width:1170px}
     body.cl-side[data-page="home"]:not(.is-pdf-active) main:not(.ls-right-sidebar-open) div#journals div.block-children-container{display:block}
-    body.cl-side[data-page="home"]:not(.is-pdf-active) main:not(.ls-right-sidebar-open) div#today-queries+div.flex.flex-col{position:fixed;bottom:1em;padding:.3em;outline:3px solid var(--ls-guideline-color);outline-offset:3px;border-radius:1.2em;background:unset;backdrop-filter:blur(40px);font-size:small;max-height:30vh;overflow:auto;z-index:1}
-    body.cl-side[data-page="home"] main.ls-right-sidebar-open div#today-queries+div.flex.flex-col,body.cl-side[data-page="home"] body.is-pdf-active div#today-queries+div.flex.flex-col{display:none}
+    body.cl-side[data-page="home"]:not(.is-pdf-active) main:not(.ls-right-sidebar-open) :is(div#today-queries+div.flex.flex-col, div.scheduled-or-deadlines){position:fixed;bottom:1em;padding:.3em;outline:3px solid var(--ls-guideline-color);outline-offset:3px;border-radius:1.2em;background:unset;backdrop-filter:blur(40px);font-size:small;max-height:30vh;overflow:auto;z-index:1}
+    body.cl-side[data-page="home"] main.ls-right-sidebar-open :is(div#today-queries+div.flex.flex-col, div.scheduled-or-deadlines),body.cl-side[data-page="home"] body.is-pdf-active :is(div#today-queries+div.flex.flex-col, div.scheduled-or-deadlines){display:none}
     body.cl-side[data-page="home"]:not(.is-pdf-active) main:not(.ls-right-sidebar-open) div#today-queries{width:390px;position:fixed;right:0;top:calc(var(--ls-headbar-height) + var(--ls-headbar-inner-top-padding));bottom:3px;overflow-y:scroll;font-size:smaller;border-left:2px solid var(--ls-guideline-color);padding:.12em}
     body.cl-side[data-page="home"] main.ls-right-sidebar-open div#root div#journals div#today-queries,body.cl-side[data-page="home"].is-pdf-active div#root div#journals div#today-queries{display:none}
     body.cl-side[data-page="home"].is-tabs-loaded div#root div#journals div#today-queries{top:calc(var(--ls-headbar-height) + var(--ls-headbar-inner-top-padding) + 40px)}
@@ -127,41 +127,41 @@ function main() {
     @media screen and (min-width: 1850px) and (max-width: 1910px) {
     body.cl-side[data-page="home"]:not(.is-pdf-active) main:not(.ls-right-sidebar-open) div#today-queries,body.cl-side[data-page="home"]:not(.is-pdf-active) main:not(.ls-left-sidebar-open) div#today-queries{width:360px}
     body.cl-side[data-page="home"]:not(.is-pdf-active) main:not(.ls-right-sidebar-open) div.journal>div.flex.flex-col:first-child{min-width:820px}
-    body.cl-side[data-page="home"]:not(.is-pdf-active) main:not(.ls-right-sidebar-open) div#today-queries+div.flex.flex-col{width:380px}
+    body.cl-side[data-page="home"]:not(.is-pdf-active) main:not(.ls-right-sidebar-open) :is(div#today-queries+div.flex.flex-col, div.scheduled-or-deadlines){width:380px}
     }
     @media screen and (min-width: 1911px) and (max-width: 2019px) {
     body.cl-side[data-page="home"]:not(.is-pdf-active) main:not(.ls-right-sidebar-open) div.journal>div.flex.flex-col:first-child{min-width:920px}
-    body.cl-side[data-page="home"]:not(.is-pdf-active) main:not(.ls-right-sidebar-open) div#today-queries+div.flex.flex-col{width:460px}
+    body.cl-side[data-page="home"]:not(.is-pdf-active) main:not(.ls-right-sidebar-open) :is(div#today-queries+div.flex.flex-col, div.scheduled-or-deadlines){width:460px}
     }
     @media screen and (min-width: 2020px) {
     body.cl-side[data-page="home"]:not(.is-pdf-active) main:not(.ls-right-sidebar-open) div#journals div.references{min-width:670px}
     body.cl-side[data-page="home"]:not(.is-pdf-active) main:not(.ls-right-sidebar-open) div.journal>div.flex.flex-col:first-child{min-width:1000px}
-    body.cl-side[data-page="home"]:not(.is-pdf-active) main:not(.ls-right-sidebar-open) div#today-queries+div.flex.flex-col{width:520px}
+    body.cl-side[data-page="home"]:not(.is-pdf-active) main:not(.ls-right-sidebar-open) :is(div#today-queries+div.flex.flex-col, div.scheduled-or-deadlines){width:520px}
     }
     @media screen and (min-width: 1850px) and (max-width: 2259px) {
     body.cl-side[data-page="home"]:not(.is-pdf-active) main:not(.ls-right-sidebar-open) div#journals div.references{min-width:350px;max-width:400px}
-    body.cl-side[data-page="home"]:not(.is-pdf-active) main:not(.ls-right-sidebar-open) div#today-queries+div.flex.flex-col{right:400px}
+    body.cl-side[data-page="home"]:not(.is-pdf-active) main:not(.ls-right-sidebar-open) :is(div#today-queries+div.flex.flex-col, div.scheduled-or-deadlines){right:400px}
     body.cl-side[data-page="home"]:not(.is-pdf-active) main:not(.ls-right-sidebar-open) div#journals{margin-right:360px}
     }
     @media screen and (min-width: 2260px) {
     body.cl-side[data-page="home"]:not(.is-pdf-active) main:not(.ls-right-sidebar-open) div#journals div.references{min-width:400px;max-width:670px}
     body.cl-side[data-page="home"]:not(.is-pdf-active) main:not(.ls-right-sidebar-open) div#journals div.journal>div.flex.flex-col:first-child{max-width:1250px;margin-left:4em}
-    body.cl-side[data-page="home"]:not(.is-pdf-active) main:not(.ls-right-sidebar-open) div#journals div#today-queries+div.flex.flex-col{right:525px}
+    body.cl-side[data-page="home"]:not(.is-pdf-active) main:not(.ls-right-sidebar-open) div#journals :is(div#today-queries+div.flex.flex-col, div.scheduled-or-deadlines){right:525px}
     body.cl-side[data-page="home"]:not(.is-pdf-active) main:not(.ls-right-sidebar-open) div#journals div#today-queries{width:500px}
     body.cl-side[data-page="home"]:not(.is-pdf-active) main:not(.ls-right-sidebar-open) div#journals{margin-right:500px}
     }
     @media screen and (min-width: 2800px) {
     body.cl-side[data-page="home"]:not(.is-pdf-active) main:not(.ls-right-sidebar-open) div#journals div.references{min-width:670px;max-width:670px}
     body.cl-side[data-page="home"]:not(.is-pdf-active) main:not(.ls-right-sidebar-open) div#journals div.journal>div.flex.flex-col:first-child{min-width:1200px;max-width:1430px}
-    body.cl-side[data-page="home"]:not(.is-pdf-active) main:not(.ls-right-sidebar-open) div#journals div#today-queries+div.flex.flex-col{right:640px}
+    body.cl-side[data-page="home"]:not(.is-pdf-active) main:not(.ls-right-sidebar-open) div#journals :is(div#today-queries+div.flex.flex-col, div.scheduled-or-deadlines){right:640px}
     body.cl-side[data-page="home"]:not(.is-pdf-active) main:not(.ls-right-sidebar-open) div#journals div#today-queries{width:620px}
     body.cl-side[data-page="home"]:not(.is-pdf-active) main:not(.ls-right-sidebar-open) div#journals{margin-right:620px}
     }
     @media screen and (min-width: 1850px) {
     body:not(.cl-side)[data-page="home"]:not(.is-pdf-active) main:not(.ls-right-sidebar-open) div#main-content-container div.relative+div.references.mt-6.flex-1.flex-row,body:not(.cl-side)[data-page="home"]:not(.is-pdf-active) main:not(.ls-right-sidebar-open) div#main-content-container div.page-hierarchy{width:566px}
     body:not(.cl-side)[data-page="home"]:not(.is-pdf-active) main:not(.ls-right-sidebar-open) div#journals div.references{max-width:900px;max-height:800px;overflow-y:auto;outline:3px solid var(--ls-guideline-color);outline-offset:2px;border-radius:.6em;padding-left:3em;margin-left:6em}
-    body:not(.cl-side)[data-page="home"]:not(.is-pdf-active) main:not(.ls-right-sidebar-open) div#today-queries+div.flex.flex-col{position:fixed;bottom:1em;padding:.3em;outline:4px solid var(--ls-guideline-color);outline-offset:3px;border-radius:1.2em;background:unset;backdrop-filter:blur(20px);font-size:small;max-height:30vh;overflow:auto;z-index:1}
-    body:not(.cl-side)[data-page="home"] main.ls-right-sidebar-open div#today-queries+div.flex.flex-col,body:not(.cl-side)[data-page="home"].is-pdf-active div#today-queries+div.flex.flex-col{display:none}
+    body:not(.cl-side)[data-page="home"]:not(.is-pdf-active) main:not(.ls-right-sidebar-open) :is(div#today-queries+div.flex.flex-col, div.scheduled-or-deadlines){position:fixed;bottom:1em;padding:.3em;outline:4px solid var(--ls-guideline-color);outline-offset:3px;border-radius:1.2em;background:unset;backdrop-filter:blur(20px);font-size:small;max-height:30vh;overflow:auto;z-index:1}
+    body:not(.cl-side)[data-page="home"] main.ls-right-sidebar-open :is(div#today-queries+div.flex.flex-col, div.scheduled-or-deadlines),body:not(.cl-side)[data-page="home"].is-pdf-active :is(div#today-queries+div.flex.flex-col, div.scheduled-or-deadlines){display:none}
     body:not(.cl-side)[data-page="home"]:not(.is-pdf-active) main:not(.ls-right-sidebar-open) div#today-queries{width:560px;position:fixed;right:0;top:calc(var(--ls-headbar-height) + var(--ls-headbar-inner-top-padding));bottom:3px;overflow-y:scroll;font-size:smaller;border-left:2px solid var(--ls-guideline-color);padding:.12em}
     body:not(.cl-side)[data-page="home"] main.ls-right-sidebar-open div#root div#journals div#today-queries,body:not(.cl-side)[data-page="home"].is-pdf-active div#root div#journals div#today-queries{display:none}
     body:not(.cl-side)[data-page="home"].is-tabs-loaded div#root div#journals div#today-queries{top:calc(var(--ls-headbar-height) + var(--ls-headbar-inner-top-padding) + 40px)}
@@ -180,7 +180,7 @@ function main() {
     body:not(.cl-side)[data-page="home"] div#main-content-container{margin:0;padding-top:unset}
     body:not(.cl-side)[data-page="home"]:not(.is-pdf-active) main:not(.ls-right-sidebar-open) div#main-container{padding-right:622px}
     body:not(.cl-side)[data-page="home"]:not(.is-pdf-active) main:not(.ls-right-sidebar-open) div#today-queries{width:620px}
-    body:not(.cl-side)[data-page="home"]:not(.is-pdf-active) main:not(.ls-right-sidebar-open) div#today-queries+div.flex.flex-col{right:20px}
+    body:not(.cl-side)[data-page="home"]:not(.is-pdf-active) main:not(.ls-right-sidebar-open) :is(div#today-queries+div.flex.flex-col, div.scheduled-or-deadlines){right:20px}
     }
     @media screen and (min-width: 2260px) {
     body:not(.cl-side)[data-page="home"]:not(.is-pdf-active) main:not(.ls-right-sidebar-open) div#journals div.journal>div.flex.flex-col:first-child{min-width:1200px;max-width:1430px}
@@ -189,7 +189,7 @@ function main() {
     body:not(.cl-side)[data-page="home"]:not(.is-pdf-active) main:not(.ls-right-sidebar-open) div#journals div#today-queries{width:704px}
     }
     @media screen and (min-width: 2780px) {
-    body:not(.cl-side)[data-page="home"]:not(.is-pdf-active) main:not(.ls-right-sidebar-open) div#journals div#today-queries+div.flex.flex-col{right:720px}
+    body:not(.cl-side)[data-page="home"]:not(.is-pdf-active) main:not(.ls-right-sidebar-open) div#journals :is(div#today-queries+div.flex.flex-col, div.scheduled-or-deadlines){right:720px}
     }
 `);
 
