@@ -1,17 +1,13 @@
 # Logseq Plugin: Column Layout
 
 - Journals, linked references, and journal queries can be placed side by side.
-
 > ⚠️Cancel if the screen width is less than `1850px`
 
 [![latest release version](https://img.shields.io/github/v/release/YU000jp/Logseq-column-Layout)](https://github.com/YU000jp/Logseq-column-Layout/releases)
 [![License](https://img.shields.io/github/license/YU000jp/Logseq-column-Layout?color=blue)](https://github.com/YU000jp/Logseq-column-Layout/blob/main/LICENSE)
 [![Downloads](https://img.shields.io/github/downloads/YU000jp/Logseq-column-Layout/total.svg)](https://github.com/YU000jp/Logseq-column-Layout/releases)
 
-## Changelog
-
 - ContextMenu functions separate as a plugin => [SomeMenuExtender](https://github.com/YU000jp/logseq-plugin-some-menu-extender) #2023/04/01
-
 - page-tags and hierarchy display function in content page (non-journals) separate as a plugin => [Page-tags and Hierarchy](https://github.com/YU000jp/logseq-page-tags-and-hierarchy)
 
 ## Screenshot
