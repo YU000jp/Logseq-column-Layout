@@ -1,4 +1,4 @@
-# Logseq Plugin: Column Layout
+# Logseq Plugin: Column Layout (UI)
 
 - Journals, linked references, and journal queries can be placed side by side.
 > ⚠️Cancel if the screen width is less than `1850px`
