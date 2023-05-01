@@ -12,7 +12,7 @@
 
 ## Screenshot
 
-![スクリーンショット 2022-10-14 0207414](https://user-images.githubusercontent.com/111847207/195663729-7c979e9e-9309-4f0b-9766-581778c5aaa7.png)
+![image 2022-10-14 0207414](https://user-images.githubusercontent.com/111847207/195663729-7c979e9e-9309-4f0b-9766-581778c5aaa7.png)
 
 ![image](https://user-images.githubusercontent.com/111847207/229287018-f99c3a07-4f39-40a1-8bce-f6ee6ae17a78.png)
 
@@ -23,7 +23,7 @@
 - If you use the reference function and write the timeline, it is also effective as a log.
 - Press ⌨️`cmd(win) + alt` at the same time to get the reference by mouse dragging on the bullet.
 
-![スクリーンショット 2022-10-14 0207412](https://user-images.githubusercontent.com/111847207/195662824-35aecadd-c404-42a8-82eb-54ffc628c321.png)
+![image 2022-10-14 0207412](https://user-images.githubusercontent.com/111847207/195662824-35aecadd-c404-42a8-82eb-54ffc628c321.png)
 
 ### Linked reference
 
@@ -46,8 +46,6 @@
 - To get more task management
 - On Logseq, edit `config.edn` file. [For more details refer to this link(sample code)](https://github.com/YU000jp/logseq-default-queries-journals)
 
-![Animation1](img/journal-queries-demo.gif)
-
 ### Original right sidebar
 
 - Pages can be placed side by side in right sidebar.
@@ -55,7 +53,7 @@
 - Changed not to display page-tags and Hierarchy in right sidebar.
 - Display several pages side by side in right sidebar.
 
-![Animation2](https://user-images.githubusercontent.com/111847207/200146804-e0e53c12-933a-417e-b19a-e9e782e1c492.gif)
+![Animation](https://user-images.githubusercontent.com/111847207/200146804-e0e53c12-933a-417e-b19a-e9e782e1c492.gif)
 
 ## Install from Marketplace
 
