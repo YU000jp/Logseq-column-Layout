@@ -55,27 +55,24 @@
 
 ![Animation](https://user-images.githubusercontent.com/111847207/200146804-e0e53c12-933a-417e-b19a-e9e782e1c492.gif)
 
-## Install from Marketplace
+## Install from Logseq Marketplace
 
-- Press [---] on the top right toolbar to open [Plugins]
+- Press [`---`] on the top right toolbar to open [`Plugins`]
 - Select marketplace
-- Type 'column' in the search field, select it from the search results and install
+- Type '`column`' in the search field, select it from the search results and install
 
 ![image](https://user-images.githubusercontent.com/111847207/229359128-8a35bc00-b9ab-4048-be6f-5026bf0980a5.png)
 
-## ⚠️ Remarks
+## Questions❔
 
 - Linked References space is blank if there are no tasks in Logseq.
 - Linked reference from journal are limited to dates other than today.
 - If you find it difficult to see the image in a reduced view, please use the zoom function or open it in sidebar.
 
-## 🚧 Troubleshoot
-
-- Please let me know on [GitHub](https://github.com/YU000jp/Logseq-column-Layout/issues).
-- It would be helpful if you could take a screenshot.
-
 ## Other my plugins
 
+- [Weekdays and Holidays (Templates)](https://github.com/YU000jp/logseq-plugin-weekdays-and-weekends)
+- [Sticky Popup](https://github.com/YU000jp/logseq-plugin-sticky-popup)
 - [SomeMenuExtemder](https://github.com/YU000jp/logseq-plugin-some-menu-extender)
 - [Panel Coloring](https://github.com/YU000jp/logseq-plugin-panel-coloring)
 - [Page-tags and Hierarchy](https://github.com/YU000jp/logseq-page-tags-and-hierarchy)
