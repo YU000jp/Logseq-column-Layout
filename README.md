@@ -69,16 +69,6 @@
 - Linked reference from journal are limited to dates other than today.
 - If you find it difficult to see the image in a reduced view, please use the zoom function or open it in sidebar.
 
-## Other my plugins
-
-- [Weekdays and Holidays (Templates)](https://github.com/YU000jp/logseq-plugin-weekdays-and-weekends)
-- [Sticky Popup](https://github.com/YU000jp/logseq-plugin-sticky-popup)
-- [SomeMenuExtemder](https://github.com/YU000jp/logseq-plugin-some-menu-extender)
-- [Panel Coloring](https://github.com/YU000jp/logseq-plugin-panel-coloring)
-- [Page-tags and Hierarchy](https://github.com/YU000jp/logseq-page-tags-and-hierarchy)
-- [Rakuten-books](https://github.com/YU000jp/logseq-plugin-rakuten-books) (Only for Japanese site)
-- [booklog-jp-import](https://github.com/YU000jp/logseq-plugin-booklog-jp-import) (Only for Japanese site)
-
 ### Supported plugins
 
 - [Awesome UI](https://github.com/yoyurec/logseq-awesome-ui)
@@ -88,7 +78,18 @@
 
 - [Awesome Styler](https://github.com/yoyurec/logseq-awesome-styler)
 
-## Credit
+## My plugins
+
+- [Weekdays and Holidays (Templates)](https://github.com/YU000jp/logseq-plugin-weekdays-and-weekends)
+- [Sticky Popup](https://github.com/YU000jp/logseq-plugin-sticky-popup)
+- [SomeMenuExtender](https://github.com/YU000jp/logseq-plugin-some-menu-extender)
+- [Column Layout (UI)](https://github.com/YU000jp/Logseq-column-Layout)
+- [Panel Coloring (Color)](https://github.com/YU000jp/logseq-plugin-panel-coloring)
+- [Page-tags and Hierarchy (UI)](https://github.com/YU000jp/logseq-page-tags-and-hierarchy)
+- [Rakuten-books](https://github.com/YU000jp/logseq-plugin-rakuten-books) (Only for Japanese site)
+- [booklog-jp-import](https://github.com/YU000jp/logseq-plugin-booklog-jp-import) (Only for Japanese site)
+
+## Prior art & Credit
 
 - [Vertical Panels for Sidebar](https://github.com/r-hegde/logseq-vertical-panels)
 
