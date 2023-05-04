@@ -4,9 +4,6 @@ dependencies:
   '@logseq/libs':
     specifier: ^0.0.14
     version: 0.0.14
-  rollup-plugin-string:
-    specifier: ^3.0.0
-    version: 3.0.0
 
 devDependencies:
   '@semantic-release/changelog':
@@ -33,6 +30,9 @@ devDependencies:
   npx:
     specifier: ^10.2.2
     version: 10.2.2
+  rollup-plugin-string:
+    specifier: ^3.0.0
+    version: 3.0.0
   semantic-release:
     specifier: ^21.0.1
     version: 21.0.1
@@ -2189,7 +2189,7 @@ packages:
 
   /estree-walker@0.6.1:
     resolution: {integrity: sha512-SqmZANLWS0mnatqbSfRP5g8OXZC12Fgg1IwNtLsyHDzJizORW4khDfjPqJZsemPWBB2uqykUah5YpQ6epsqC/w==}
-    dev: false
+    dev: true
 
   /eventemitter3@4.0.7:
     resolution: {integrity: sha512-8guHBZCwKnFhYdHr2ysuRWErTwhoN2X8XELRlrRwpmfeY2jjuUN4taQMsULKUVo1K4DvZl+0pgfyoysHxvmvEw==}
@@ -4335,13 +4335,13 @@ packages:
     resolution: {integrity: sha512-vqyzgn9QefAgeKi+Y4A7jETeIAU1zQmS6VotH6bzm/zmUQEnYkpIGRaOBPY41oiWYV4JyBoGAaBjYMYuv+6wVw==}
     dependencies:
       rollup-pluginutils: 2.8.2
-    dev: false
+    dev: true
 
   /rollup-pluginutils@2.8.2:
     resolution: {integrity: sha512-EEp9NhnUkwY8aif6bxgovPHMoMoNr2FulJziTndpt5H9RdwC47GSGuII9XxpSdzVGM0GWrNPHV6ie1LTNJPaLQ==}
     dependencies:
       estree-walker: 0.6.1
-    dev: false
+    dev: true
 
   /rollup@3.20.2:
     resolution: {integrity: sha512-3zwkBQl7Ai7MFYQE0y1MeQ15+9jsi7XxfrqwTb/9EK8D9C9+//EBR4M+CuA1KODRaNbFez/lWxA5vhEGZp4MUg==}
