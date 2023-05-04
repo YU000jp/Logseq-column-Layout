@@ -89,7 +89,10 @@ function main() {
 };/* end_main */
 
 const removeProvideStyle = (className: string) => {
-    parent.document.head.querySelector(`style[data-injected-style^="${className}"]`)?.remove();
+    const doc = parent.document.head.querySelector(`style[data-injected-style^="${className}"]`);
+    if (doc) {
+        doc.remove();
+    }
 };
 
 logseq.ready(main).catch(console.error);
