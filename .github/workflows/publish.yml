@@ -1,66 +1,39 @@
-name: Build plugin
-
-on:
-  push:
-    # Sequence of patterns matched against refs/tags
-    tags:
-      - "v*"
-
+name: Release
 env:
   PLUGIN_NAME: ${{ github.event.repository.name }}
-
+on:
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
 jobs:
-  build:
-    runs-on: ubuntu-22.04
-
+  release:
+    runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - name: Use Node.js
-        uses: actions/setup-node@v3
+      - name: Checkout
+        uses: actions/checkout@v3
         with:
-          node-version: "18" # You might need to adjust this value to your own version
-      - name: Build
-        id: build
-        run: |
-          npm install -g pnpm
-          pnpm install --no-frozen-lockfile
-          pnpm build
-          mkdir ${{ env.PLUGIN_NAME }}
-          cp README.md package.json icon.svg ${{ env.PLUGIN_NAME }}
-          mv dist ${{ env.PLUGIN_NAME }}
-          zip -r ${{ env.PLUGIN_NAME }}.zip ${{ env.PLUGIN_NAME }}
-          ls
-          echo "::set-output name=tag_name::$(git tag --sort version:refname | tail -n 1)"
-      - name: Create Release
-        uses: ncipollo/release-action@v1.12.0
-        id: create_release
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          VERSION: ${{ github.ref }}
-        with:
-          allowUpdates: true
-          draft: false
-          prerelease: false
+          fetch-depth: 0
 
-      - name: Upload zip file
-        id: upload_zip
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v3.6.0
         with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./${{ env.PLUGIN_NAME }}.zip
-          asset_name: ${{ env.PLUGIN_NAME }}-${{ steps.build.outputs.tag_name }}.zip
-          asset_content_type: application/zip
+          node-version: "19"
 
-      # Upload the package.json file to the existing release or create a new release
-      - name: Upload package.json
-        id: upload_metadata
-        uses: actions/upload-release-asset@v1
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2.2.4
+        with:
+          version: 7
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Build dist
+        run: pnpm prod
+
+      - name: Install zip
+        uses: montudor/action-zip@v1
+
+      - name: Release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./package.json
-          asset_name: package.json
-          asset_content_type: application/json
+        run: npx semantic-release
+        

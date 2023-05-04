@@ -1,0 +1,94 @@
+body[data-page="home"] div#today-queries>div.lazy-visibility {
+    min-height: unset !important
+}
+
+body[data-page="home"] div#today-queries div.shadow {
+    display: none
+}
+
+body[data-page="home"] div#today-queries div.color-level div.blocks-container,
+body[data-page="home"] div#today-queries div.color-level {
+    background-color: unset
+}
+
+body[data-page="home"] main.ls-wide-mode div#main-content-container div.cp__sidebar-main-content {
+    max-width: unset
+}
+
+div#time-repeater {
+    min-width: 200px
+}
+
+div.block-content div.asset-container div.asset-overlay {
+    background-image: none
+}
+
+div#main-content-container div.asset-container :has(img) {
+    overflow-x: scroll
+}
+
+body[data-page="home"] div#main-content-container div.asset-container img {
+    max-width: 660px
+}
+
+body[data-page="page"] div#main-content-container div.asset-container img {
+    max-width: 1050px
+}
+
+div.nav-content-item-inner {
+    margin-top: 2em
+}
+
+div#main-content-container blockquote {
+    font-size: .95em
+}
+
+div#main-content-container .now,
+div#main-content-container .doing,
+div#main-content-container .later,
+div#main-content-container .todo {
+    background: linear-gradient(transparent 80%, var(--ls-block-highlight-color) 30%);
+    font-weight: 700;
+    font-size: 1.1em
+}
+
+div#root [data-refs-self*="kanban"]>.block-children-container>.block-children {
+    overflow-x: scroll;
+    font-size: .98em;
+    scroll-snap-type: x
+}
+
+main.ls-wide-mode div#main-content-container div.relative div.lazy-visibility div.references div.references-blocks div.content>div [data-refs-self*="kanban"]>.block-children-container>.block-children,
+main.ls-wide-mode div#main-content-container div.relative+div+div div.references div.references-blocks div.content>div [data-refs-self*="kanban"]>.block-children-container>.block-children,
+main.ls-wide-mode div#main-content-container div.relative+div+div+div div.references div.references-blocks div.content>div [data-refs-self*="kanban"]>.block-children-container>.block-children,
+div#right-sidebar [data-refs-self*="kanban"]>.block-children-container>.block-children {
+    flex-wrap: wrap
+}
+
+body.is-pdf-active div#main-content-container div.relative+div.references.mt-6.flex-1.flex-row,
+main.ls-right-sidebar-open div#main-content-container div.relative+div.references.mt-6.flex-1.flex-row,
+body.is-pdf-active div#main-content-container div.page-hierarchy,
+main.ls-right-sidebar-open div#main-content-container div.page-hierarchy,
+div#right-sidebar div.relative+div.references.mt-6.flex-1.flex-row,
+div#right-sidebar div.page-hierarchy {
+    display: none
+}
+
+div#main-container div.cp__sidebar-main-content {
+    max-width: unset
+}
+
+div.timestamp div#date-time-picker:nth-of-type(2),
+div.timestamp div#date-time-picker:nth-of-type(3) {
+    width: 400px;
+    background: var(--color-level-1)
+}
+
+div.timestamp div#date-time-picker {
+    top: 3.8em;
+    z-index: 11
+}
+
+div.date-picker {
+    width: 280px
+}
