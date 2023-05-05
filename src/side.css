@@ -5,25 +5,22 @@
         display: flex
     }
 
-    body[data-page="home"]:not(.is-pdf-active) div.journal>div.flex.flex-col:first-child {
+    body[data-page="home"]:not(.is-pdf-active) div.journal div.flex.flex-col:first-child {
         margin-left: 1em;
-        flex: 1
+        flex: 1;
+        padding-right: 5px
     }
 
     body[data-page="home"] div#journals div.references div.pt-6 {
         padding: .1em
     }
 
-    body[data-page="home"]:not(.is-pdf-active) div#journals div.references div.hidden {
-        width: 670px;
-        display: block
-    }
-
-    body[data-page="home"] div#journals div.journal.page div.lazy-visibility div.fade-enter-active {
+    body[data-page="home"] div#journals div.journal.page div.lazy-visibility div.fade-enter-active,
+    body[data-page="home"] div#journals div.journal.page div.lazy-visibility>div {
         height: 100%
     }
 
-    body[data-page="home"] div#journals div.journal>div.lazy-visibility div.references-blocks div.flex.flex-col>div,
+    body[data-page="home"] div#journals div.journal div.lazy-visibility div.references-blocks div.flex.flex-col>div,
     body[data-page="home"] div#journals div.references div.references-blocks div.lazy-visibility div.px-2 {
         padding-left: 0;
         padding-right: 0
@@ -37,10 +34,9 @@
         max-height: 60vh;
         overflow-y: scroll;
         position: sticky;
-        top: .5em;
+        top: 1em;
         bottom: 3em;
-        padding: .4em;
-        margin-right: 5px;
+        margin-right: 10px;
         z-index: 0;
         border-radius: .6em;
         background: var(--color-level-1);
@@ -51,8 +47,8 @@
     body[data-page="home"]:not(.is-pdf-active) div#journals div.references:hover {
         background: unset;
         backdrop-filter: blur(40px);
-        min-width: 670px;
-        max-width: 670px;
+        min-width: 660px;
+        max-width: 660px;
         overflow-x: visible;
         z-index: var(--ls-z-index-level-1)
     }
@@ -210,7 +206,7 @@
 
 @media screen and (min-width: 2020px) {
     body[data-page="home"]:not(.is-pdf-active) div#journals div.references {
-        min-width: 670px
+        min-width: 660px
     }
 
     body[data-page="home"]:not(.is-pdf-active) div.journal>div.flex.flex-col:first-child {
@@ -240,7 +236,7 @@
 @media screen and (min-width: 2260px) {
     body[data-page="home"]:not(.is-pdf-active) div#journals div.references {
         min-width: 400px;
-        max-width: 670px
+        max-width: 660px
     }
 
     body[data-page="home"]:not(.is-pdf-active) div#journals div.journal>div.flex.flex-col:first-child {
@@ -263,8 +259,8 @@
 
 @media screen and (min-width: 2800px) {
     body[data-page="home"]:not(.is-pdf-active) div#journals div.references {
-        min-width: 670px;
-        max-width: 670px
+        min-width: 660px;
+        max-width: 660px
     }
 
     body[data-page="home"]:not(.is-pdf-active) div#journals div.journal>div.flex.flex-col:first-child {
