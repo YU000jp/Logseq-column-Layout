@@ -4,6 +4,9 @@ dependencies:
   '@logseq/libs':
     specifier: ^0.0.15
     version: 0.0.15
+  logseq-l10n:
+    specifier: ^0.2.0
+    version: 0.2.0(@logseq/libs@0.0.15)
 
 devDependencies:
   '@semantic-release/changelog':
@@ -3466,6 +3469,14 @@ packages:
       chalk: 4.1.2
       is-unicode-supported: 0.1.0
     dev: true
+
+  /logseq-l10n@0.2.0(@logseq/libs@0.0.15):
+    resolution: {integrity: sha512-exBSvxVijlAW6Zy6eYRWGroJL3qxAouCZqSQzAeIRuoIU8nA0vN2S2+5slvWTFM159hlqhtdJXqudwgCs4y2Vg==}
+    peerDependencies:
+      '@logseq/libs': '>= 0.0.1-alpha.33'
+    dependencies:
+      '@logseq/libs': 0.0.15
+    dev: false
 
   /longest@2.0.1:
     resolution: {integrity: sha512-Ajzxb8CM6WAnFjgiloPsI3bF+WCxcvhdIG3KNA2KN962+tdBsHcuQ4k4qX/EcS/2CRkcc0iAkR956Nib6aXU/Q==}
