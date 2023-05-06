@@ -5,22 +5,22 @@ body:not(.cl-side)[data-page=home]:not(.is-pdf-active) main:not(.ls-right-sideba
 body:not(.cl-side)[data-page=home]:not(.is-pdf-active) main:not(.ls-right-sidebar-open) div#today-queries{width:560px;position:fixed;right:0;top:calc(var(--ls-headbar-height) + var(--ls-headbar-inner-top-padding));bottom:3px;overflow-y:scroll;font-size:smaller;border-left:2px solid var(--ls-guideline-color);padding:.12em}
 body:not(.cl-side)[data-page=home].is-tabs-loaded div#root div#journals div#today-queries{top:calc(var(--ls-headbar-height) + var(--ls-headbar-inner-top-padding) + 40px)}
 body:not(.cl-side)[data-page=home] div#today-queries :is(.now,.later,.doing,.todo){font-weight:600}
-body:not(.cl-side)[data-page=home] div#today-queries>div.lazy-visibility div.custom-query{margin-top:.1em;margin-bottom:.8em}
-body:not(.cl-side)[data-page=home] div#today-queries>div.lazy-visibility div.custom-query div.custom-query-title{outline:2px solid var(--ls-guideline-color);font-size:medium;background:var(--ls-page-blockquote-bg-color)}
-body:not(.cl-side)[data-page=home] div#today-queries>div.lazy-visibility div.custom-query div.custom-query-title:hover{outline:4px}
+body:not(.cl-side)[data-page=home] div#today-queries div.custom-query{margin-top:.1em;margin-bottom:.8em}
+body:not(.cl-side)[data-page=home] div#today-queries div.custom-query div.custom-query-title{outline:2px solid var(--ls-guideline-color);font-size:medium;background:var(--ls-page-blockquote-bg-color)}
+body:not(.cl-side)[data-page=home] div#today-queries div.custom-query div.custom-query-title:hover{outline:4px}
 body:not(.cl-side)[data-page=home] div#today-queries.mt-10{margin-top:.1em}
-body:not(.cl-side)[data-page=home] div#today-queries>div.lazy-visibility div.custom-query div.content{padding-top:.15em}
-body:not(.cl-side)[data-page=home] div#today-queries>div.lazy-visibility div.custom-query div.content div.lazy-visibility:not(:last-of-type){border-bottom:3px dotted var(--ls-guideline-color);padding:.6em}
-body:not(.cl-side)[data-page=home] div#today-queries>div.lazy-visibility div.custom-query div.content div.lazy-visibility{border-right:4px solid var(--ls-page-blockquote-bg-color)}
-body:not(.cl-side)[data-page=home] div#today-queries>div.lazy-visibility div.custom-query div.my-2{padding:.2em;margin:.2em}
-body:not(.cl-side)[data-page=home] div#today-queries>div.lazy-visibility div.custom-query div.breadcrumb.block-parents{color:var(--ct-external-link-color);margin-bottom:.6em}
+body:not(.cl-side)[data-page=home] div#today-queries div.custom-query div.content{padding-top:.15em}
+body:not(.cl-side)[data-page=home] div#today-queries div.custom-query div.content div.lazy-visibility:not(:last-of-type){border-bottom:3px dotted var(--ls-guideline-color);padding:.6em}
+body:not(.cl-side)[data-page=home] div#today-queries div.custom-query div.content div.lazy-visibility{border-right:4px solid var(--ls-page-blockquote-bg-color)}
+body:not(.cl-side)[data-page=home] div#today-queries div.custom-query div.my-2{padding:.2em;margin:.2em}
+body:not(.cl-side)[data-page=home] div#today-queries div.custom-query div.breadcrumb.block-parents{color:var(--ct-external-link-color);margin-bottom:.6em}
 body:not(.cl-side)[data-page=home] div#today-queries .sm\:px-7{padding-left:unset}
 body:not(.cl-side)[data-page=home] div#today-queries :is(h2,h3,h4){font-size:16px;padding:4px}
 body:not(.cl-side)[data-page=home] div#main-content-container{margin:0;padding-top:unset}
 body:not(.cl-side)[data-page=home]:not(.is-pdf-active) main:not(.ls-right-sidebar-open) div#main-container{padding-right:622px}
 body:not(.cl-side)[data-page=home]:not(.is-pdf-active) main:not(.ls-right-sidebar-open) div#today-queries{width:620px}
 body:not(.cl-side)[data-page=home]:not(.is-pdf-active) main:not(.ls-right-sidebar-open) :is(div#today-queries+div.flex.flex-col,div.scheduled-or-deadlines){right:20px}
-:is(body:not(.cl-side)[data-page=home] main.ls-right-sidebar-open,body:not(.cl-side)[data-page=home].is-pdf-active) :is(div#today-queries, div.scheduled-or-deadlines){display:none}
+body:is(:not(.cl-side)[data-page=home]main.ls-right-sidebar-open,:not(.cl-side)[data-page=home].is-pdf-active) div:is(#today-queries,.scheduled-or-deadlines){display:none}
 }
 @media screen and (min-width:2260px){
 body:not(.cl-side)[data-page=home]:not(.is-pdf-active) main:not(.ls-right-sidebar-open) div#journals div.journal>div.flex.flex-col:first-child{min-width:1200px;max-width:1430px}
