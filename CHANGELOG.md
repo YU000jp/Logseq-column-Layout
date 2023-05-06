@@ -1,3 +1,10 @@
+# [2.2.0](https://github.com/YU000jp/Logseq-column-Layout/compare/v2.1.1...v2.2.0) (2023-05-06)
+
+
+### Features
+
+* check CSS & bottom style update CSS & L10N ([018d17e](https://github.com/YU000jp/Logseq-column-Layout/commit/018d17e40d4d648fe761cbab70e15d0be4e99be2))
+
 ## [2.1.1](https://github.com/YU000jp/Logseq-column-Layout/compare/v2.1.0...v2.1.1) (2023-05-06)
 
 
