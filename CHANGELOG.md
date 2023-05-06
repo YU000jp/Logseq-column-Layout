@@ -1,3 +1,16 @@
+# [2.1.0](https://github.com/YU000jp/Logseq-column-Layout/compare/v2.0.14...v2.1.0) (2023-05-06)
+
+
+### Bug Fixes
+
+* clean-CSS ([6f64f4b](https://github.com/YU000jp/Logseq-column-Layout/commit/6f64f4b76038e0599fd311d83a57d980a514c192))
+* **refactor:** バグ個所の特定 ([c903080](https://github.com/YU000jp/Logseq-column-Layout/commit/c903080e53a1a95bc4cb59bd735f130762998d65))
+
+
+### Features
+
+* **Plugin Settings:** large image size setting ([75715ed](https://github.com/YU000jp/Logseq-column-Layout/commit/75715ed2e348a8661dedb002b8d82a1657838146))
+
 ## [2.0.14](https://github.com/YU000jp/Logseq-column-Layout/compare/v2.0.13...v2.0.14) (2023-05-06)
 
 
