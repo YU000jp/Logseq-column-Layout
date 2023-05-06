@@ -12,8 +12,6 @@
 
 ![image 2022-10-14 0207414](https://user-images.githubusercontent.com/111847207/195663729-7c979e9e-9309-4f0b-9766-581778c5aaa7.png)
 
-![image](https://user-images.githubusercontent.com/111847207/229287018-f99c3a07-4f39-40a1-8bce-f6ee6ae17a78.png)
-
 ## What can do
 
 ### Journals
@@ -81,16 +79,38 @@
 
 - [Awesome Styler](https://github.com/yoyurec/logseq-awesome-styler)
 
-## My plugins
+## Showcase / Questions / Ideas / Help
+
+Go to the [discussion](https://github.com/YU000jp/Logseq-column-Layout/discussions) tab to ask and find this kind of things.
+
+## Contributing
+
+- Contributions to this plugin are always welcome! If you find a bug or have a suggestion for a new feature, please open an issue or submit a pull request. All contributions will be reviewed and considered for inclusion in future releases.
+
+## License
+
+- This Plugin is released under the MIT License. See the LICENSE file for more information.
+
+## Author
+
+* GitHub: [YU000jp](https://github.com/YU000jp)
+* Twitter: [@y0skyblue](https://twitter.com/y0skyblue)
+* Discord: YU#5179 ([Logseq](https://discord.gg/logseq))
+
+### My Logseq plugins
 
 - [Weekdays and Holidays (Templates)](https://github.com/YU000jp/logseq-plugin-weekdays-and-weekends)
 - [Sticky Popup](https://github.com/YU000jp/logseq-plugin-sticky-popup)
 - [SomeMenuExtender](https://github.com/YU000jp/logseq-plugin-some-menu-extender)
-- [Column Layout (UI)](https://github.com/YU000jp/Logseq-column-Layout)
-- [Panel Coloring (Color)](https://github.com/YU000jp/logseq-plugin-panel-coloring)
-- [Page-tags and Hierarchy (UI)](https://github.com/YU000jp/logseq-page-tags-and-hierarchy)
+- [Panel Coloring](https://github.com/YU000jp/logseq-plugin-panel-coloring)
+- [Page-tags and Hierarchy](https://github.com/YU000jp/logseq-page-tags-and-hierarchy)
+- [Column Layout](https://github.com/YU000jp/Logseq-column-Layout)
 - [Rakuten-books](https://github.com/YU000jp/logseq-plugin-rakuten-books) (Only for Japanese site)
 - [booklog-jp-import](https://github.com/YU000jp/logseq-plugin-booklog-jp-import) (Only for Japanese site)
+
+## Link
+
+- [Logseq](https://github.com/logseq)
 
 ## Prior art & Credit
 
