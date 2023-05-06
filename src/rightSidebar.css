@@ -1,24 +1,24 @@
-div#right-sidebar {
+body.cl-switchRightSidebar div#right-sidebar {
     border: 4px var(--ls-guideline-color);
     border-radius: .25em;
     overflow: scroll;
     background-color: unset
 }
 
-div#right-sidebar div.cp__right-sidebar-scrollable>div+div {
+body.cl-switchRightSidebar div#right-sidebar div.cp__right-sidebar-scrollable>div+div {
     background-image: linear-gradient(var(--color-level-1) 25%, transparent 25%);
     background-size: 50px 15px
 }
 
-div#right-sidebar div.cp__right-sidebar-scrollable>div.cp__right-sidebar-topbar {
+body.cl-switchRightSidebar div#right-sidebar div.cp__right-sidebar-scrollable>div.cp__right-sidebar-topbar {
     height: unset
 }
 
-div#right-sidebar div.cp__right-sidebar div.sidebar-item {
+body.cl-switchRightSidebar div#right-sidebar div.cp__right-sidebar div.sidebar-item {
     padding-top: unset
 }
 
-div#right-sidebar div.sidebar-item-list {
+body.cl-switchRightSidebar div#right-sidebar div.sidebar-item-list {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -28,7 +28,7 @@ div#right-sidebar div.sidebar-item-list {
     scroll-snap-type: x
 }
 
-div#right-sidebar div.sidebar-item.content>div>div:first-of-type {
+body.cl-switchRightSidebar div#right-sidebar div.sidebar-item.content>div>div:first-of-type {
     margin-top: 0;
     margin-bottom: .4em;
     position: sticky !important;
@@ -38,7 +38,7 @@ div#right-sidebar div.sidebar-item.content>div>div:first-of-type {
     font-weight: 700
 }
 
-div#right-sidebar div.sidebar-item.content {
+body.cl-switchRightSidebar div#right-sidebar div.sidebar-item.content {
     min-width: 550px;
     max-width: 900px;
     resize: both;
@@ -50,36 +50,36 @@ div#right-sidebar div.sidebar-item.content {
     background: var(--ls-primary-background-color)
 }
 
-div#right-sidebar div.sidebar-item-list {
+body.cl-switchRightSidebar div#right-sidebar div.sidebar-item-list {
     display: flex;
     padding-bottom: 0;
     margin: unset;
     height: calc(99vh - 20px)
 }
 
-body.is-tabs-loaded div#right-sidebar div.sidebar-item-list {
+body.is-tabs-loaded body.cl-switchRightSidebar div#right-sidebar div.sidebar-item-list {
     height: calc(99vh - 60px)
 }
 
-div#right-sidebar div.sidebar-item-list div.sidebar-item.flex-col {
+body.cl-switchRightSidebar div#right-sidebar div.sidebar-item-list div.sidebar-item.flex-col {
     width: 100% !important
 }
 
-div#right-sidebar div.graph {
+body.cl-switchRightSidebar div#right-sidebar div.graph {
     height: 800px !important
 }
 
-div#right-sidebar div.graph canvas {
+body.cl-switchRightSidebar div#right-sidebar div.graph canvas {
     height: 100% !important;
     width: 100% !important;
     border: 2px double
 }
 
-div#right-sidebar div.sidebar-item {
+body.cl-switchRightSidebar div#right-sidebar div.sidebar-item {
     overflow: auto
 }
 
-div#right-sidebar div.sidebar-item::-webkit-scrollbar {
+body.cl-switchRightSidebar div#right-sidebar div.sidebar-item::-webkit-scrollbar {
     width: 15px;
     height: 20px
 }
@@ -88,18 +88,18 @@ div.cp__right-sidebar {
     transition: unset
 }
 
-div#right-sidebar .table-auto {
+body.cl-switchRightSidebar div#right-sidebar .table-auto {
     table-layout: fixed;
     width: 90%
 }
 
-div#right-sidebar .table-auto td.whitespace-nowrap {
+body.cl-switchRightSidebar div#right-sidebar .table-auto td.whitespace-nowrap {
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis
 }
 
-div#right-sidebar div.sidebar-item.content span.rotating-arrow:first-child {
+body.cl-switchRightSidebar div#right-sidebar div.sidebar-item.content span.rotating-arrow:first-child {
     transform: scale(2, 2);
     margin-right: .6em
 }
@@ -109,14 +109,14 @@ div.cp__right-sidebar div.sidebar-item a.close {
     margin-left: 1em
 }
 
-div#right-sidebar div.relative+div.references.mt-6.flex-1.flex-row,
-div#right-sidebar div.page-hierarchy,
-div#right-sidebar div.sidebar-item div.is-journals div.relative+div.flex.flex-col,
+body.cl-switchRightSidebar div#right-sidebar div.relative+div.references.mt-6.flex-1.flex-row,
+body.cl-switchRightSidebar div#right-sidebar div.page-hierarchy,
+body.cl-switchRightSidebar div#right-sidebar div.sidebar-item div.is-journals div.relative+div.flex.flex-col,
 main.ls-right-sidebar-open :is(div#today-queries, div.scheduled-or-deadlines) {
     display: none
 }
 
-div#right-sidebar div.hidden {
+body.cl-switchRightSidebar div#right-sidebar div.hidden {
     display: block;
     margin-top: 1em;
     margin-bottom: -2em;
@@ -127,19 +127,19 @@ div#right-sidebar div.hidden {
     border-radius: 1.5em
 }
 
-div#right-sidebar div.hidden div {
+body.cl-switchRightSidebar div#right-sidebar div.hidden div {
     display: none
 }
 
-div#right-sidebar div.sidebar-item.content div.initial {
+body.cl-switchRightSidebar div#right-sidebar div.sidebar-item.content div.initial {
     min-height: 400px
 }
 
-div#right-sidebar div.cp__right-sidebar-topbar {
+body.cl-switchRightSidebar div#right-sidebar div.cp__right-sidebar-topbar {
     flex-direction: row-reverse
 }
 
-div#right-sidebar span.ls-icon-layout-sidebar-right svg {
+body.cl-switchRightSidebar div#right-sidebar span.ls-icon-layout-sidebar-right svg {
     width: 24px;
     height: 24px
 }
@@ -154,7 +154,7 @@ main.ls-right-sidebar-open div[data-modal-name="page-search"] {
     left: unset
 }
 
-div#right-sidebar div#date-time-picker {
+body.cl-switchRightSidebar div#right-sidebar div#date-time-picker {
     width: 300px;
     background: var(--color-level-1);
     z-index: var(--ls-z-index-level-4)
