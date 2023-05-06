@@ -6,9 +6,7 @@
 [![latest release version](https://img.shields.io/github/v/release/YU000jp/Logseq-column-Layout)](https://github.com/YU000jp/Logseq-column-Layout/releases)
 [![License](https://img.shields.io/github/license/YU000jp/Logseq-column-Layout?color=blue)](https://github.com/YU000jp/Logseq-column-Layout/blob/main/LICENSE)
 [![Downloads](https://img.shields.io/github/downloads/YU000jp/Logseq-column-Layout/total.svg)](https://github.com/YU000jp/Logseq-column-Layout/releases)
-
-- ContextMenu functions separate as a plugin => [SomeMenuExtender](https://github.com/YU000jp/logseq-plugin-some-menu-extender) #2023/04/01
-- page-tags and hierarchy display function in content page (non-journals) separate as a plugin => [Page-tags and Hierarchy](https://github.com/YU000jp/logseq-page-tags-and-hierarchy)
+ Published 2022/09/13
 
 ## Screenshot
 
@@ -68,6 +66,11 @@
 - Linked References space is blank if there are no tasks in Logseq.
 - Linked reference from journal are limited to dates other than today.
 - If you find it difficult to see the image in a reduced view, please use the zoom function or open it in sidebar.
+
+## About this plugin
+
+- ContextMenu functions separate as a plugin => [SomeMenuExtender](https://github.com/YU000jp/logseq-plugin-some-menu-extender) #2023/04/01
+- page-tags and hierarchy display function in content page (non-journals) separate as a plugin => [Page-tags and Hierarchy](https://github.com/YU000jp/logseq-page-tags-and-hierarchy)
 
 ### Supported plugins
 
