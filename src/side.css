@@ -15,8 +15,7 @@
         padding: .1em
     }
 
-    body.cl-side[data-page="home"] div#journals div.journal.page div.lazy-visibility div.fade-enter-active,
-    body.cl-side[data-page="home"] div#journals div.journal.page div.lazy-visibility>div {
+    body.cl-side[data-page="home"] div#journals div.journal.page div.lazy-visibility div.fade-enter-active {
         height: 100%
     }
 
