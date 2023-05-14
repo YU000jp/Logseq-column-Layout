@@ -65,11 +65,6 @@
 - Linked reference from journal are limited to dates other than today.
 - If you find it difficult to see the image in a reduced view, please use the zoom function or open it in sidebar.
 
-## About this plugin
-
-- ContextMenu functions separate as a plugin => [SomeMenuExtender](https://github.com/YU000jp/logseq-plugin-some-menu-extender) #2023/04/01
-- page-tags and hierarchy display function in content page (non-journals) separate as a plugin => [Page-tags and Hierarchy](https://github.com/YU000jp/logseq-page-tags-and-hierarchy)
-
 ### Supported plugins
 
 - [Awesome UI](https://github.com/yoyurec/logseq-awesome-ui)
@@ -105,12 +100,6 @@ Go to the [discussion](https://github.com/YU000jp/Logseq-column-Layout/discussio
 - [Panel Coloring](https://github.com/YU000jp/logseq-plugin-panel-coloring)
 - [Page-tags and Hierarchy](https://github.com/YU000jp/logseq-page-tags-and-hierarchy)
 - [Column Layout](https://github.com/YU000jp/Logseq-column-Layout)
-- [Rakuten-books](https://github.com/YU000jp/logseq-plugin-rakuten-books) (Only for Japanese site)
-- [booklog-jp-import](https://github.com/YU000jp/logseq-plugin-booklog-jp-import) (Only for Japanese site)
-
-## Link
-
-- [Logseq](https://github.com/logseq)
 
 ## Prior art & Credit
 
