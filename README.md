@@ -89,19 +89,9 @@
 
 - Go to the [discussion](https://github.com/YU000jp/Logseq-column-Layout/discussions) tab to ask and find this kind of things.
 
-## Contributing
-
-> Contributions to this plugin are always welcome! If you find a bug or have a suggestion for a new feature, please open an issue or submit a pull request. All contributions will be reviewed and considered for inclusion in future releases.
-
-## License
-
-> This Plugin is released under the MIT License. See the LICENSE file for more information.
-
 ## Author
 
 * GitHub: [YU000jp](https://github.com/YU000jp)
-* Twitter: [@y0skyblue](https://twitter.com/y0skyblue)
-* Discord: YU#5179 ([Logseq](https://discord.gg/logseq))
 
 ### My Logseq plugins
 
