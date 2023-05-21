@@ -51,13 +51,24 @@
 
 ![Animation](https://user-images.githubusercontent.com/111847207/200146804-e0e53c12-933a-417e-b19a-e9e782e1c492.gif)
 
-## Install from Logseq Marketplace
+<hr/>
+
+## Getting Started
+
+### Install from Logseq Marketplace
 
 - Press [`---`] on the top right toolbar to open [`Plugins`]
 - Select marketplace
 - Type '`column`' in the search field, select it from the search results and install
 
 ![image](https://user-images.githubusercontent.com/111847207/229359128-8a35bc00-b9ab-4048-be6f-5026bf0980a5.png)
+
+### Usage
+
+- When this plugin install, the style be applied to journals. 
+> By default, original right sidebar is turned on. it is possible to set in the plugin settings.
+
+<hr/>
 
 ## Questions❔
 
@@ -76,15 +87,15 @@
 
 ## Showcase / Questions / Ideas / Help
 
-Go to the [discussion](https://github.com/YU000jp/Logseq-column-Layout/discussions) tab to ask and find this kind of things.
+- Go to the [discussion](https://github.com/YU000jp/Logseq-column-Layout/discussions) tab to ask and find this kind of things.
 
 ## Contributing
 
-- Contributions to this plugin are always welcome! If you find a bug or have a suggestion for a new feature, please open an issue or submit a pull request. All contributions will be reviewed and considered for inclusion in future releases.
+> Contributions to this plugin are always welcome! If you find a bug or have a suggestion for a new feature, please open an issue or submit a pull request. All contributions will be reviewed and considered for inclusion in future releases.
 
 ## License
 
-- This Plugin is released under the MIT License. See the LICENSE file for more information.
+> This Plugin is released under the MIT License. See the LICENSE file for more information.
 
 ## Author
 
