@@ -51,15 +51,15 @@
 
 ![Animation](https://user-images.githubusercontent.com/111847207/200146804-e0e53c12-933a-417e-b19a-e9e782e1c492.gif)
 
-<hr/>
+---
 
 ## Getting Started
 
 ### Install from Logseq Marketplace
 
-- Press [`---`] on the top right toolbar to open [`Plugins`]
-- Select marketplace
-- Type '`column`' in the search field, select it from the search results and install
+- Press `---` on the top right toolbar to open `Plugins`
+- Select `Marketplace`
+- Type `Column` in the search field, select it from the search results and install
 
 ![image](https://user-images.githubusercontent.com/111847207/229359128-8a35bc00-b9ab-4048-be6f-5026bf0980a5.png)
 
@@ -68,7 +68,7 @@
 - When this plugin install, the style be applied to journals. 
 > By default, original right sidebar is turned on. it is possible to set in the plugin settings.
 
-<hr/>
+---
 
 ## Questions❔
 
@@ -95,6 +95,7 @@
 
 ### My Logseq plugins
 
+- [Show Weekday and Week-number](https://github.com/YU000jp/logseq-plugin-show-weekday-and-week-number)
 - [Weekdays and Holidays (Templates)](https://github.com/YU000jp/logseq-plugin-weekdays-and-weekends)
 - [Sticky Popup](https://github.com/YU000jp/logseq-plugin-sticky-popup)
 - [SomeMenuExtender](https://github.com/YU000jp/logseq-plugin-some-menu-extender)
