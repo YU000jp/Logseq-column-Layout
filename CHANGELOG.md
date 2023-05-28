@@ -1,3 +1,10 @@
+## [2.2.1](https://github.com/YU000jp/Logseq-column-Layout/compare/v2.2.0...v2.2.1) (2023-05-28)
+
+
+### Bug Fixes
+
+* **bug:** Not open journals on right-sidebar ([7112584](https://github.com/YU000jp/Logseq-column-Layout/commit/71125849f9d939c1a036b6d06658597263940cf0))
+
 # [2.2.0](https://github.com/YU000jp/Logseq-column-Layout/compare/v2.1.1...v2.2.0) (2023-05-06)
 
 
