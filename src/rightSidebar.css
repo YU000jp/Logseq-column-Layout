@@ -19,7 +19,7 @@ div#right-sidebar div.sidebar-item.content div.initial{min-height:400px}
 div#right-sidebar div.sidebar-item.content span.rotating-arrow:first-child{transform:scale(2,2);margin-right:.6em}
 div#right-sidebar table.table-auto{table-layout:fixed;width:90%}
 div#right-sidebar table.table-auto td.whitespace-nowrap{overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
-div#right-sidebar div.hidden div,div#right-sidebar div:is(.page-hierarchy,.relative+div.references,.sidebar-item div.is-journals div.relative),main.ls-right-sidebar-open :is(div#today-queries,div.scheduled-or-deadlines){display:none}
+div#right-sidebar div.hidden div,div#right-sidebar div:is(.page-hierarchy,.relative+div.references),main.ls-right-sidebar-open :is(div#today-queries,div.scheduled-or-deadlines){display:none}
 div#right-sidebar div.hidden{display:block;margin-top:1em;margin-bottom:-2em;padding:0;width:100%;height:1em;background-color:var(--color-level-3);border-radius:1.5em}
 div#right-sidebar div.cp__right-sidebar-topbar{flex-direction:row-reverse}
 div#right-sidebar span.ls-icon-layout-sidebar-right svg{width:24px;height:24px}
