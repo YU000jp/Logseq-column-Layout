@@ -1,6 +1,7 @@
 # Logseq Plugin: Column Layout (UI)
 
 - For quick reference, it is possible to place journals, linked references, and journal queries side by side.
+
 > ⚠️Cancel if the screen width is less than `1850px`
 
 [![latest release version](https://img.shields.io/github/v/release/YU000jp/Logseq-column-Layout)](https://github.com/YU000jp/Logseq-column-Layout/releases)
@@ -65,7 +66,8 @@
 
 ### Usage
 
-- When this plugin install, the style be applied to journals. 
+- When this plugin install, the style be applied to journals.
+
 > By default, original right sidebar is turned on. it is possible to set in the plugin settings.
 
 ---
@@ -87,21 +89,11 @@
 
 ## Showcase / Questions / Ideas / Help
 
-- Go to the [discussion](https://github.com/YU000jp/Logseq-column-Layout/discussions) tab to ask and find this kind of things.
+> Go to the [discussion](https://github.com/YU000jp/Logseq-column-Layout/discussions) tab to ask and find this kind of things.
 
 ## Author
 
-* GitHub: [YU000jp](https://github.com/YU000jp)
-
-### My Logseq plugins
-
-- [Show Weekday and Week-number](https://github.com/YU000jp/logseq-plugin-show-weekday-and-week-number)
-- [Weekdays and Holidays (Templates)](https://github.com/YU000jp/logseq-plugin-weekdays-and-weekends)
-- [Sticky Popup](https://github.com/YU000jp/logseq-plugin-sticky-popup)
-- [SomeMenuExtender](https://github.com/YU000jp/logseq-plugin-some-menu-extender)
-- [Panel Coloring](https://github.com/YU000jp/logseq-plugin-panel-coloring)
-- [Page-tags and Hierarchy](https://github.com/YU000jp/logseq-page-tags-and-hierarchy)
-- [Column Layout](https://github.com/YU000jp/Logseq-column-Layout)
+- GitHub: [YU000jp](https://github.com/YU000jp)
 
 ## Prior art & Credit
 
