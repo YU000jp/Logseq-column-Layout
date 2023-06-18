@@ -70,6 +70,19 @@
 
 > By default, original right sidebar is turned on. it is possible to set in the plugin settings.
 
+### Plugin Settings
+
+- [Journals] Linked References side by side: boolean
+   - `true` default
+   - `false`
+- Original right sidebar: boolean
+   - `true` default
+   - `false`
+- Change large image max-size (open journals): number (px)
+   - `300` < `660` default < `800`
+- Change large image max-size (open pages): number (px)
+   - `300` < `1050` default > `1200`
+
 ---
 
 ## Questions❔
