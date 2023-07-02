@@ -1,4 +1,4 @@
-# Logseq Plugin: Column Layout (UI)
+# Logseq Plugin: *Column Layout (UI)*
 
 - For quick reference, it is possible to place journals, linked references, and journal queries side by side.
 
