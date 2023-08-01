@@ -7,7 +7,7 @@ div#right-sidebar{border:4px var(--ls-guideline-color);border-radius:.25em;overf
 div#right-sidebar div.cp__right-sidebar-scrollable>div+div{background-image:linear-gradient(var(--color-level-1) 25%,transparent 25%);background-size:50px 15px}
 div#right-sidebar div.cp__right-sidebar-scrollable>div.cp__right-sidebar-topbar{height:unset}
 div#right-sidebar div.cp__right-sidebar div.sidebar-item{padding-top:unset}
-div#right-sidebar div.sidebar-item-list{display:flex;flex-direction:column;flex-wrap:wrap;align-content:flex-start;overflow-x:scroll;font-size:.96em;scroll-snap-type:x;padding-bottom:0;margin:unset;height:calc(99vh - 20px)}
+div#right-sidebar div.sidebar-item-list{display:flex;flex-direction:column;flex-wrap:wrap;align-content:flex-start;overflow-x:scroll;font-size:.96em;scroll-snap-type:x;padding-bottom:0;margin:unset;height:calc(98vh - 20px)}
 div#right-sidebar div.sidebar-item-list div.sidebar-item.flex-col{width:100%!important}
 div#right-sidebar div.sidebar-item.content{min-width:550px;max-width:900px;resize:both;align-self:flex-start;margin-bottom:.4em;max-height:fit-content;overflow-y:visible;padding-bottom:3em;background:var(--ls-primary-background-color)}
 div#right-sidebar div.sidebar-item.content>div>div:first-of-type{margin-top:0;margin-bottom:.4em;position:sticky!important;top:-1em;backdrop-filter:blur(20px);z-index:1;font-weight:700}
@@ -19,8 +19,7 @@ div#right-sidebar div.sidebar-item.content div.initial{min-height:400px}
 div#right-sidebar div.sidebar-item.content span.rotating-arrow:first-child{transform:scale(2,2);margin-right:.6em}
 div#right-sidebar table.table-auto{table-layout:fixed;width:90%}
 div#right-sidebar table.table-auto td.whitespace-nowrap{overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
-div#right-sidebar div.hidden div,div#right-sidebar div:is(.page-hierarchy,.relative+div.references),main.ls-right-sidebar-open :is(div#today-queries,div.scheduled-or-deadlines){display:none}
-div#right-sidebar div.hidden{display:block;margin-top:1em;margin-bottom:-2em;padding:0;width:100%;height:1em;background-color:var(--color-level-3);border-radius:1.5em}
 div#right-sidebar div.cp__right-sidebar-topbar{flex-direction:row-reverse}
 div#right-sidebar span.ls-icon-layout-sidebar-right svg{width:24px;height:24px}
-div#right-sidebar div#date-time-picker{width:300px;background:var(--color-level-1);z-index:var(--ls-z-index-level-4)}
+div#right-sidebar div#date-time-picker{width:430px;background:var(--color-level-1);z-index:var(--ls-z-index-level-4)}
+div#right-sidebar div:is(.page-tags,.page-hierarchy),main.ls-right-sidebar-open :is(div#today-queries,div.scheduled-or-deadlines){display:none}
