@@ -8,9 +8,6 @@ div#main-content-container blockquote{font-size:.95em}
 div#main-content-container :is(.now,.doing,.later,.todo){background:linear-gradient(transparent 80%,var(--ls-block-highlight-color) 30%);font-weight:700;font-size:1.1em}
 div#main-container div.cp__sidebar-main-content{max-width:unset}
 div#root [data-refs-self*=kanban]>.block-children-container>.block-children{overflow-x:scroll;font-size:.98em;scroll-snap-type:x}
-div#right-sidebar [data-refs-self*=kanban]>.block-children-container>.block-children{flex-wrap:wrap}
-:is(body.is-pdf-active, main.ls-right-sidebar-open) div#main-content-container div:is(.relative+div.references,.page-hierarchy),div#right-sidebar div:is(.relative+div.references,.page-hierarchy){display:none}
 div#time-repeater{min-width:200px}
 div.timestamp :is(div#date-time-picker:nth-of-type(2),div#date-time-picker:nth-of-type(3)){width:400px;background:var(--color-level-1)}
 div.timestamp div#date-time-picker{top:3.8em;z-index:11}
-div.date-picker{width:280px}
