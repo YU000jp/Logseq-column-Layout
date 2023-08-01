@@ -1,3 +1,11 @@
+## [2.2.2](https://github.com/YU000jp/Logseq-column-Layout/compare/v2.2.1...v2.2.2) (2023-08-01)
+
+
+### Bug Fixes
+
+* **bug:** data-picker too small ([73150ba](https://github.com/YU000jp/Logseq-column-Layout/commit/73150ba48eb1d62d34b6588fda62bbae9c5cf763))
+* journal linked references focus-within ([5d648b9](https://github.com/YU000jp/Logseq-column-Layout/commit/5d648b9e4535ff1b8f243ecfec2cddc4300680c4))
+
 ## [2.2.1](https://github.com/YU000jp/Logseq-column-Layout/compare/v2.2.0...v2.2.1) (2023-05-28)
 
 
