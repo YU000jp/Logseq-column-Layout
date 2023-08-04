@@ -1,3 +1,10 @@
+## [2.2.3](https://github.com/YU000jp/Logseq-column-Layout/compare/v2.2.2...v2.2.3) (2023-08-04)
+
+
+### Bug Fixes
+
+* **bug:** on non-journal page, remove content width ([be80680](https://github.com/YU000jp/Logseq-column-Layout/commit/be80680b20dc3aa4209ff095472752822e12f592))
+
 ## [2.2.2](https://github.com/YU000jp/Logseq-column-Layout/compare/v2.2.1...v2.2.2) (2023-08-01)
 
 
