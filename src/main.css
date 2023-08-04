@@ -1,12 +1,11 @@
 body[data-page=home] div#today-queries>div.lazy-visibility{min-height:unset!important}
-div.shadow{display:none}
 body[data-page=home] div#today-queries div.color-level,body[data-page=home] div#today-queries div.color-level div.blocks-container{background-color:unset}
 body[data-page=home] main.ls-wide-mode div#main-content-container div.cp__sidebar-main-content{max-width:unset}
-div.nav-content-item-inner{margin-top:2em}
-div#main-content-container img{overflow-x:scroll}
-div#main-content-container blockquote{font-size:.95em}
-div#main-content-container :is(.now,.doing,.later,.todo){background:linear-gradient(transparent 80%,var(--ls-block-highlight-color) 30%);font-weight:700;font-size:1.1em}
-div#main-container div.cp__sidebar-main-content{max-width:unset}
+body[data-page=home] div.nav-content-item-inner{margin-top:2em}
+body[data-page=home] div#main-content-container img{overflow-x:scroll}
+body[data-page=home] div#main-content-container blockquote{font-size:.95em}
+body[data-page=home] div#today-queries :is(.now,.doing,.later,.todo){background:linear-gradient(transparent 80%,var(--ls-block-highlight-color) 30%);font-weight:700;font-size:1.1em}
+body[data-page=home] div#main-container div.cp__sidebar-main-content{max-width:unset}
 div#root [data-refs-self*=kanban]>.block-children-container>.block-children{overflow-x:scroll;font-size:.98em;scroll-snap-type:x}
 div#time-repeater{min-width:200px}
 div.timestamp :is(div#date-time-picker:nth-of-type(2),div#date-time-picker:nth-of-type(3)){width:400px;background:var(--color-level-1)}
