@@ -1,3 +1,10 @@
+## [2.2.4](https://github.com/YU000jp/Logseq-column-Layout/compare/v2.2.3...v2.2.4) (2023-08-05)
+
+
+### Bug Fixes
+
+* **bug:** support awesome styler (excluding journals) ([a7ef7b6](https://github.com/YU000jp/Logseq-column-Layout/commit/a7ef7b619c4af72ce6f18df9640f524a5115b50d))
+
 ## [2.2.3](https://github.com/YU000jp/Logseq-column-Layout/compare/v2.2.2...v2.2.3) (2023-08-04)
 
 
