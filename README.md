@@ -91,11 +91,6 @@
 - Linked reference from journal are limited to dates other than today.
 - If you find it difficult to see the image in a reduced view, please use the zoom function or open it in sidebar.
 
-### Supported plugins
-
-- [Awesome UI](https://github.com/yoyurec/logseq-awesome-ui)
-- [Awesome Links](https://github.com/yoyurec/logseq-awesome-links)
-
 ### Unsupported plugin
 
 - [Awesome Styler](https://github.com/yoyurec/logseq-awesome-styler)
