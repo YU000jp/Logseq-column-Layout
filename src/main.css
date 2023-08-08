@@ -1,6 +1,4 @@
 body[data-page=home] div#today-queries>div.lazy-visibility{min-height:unset!important}
-body[data-page=home] main.ls-wide-mode div#main-content-container div.cp__sidebar-main-content{max-width:unset}
-body[data-page=home] div#main-container div.cp__sidebar-main-content{max-width:unset}
 body[data-page=home] div#today-queries div.color-level,body[data-page=home] div#today-queries div.color-level div.blocks-container{background-color:unset}
 body[data-page=home] div.nav-content-item-inner{margin-top:2em}
 body[data-page=home] div#main-content-container img{overflow-x:scroll}

@@ -1,16 +1,17 @@
 @media screen and (min-width:1850px){
+body[data-page=home] main.ls-wide-mode div#main-content-container div.cp__sidebar-main-content{max-width:unset}
+body[data-page=home] div#main-container div.cp__sidebar-main-content{max-width:unset}
 body[data-page=home].is-tabs-loaded div#journals div#today-queries{top:calc(var(--ls-headbar-height) + var(--ls-headbar-inner-top-padding) + 40px)}
 body[data-page=home]:is(.is-pdf-active,main.ls-right-sidebar-open) div:is(#today-queries,.scheduled-or-deadlines){display:none}
-body[data-page=home]:not(.is-pdf-active) main:not(.ls-right-sidebar-open) div#main-container{padding-right:622px}
+body[data-page=home]:not(.is-pdf-active) main:not(.ls-right-sidebar-open) div#main-container{padding-right:565px}
 body[data-page=home]:not(.is-pdf-active) main:not(.ls-right-sidebar-open) div#main-content-container{margin:0;padding-top:unset}
-body[data-page=home]:not(.is-pdf-active) main:not(.ls-right-sidebar-open) div#main-content-container :is(div.relative+div.references,div.page-hierarchy){width:566px}
 body[data-page=home]:not(.is-pdf-active) main:not(.ls-right-sidebar-open) div#journals div.references{margin-right:auto;max-height:800px;overflow-y:auto;overflow-x:auto}
 body[data-page=home]:not(.is-pdf-active) main:not(.ls-right-sidebar-open) div#journals div.page-linked div.references-blocks div.content>div.flex-col{margin-left:3em;margin-right:1em;max-width:1250px}
-body[data-page=home]:not(.is-pdf-active) main:not(.ls-right-sidebar-open) :is(div#today-queries+div.flex.flex-col,div.scheduled-or-deadlines){right:20px;position:fixed;bottom:1em;padding:.3em;outline:4px solid var(--ls-guideline-color);outline-offset:3px;border-radius:1.2em;background:unset;backdrop-filter:blur(20px);font-size:small;max-height:30vh;overflow:auto;z-index:1}
-body[data-page=home]:not(.is-pdf-active) main:not(.ls-right-sidebar-open) div#today-queries{background:var(--ls-primary-background-color);width:560px;position:fixed;right:0;top:calc(var(--ls-headbar-height) + var(--ls-headbar-inner-top-padding));bottom:3px;overflow-y:scroll;font-size:smaller;border-left:2px solid var(--ls-guideline-color);padding:.12em}
+body[data-page=home]:not(.is-pdf-active) main:not(.ls-right-sidebar-open) :is(div#today-queries+div.flex.flex-col,div.scheduled-or-deadlines){right:20px;position:fixed;bottom:1em;padding:.3em;outline:4px solid var(--ls-guideline-color);outline-offset:3px;border-radius:.3em;background:unset;backdrop-filter:blur(20px);font-size:small;max-height:30vh;overflow:auto;z-index:1;min-width:530px}
+body[data-page=home]:not(.is-pdf-active) main:not(.ls-right-sidebar-open) div#today-queries{background:var(--ls-primary-background-color);width:560px;position:fixed;right:0;top:calc(var(--ls-headbar-height) + var(--ls-headbar-inner-top-padding));bottom:3px;overflow-y:scroll;font-size:.9em;border-left:2px solid var(--ls-guideline-color);padding:.12em}
 body[data-page=home]:not(.is-pdf-active) main:not(.ls-right-sidebar-open) div#today-queries :is(.now,.later,.doing,.todo){font-weight:600}
 body[data-page=home]:not(.is-pdf-active) main:not(.ls-right-sidebar-open) div#today-queries div.custom-query{margin-top:.1em;margin-bottom:.8em}
-body[data-page=home]:not(.is-pdf-active) main:not(.ls-right-sidebar-open) div#today-queries div.custom-query div.custom-query-title{outline:2px solid var(--ls-guideline-color);font-size:medium;background:var(--ls-page-blockquote-bg-color)}
+body[data-page=home]:not(.is-pdf-active) main:not(.ls-right-sidebar-open) div#today-queries div.custom-query div.custom-query-title{outline:2px solid var(--ls-guideline-color);background:var(--ls-page-blockquote-bg-color)}
 body[data-page=home]:not(.is-pdf-active) main:not(.ls-right-sidebar-open) div#today-queries div.custom-query div.custom-query-title:hover{outline:4px}
 body[data-page=home]:not(.is-pdf-active) main:not(.ls-right-sidebar-open) div#today-queries div.custom-query div.content{padding-top:.15em}
 body[data-page=home]:not(.is-pdf-active) main:not(.ls-right-sidebar-open) div#today-queries div.custom-query div.content div.lazy-visibility{border-right:4px solid var(--ls-page-blockquote-bg-color)}
