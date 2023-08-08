@@ -4,21 +4,22 @@ import CSSmain from './main.css?inline';
 import CSSrightSidebar from './rightSidebar.css?inline';
 import CSSsideLinkedReferences from './side.css?inline';
 import CSSNotSideLinkedReferences from './notSide.css?inline';
-import { setup as l10nSetup, t } from "logseq-l10n"; //https://github.com/sethyuan/logseq-l10n
-import ja from "./translations/ja.json";
+//import { setup as l10nSetup, t } from "logseq-l10n"; //https://github.com/sethyuan/logseq-l10n
+//import ja from "./translations/ja.json";
+import { removeProvideStyle } from './lib';
 
 
 /* main */
 function main() {
 
-    (async () => {
-        try {
-            await l10nSetup({ builtinTranslations: { ja } });
-        } finally {
-            /* user settings */
-            logseq.useSettingsSchema(settingsTemplate);
-        }
-    })();
+    //(async () => {
+    // try {
+    //     await l10nSetup({ builtinTranslations: { ja } });
+    // } finally {
+    /* user settings */
+    logseq.useSettingsSchema(settingsTemplate);
+    //     }
+    // })();
 
     const keyRightSidebar = "RightSidebar";
     if (logseq.settings?.booleanRightSidebar === true) {
@@ -112,30 +113,21 @@ body[data-page="page"] div.asset-container img {
 `;
 }
 
-const removeProvideStyle = (className: string) => {
-    const doc = parent.document.head.querySelector(`style[data-injected-style^="${className}"]`) as HTMLStyleElement;
-    if (doc) doc.remove();
-};
-
-function removeCSSclass(className: string): void {
-    if (parent.document.body.classList?.contains(className)) parent.document.body.classList.remove(className);
-}
-
 //https://logseq.github.io/plugins/types/SettingSchemaDesc.html
 const settingsTemplate: SettingSchemaDesc[] = [
     {
         key: "booleanLinkedReferences",
-        title: "[Journals] Linked References",
+        title: "Journals, Turn on Linked References side by side",
         type: "boolean",
         default: true,
-        description: "Side by side",
+        description: "default: `true`",
     },
     {
         key: "booleanRightSidebar",
-        title: "Original right sidebar",
+        title: "Enable original right sidebar",
         type: "boolean",
         default: true,
-        description: "place side by side in the sidebar",
+        description: "default: `true`, place blocks or pages side by side in the sidebar",
     },
     {
         key: "imageSizeHome",
