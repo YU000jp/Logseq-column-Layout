@@ -1,3 +1,10 @@
+## [2.2.5](https://github.com/YU000jp/Logseq-column-Layout/compare/v2.2.4...v2.2.5) (2023-08-08)
+
+
+### Bug Fixes
+
+* **Clean up:** Journal Queries and Linked References ([256a083](https://github.com/YU000jp/Logseq-column-Layout/commit/256a08310ea798143a1efb7e13a890677e285d32))
+
 ## [2.2.4](https://github.com/YU000jp/Logseq-column-Layout/compare/v2.2.3...v2.2.4) (2023-08-05)
 
 
