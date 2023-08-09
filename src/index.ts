@@ -6,7 +6,7 @@ import CSSsideLinkedReferences from './side.css?inline';
 import CSSNotSideLinkedReferences from './notSide.css?inline';
 //import { setup as l10nSetup, t } from "logseq-l10n"; //https://github.com/sethyuan/logseq-l10n
 //import ja from "./translations/ja.json";
-import { removeProvideStyle } from './lib';
+import { calculateRangeBarForSettingUI, calculateRangeBarForSettingUIonce, removeProvideStyle } from './lib';
 
 
 /* main */
@@ -34,11 +34,20 @@ function main() {
         logseq.provideStyle({ key: keyNotSideLinkedReferences, style: CSSNotSideLinkedReferences });
     }
 
+    //新しい計算方法で求めて変更する
+    if (logseq.settings?.imageSizeHome !== "") logseq.updateSettings({
+        imageSizeMaxHome: calculateRangeBarForSettingUIonce(300, 800, logseq.settings?.imageSizeHome),
+        imageSizeHome: "",
+     });
+    if (logseq.settings?.imageSizePage !== "") logseq.updateSettings({
+        imageSizeMaxPage: calculateRangeBarForSettingUIonce(300, 1200, logseq.settings?.imageSizePage),
+        imageSizePage: "",
+    });
+
+
     //setting image Size
-    const keyImageSizeHome = "imageSizeHome";
-    logseq.provideStyle({ key: keyImageSizeHome, style: CSSimageSizeHome(logseq.settings?.imageSizeHome) });
-    const keyImageSizePage = "imageSizePage";
-    logseq.provideStyle({ key: keyImageSizePage, style: CSSimageSizePage(logseq.settings?.imageSizePage) });
+    const keyImageSize = "imageSize";
+    logseq.provideStyle({ key: keyImageSize, style: CSSimageSize(logseq.settings?.imageSizeMaxHome, logseq.settings?.imageSizeMaxPage) });
 
     //Fix bugs
     /* Fix "Extra space when journal queries are not active #6773" */
@@ -67,48 +76,28 @@ function main() {
             } else if (oldSet.booleanRightSidebar !== true && newSet.booleanRightSidebar === true) {
                 logseq.provideStyle({ key: keyRightSidebar, style: CSSrightSidebar });
             }
-            if (oldSet.imageSizeHome !== newSet.imageSizeHome) {
+            if (oldSet.imageSizeMaxHome !== newSet.imageSizeMaxHome || oldSet.imageSizeMaxPage !== newSet.imageSizeMaxPage) {
                 try {
-                    removeProvideStyle(keyImageSizeHome);
+                    removeProvideStyle(keyImageSize);
                 } finally {
-                    logseq.provideStyle({ key: keyImageSizeHome, style: CSSimageSizeHome(newSet.imageSizeHome) });
-                }
-            }
-            if (oldSet.imageSizePage !== newSet.imageSizePage) {
-                try {
-                    removeProvideStyle(keyImageSizePage);
-                } finally {
-                    logseq.provideStyle({ key: keyImageSizePage, style: CSSimageSizePage(newSet.imageSizePage) });
+                    logseq.provideStyle({ key: keyImageSize, style: CSSimageSize(newSet.imageSizeMaxHome, newSet.imageSizeMaxPage) });
                 }
             }
         }
     });
 };/* end_main */
 
-const CSSimageSizeHome = (setting: number): string => {
-    //300px < number > 800px
-    if (setting < 300) {
-        setting = 300;
-    }   //min
-    if (setting > 800) {
-        setting = 800;
-    }   //max
+
+
+const CSSimageSize = (home: number, page: number): string => {
+    //Home: 300px < number > 800px
+    //Page: 300px < number > 1200px
     return `
 body[data-page="home"] div.asset-container img {
-    max-width: ${setting}px
+    max-width: ${calculateRangeBarForSettingUI(300, 800, home)}px
 }
-`};
-const CSSimageSizePage = (setting: number): string => {
-    //300px < number > 1200px
-    if (setting < 300) {
-        setting = 300;
-    }   //min
-    if (setting > 1200) {
-        setting = 1200;
-    }   //max
-    return `
 body[data-page="page"] div.asset-container img {
-    max-width: ${setting}px
+    max-width: ${calculateRangeBarForSettingUI(300, 1200, page)}px
 }
 `;
 }
@@ -130,18 +119,20 @@ const settingsTemplate: SettingSchemaDesc[] = [
         description: "default: `true`, place blocks or pages side by side in the sidebar",
     },
     {
-        key: "imageSizeHome",
-        title: "Change large image max-size (open journals)",
+        key: "imageSizeMaxHome",
+        title: "Change large image max-size (for journals)",
         type: "number",
-        default: "660",
-        description: "300px < number > 800px   // default: 660",
+        default: "72",
+        description: "`300` < default: `660` < `800` [px]",//比率変更不可
+        inputAs: "range",
     },
     {
-        key: "imageSizePage",
-        title: "Change large image max-size (open pages)",
+        key: "imageSizeMaxPage",
+        title: "Change large image max-size (for non-journal pages)",
         type: "number",
-        default: "1050",
-        description: "300px < number > 1200px    // default: 1050",
+        default: "83",
+        description: "`300` < default: `1050` < `1200` [px]",//比率変更不可
+        inputAs: "range",
     },
 ];
 
