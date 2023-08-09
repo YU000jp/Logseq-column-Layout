@@ -1,3 +1,15 @@
+# [2.3.0](https://github.com/YU000jp/Logseq-column-Layout/compare/v2.2.5...v2.3.0) (2023-08-09)
+
+
+### Bug Fixes
+
+* **Clean up:** CSS ([d4fedb4](https://github.com/YU000jp/Logseq-column-Layout/commit/d4fedb452172a0815bf7deb6f86adc2807a5fc1b))
+
+
+### Features
+
+* **plugin settings:** Add range bar (for image max size ([88ca146](https://github.com/YU000jp/Logseq-column-Layout/commit/88ca1468472ad2d58f3f5af1f34a9ffece76f2eb))
+
 ## [2.2.5](https://github.com/YU000jp/Logseq-column-Layout/compare/v2.2.4...v2.2.5) (2023-08-08)
 
 
