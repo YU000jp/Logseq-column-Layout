@@ -1,3 +1,10 @@
+## [2.3.1](https://github.com/YU000jp/Logseq-column-Layout/compare/v2.3.0...v2.3.1) (2023-08-09)
+
+
+### Bug Fixes
+
+* **design:** Linked References font-size down & clean space ([05c32d4](https://github.com/YU000jp/Logseq-column-Layout/commit/05c32d4d1266c9be0987d2f6ed4a5f427cd5a863))
+
 # [2.3.0](https://github.com/YU000jp/Logseq-column-Layout/compare/v2.2.5...v2.3.0) (2023-08-09)
 
 
