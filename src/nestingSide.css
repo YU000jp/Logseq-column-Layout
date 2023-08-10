@@ -166,7 +166,7 @@ body[data-page=home] {
                 min-width: 820px
             }
 
-            & div:is(#today-queries+div.flex.flex-col, .scheduled-or-deadlines) {
+            & div.scheduled-or-deadlines {
                 width: 380px
             }
         }
@@ -178,7 +178,7 @@ body[data-page=home] {
                 min-width: 920px
             }
 
-            & div:is(#today-queries+div.flex.flex-col, .scheduled-or-deadlines) {
+            & div.scheduled-or-deadlines {
                 width: 460px
             }
         }
@@ -194,7 +194,7 @@ body[data-page=home] {
                 min-width: 1000px
             }
 
-            & div:is(#today-queries+div.flex.flex-col, .scheduled-or-deadlines) {
+            & div.scheduled-or-deadlines {
                 width: 520px
             }
         }
@@ -203,7 +203,7 @@ body[data-page=home] {
     @media screen and (min-width:1850px) and (max-width:2259px) {
         &:not(.is-pdf-active) main:not(.ls-right-sidebar-open) {
 
-            & div:is(#today-queries+div.flex.flex-col, .scheduled-or-deadlines) {
+            & div.scheduled-or-deadlines {
                 right: 400px
             }
 
@@ -231,7 +231,7 @@ body[data-page=home] {
                 margin-left: 4em
             }
 
-            & div:is(#today-queries+div.flex.flex-col, .scheduled-or-deadlines) {
+            & div.scheduled-or-deadlines {
                 right: 525px
             }
 
@@ -254,7 +254,7 @@ body[data-page=home] {
                 max-width: 1430px
             }
 
-            & div:is(#today-queries+div.flex.flex-col, .scheduled-or-deadlines) {
+            & div.scheduled-or-deadlines {
                 right: 640px
             }
 
