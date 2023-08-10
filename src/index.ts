@@ -2,6 +2,7 @@ import '@logseq/libs';
 import { LSPluginBaseInfo } from "@logseq/libs/dist/LSPlugin.user";
 import CSSmain from './main.css?inline';
 import CSSrightSidebar from './rightSidebar.css?inline';
+import CSS3NestingRightSidebar from './nestingRightSidebar.css?inline';
 import CSSside from './side.css?inline';
 import CSS3NestingSide from './nestingSide.css?inline';
 import CSSNonSide from './notSide.css?inline';
@@ -9,7 +10,7 @@ import CSSNonSide from './notSide.css?inline';
 //import ja from "./translations/ja.json";
 import { calculateRangeBarForSettingOnce, removeProvideStyle } from './lib';
 import { versionCheck } from './lib';
-import { provideStyleSide } from './lib';
+import { provideStyleSide as provideStyleByVersion } from './lib';
 import { settingsTemplate } from './settings';
 import { CSSimageSize } from './settings';
 let versionOver: boolean = false;
@@ -28,22 +29,22 @@ function main() {
     // })();
 
     const keyRightSidebar = "rightSidebar";
-    if (logseq.settings?.booleanRightSidebar === true) {
-        logseq.provideStyle({ key: keyRightSidebar, style: CSSrightSidebar });
-    }
-
+    const keyNestingRightSidebar = "nestingRightSidebar";
     const keySide = "side";
     const keyNestingSide = "nestingSide";
     const keyNonSide = "nonSide";
-    if (logseq.settings?.booleanLinkedReferences === true) {
-        (async () => {
-            versionOver = await versionCheck(0, 9, 11); //バージョンチェック
-            provideStyleSide(versionOver, keyNestingSide, CSS3NestingSide, keySide, CSSside);
-        })();
 
-    } else {
-        logseq.provideStyle({ key: keyNonSide, style: CSSNonSide });
-    }
+    (async () => {
+        versionOver = await versionCheck(0, 9, 11); //バージョンチェック
+        if (logseq.settings?.booleanLinkedReferences === true) {
+            provideStyleByVersion(versionOver, keyNestingSide, CSS3NestingSide, keySide, CSSside);
+        } else {
+            logseq.provideStyle({ key: keyNonSide, style: CSSNonSide });
+        }
+        if (logseq.settings?.booleanRightSidebar === true)
+            provideStyleByVersion(versionOver, keyNestingRightSidebar, CSS3NestingRightSidebar, keyRightSidebar, CSSrightSidebar);
+    })();
+
 
     //新しい計算方法で求めて変更する
     if (logseq.settings?.imageSizeHome !== "") logseq.updateSettings({
@@ -72,6 +73,7 @@ function main() {
             if (oldSet.booleanLinkedReferences !== false && newSet.booleanLinkedReferences === false) {
                 try {
                     removeProvideStyle(keySide);
+                    removeProvideStyle(keyNestingSide);
                 } finally {
                     logseq.provideStyle({ key: keyNonSide, style: CSSNonSide });
                 }
@@ -79,13 +81,14 @@ function main() {
                 try {
                     removeProvideStyle(keyNonSide);
                 } finally {
-                    provideStyleSide(versionOver, keyNestingSide, CSS3NestingSide, keySide, CSSside);
+                    provideStyleByVersion(versionOver, keyNestingSide, CSS3NestingSide, keySide, CSSside);
                 }
             }
             if (oldSet.booleanRightSidebar !== false && newSet.booleanRightSidebar === false) {
                 removeProvideStyle(keyRightSidebar);
+                removeProvideStyle(keyNestingRightSidebar);
             } else if (oldSet.booleanRightSidebar !== true && newSet.booleanRightSidebar === true) {
-                logseq.provideStyle({ key: keyRightSidebar, style: CSSrightSidebar });
+                provideStyleByVersion(versionOver, keyNestingRightSidebar, CSS3NestingRightSidebar, keyRightSidebar, CSSrightSidebar);
             }
             if (oldSet.imageSizeMaxHome !== newSet.imageSizeMaxHome || oldSet.imageSizeMaxPage !== newSet.imageSizeMaxPage) {
                 try {
