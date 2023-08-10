@@ -1,3 +1,10 @@
+# [2.5.0](https://github.com/YU000jp/Logseq-column-Layout/compare/v2.4.0...v2.5.0) (2023-08-10)
+
+
+### Features
+
+* **perf:** refactor original right sidebar feature with CSS3 nesting ([e7af1e3](https://github.com/YU000jp/Logseq-column-Layout/commit/e7af1e354820e816e173c08a5ddb4803d3aaec00))
+
 # [2.4.0](https://github.com/YU000jp/Logseq-column-Layout/compare/v2.3.1...v2.4.0) (2023-08-10)
 
 
