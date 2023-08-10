@@ -1,3 +1,10 @@
+# [2.4.0](https://github.com/YU000jp/Logseq-column-Layout/compare/v2.3.1...v2.4.0) (2023-08-10)
+
+
+### Features
+
+* **perf:** refactor with CSS3 nesting (Logseq ver0.9.11 check version) ([a570618](https://github.com/YU000jp/Logseq-column-Layout/commit/a570618075dd705270a5bdd54140d4c542ba2f2e))
+
 ## [2.3.1](https://github.com/YU000jp/Logseq-column-Layout/compare/v2.3.0...v2.3.1) (2023-08-09)
 
 
