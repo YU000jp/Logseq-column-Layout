@@ -1,3 +1,10 @@
+# [2.6.0](https://github.com/YU000jp/Logseq-column-Layout/compare/v2.5.0...v2.6.0) (2023-08-11)
+
+
+### Features
+
+* **Image-scale:** object-fit: scale-down (CSS) ([3317801](https://github.com/YU000jp/Logseq-column-Layout/commit/3317801201102ba143bff2d97b35d1f663429ea4))
+
 # [2.5.0](https://github.com/YU000jp/Logseq-column-Layout/compare/v2.4.0...v2.5.0) (2023-08-10)
 
 
