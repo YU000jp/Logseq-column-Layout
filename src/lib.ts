@@ -29,7 +29,7 @@ export async function versionCheck(first: number, second: number, third: number)
     } else return false; //指定より古いバージョンの場合
 }
 
-export function provideStyleSide(versionOver: boolean, newKey: string, newStyle: string, oldKey: string, oldStyle: string,) {
+export function provideStyleByVersion(versionOver: boolean, newKey: string, newStyle: string, oldKey: string, oldStyle: string,) {
     if (versionOver === true)
         logseq.provideStyle({ key: newKey, style: newStyle });//指定した以上のバージョンの場合
     else

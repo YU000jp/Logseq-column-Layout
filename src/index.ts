@@ -10,7 +10,7 @@ import CSSNonSide from './notSide.css?inline';
 //import ja from "./translations/ja.json";
 import { calculateRangeBarForSettingOnce, removeProvideStyle } from './lib';
 import { versionCheck } from './lib';
-import { provideStyleSide as provideStyleByVersion } from './lib';
+import { provideStyleByVersion } from './lib';
 import { settingsTemplate } from './settings';
 import { CSSimageSize } from './settings';
 let versionOver: boolean = false;
