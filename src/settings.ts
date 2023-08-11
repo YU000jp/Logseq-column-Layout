@@ -33,16 +33,23 @@ export const settingsTemplate: SettingSchemaDesc[] = [
         description: "`300` < default: `1050` < `1200` [px]",
         inputAs: "range",
     },
-];export const CSSimageSize = (home: number, page: number): string => {
+];
+
+
+export const CSSimageSize = (home: number, page: number): string => {
     //Home: 300px < number > 800px
     //Page: 300px < number > 1200px
     return `
 body[data-page="home"] div.asset-container img {
-    max-width: ${calculateRangeBarForSettingUI(300, 800, home)}px
+    max-width: ${calculateRangeBarForSettingUI(300, 800, home)}px;
+    object-fit: scale-down;
 }
 body[data-page="page"] div.asset-container img {
-    max-width: ${calculateRangeBarForSettingUI(300, 1200, page)}px
+    max-width: ${calculateRangeBarForSettingUI(300, 1200, page)}px;
+    object-fit: scale-down;
 }
 `;
+    //object-fit https://catnose.me/learning/css/object-fit
+    //画像を縮小するが拡大はしない scale-down
 };
 
