@@ -1,3 +1,10 @@
+## [2.6.1](https://github.com/YU000jp/Logseq-column-Layout/compare/v2.6.0...v2.6.1) (2023-08-12)
+
+
+### Bug Fixes
+
+* **bug:** right sidebar, when item resize max size (For page graph) ([4ddb666](https://github.com/YU000jp/Logseq-column-Layout/commit/4ddb66605ea3c12d09aeed4d3c5f59439016e931))
+
 # [2.6.0](https://github.com/YU000jp/Logseq-column-Layout/compare/v2.5.0...v2.6.0) (2023-08-11)
 
 
