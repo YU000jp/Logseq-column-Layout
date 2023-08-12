@@ -72,16 +72,16 @@
 
 ### Plugin Settings
 
-- [Journals] Linked References side by side: boolean
+- Journals, Turn on Linked References side by side: boolean
    - `true` default
    - `false`
-- Original right sidebar: boolean
+- Enable original right sidebar: boolean
    - `true` default
    - `false`
-- Change large image max-size (open journals): number (px)
-   - `300` < `660` default < `800`
-- Change large image max-size (open pages): number (px)
-   - `300` < `1050` default > `1200`
+- Change large image max-size (for journals): slider
+   - `300` < `660` default < `800` [px]
+- Change large image max-size (for non-jouranl pages): slider
+   - `300` < `1050` default < `1200`[px]
 
 ---
 
