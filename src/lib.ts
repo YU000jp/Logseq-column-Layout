@@ -34,7 +34,12 @@ export async function versionCheck(
   second: number,
   third: number
 ): Promise<boolean> {
-  const version: string = await logseq.App.getInfo("version");
+  let version: string = await logseq.App.getInfo("version");
+  //0.9.13-nightly.20230811のような文字列であった場合、-nightly以降を削除する
+  if (version?.includes("-")) {
+    const versionArr = version?.split("-") as string[];
+    version = versionArr[0];
+  }
   const versionArr = version?.split(".") as string[];
   if (
     Number(versionArr[0]) > first ||
