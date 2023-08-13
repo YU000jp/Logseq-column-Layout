@@ -1,3 +1,10 @@
+## [2.6.3](https://github.com/YU000jp/Logseq-column-Layout/compare/v2.6.2...v2.6.3) (2023-08-13)
+
+
+### Bug Fixes
+
+* **bug:** right sidebar (Logseq nightly) ([7a8ac4e](https://github.com/YU000jp/Logseq-column-Layout/commit/7a8ac4ed011983657f3558aa994a0b87893048f5))
+
 ## [2.6.2](https://github.com/YU000jp/Logseq-column-Layout/compare/v2.6.1...v2.6.2) (2023-08-13)
 
 
