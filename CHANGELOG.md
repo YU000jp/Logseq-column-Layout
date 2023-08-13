@@ -1,3 +1,10 @@
+## [2.6.2](https://github.com/YU000jp/Logseq-column-Layout/compare/v2.6.1...v2.6.2) (2023-08-13)
+
+
+### Bug Fixes
+
+* **bug:** Logseq nightly version break ([d363985](https://github.com/YU000jp/Logseq-column-Layout/commit/d363985a9b05f80b91ddfe0a1991b613e8f48628))
+
 ## [2.6.1](https://github.com/YU000jp/Logseq-column-Layout/compare/v2.6.0...v2.6.1) (2023-08-12)
 
 
