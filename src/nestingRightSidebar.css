@@ -68,8 +68,9 @@ div#root {
                 height: 100%;
                 width: 100%;
                 border: 1px solid;
+
                 &:focus-within {
-                    margin:-10vh;
+                    margin: -10vh;
                 }
             }
         }
@@ -94,9 +95,7 @@ div#root {
                 top: 0;
                 backdrop-filter: blur(20px);
                 z-index: 1;
-                margin: 0;
-                padding: .8em;
-                font-size: 1.1em
+                font-size: 1.2em
             }
 
             &::-webkit-scrollbar {
