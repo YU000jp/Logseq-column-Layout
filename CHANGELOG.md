@@ -1,3 +1,11 @@
+## [2.6.4](https://github.com/YU000jp/Logseq-column-Layout/compare/v2.6.3...v2.6.4) (2023-08-17)
+
+
+### Bug Fixes
+
+* **Original Sidebar:** Show message for not work and not support on Logseq v0.9.14 ([9663022](https://github.com/YU000jp/Logseq-column-Layout/commit/9663022fc52dcaf6e7f5a50b3097d213796bd042))
+* **right sidebar:** gap ([9077d5e](https://github.com/YU000jp/Logseq-column-Layout/commit/9077d5e30e96aa8709252cf93537026646df9463))
+
 ## [2.6.3](https://github.com/YU000jp/Logseq-column-Layout/compare/v2.6.2...v2.6.3) (2023-08-13)
 
 
