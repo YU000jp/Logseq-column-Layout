@@ -14,6 +14,7 @@ import { provideStyleByVersion } from "./lib";
 import { settingsTemplate } from "./settings";
 import { CSSimageSize } from "./settings";
 let versionOver: boolean = false;
+let versionOver0914: boolean = false;
 
 /* main */
 function main() {
@@ -34,6 +35,7 @@ function main() {
 
   (async () => {
     versionOver = await versionCheck(0, 9, 11); //バージョンチェック
+    versionOver0914 = await versionCheck(0, 9, 14); //バージョンチェック
     if (logseq.settings?.booleanLinkedReferences === true) {
       provideStyleByVersion(
         versionOver,
@@ -46,13 +48,26 @@ function main() {
       logseq.provideStyle({ key: keyNonSide, style: CSSNonSide });
     }
     if (logseq.settings?.booleanRightSidebar === true)
-      provideStyleByVersion(
-        versionOver,
-        keyNestingRightSidebar,
-        CSS3NestingRightSidebar,
-        keyRightSidebar,
-        CSSrightSidebar
-      );
+      if (versionOver0914 === true) {
+        //0.9.14以降には対応しない
+        logseq.UI.showMsg(
+          "Original sidebar does not work with Logseq version 0.9.14 or later. (Column Layout plugin)",
+          "warning",
+          { timeout: 3000 }
+        );
+        setTimeout(
+          () => logseq.updateSettings({ booleanRightSidebar: false }),
+          100
+        );
+      } else {
+        provideStyleByVersion(
+          versionOver,
+          keyNestingRightSidebar,
+          CSS3NestingRightSidebar,
+          keyRightSidebar,
+          CSSrightSidebar
+        );
+      }
   })();
 
   //新しい計算方法で求めて変更する
@@ -99,7 +114,7 @@ function main() {
     ) => {
       if (newSet && oldSet && newSet !== oldSet) {
         if (
-          oldSet.booleanLinkedReferences !== false &&
+          oldSet.booleanLinkedReferences === true &&
           newSet.booleanLinkedReferences === false
         ) {
           try {
@@ -109,7 +124,7 @@ function main() {
             logseq.provideStyle({ key: keyNonSide, style: CSSNonSide });
           }
         } else if (
-          oldSet.booleanLinkedReferences !== true &&
+          oldSet.booleanLinkedReferences === false &&
           newSet.booleanLinkedReferences === true
         ) {
           try {
@@ -125,22 +140,35 @@ function main() {
           }
         }
         if (
-          oldSet.booleanRightSidebar !== false &&
+          oldSet.booleanRightSidebar === true &&
           newSet.booleanRightSidebar === false
         ) {
           removeProvideStyle(keyRightSidebar);
           removeProvideStyle(keyNestingRightSidebar);
         } else if (
-          oldSet.booleanRightSidebar !== true &&
+          oldSet.booleanRightSidebar === false &&
           newSet.booleanRightSidebar === true
         ) {
-          provideStyleByVersion(
-            versionOver,
-            keyNestingRightSidebar,
-            CSS3NestingRightSidebar,
-            keyRightSidebar,
-            CSSrightSidebar
-          );
+          if (versionOver0914 === true) {
+            //0.9.14以降には対応しない
+            logseq.UI.showMsg(
+              "Original sidebar does not work with Logseq version 0.9.14 or later. (Column Layout plugin)",
+              "warning",
+              { timeout: 3000 }
+            );
+            setTimeout(
+              () => logseq.updateSettings({ booleanRightSidebar: false }),
+              100
+            );
+          } else {
+            provideStyleByVersion(
+              versionOver,
+              keyNestingRightSidebar,
+              CSS3NestingRightSidebar,
+              keyRightSidebar,
+              CSSrightSidebar
+            );
+          }
         }
         if (
           oldSet.imageSizeMaxHome !== newSet.imageSizeMaxHome ||
