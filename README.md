@@ -45,7 +45,7 @@
 
 ### Original right sidebar 
 
-> ⚠️ ! Not work with Logseq v0.9.14 or later !
+> ⚠️ ! The operation method has changed from version Logseq v0.9.14. !
 
 - Pages can be placed side by side in right sidebar.
 - Adjust the size by selecting the bottom right of the block. But don't make it too small.

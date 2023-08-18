@@ -5,7 +5,7 @@ import { calculateRangeBarForSettingUI } from "./lib";
 export const settingsTemplate: SettingSchemaDesc[] = [
   {
     key: "booleanLinkedReferences",
-    title: "Journals, Turn on Linked References side by side",
+    title: "Journals, show Linked References side by side",
     type: "boolean",
     default: true,
     description: "default: `true`",
@@ -16,14 +16,14 @@ export const settingsTemplate: SettingSchemaDesc[] = [
     type: "boolean",
     default: true,
     description:
-      "default: `true`, place blocks or pages side by side in the sidebar",
+      "default: `true`, place block or page-content side by side in the sidebar. ⚠️! The operation method has changed from version Logseq v0.9.14. !",
   },
   {
     key: "imageSizeMaxHome",
     title: "Change large image max-size (for journals)",
     type: "number",
     default: "72",
-    description: "`300` < default: `660` < `800` [px]",
+    description: "`300` < `660` default < `800` [px]",
     inputAs: "range",
   },
   {
@@ -31,7 +31,7 @@ export const settingsTemplate: SettingSchemaDesc[] = [
     title: "Change large image max-size (for non-journal pages)",
     type: "number",
     default: "83",
-    description: "`300` < default: `1050` < `1200` [px]",
+    description: "`300` < `1050` default < `1200` [px]",
     inputAs: "range",
   },
 ];

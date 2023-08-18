@@ -1,4 +1,7 @@
-import CSSsideLinkedReferences from "./side.css?inline";
+import { versionOver, versionOver0914 } from ".";
+import CSS3NestingRightSidebar from "./nestingRightSidebar.css?inline";
+import CSS3NestingRightSidebar00914 from "./nestingRightSidebar00914.css?inline";
+import CSSrightSidebar from "./rightSidebar.css?inline";
 
 export const removeProvideStyle = (className: string) => {
   const doc = parent.document.head.querySelector(
@@ -61,4 +64,36 @@ export function provideStyleByVersion(
     logseq.provideStyle({ key: newKey, style: newStyle });
   //指定した以上のバージョンの場合
   else logseq.provideStyle({ key: oldKey, style: oldStyle }); //指定より古いバージョンの場合
+}
+export function provideStyleRightSidebarEachVersion(
+  keyNestingRightSidebar: string,
+  keyNestingRightSidebar00914: string,
+  keyRightSidebar: string
+) {
+  if (versionOver0914 === true) {
+    logseq.provideStyle({
+      key: keyNestingRightSidebar00914,
+      style: CSS3NestingRightSidebar00914,
+    });
+    // //0.9.14以降には対応しない
+    // logseq.UI.showMsg(
+    //   "Original sidebar does not work with Logseq version 0.9.14 or later. (Column Layout plugin)",
+    //   "warning",
+    //   { timeout: 3000 }
+    // );
+    // setTimeout(
+    //   () => logseq.updateSettings({ booleanRightSidebar: false }),
+    //   100
+    // );
+  } else if (versionOver === true) {
+    logseq.provideStyle({
+      key: keyNestingRightSidebar,
+      style: CSS3NestingRightSidebar,
+    });
+  } else {
+    logseq.provideStyle({
+      key: keyRightSidebar,
+      style: CSSrightSidebar,
+    });
+  }
 }
