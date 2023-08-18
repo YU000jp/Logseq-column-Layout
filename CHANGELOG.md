@@ -1,3 +1,10 @@
+# [2.7.0](https://github.com/YU000jp/Logseq-column-Layout/compare/v2.6.4...v2.7.0) (2023-08-18)
+
+
+### Features
+
+* **right Sidebar:** Support with Logseq v0.9.14 ([b8571f5](https://github.com/YU000jp/Logseq-column-Layout/commit/b8571f55fce6c6fdfc2ebbcd8d05a1135ec4c29d))
+
 ## [2.6.4](https://github.com/YU000jp/Logseq-column-Layout/compare/v2.6.3...v2.6.4) (2023-08-17)
 
 
