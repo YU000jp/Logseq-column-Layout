@@ -1,3 +1,10 @@
+# [2.8.0](https://github.com/YU000jp/Logseq-column-Layout/compare/v2.7.0...v2.8.0) (2023-08-21)
+
+
+### Features
+
+* **redesign:** Linked References and Journal queries ([70d7eba](https://github.com/YU000jp/Logseq-column-Layout/commit/70d7eba7d01704a0d281ae0860c7eba454dcb693))
+
 # [2.7.0](https://github.com/YU000jp/Logseq-column-Layout/compare/v2.6.4...v2.7.0) (2023-08-18)
 
 
