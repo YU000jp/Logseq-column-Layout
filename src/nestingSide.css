@@ -35,18 +35,11 @@ body[data-page=home] {
                     outline: 2px solid var(--ls-guideline-color);
                     outline-offset: 3px;
                     font-size: .9em;
+                    overflow: auto;
 
-                    &:is(:focus-within, :hover) {
-                        background: unset;
-                        backdrop-filter: blur(40px);
-                        min-width: 660px;
-                        max-width: 660px;
-                        overflow-x: visible;
-                        z-index: var(--ls-z-index-level-1)
-                    }
-
-                    >div.pt-6 {
-                        padding-top: unset
+                    >div.content.pt-6 {
+                        padding-top: unset;
+                        width: 640px;
                     }
                 }
 
@@ -111,13 +104,19 @@ body[data-page=home] {
                 }
 
                 & div.custom-query {
-                    margin-top: .1em;
-                    margin-bottom: .8em;
+                    margin-top: .2em;
+                    margin-bottom: 1em;
+
+                    &>div>div.flex {
+                        outline: 2px solid var(--ls-guideline-color);
+                        border-radius: 0.3em;
+                        margin-right: 3px;
+                    }
 
                     & div.custom-query-title {
                         outline: 2px solid var(--ls-guideline-color);
                         background: var(--ls-page-blockquote-bg-color);
-                        padding-right: 10px;
+                        padding: 8px;
 
                         &:hover {
                             outline: 4px
@@ -238,6 +237,16 @@ body[data-page=home] {
             & div#today-queries {
                 width: 500px
             }
+        }
+    }
+
+    @media screen and (min-width:1850px) and (max-width:2799px) {
+        &:not(.is-pdf-active) main:not(.ls-right-sidebar-open) div#journals div.references:is(:focus-within, :hover) {
+            background: unset;
+            backdrop-filter: blur(40px);
+            min-width: 660px;
+            max-width: 660px;
+            z-index: var(--ls-z-index-level-1)
         }
     }
 
