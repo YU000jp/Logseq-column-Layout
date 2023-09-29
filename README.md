@@ -43,17 +43,6 @@
 - To get more task management
 - On Logseq, edit `config.edn` file. [For more details refer to this link(sample code)](https://github.com/YU000jp/logseq-default-queries-journals)
 
-### Original right sidebar 
-
-> ⚠️ ! The operation method has changed from version Logseq v0.9.14. !
-
-- Pages can be placed side by side in right sidebar.
-- Adjust the size by selecting the bottom right of the block. But don't make it too small.
-- Changed not to display page-tags and Hierarchy in right sidebar.
-- Display several pages side by side in right sidebar.
-
-![Animation](https://user-images.githubusercontent.com/111847207/200146804-e0e53c12-933a-417e-b19a-e9e782e1c492.gif)
-
 ---
 
 ## Getting Started
@@ -78,6 +67,7 @@
    - `true` default
    - `false`
 - Enable original right sidebar: boolean
+> ⚠️ The operation method has changed from version Logseq v0.9.14.
    - `true` default
    - `false`
 - Change large image max-size (for journals): slider
