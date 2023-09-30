@@ -1,3 +1,6 @@
 {
-
+    "Journals, show Linked References side by side": "日誌、Linked Referencesを並べて表示",
+    "Enable original right sidebar": "オリジナルの右サイドバーを有効にする",
+    "Change large image max-size (for journals)": "大きな画像の最大サイズを変更する（日誌のみ）",
+    "Change large image max-size (for non-journal pages)": "大きな画像の最大サイズを変更する（日誌以外）",
 }

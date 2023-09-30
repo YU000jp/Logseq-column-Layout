@@ -1,26 +1,27 @@
 import { SettingSchemaDesc } from "@logseq/libs/dist/LSPlugin.user";
 import { calculateRangeBarForSettingUI } from "./lib";
+import { t } from "logseq-l10n";
 
 //https://logseq.github.io/plugins/types/SettingSchemaDesc.html
-export const settingsTemplate: SettingSchemaDesc[] = [
+export const settingsTemplate = (): SettingSchemaDesc[] => [
   {
     key: "booleanLinkedReferences",
-    title: "Journals, show Linked References side by side",
+    title: t("Journals, show Linked References side by side"),
     type: "boolean",
     default: true,
     description: "default: `true`",
   },
   {
     key: "booleanRightSidebar",
-    title: "Enable original right sidebar",
+    title: t("Enable original right sidebar"),
     type: "boolean",
     default: true,
     description:
-      "default: `true`, place block or page-content side by side in the sidebar. ⚠️! The operation method has changed from version Logseq v0.9.14. !",
+      "default: `true`, place block or page-content side by side in the sidebar. ⚠️The operation method has changed from version Logseq v0.9.14.",
   },
   {
     key: "imageSizeMaxHome",
-    title: "Change large image max-size (for journals)",
+    title: t("Change large image max-size (for journals)"),
     type: "number",
     default: "72",
     description: "`300` < `660` default < `800` [px]",
@@ -28,7 +29,7 @@ export const settingsTemplate: SettingSchemaDesc[] = [
   },
   {
     key: "imageSizeMaxPage",
-    title: "Change large image max-size (for non-journal pages)",
+    title: t("Change large image max-size (for non-journal pages)"),
     type: "number",
     default: "83",
     description: "`300` < `1050` default < `1200` [px]",

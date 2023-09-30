@@ -4,8 +4,8 @@ import CSSmain from "./main.css?inline";
 import CSSside from "./side.css?inline";
 import CSS3NestingSide from "./nestingSide.css?inline";
 import CSSNonSide from "./notSide.css?inline";
-//import { setup as l10nSetup, t } from "logseq-l10n"; //https://github.com/sethyuan/logseq-l10n
-//import ja from "./translations/ja.json";
+import { setup as l10nSetup, t } from "logseq-l10n"; //https://github.com/sethyuan/logseq-l10n
+import ja from "./translations/ja.json";
 import { calculateRangeBarForSettingOnce, removeProvideStyle } from "./lib";
 import { versionCheck } from "./lib";
 import { provideStyleByVersion } from "./lib";
@@ -17,14 +17,14 @@ export let versionOver0914: boolean = false;
 
 /* main */
 function main() {
-  //(async () => {
-  // try {
-  //     await l10nSetup({ builtinTranslations: { ja } });
-  // } finally {
-  /* user settings */
-  logseq.useSettingsSchema(settingsTemplate);
-  //     }
-  // })();
+  (async () => {
+    try {
+      await l10nSetup({ builtinTranslations: { ja } });
+    } finally {
+      /* user settings */
+      logseq.useSettingsSchema(settingsTemplate());
+    }
+  })();
 
   const keyRightSidebar = "rightSidebar";
   const keyNestingRightSidebar = "nestingRightSidebar";
