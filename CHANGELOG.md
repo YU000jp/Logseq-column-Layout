@@ -1,3 +1,10 @@
+# [2.9.0](https://github.com/YU000jp/Logseq-column-Layout/compare/v2.8.0...v2.9.0) (2023-09-30)
+
+
+### Features
+
+* **translation:** ja ([089e143](https://github.com/YU000jp/Logseq-column-Layout/commit/089e14394778322b1fcd04296a375ff40c847afc))
+
 # [2.8.0](https://github.com/YU000jp/Logseq-column-Layout/compare/v2.7.0...v2.8.0) (2023-08-21)
 
 
