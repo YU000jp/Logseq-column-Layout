@@ -10,10 +10,10 @@ export const removeProvideStyle = (className: string) => {
   if (doc) doc.remove();
 };
 
-export function removeCSSclass(className: string): void {
+export const removeCSSclass = (className: string) => {
   if (parent.document.body.classList?.contains(className))
     parent.document.body.classList.remove(className);
-}
+};
 
 //for setting UI
 export const calculateRangeBarForSettingUI = (
