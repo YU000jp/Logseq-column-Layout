@@ -1,7 +1,7 @@
 # Logseq Plugin: *Column Layout (UI)*
 
 - For quick reference, place journals, linked references, and journal queries side by side.
-> For non-journals >> [Page-tags and Hierarchy plugin (wide view mode)](https://github.com/YU000jp/logseq-page-tags-and-hierarchy/)
+  > For non-journals >> [Page-tags and Hierarchy plugin (wide view mode)](https://github.com/YU000jp/logseq-page-tags-and-hierarchy/)
 
 [![latest release version](https://img.shields.io/github/v/release/YU000jp/Logseq-column-Layout)](https://github.com/YU000jp/Logseq-column-Layout/releases)
 [![License](https://img.shields.io/github/license/YU000jp/Logseq-column-Layout?color=blue)](https://github.com/YU000jp/Logseq-column-Layout/blob/main/LICENSE)
@@ -16,8 +16,7 @@
 
 ### Journals
 
-- If you use the reference function and write the timeline, it is also effective as a log.
-- Press ⌨️`cmd(win) + alt` at the same time to get the reference by mouse dragging on the bullet.
+- If use the reference function and write the timeline, it is also effective as a log. Press ⌨️`cmd(win) + alt` at the same time to get the reference by mouse dragging on the bullet.
 
 ![image 2022-10-14 0207412](https://user-images.githubusercontent.com/111847207/195662824-35aecadd-c404-42a8-82eb-54ffc628c321.png)
 
@@ -25,8 +24,7 @@
 
 #### Suitable for [Omnivore plugin](https://github.com/omnivore-app/logseq-omnivore)
 
-- Omnivore is a **WebClipping tool** that can be quoted to Logseq.
-- You can see the table of web clips for the day next to the journal, so it's easy to access. (View `substack.com` newsletter)
+- Omnivore is a **WebClipping tool** that can be quoted to Logseq. It is possible to see the table of web clips for the day next to the journal, so it's easy to access. (View `substack.com` newsletter)
 
 #### 📅 As a list for inclusion in the next journal
 
@@ -34,13 +32,11 @@
 
 #### PDF highlights
 
-- Logseq has the ability to read and highlight PDF file. If you add a date link to highlights, it will be included in the list of linked references.
-- [PDF highlights (docs.logseq.com)](https://docs.logseq.com/#/page/pdf%20highlights)
+- Logseq has the ability to read and highlight PDF file. If you add a date link to highlights, it will be included in the list of linked references. [PDF highlights (docs.logseq.com)](https://docs.logseq.com/#/page/pdf%20highlights)
 
 ### Journal queries
 
-- To get more task management
-- On Logseq, edit `config.edn` file. [For more details refer to this link(sample code)](https://github.com/YU000jp/logseq-default-queries-journals)
+- To get more task management. On Logseq, edit `config.edn` file. [For more details refer to this link(sample code)](https://github.com/YU000jp/logseq-default-queries-journals)
 
 ---
 
@@ -52,11 +48,7 @@
 
 ### Install from Logseq Marketplace
 
-- Press `---` on the top right toolbar to open `Plugins`
-- Select `Marketplace`
-- Type `Column` in the search field, select it from the search results and install
-
-![image](https://user-images.githubusercontent.com/111847207/229359128-8a35bc00-b9ab-4048-be6f-5026bf0980a5.png)
+- Press `---` on the top right toolbar to open `Plugins`. Select `Marketplace`. Type `Column` in the search field, select it from the search results and install
 
 ### Usage
 
