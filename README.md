@@ -1,8 +1,7 @@
 # Logseq Plugin: *Column Layout (UI)*
 
 - For quick reference, place journals, linked references, and journal queries side by side.
-  - For non-journals >> [Page-tags and Hierarchy plugin (wide view mode)](https://github.com/YU000jp/logseq-page-tags-and-hierarchy/)
-  - ⚠️Cancel if the screen width is less than `1850px`
+> For non-journals >> [Page-tags and Hierarchy plugin (wide view mode)](https://github.com/YU000jp/logseq-page-tags-and-hierarchy/)
 
 [![latest release version](https://img.shields.io/github/v/release/YU000jp/Logseq-column-Layout)](https://github.com/YU000jp/Logseq-column-Layout/releases)
 [![License](https://img.shields.io/github/license/YU000jp/Logseq-column-Layout?color=blue)](https://github.com/YU000jp/Logseq-column-Layout/blob/main/LICENSE)
@@ -47,6 +46,10 @@
 
 ## Getting Started
 
+#### Not supported
+
+- [Awesome Styler](https://github.com/yoyurec/logseq-awesome-styler) plugin cannot be used at the same time
+
 ### Install from Logseq Marketplace
 
 - Press `---` on the top right toolbar to open `Plugins`
@@ -57,9 +60,7 @@
 
 ### Usage
 
-- When this plugin install, the style be applied to journals.
-
-> By default, original right sidebar is turned on. it is possible to set in the plugin settings.
+- When install this plugin, styles be applied only to journals. Application will be excluded if the window size is less than 1850px.
 
 ### Plugin Settings
 
@@ -83,9 +84,7 @@
 - Linked reference from journal are limited to dates other than today.
 - If you find it difficult to see the image in a reduced view, please use the zoom function or open it in sidebar.
 
-### Unsupported plugin
 
-- [Awesome Styler](https://github.com/yoyurec/logseq-awesome-styler)
 
 ## Showcase / Questions / Ideas / Help
 
