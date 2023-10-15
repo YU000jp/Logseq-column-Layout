@@ -1,23 +1,10 @@
-div#root {
+body>div#root>main {
     & div.cp__right-sidebar {
         transition: unset;
 
         & div.sidebar-item a.close {
             transform: unset;
             margin-left: 1em
-        }
-    }
-
-    & main.ls-right-sidebar-open div {
-
-        &#main-content-container {
-            justify-content: left;
-            padding-left: 1em
-        }
-
-        &[data-modal-name=page-search] {
-            transform: unset;
-            left: unset
         }
     }
 
@@ -148,12 +135,27 @@ div#root {
         }
     }
 
+    &.ls-right-sidebar-open {
+        & div {
+            &#main-content-container {
+                justify-content: left;
+                padding-left: 1em
+            }
+
+            &[data-modal-name=page-search] {
+                transform: unset;
+                left: unset
+            }
+        }
+
+        & :is(div#today-queries, div.scheduled-or-deadlines) {
+            display: none
+        }
+    }
 }
 
-main.ls-right-sidebar-open :is(div#today-queries, div.scheduled-or-deadlines) {
-    display: none
-}
 
-body.is-tabs-loaded div#root div#right-sidebar div.sidebar-item-list {
-    height: calc(99vh - 60px)
+
+body.is-tabs-loaded>div#root>main div#right-sidebar div.sidebar-item-list {
+    height: calc(99vh - 60px);
 }
