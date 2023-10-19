@@ -52,7 +52,7 @@
 
 ### Usage
 
-- When install this plugin, styles be applied only to journals. Application will be excluded if the window size is less than 1850px.
+- Styles be applied only to journals. The styles are not applied if the window size is less than 1850px.
 
 ### Plugin Settings
 
