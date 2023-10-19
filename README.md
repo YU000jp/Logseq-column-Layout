@@ -56,13 +56,13 @@
 
 ### Plugin Settings
 
-- Journals, Turn on Linked References side by side: boolean
+- Place "Linked References" next to journals: boolean
    - `true` default
    - `false`
-- Enable original right sidebar: boolean
-> ⚠️ The operation method has changed from version Logseq v0.9.14.
-   - `true` default
-   - `false`
+- Make right sidebar content next to each other: boolean
+   > ⚠️Starting with Logseq v0.9.14 version, the limit is 2.
+   - `true`
+   - `false` default
 - Change large image max-size (for journals): slider
    - `300` < `660` default < `800` [px]
 - Change large image max-size (for non-jouranl pages): slider
