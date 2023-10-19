@@ -1,3 +1,5 @@
+[日本語](https://github.com/YU000jp/Logseq-column-Layout/blob/main/README.md)
+
 # Logseq Plugin: *Column Layout (UI)*
 
 1. Page view UI for journals: For quick reference, place journals, linked references, and journal queries side by side.
@@ -44,7 +46,7 @@
 
 #### Not supported
 
-- [Awesome Styler](https://github.com/yoyurec/logseq-awesome-styler) plugin cannot be used at the same time
+1. [Awesome Styler](https://github.com/yoyurec/logseq-awesome-styler) plugin cannot be used at the same time
 
 ### Install from Logseq Marketplace
 
