@@ -1,3 +1,10 @@
+# [2.10.0](https://github.com/YU000jp/Logseq-column-Layout/compare/v2.9.0...v2.10.0) (2023-10-19)
+
+
+### Features
+
+* **doc:** plugin settings ([1afc238](https://github.com/YU000jp/Logseq-column-Layout/commit/1afc238bf61f7aa775cbe46dbd94322a934a5b8b))
+
 # [2.9.0](https://github.com/YU000jp/Logseq-column-Layout/compare/v2.8.0...v2.9.0) (2023-09-30)
 
 
