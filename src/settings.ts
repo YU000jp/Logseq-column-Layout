@@ -6,18 +6,18 @@ import { t } from "logseq-l10n";
 export const settingsTemplate = (): SettingSchemaDesc[] => [
   {
     key: "booleanLinkedReferences",
-    title: t("Journals, show Linked References side by side"),
+    title: t("Place \"Linked References\" next to journals"),
     type: "boolean",
     default: true,
-    description: "default: `true`",
+    description: "",
   },
   {
     key: "booleanRightSidebar",
-    title: t("Enable original right sidebar"),
+    title: t("Make right sidebar content next to each other" ),
     type: "boolean",
-    default: true,
+    default: false,
     description:
-      "default: `true`, place block or page-content side by side in the sidebar. ⚠️The operation method has changed from version Logseq v0.9.14.",
+      t("⚠️Starting with Logseq v0.9.14 version, the limit is 2."),
   },
   {
     key: "imageSizeMaxHome",
@@ -41,11 +41,11 @@ export const CSSimageSize = (home: number, page: number): string => {
   //Home: 300px < number > 800px
   //Page: 300px < number > 1200px
   return `
-body[data-page="home"] div.asset-container img {
+body[data-page="home"]>div#root>div>main div.asset-container img {
     max-width: ${calculateRangeBarForSettingUI(300, 800, home)}px;
     object-fit: scale-down;
 }
-body[data-page="page"] div.asset-container img {
+body[data-page="page"]>div#root>div>main div.asset-container img {
     max-width: ${calculateRangeBarForSettingUI(300, 1200, page)}px;
     object-fit: scale-down;
 }
