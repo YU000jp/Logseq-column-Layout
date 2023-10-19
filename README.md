@@ -1,4 +1,4 @@
-[日本語](https://github.com/YU000jp/Logseq-column-Layout/blob/main/README.md)
+[日本語](https://github.com/YU000jp/Logseq-column-Layout/blob/main/README.ja.md)
 
 # Logseq Plugin: *Column Layout (UI)*
 
