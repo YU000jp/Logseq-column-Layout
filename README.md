@@ -44,13 +44,10 @@
 
 ## Getting Started
 
-#### Not supported
+Not supported > [Awesome Styler](https://github.com/yoyurec/logseq-awesome-styler) plugin cannot be used at the same time
 
-1. [Awesome Styler](https://github.com/yoyurec/logseq-awesome-styler) plugin cannot be used at the same time
-
-### Install from Logseq Marketplace
-
-- Press `---` on the top right toolbar to open `Plugins`. Select `Marketplace`. Type `Column` in the search field, select it from the search results and install
+Install from Logseq Marketplace
+  - Press `---` on the top right toolbar to open `Plugins`. Select `Marketplace`. Type `Column` in the search field, select it from the search results and install
 
 ### Usage
 
