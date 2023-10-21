@@ -3,7 +3,7 @@
 # Logseq Plugin: *Column Layout (Journals UI)*
 
 1. Journals view UI: For quick reference, place journals, linked references, and journal queries side by side.
-  > For non-journals >> [Page-tags and Hierarchy plugin (wide view mode)](https://github.com/YU000jp/logseq-page-tags-and-hierarchy/)
+  > For non-journals >> [Page-tags and Hierarchy (Page UI) plugin (wide view mode)](https://github.com/YU000jp/logseq-page-tags-and-hierarchy/)
 
 [![latest release version](https://img.shields.io/github/v/release/YU000jp/Logseq-column-Layout)](https://github.com/YU000jp/Logseq-column-Layout/releases)
 [![License](https://img.shields.io/github/license/YU000jp/Logseq-column-Layout?color=blue)](https://github.com/YU000jp/Logseq-column-Layout/blob/main/LICENSE)
@@ -84,10 +84,6 @@
 
 > Go to the [discussion](https://github.com/YU000jp/Logseq-column-Layout/discussions) tab to ask and find this kind of things.
 
-## Author
-
-- GitHub: [YU000jp](https://github.com/YU000jp)
-
----
+Author > [YU000jp (GitHub)](https://github.com/YU000jp)
 
 <a href="https://www.buymeacoffee.com/yu000japan" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-violet.png" alt="🍌Buy Me A Coffee" style="height: 42px;width: 152px" ></a>
