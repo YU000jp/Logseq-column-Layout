@@ -2,17 +2,20 @@ body {
     &[data-page=home]>div#root>div>main>div {
 
         & div#main-content-container {
-            & div#today-queries>div.lazy-visibility {
-                min-height: unset !important
-            }
+            & div {
+                &#today-queries {
+                    &>div.lazy-visibility {
+                        min-height: unset !important
+                    }
 
-            div#today-queries div.color-level,
-            body[data-page=home] div#today-queries div.color-level div.blocks-container {
-                background-color: unset
-            }
+                    & div.color-level div.blocks-container {
+                        background-color: unset
+                    }
+                }
 
-            div.nav-content-item-inner {
-                margin-top: 2em
+                &.nav-content-item-inner {
+                    margin-top: 2em
+                }
             }
         }
     }
@@ -22,23 +25,25 @@ body {
             overflow-x: scroll
         }
 
-        & div#time-repeater {
-            min-width: 200px
-        }
-
         & blockquote {
             font-size: .95em
         }
 
-        & div.timestamp div#date-time-picker {
-            top: 3.8em;
-            z-index: 11;
-
-            &:is(:nth-of-type(2), :nth-of-type(3)) {
-                width: 400px;
-                background: var(--color-level-1)
+        & div {
+            &#time-repeater {
+                min-width: 200px
             }
 
+            &.timestamp div#date-time-picker {
+                top: 3.8em;
+                z-index: 11;
+
+                &:is(:nth-of-type(2), :nth-of-type(3)) {
+                    width: 400px;
+                    background: var(--color-level-1)
+                }
+
+            }
         }
 
         & [data-refs-self*=kanban]>.block-children-container>.block-children {
