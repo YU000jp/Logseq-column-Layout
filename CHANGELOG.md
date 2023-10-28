@@ -1,3 +1,10 @@
+## [2.10.1](https://github.com/YU000jp/Logseq-column-Layout/compare/v2.10.0...v2.10.1) (2023-10-28)
+
+
+### Bug Fixes
+
+* **bug:** refactor ([38b4f83](https://github.com/YU000jp/Logseq-column-Layout/commit/38b4f834a5791966486e7112dbde72eeba747014))
+
 # [2.10.0](https://github.com/YU000jp/Logseq-column-Layout/compare/v2.9.0...v2.10.0) (2023-10-19)
 
 
