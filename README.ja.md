@@ -2,7 +2,7 @@
 
 # Logseq プラグイン: *Column Layout (Journals UI)*
 
-- 日誌UI: 日誌(ジャーナル)のページに 独自のスタイルを適用します。日誌と、そのリンク参照のリスト("Lined References")、日誌クエリー(Journal Queries)を横並びにして、カラムレイアウトで配置します。
+- 日誌UI: 独自のスタイルを適用します。日誌と、そのリンク参照のリスト("Lined References")、日誌クエリー(Journal Queries)を横並びにして、カラムレイアウトで配置します。
   > 日誌以外の場合 >> [ページタグと階層 プラグイン（ワイドビューモード）](https://github.com/YU000jp/logseq-page-tags-and-hierarchy/)
 
 [![最新リリースバージョン](https://img.shields.io/github/v/release/YU000jp/Logseq-column-Layout)](https://github.com/YU000jp/Logseq-column-Layout/releases)
@@ -18,7 +18,7 @@
 
 ### 日誌
 
-- ブロック参照機能(リファレンス)で、タイムラインを記述します。ログの記録としても効果的です。 ⌨️`Win/Cmd + Alt` キーを同時押しで、箇条書き(・)を掴みながらドラッグして、そのブロック参照をブロックに置きます。
+- 引用(ブロック参照)で、タイムラインを記述します。ログの記録としても効果的です。 ⌨️`Win/Cmd + Alt` キーを同時押しで、箇条書き(・)を掴みながらドラッグして、そのブロック参照をブロックに置きます。
 
 ![image](https://user-images.githubusercontent.com/111847207/195662824-35aecadd-c404-42a8-82eb-54ffc628c321.png)
 
