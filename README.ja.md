@@ -3,7 +3,7 @@
 # Logseq プラグイン: *Column Layout (Journals UI)*
 
 - 日誌UI: 独自のスタイルを適用します。日誌と、そのリンク参照のリスト("Lined References")、日誌クエリー(Journal Queries)を横並びにして、カラムレイアウトで配置します。
-  > 日誌以外の場合 >> [ページタグと階層 プラグイン（ワイドビューモード）](https://github.com/YU000jp/logseq-page-tags-and-hierarchy/)
+  > 日誌以外の場合 >> [ページタグと階層 プラグイン](https://github.com/YU000jp/logseq-page-tags-and-hierarchy/)
 
 [![最新リリースバージョン](https://img.shields.io/github/v/release/YU000jp/Logseq-column-Layout)](https://github.com/YU000jp/Logseq-column-Layout/releases)
 [![ライセンス](https://img.shields.io/github/license/YU000jp/Logseq-column-Layout?color=blue)](https://github.com/YU000jp/Logseq-column-Layout/blob/main/LICENSE)
