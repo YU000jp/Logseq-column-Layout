@@ -3,7 +3,7 @@
 # Logseq Plugin: *Column Layout (Journals UI)*
 
 1. Journals view UI: For quick reference, place journals, linked references, and journal queries side by side.
-  > For non-journals >> [Page-tags and Hierarchy (Page UI) plugin (wide view mode)](https://github.com/YU000jp/logseq-page-tags-and-hierarchy/)
+  > For non-journals >> [Page-tags and Hierarchy (Page UI) plugin](https://github.com/YU000jp/logseq-page-tags-and-hierarchy/)
 
 [![latest release version](https://img.shields.io/github/v/release/YU000jp/Logseq-column-Layout)](https://github.com/YU000jp/Logseq-column-Layout/releases)
 [![License](https://img.shields.io/github/license/YU000jp/Logseq-column-Layout?color=blue)](https://github.com/YU000jp/Logseq-column-Layout/blob/main/LICENSE)
