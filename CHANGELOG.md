@@ -1,3 +1,10 @@
+## [2.10.2](https://github.com/YU000jp/Logseq-column-Layout/compare/v2.10.1...v2.10.2) (2023-11-04)
+
+
+### Bug Fixes
+
+* **bug:** CSS ([618f41f](https://github.com/YU000jp/Logseq-column-Layout/commit/618f41f1d7a0d9e1c652403f599c820b92015e05))
+
 ## [2.10.1](https://github.com/YU000jp/Logseq-column-Layout/compare/v2.10.0...v2.10.1) (2023-10-28)
 
 
