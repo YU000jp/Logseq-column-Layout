@@ -30,7 +30,7 @@ body[data-page=home]:not(.is-pdf-active) main:not(.ls-right-sidebar-open) div#to
 body[data-page=home]:not(.is-pdf-active) main:not(.ls-right-sidebar-open) div#main-content-container{margin:0;padding-top:unset;padding-left:0.2em}
 }
 @media screen and (min-width:1850px) and (max-width:1910px){
-body[data-page=home]:not(.is-pdf-active) main:not(.ls-right-sidebar-open)main:not(.ls-left-sidebar-open) div#today-queries{width:360px}
+body[data-page=home]:not(.is-pdf-active) main:not(.ls-right-sidebar-open) main:not(.ls-left-sidebar-open) div#today-queries{width:360px}
 body[data-page=home]:not(.is-pdf-active) main:not(.ls-right-sidebar-open) div.journal>div.flex.flex-col:first-child{min-width:820px}
 body[data-page=home]:not(.is-pdf-active) main:not(.ls-right-sidebar-open) div:is(#today-queries+div.flex.flex-col,.scheduled-or-deadlines){width:380px}
 }

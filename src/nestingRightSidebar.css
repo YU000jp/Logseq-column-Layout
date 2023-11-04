@@ -75,7 +75,7 @@ body>div#root>main {
                     max-height: fit-content;
                     overflow-y: visible;
                     padding-bottom: 3em;
-                    background: var(--ls-primary-background-color);
+                    background-color: var(--ls-primary-background-color);
                     padding: 0.3em;
                     margin-top: 1em;
 
@@ -129,7 +129,7 @@ body>div#root>main {
 
             &#date-time-picker {
                 width: 430px;
-                background: var(--color-level-1);
+                background-color: var(--color-level-1);
                 z-index: var(--ls-z-index-level-4)
             }
 
