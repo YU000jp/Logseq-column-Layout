@@ -1,7 +1,5 @@
 {
     "Place \"Linked References\" next to journals" : "「Linked References」を日誌の右側に配置する。オフの場合は下に配置。",
     "Make right sidebar content next to each other" : "右サイドバーのコンテンツを並べて表示する",
-    "⚠️Starting with Logseq v0.9.14 version, the limit is 2." : "⚠️Logseq v0.9.14以降は2つ横並びまでに制限されています。",
-    "Change large image max-size (for journals)": "大きな画像の最大サイズを変更する（日誌のみ）",
-    "Change large image max-size (for non-journal pages)": "大きな画像の最大サイズを変更する（日誌以外）"
+    "⚠️Starting with Logseq v0.9.14 version, the limit is 2." : "⚠️Logseq v0.9.14以降は2つ横並びまでに制限されています。"
 }
