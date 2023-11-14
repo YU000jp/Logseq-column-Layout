@@ -5,6 +5,13 @@
 
 * **Remove:** Image Resizer ([d55c9f5](https://github.com/YU000jp/Logseq-column-Layout/commit/d55c9f5c33a344f11cd93a46c0a0f43693458008))
 
+# [2.11.0](https://github.com/YU000jp/Logseq-column-Layout/compare/v2.10.2...v2.11.0) (2023-11-14)
+
+
+### Features
+
+* **Remove:** Image Resizer ([d55c9f5](https://github.com/YU000jp/Logseq-column-Layout/commit/d55c9f5c33a344f11cd93a46c0a0f43693458008))
+
 ## [2.10.2](https://github.com/YU000jp/Logseq-column-Layout/compare/v2.10.1...v2.10.2) (2023-11-04)
 
 
