@@ -1,6 +1,6 @@
 import "@logseq/libs"
 import { LSPluginBaseInfo } from "@logseq/libs/dist/LSPlugin.user"
-import { setup as l10nSetup } from "logseq-l10n" //https://github.com/sethyuan/logseq-l10n
+import { setup as l10nSetup, t } from "logseq-l10n" //https://github.com/sethyuan/logseq-l10n
 import { provideStyleByVersion, provideStyleRightSidebarEachVersion, removeProvideStyle, versionCheck } from "./lib"
 import CSSmain from "./main.css?inline"
 import CSS3NestingSide from "./nestingSide.css?inline"
@@ -24,6 +24,12 @@ const main = async () => {
   /* user settings */
   logseq.useSettingsSchema(settingsTemplate())
 
+
+  if (logseq.settings!.notice2023111404 !== true) {
+    //移行メッセージ
+    logseq.UI.showMsg(t("'Image size limit feature' has been moved to 'Preview Image' plugin.\n\n(Column Layout plugin)"), "warning", { timeout: 5000 })
+    logseq.updateSettings({ notice2023111404: true })
+  }
 
   versionOver = await versionCheck(0, 9, 11) //バージョンチェック
   versionOver0914 = await versionCheck(0, 9, 14) //バージョンチェック
