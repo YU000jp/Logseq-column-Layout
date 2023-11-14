@@ -62,10 +62,8 @@ Logseq マーケットプレイス からインストール
    > ⚠️ Logseq v0.9.14バージョンから、横並びの制限は2になりました。
    - `true`
    - `false` デフォルト
-- 大きな画像の最大サイズ（日誌用）を変更: スライダー
-   - `300` < `660` デフォルト < `800` [px]
-- 大きな画像の最大サイズ（日誌以外のページ用）を変更: スライダー
-   - `300` < `1050` デフォルト < `1200` [px]
+
+> 画像サイズ制限機能は、[画像プレビュープラグイン](https://github.com/YU000jp/logseq-plugin-preview-image)に移動しました。
 
 ---
 
@@ -79,6 +77,6 @@ Logseq マーケットプレイス からインストール
 
 > [ディスカッション](https://github.com/YU000jp/Logseq-column-Layout/discussions)タブに移動して質問し、この種の情報を見つけてください。
 
-製作者 > [YU000jp (GitHub)](https://github.com/YU000jp)
+製作者 > [@YU000jp](https://github.com/YU000jp)
 
 <a href="https://www.buymeacoffee.com/yu000japan" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-violet.png" alt="🍌Buy Me A Coffee 製作者にコーヒーを奢ってください!" style="height: 42px;width: 152px" ></a>

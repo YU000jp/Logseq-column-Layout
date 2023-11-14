@@ -62,10 +62,8 @@ Install from Logseq Marketplace
    > ⚠️Starting with Logseq v0.9.14 version, the limit is 2.
    - `true`
    - `false` default
-- Change large image max-size (for journals): slider
-   - `300` < `660` default < `800` [px]
-- Change large image max-size (for non-jouranl pages): slider
-   - `300` < `1050` default < `1200`[px]
+
+> Image size limit feature' has been moved to [Preview Image plugin](https://github.com/YU000jp/logseq-plugin-preview-image).
 
 ---
 
@@ -81,6 +79,6 @@ Install from Logseq Marketplace
 
 > Go to the [discussion](https://github.com/YU000jp/Logseq-column-Layout/discussions) tab to ask and find this kind of things.
 
-Author > [YU000jp (GitHub)](https://github.com/YU000jp)
+Author > [@YU000jp](https://github.com/YU000jp)
 
 <a href="https://www.buymeacoffee.com/yu000japan" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-violet.png" alt="🍌Buy Me A Coffee" style="height: 42px;width: 152px" ></a>
