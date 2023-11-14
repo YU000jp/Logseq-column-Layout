@@ -6,7 +6,7 @@
     "license": "MIT",
     "logseq": {
         "id": "logseq-column-layout",
-        "title": "Column Layout (UI)",
+        "title": "Column Layout (journals UI)",
         "icon": "./icon.svg",
         "main": "./dist/index.html"
     },
