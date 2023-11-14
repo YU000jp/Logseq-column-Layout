@@ -1,5 +1,5 @@
 {
-    "'Image size limit feature' has been moved to 'Preview Image' plugin.\n\n(Column Layout plugin)": "「画像サイズ制限機能」は「プレビュー画像」プラグインに移動しました。\n\n（Column Layoutプラグイン）",
+    "'Image size limit feature' has been moved to 'Preview Image' plugin.": "画像サイズ制限の機能は「Preview Image」プラグインに移動しました。",
     "⚠️Starting with Logseq v0.9.14 version, the limit is 2.": "⚠️Logseq v0.9.14以降は2つ横並びまでに制限されています。",
     "Make right sidebar content next to each other": "右サイドバーのコンテンツを並べて表示する",
     "Place \"Linked References\" next to journals": "「Linked References」を日誌の右側に配置する。オフの場合は下に配置。"

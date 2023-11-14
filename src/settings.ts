@@ -18,5 +18,12 @@ export const settingsTemplate = (): SettingSchemaDesc[] => [
     description:
       t("⚠️Starting with Logseq v0.9.14 version, the limit is 2."),
   },
+  {
+    key: "heading",
+    title: t("'Image size limit feature' has been moved to 'Preview Image' plugin."),
+    type: "heading",
+    default: "",
+    description: "https://github.com/YU000jp/logseq-plugin-preview-image",
+  }
 ]
 

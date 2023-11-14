@@ -27,7 +27,7 @@ const main = async () => {
 
   if (logseq.settings!.notice2023111404 !== true) {
     //移行メッセージ
-    logseq.UI.showMsg(t("'Image size limit feature' has been moved to 'Preview Image' plugin.\n\n(Column Layout plugin)"), "warning", { timeout: 5000 })
+    logseq.UI.showMsg(t("'Image size limit feature' has been moved to 'Preview Image' plugin.") + "\n\n(Column Layout plugin)", "warning", { timeout: 5000 })
     logseq.updateSettings({ notice2023111404: true })
   }
 
