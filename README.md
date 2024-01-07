@@ -81,7 +81,7 @@ Install from Logseq Marketplace
 1. If you do not want to display multiple diaries in journals
    - [Single Journal plugin](https://github.com/YU000jp/logseq-plugin-single-journal)
 1. Place the mini calendar on top of journals
-   - https://github.com/YU000jp/logseq-plugin-show-weekday-and-week-number
+   - [Show weekday and week-number plugin](https://github.com/YU000jp/logseq-plugin-show-weekday-and-week-number)
 
 Author > [@YU000jp](https://github.com/YU000jp)
 
