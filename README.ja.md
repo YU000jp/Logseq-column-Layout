@@ -77,6 +77,11 @@ Logseq マーケットプレイス からインストール
 
 > [ディスカッション](https://github.com/YU000jp/Logseq-column-Layout/discussions)タブに移動して質問し、この種の情報を見つけてください。
 
+1. 日誌で、昨日などの過去の分を表示したくない場合
+   - [Single Journal プラグイン](https://github.com/YU000jp/logseq-plugin-single-journal)
+1. 日誌の上にミニカレンダーを配置する
+   - [Show weekday and week-number プラグイン](https://github.com/YU000jp/logseq-plugin-show-weekday-and-week-number)
+
 製作者 > [@YU000jp](https://github.com/YU000jp)
 
 <a href="https://www.buymeacoffee.com/yu000japan" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-violet.png" alt="🍌Buy Me A Coffee 製作者にコーヒーを奢ってください!" style="height: 42px;width: 152px" ></a>
