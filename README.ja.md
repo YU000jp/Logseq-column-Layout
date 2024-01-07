@@ -1,6 +1,6 @@
 [English](https://github.com/YU000jp/Logseq-column-Layout)
 
-# Logseq プラグイン: *Column Layout (Journals UI)*
+# Logseq プラグイン: *Column Layout*
 
 - 日誌UI: 独自のスタイルを適用します。日誌と、そのリンク参照のリスト("Lined References")、日誌クエリー(Journal Queries)を横並びにして、カラムレイアウトで配置します。
   > 日誌以外の場合 >> [ページタグと階層 プラグイン](https://github.com/YU000jp/logseq-page-tags-and-hierarchy/)
