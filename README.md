@@ -80,6 +80,8 @@ Install from Logseq Marketplace
 1. This plugin relies on Logseq's DOM (Document Object Model) structure. If the DOM structure changes due to a Logseq version update, styles may not be applied. We will adjust the CSS to deal with it. If you notice something, please raise an issue.
 1. If you do not want to display multiple diaries in journals
    - [Single Journal plugin](https://github.com/YU000jp/logseq-plugin-single-journal)
+1. Place the mini calendar on top of journals
+   - https://github.com/YU000jp/logseq-plugin-show-weekday-and-week-number
 
 Author > [@YU000jp](https://github.com/YU000jp)
 
