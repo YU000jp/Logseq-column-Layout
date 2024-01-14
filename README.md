@@ -73,7 +73,7 @@ Install from Logseq Marketplace
 1. Linked reference from journal are limited to dates other than today.
 1. If you find it difficult to see the image in a reduced view, please use the zoom function or open it in sidebar.
 
-## Showcase / Questions / Ideas / Help
+## Showcase / Ideas / Help
 
 > Go to the [discussion](https://github.com/YU000jp/Logseq-column-Layout/discussions) tab to ask and find this kind of things.
 
