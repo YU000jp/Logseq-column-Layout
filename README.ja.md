@@ -67,16 +67,13 @@ Logseq マーケットプレイス からインストール
 
 ---
 
-## 疑問❔
-
-- Logseqにタスクがない場合、"Lined References"のスペースは空白になります。
-- 日記からの参照("Lined References")は、今日以外の日付に限られます。
-- 縮小表示で画像が見にくい場合、ズーム機能を使用するか、サイドバーで開いてください。
-
 ## ショーケース / 質問 / アイデア / ヘルプ
 
 > [ディスカッション](https://github.com/YU000jp/Logseq-column-Layout/discussions)タブに移動して質問し、この種の情報を見つけてください。
 
+1. Logseqにタスクがない場合、"Lined References"のスペースは空白になります。
+1. 日記からの参照("Lined References")は、今日以外の日付に限られます。
+1. 縮小表示で画像が見にくい場合、ズーム機能を使用するか、サイドバーで開いてください。
 1. 日誌で、昨日などの過去の分を表示したくない場合
    - [Single Journal プラグイン](https://github.com/YU000jp/logseq-plugin-single-journal)
 1. 日誌の上にミニカレンダーを配置する
