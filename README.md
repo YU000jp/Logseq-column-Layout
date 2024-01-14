@@ -67,16 +67,12 @@ Install from Logseq Marketplace
 
 ---
 
-## Questions❔
+## Showcase / Questions / Ideas / Help
 
+> Go to the [discussion](https://github.com/YU000jp/Logseq-column-Layout/discussions) tab to ask and find this kind of things.
 1. Linked References space is blank if there are no tasks in Logseq.
 1. Linked reference from journal are limited to dates other than today.
 1. If you find it difficult to see the image in a reduced view, please use the zoom function or open it in sidebar.
-
-## Showcase / Ideas / Help
-
-> Go to the [discussion](https://github.com/YU000jp/Logseq-column-Layout/discussions) tab to ask and find this kind of things.
-
 1. This plugin relies on Logseq's DOM (Document Object Model) structure. If the DOM structure changes due to a Logseq version update, styles may not be applied. We will adjust the CSS to deal with it. If you notice something, please raise an issue.
 1. If you do not want to display multiple diaries in journals
    - [Single Journal plugin](https://github.com/YU000jp/logseq-plugin-single-journal)
