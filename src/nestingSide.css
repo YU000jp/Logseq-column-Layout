@@ -59,7 +59,8 @@ body[data-page="home"] {
                     position: fixed;
                     bottom: 1em;
                     padding: .3em;
-                    outline: 3px solid var(--ls-guideline-color);
+                    border: 2px solid var(--ls-border-color);
+                    box-shadow: 0 0 7px var(--ls-border-color);
                     outline-offset: 3px;
                     border-radius: .4em;
                     background: unset;
