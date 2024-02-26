@@ -1,25 +1,125 @@
-div#root div.cp__right-sidebar{transition:unset}
-div#root div.cp__right-sidebar div.sidebar-item a.close{transform:unset;margin-left:1em}
-div#root main.ls-right-sidebar-open div#main-content-container{justify-content:left;padding-left:1em}
-div#root main.ls-right-sidebar-open div[data-modal-name=page-search]{transform:unset;left:unset}
-div#root div#root div#right-sidebar{border:4px var(--ls-guideline-color);border-radius:.25em;overflow:scroll;background-color:unset}
-div#root div#root div#right-sidebar div.cp__right-sidebar-scrollable>div+div{background-image:linear-gradient(var(--color-level-1) 25%,transparent 25%);background-size:50px 15px}
-div#root div#right-sidebar div.cp__right-sidebar-scrollable>div.cp__right-sidebar-topbar{height:unset}
-div#root div#right-sidebar div.cp__right-sidebar div.sidebar-item{padding-top:unset}
-div#root div#right-sidebar div.sidebar-item-list{display:flex;flex-direction:column;flex-wrap:wrap;align-content:flex-start;overflow-x:scroll;font-size:.96em;scroll-snap-type:x;padding-bottom:0;margin:unset;height:calc(98vh - 20px)}
-body.is-tabs-loaded div#root div#right-sidebar div.sidebar-item-list{height:calc(99vh - 60px)}
-div#root div#right-sidebar div.sidebar-item-list div.sidebar-item.flex-col{width:100%!important}
-div#root div#right-sidebar div.sidebar-item.content{min-width:550px;max-width:900px;resize:both;align-self:flex-start;margin-bottom:.4em;max-height:fit-content;overflow-y:visible;padding-bottom:3em;background:var(--ls-primary-background-color)}
-div#root div#right-sidebar div.sidebar-item.content>div>div:first-of-type{position:sticky;top:0;backdrop-filter:blur(20px);z-index:1;margin:0;padding:.8em;font-size:1.1em}
-div#root div#right-sidebar div.graph{height:800px}
-div#root div#right-sidebar div.graph canvas{height:100%;width:100%;border:2px double}
-div#root div#right-sidebar div.sidebar-item{overflow:auto}
-div#root div#right-sidebar div.sidebar-item::-webkit-scrollbar{width:15px;height:20px}
-div#root div#right-sidebar div.sidebar-item.content div.initial{min-height:400px}
-div#root div#right-sidebar div.sidebar-item.content span.rotating-arrow:first-child{transform:scale(2,2);margin-right:.6em}
-div#root div#right-sidebar table.table-auto{table-layout:fixed;width:90%}
-div#root div#right-sidebar table.table-auto td.whitespace-nowrap{overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
-div#root div#right-sidebar div.cp__right-sidebar-topbar{flex-direction:row-reverse}
-div#root div#right-sidebar span.ls-icon-layout-sidebar-right svg{width:24px;height:24px}
-div#root div#right-sidebar div#date-time-picker{width:430px;background:var(--color-level-1);z-index:var(--ls-z-index-level-4)}
-div#root div#right-sidebar div:is(.page-tags,.page-hierarchy),main.ls-right-sidebar-open :is(div#today-queries,div.scheduled-or-deadlines){display:none}
+body {
+    &>div#root>div>main {
+
+        & div#right-sidebar {
+            overflow: scroll;
+
+
+            & table.table-auto {
+                table-layout: fixed;
+                width: 90%;
+
+                & td.whitespace-nowrap {
+                    overflow: hidden;
+                    white-space: nowrap;
+                    text-overflow: ellipsis
+                }
+
+            }
+
+            & span.ls-icon-layout-sidebar-right svg {
+                width: 24px;
+                height: 24px
+            }
+
+            & div {
+                &.cp__right-sidebar-scrollable>div {
+                    &+div {
+                        background-image: linear-gradient(var(--color-level-1) 25%, transparent 25%);
+                        background-size: 50px 15px
+                    }
+
+                }
+
+                &.sidebar-item-list {
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    align-content: flex-start;
+                    overflow-x: scroll;
+                    font-size: .96em;
+                    scroll-snap-type: x;
+                    height: calc(96vh - 20px);
+                    margin-top: 1em;
+                }
+
+                &.sidebar-item {
+                    &.content {
+                        min-width: 550px;
+                        max-width: 1050px;
+                        resize: vertical;
+                        align-self: flex-start;
+                        margin-bottom: .4em;
+                        max-height: fit-content;
+                        overflow-y: visible;
+                        padding-bottom: 3em;
+                        background: var(--ls-primary-background-color);
+                        padding: 0.3em;
+                        margin-top: 1em;
+                        max-height: 93vh;
+
+                        &:has(>div>div.hidden) {
+                            min-width: 300px;
+                        }
+
+                        &>div>div:first-of-type {
+                            position: sticky;
+                            top: 0;
+                            backdrop-filter: blur(20px);
+                            z-index: 1;
+                            font-size: 1.2em
+                        }
+                    }
+
+                    &.collapsed:has(div.hidden) {
+                        height: unset !important;
+                        min-width: 300px;
+                    }
+
+
+
+                    &::-webkit-scrollbar {
+                        width: 10px;
+                        height: 10px
+                    }
+
+                    &.content {
+                        & div.initial {
+                            min-height: 400px
+                        }
+
+                        & span.rotating-arrow:first-child {
+                            transform: scale(2, 2);
+                            margin-right: .6em
+                        }
+
+                    }
+                }
+
+                &.cp__right-sidebar-topbar {
+                    flex-direction: row-reverse
+                }
+
+                &#date-time-picker {
+                    width: 430px;
+                    background: var(--color-level-1);
+                    z-index: var(--ls-z-index-level-4)
+                }
+
+                &:is(.page-tags, .page-hierarchy) {
+                    display: none
+                }
+            }
+
+        }
+
+        &.ls-right-sidebar-open :is(div#today-queries, div.scheduled-or-deadlines) {
+            display: none
+        }
+    }
+
+    &.is-tabs-loaded>div#root>div>main div#right-sidebar div.sidebar-item-list {
+        height: calc(96vh - 60px);
+
+    }
+}
