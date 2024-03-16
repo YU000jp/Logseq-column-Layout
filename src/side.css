@@ -1,4 +1,4 @@
-body[data-page="home"] {
+body[data-page="home"]:not(.is-pdf-active) {
     @media screen and (min-width:1850px) {
         &>div#root>div>main {
             &.ls-wide-mode div#main-content-container div.cp__sidebar-main-content {
@@ -8,272 +8,235 @@ body[data-page="home"] {
             & div#main-container div.cp__sidebar-main-content {
                 max-width: unset !important;
             }
+
         }
 
         &.is-tabs-loaded>div#root>div>main>div div#journals div#today-queries {
             top: calc(var(--ls-headbar-height) + var(--ls-headbar-inner-top-padding) + 40px)
         }
 
-        &:is(main.ls-right-sidebar-open, .is-pdf-active) div:is(#today-queries, .scheduled-or-deadlines) {
+        & main.ls-right-sidebar-open div:is(#today-queries, .scheduled-or-deadlines) {
             display: none
         }
 
-        &:not(.is-pdf-active)>div#root>div>main:not(.ls-right-sidebar-open) div#main-content-container {
-            margin: 0;
-            padding-top: unset;
-            padding-left: 0.2em;
+        &>div#root>div>main:not(.ls-right-sidebar-open) div#main-content-container {
 
-            & div {
-                &#journals>div>div>div.journal.page {
-                    display: flex;
+            & div#journals>div>div>div.journal.page {
+                display: flex;
+                justify-content: space-around;
+                margin-right: 0.25em;
 
-                    &>div.lazy-visibility>div>div.fade-enter-active>div.references.page-linked {
-                        max-height: 60vh;
-                        overflow-y: scroll;
-                        position: sticky;
-                        top: 1em;
-                        bottom: 3em;
-                        margin-right: 10px;
-                        z-index: 0;
-                        border-radius: .3em;
-                        outline: 2px solid var(--ls-guideline-color);
-                        outline-offset: 3px;
-                        font-size: .9em;
-                        overflow: auto;
-
-                        &>div.content.pt-6 {
-                            padding-top: unset;
-                            width: 640px;
-                        }
-                    }
+                &>div.flex.flex-col {
+                    flex: 3;
                 }
 
-                &.journal>div.flex.flex-col:first-child {
-                    max-width: 1170px;
+                &>div#today-queries+div.lazy-visibility {
+                    display: none;
+                }
+
+                &>div.lazy-visibility {
                     flex: 1;
-                    margin-left: 1.8em
                 }
 
-                &#today-queries+div.flex.flex-col,
-                &.lazy-visibility>div>div>div.scheduled-or-deadlines {
-                    position: fixed;
-                    bottom: 1em;
-                    padding: .3em;
-                    border: 2px solid var(--ls-border-color);
-                    box-shadow: 0 0 7px var(--ls-border-color);
-                    outline-offset: 3px;
-                    border-radius: .4em;
-                    background: unset;
-                    backdrop-filter: blur(40px);
-                    font-size: small;
-                    max-height: 30vh;
-                    overflow: auto;
-                    z-index: 1;
-
-                    & div.sm\:px-7 {
-                        padding-left: unset;
-                        padding-right: unset
-                    }
-                }
-
-                &#today-queries {
-                    background: var(--ls-primary-background-color);
-                    width: 390px;
-                    position: fixed;
-                    right: 0;
-                    top: calc(var(--ls-headbar-height) + var(--ls-headbar-inner-top-padding));
-                    bottom: 3px;
+                & div.page-linked {
+                    max-height: 60vh;
                     overflow-y: scroll;
+                    position: sticky;
+                    top: 1em;
+                    bottom: 3em;
+                    z-index: 0;
+                    border-radius: .3em;
+                    outline: 2px solid var(--ls-guideline-color);
+                    outline-offset: 3px;
                     font-size: .9em;
-                    border-left: 1px solid var(--ls-guideline-color);
+                    overflow: auto;
+                    flex: 1;
 
-                    &.mt-10 {
-                        margin-top: .1em
+                    &>div.content.pt-6 {
+                        padding-top: unset;
+                        width: 640px;
+                    }
+                }
+            }
+
+            & div#today-queries+div.flex.flex-col,
+            & div.scheduled-or-deadlines {
+                position: fixed;
+                bottom: 1em;
+                padding: .3em;
+                border: 2px solid var(--ls-border-color);
+                box-shadow: 0 0 7px var(--ls-border-color);
+                outline-offset: 3px;
+                border-radius: .4em;
+                background: unset;
+                backdrop-filter: blur(40px);
+                font-size: small;
+                max-height: 30vh;
+                overflow: auto;
+                z-index: 1;
+
+                & div.sm\:px-7 {
+                    padding-left: unset;
+                    padding-right: unset
+                }
+            }
+
+            & div#today-queries {
+                background: var(--ls-primary-background-color);
+                position: fixed;
+                right: 0;
+                top: calc(var(--ls-headbar-height) + var(--ls-headbar-inner-top-padding));
+                bottom: 3px;
+                overflow-y: scroll;
+                font-size: .9em;
+                border-left: 1px solid var(--ls-guideline-color);
+
+                &.mt-10 {
+                    margin-top: .1em
+                }
+
+                & div.custom-query {
+                    margin-top: .2em;
+                    margin-bottom: 1em;
+
+                    &>div>div.flex {
+                        outline: 2px solid var(--ls-guideline-color);
+                        border-radius: 0.3em;
+                        margin-right: 3px;
                     }
 
-                    & div.custom-query {
-                        margin-top: .2em;
-                        margin-bottom: 1em;
+                    & div.custom-query-title {
+                        outline: 2px solid var(--ls-guideline-color);
+                        background: var(--ls-page-blockquote-bg-color);
+                        padding: 8px;
 
-                        &>div>div.flex {
-                            outline: 2px solid var(--ls-guideline-color);
-                            border-radius: 0.3em;
-                            margin-right: 3px;
+                        &:hover {
+                            outline: 4px
                         }
+                    }
 
-                        & div {
-                            &.custom-query-title {
-                                outline: 2px solid var(--ls-guideline-color);
-                                background: var(--ls-page-blockquote-bg-color);
-                                padding: 8px;
+                    & div.content div.lazy-visibility {
+                        border-right: 4px solid var(--ls-page-blockquote-bg-color);
 
-                                &:hover {
-                                    outline: 4px
-                                }
-                            }
-
-                            &.content div.lazy-visibility {
-                                border-right: 4px solid var(--ls-page-blockquote-bg-color);
-
-                                &:not(:last-of-type) {
-                                    border-bottom: 3px dotted var(--ls-guideline-color);
-                                    padding: .6em
-                                }
-                            }
-
-                            &.my-2 {
-                                padding: .2em;
-                                margin: .2em;
-                                height: unset !important
-                            }
-
-                            &.breadcrumb.block-parents {
-                                color: var(--ct-external-link-color)
-                            }
+                        &:not(:last-of-type) {
+                            border-bottom: 3px dotted var(--ls-guideline-color);
+                            padding: .6em
                         }
                     }
 
-                    & .sm\:px-7 {
-                        padding-left: unset
+                    & div.my-2 {
+                        padding: .2em;
+                        margin: .2em;
+                        height: unset !important
                     }
 
-                    & h2,
-                    h3,
-                    h4 {
-                        font-size: 16px;
-                        padding: 4px
+                    & div.breadcrumb.block-parents {
+                        color: var(--ct-external-link-color)
                     }
+                }
+
+                & .sm\:px-7 {
+                    padding-left: unset
+                }
+
+                & h2,
+                h3,
+                h4 {
+                    font-size: 16px;
+                    padding: 4px
                 }
             }
         }
     }
 
-    @media screen and (min-width:1850px) and (max-width:1910px) {
-        &:not(.is-pdf-active)>div#root>div>main:not(.ls-right-sidebar-open) {
-            &:not(.ls-left-sidebar-open) div#today-queries {
-                width: 360px
+    &>div#root>div>main:not(.ls-right-sidebar-open) {
+
+        & div#journals {
+
+            /* Linked Referencesのマウスオーバー */
+            @media screen and (min-width:1850px) and (max-width:2799px) {
+                & div.page-linked:is(:focus-within, :hover) {
+                    background: unset;
+                    backdrop-filter: blur(40px);
+                    min-width: 660px;
+                    max-width: 660px;
+                    z-index: var(--ls-z-index-level-1)
+                }
             }
 
-            & div {
-                &.journal>div.flex.flex-col:first-child {
+            @media screen and (min-width:1850px) and (max-width:1910px) {
+                margin-right: 380px;
+
+                & div#today-queries {
+                    width: 380px;
+
+                }
+
+                & div.journal>div.flex.flex-col {
                     min-width: 820px
                 }
 
-                &.scheduled-or-deadlines {
-                    width: 380px
+                & div.scheduled-or-deadlines {
+                    width: 380px;
+                    right: 380px;
                 }
             }
-        }
-    }
 
-    @media screen and (min-width:1911px) and (max-width:2019px) {
-        &:not(.is-pdf-active)>div#root>div>main:not(.ls-right-sidebar-open) {
-            & div {
-                &.journal>div.flex.flex-col:first-child {
+            @media screen and (min-width:1911px) and (max-width:2019px) {
+                margin-right: 380px;
+
+                & div#today-queries {
+                    width: 380px;
+
+                }
+
+                & div.journal>div.flex.flex-col {
                     min-width: 920px
                 }
 
-                &.scheduled-or-deadlines {
-                    width: 460px
+                & div.scheduled-or-deadlines {
+                    width: 400px;
+                    right: 380px;
                 }
             }
-        }
-    }
 
-    @media screen and (min-width:2020px) {
-        &:not(.is-pdf-active)>div#root>div>main:not(.ls-right-sidebar-open) {
-            & div {
-                &#journals div.references {
-                    min-width: 660px
+            @media screen and (min-width:2020px) and (max-width:2259px) {
+                margin-right: 380px;
+
+                & div#today-queries {
+                    width: 380px;
+
                 }
 
-                &.journal>div.flex.flex-col:first-child {
+                & div.journal>div.flex.flex-col {
                     min-width: 1000px
                 }
 
-                &.scheduled-or-deadlines {
-                    width: 520px
+                & div.scheduled-or-deadlines {
+                    width: 460px;
+                    right: 400px;
                 }
             }
-        }
-    }
 
-    @media screen and (min-width:1850px) and (max-width:2259px) {
-        &:not(.is-pdf-active)>div#root>div>main:not(.ls-right-sidebar-open) {
-            & div {
-                &.scheduled-or-deadlines {
-                    right: 400px
+            @media screen and (min-width:2260px) {
+                margin-right: 500px;
+
+                & div#today-queries {
+                    width: 500px;
                 }
 
-                &#journals {
-                    margin-right: 360px;
-
-                    & div.references {
-                        min-width: 350px;
-                        max-width: 400px
-                    }
-                }
-            }
-        }
-    }
-
-    @media screen and (min-width:2260px) {
-        &:not(.is-pdf-active)>div#root>div>main:not(.ls-right-sidebar-open) div#journals {
-            & div {
-                &.references {
-                    min-width: 400px;
-                    max-width: 660px;
-                    margin-right: 500px
+                & div.journal>div.flex.flex-col {
+                    min-width: 1050px;
                 }
 
-                &.journal>div.flex.flex-col:first-child {
-                    max-width: 1250px;
-                    margin-left: 4em
-                }
-
-                &.scheduled-or-deadlines {
+                & div.scheduled-or-deadlines {
+                    width: 520px;
                     right: 525px
                 }
 
-                &#today-queries {
-                    width: 500px
-                }
             }
         }
-    }
 
-    @media screen and (min-width:1850px) and (max-width:2799px) {
-        &:not(.is-pdf-active)>div#root>div>main:not(.ls-right-sidebar-open) div#journals div.references:is(:focus-within, :hover) {
-            background: unset;
-            backdrop-filter: blur(40px);
-            min-width: 660px;
-            max-width: 660px;
-            z-index: var(--ls-z-index-level-1)
-        }
-    }
 
-    @media screen and (min-width:2800px) {
-        &:not(.is-pdf-active)>div#root>div>main:not(.ls-right-sidebar-open) div#journals {
-            & div {
-                &.references {
-                    min-width: 660px;
-                    max-width: 660px;
-                    margin-right: 620px
-                }
-
-                &.journal>div.flex.flex-col:first-child {
-                    min-width: 1200px;
-                    max-width: 1430px
-                }
-
-                &.scheduled-or-deadlines {
-                    right: 640px
-                }
-
-                &#today-queries {
-                    width: 620px
-                }
-            }
-        }
     }
 }
