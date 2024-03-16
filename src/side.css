@@ -1,3 +1,13 @@
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
 body[data-page="home"]:not(.is-pdf-active) {
     @media screen and (min-width:1850px) {
         &>div#root>div>main {
@@ -39,6 +49,8 @@ body[data-page="home"]:not(.is-pdf-active) {
                     /* Linked References */
                     &>div.lazy-visibility {
                         flex: 1;
+                        opacity: 0;
+                        animation: fadeIn 3s forwards;
                     }
                 }
 
@@ -93,6 +105,8 @@ body[data-page="home"]:not(.is-pdf-active) {
                 overflow-y: scroll;
                 font-size: .9em;
                 border-left: 1px solid var(--ls-guideline-color);
+                opacity: 0;
+                animation: fadeIn 1.5s forwards;
 
                 &.mt-10 {
                     margin-top: .1em
