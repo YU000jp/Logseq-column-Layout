@@ -1,3 +1,15 @@
+## [2.11.1](https://github.com/YU000jp/Logseq-column-Layout/compare/v2.11.0...v2.11.1) (2024-03-16)
+
+
+### Bug Fixes
+
+* **bug:** boxes overlap ([76b0f17](https://github.com/YU000jp/Logseq-column-Layout/commit/76b0f1782616f90f725b718c0dae385336147da7))
+
+
+### Performance Improvements
+
+* remove check Logseq version [#25](https://github.com/YU000jp/Logseq-column-Layout/issues/25) ([410cc49](https://github.com/YU000jp/Logseq-column-Layout/commit/410cc49501c3c1ef9f65c0ae18b16f0ed21769c9))
+
 # [2.11.0](https://github.com/YU000jp/Logseq-column-Layout/compare/v2.10.2...v2.11.0) (2023-11-14)
 
 
