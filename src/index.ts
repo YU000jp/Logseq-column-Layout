@@ -21,34 +21,28 @@ const main = async () => {
   logseq.useSettingsSchema(settingsTemplate())
 
 
-  // if (logseq.settings!.notice2023111404 !== true) {
-  //   //移行メッセージ
-  //   logseq.UI.showMsg(t("'Image size limit feature' has been moved to 'Preview Image' plugin.") + "\n\n(Column Layout plugin)", "warning", { timeout: 5000 })
-  //   logseq.updateSettings({ notice2023111404: true })
-  // }
+  if (logseq.settings!.notice2023111404 !== true) {
+    //移行メッセージ
+    logseq.UI.showMsg(t("'Image size limit feature' has been moved to 'Preview Image' plugin.") + "\n\n(Column Layout plugin)", "warning", { timeout: 5000 })
+    logseq.updateSettings({ notice2023111404: true })
+  }
 
   // versionOver = await versionCheck(0, 9, 11) //バージョンチェック
   // versionOver0914 = await versionCheck(0, 9, 14) //バージョンチェック
   if (logseq.settings?.booleanLinkedReferences === true)
-    provideStyle(keyNestingSide, CSS3Side)
+    provideStyle(keyNestingSide, CSS3Side,)
   else
-    logseq.provideStyle({
-      key: keyNonSide,
-      style: CSSNonSide
-    })
+    logseq.provideStyle({ key: keyNonSide, style: CSSNonSide })
 
   if (logseq.settings?.booleanRightSidebar === true)
-    provideStyleRightSidebar(keyRightSidebar)
+    provideStyleRightSidebar(keyRightSidebar,)
 
   //Fix bugs
   /* Fix "Extra space when journal queries are not active #6773" */
   /* journal queries No shadow */
   /* background conflict journal queries */
 
-  logseq.provideStyle({
-    key: "main",
-    style: CSSmain
-  })
+  logseq.provideStyle({ key: "main", style: CSSmain })
 
   logseq.onSettingsChanged((newSet: LSPluginBaseInfo["settings"], oldSet: LSPluginBaseInfo["settings"]) => {
     if (newSet
@@ -60,10 +54,7 @@ const main = async () => {
           removeProvideStyle(keySide)
           removeProvideStyle(keyNestingSide)
         } finally {
-          logseq.provideStyle({
-            key: keyNonSide,
-            style: CSSNonSide
-          })
+          logseq.provideStyle({ key: keyNonSide, style: CSSNonSide })
         }
       } else
         if (oldSet.booleanLinkedReferences === false
@@ -71,7 +62,7 @@ const main = async () => {
           try {
             removeProvideStyle(keyNonSide)
           } finally {
-            provideStyle(keyNestingSide, CSS3Side)
+            provideStyle(keyNestingSide, CSS3Side,)
           }
         }
       if (oldSet.booleanRightSidebar === true
@@ -118,17 +109,11 @@ logseq.ready(main).catch(console.error)
 
 
 const provideStyle = (newKey: string, newStyle: string) => {
-  logseq.provideStyle({
-    key: newKey,
-    style: newStyle
-  })
+  logseq.provideStyle({ key: newKey, style: newStyle })
 }
 
 
 const provideStyleRightSidebar = (keyRightSidebar: string) => {
-  logseq.provideStyle({
-    key: keyRightSidebar,
-    style: CSS3RightSidebar,
-  })
+  logseq.provideStyle({ key: keyRightSidebar, style: CSS3RightSidebar, })
 }
 
