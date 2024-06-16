@@ -83,7 +83,7 @@ body[data-page="home"]:not(.is-pdf-active) {
                 box-shadow: 0 0 7px var(--ls-border-color);
                 outline-offset: 3px;
                 border-radius: .4em;
-                background: unset;
+                background: var(--ls-primary-background-color);
                 backdrop-filter: blur(40px);
                 font-size: small;
                 max-height: 30vh;
@@ -171,7 +171,7 @@ body[data-page="home"]:not(.is-pdf-active) {
         /* Linked Referencesのマウスオーバー */
         @media screen and (min-width:1850px) and (max-width:2799px) {
             & div.page-linked:is(:focus-within, :hover) {
-                background: unset;
+                background: var(--ls-primary-background-color);
                 backdrop-filter: blur(40px);
                 min-width: 660px;
                 max-width: 660px;
