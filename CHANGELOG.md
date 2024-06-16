@@ -1,3 +1,15 @@
+# [2.12.0](https://github.com/YU000jp/Logseq-column-Layout/compare/v2.11.1...v2.12.0) (2024-06-16)
+
+
+### Bug Fixes
+
+* **bug:** No background color applied ([6922d19](https://github.com/YU000jp/Logseq-column-Layout/commit/6922d199dc8428176bdeb30838692c688b691e8f))
+
+
+### Features
+
+* **Add:** Separate each journal on Journals ([b3dae54](https://github.com/YU000jp/Logseq-column-Layout/commit/b3dae540008d156e60c18a939da30ec0b84c27af))
+
 ## [2.11.1](https://github.com/YU000jp/Logseq-column-Layout/compare/v2.11.0...v2.11.1) (2024-03-16)
 
 
