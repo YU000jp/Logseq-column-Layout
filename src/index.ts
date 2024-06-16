@@ -12,6 +12,24 @@ const keyRightSidebar = "rightSidebar"
 const keySide = "side"
 const keyNestingSide = "nestingSide"
 const keyNonSide = "nonSide"
+const keySeparate = "continuous"
+const CSSSeparate = `
+      body[data-page="home"]:not(.is-pdf-active)>div#root>div>main div#main-content-container div#journals {
+
+      &:first-child {
+        min-height: unset;
+      }
+      
+      & div.journal-item {
+        min-height: unset;
+
+        &>div.journal>div.flex>div.initial {
+          min-height: 90vh;
+        }
+      }
+}
+`
+
 /* main */
 const main = async () => {
 
@@ -27,7 +45,7 @@ const main = async () => {
   //   logseq.updateSettings({ notice2023111404: true })
   // }
 
-  if (logseq.settings?.booleanLinkedReferences === true)
+  if (logseq.settings!.booleanLinkedReferences === true)
     provideStyle(keyNestingSide, CSS3Side)
   else
     logseq.provideStyle({
@@ -35,8 +53,11 @@ const main = async () => {
       style: CSSNonSide
     })
 
-  if (logseq.settings?.booleanRightSidebar === true)
-    provideStyleRightSidebar(keyRightSidebar)
+  if (logseq.settings!.booleanRightSidebar === true)
+    provideStyle(keyRightSidebar,CSS3RightSidebar)
+
+  if (logseq.settings!.booleanSeparate === true)
+    provideStyle(keySeparate, CSSSeparate)
 
   //Fix bugs
   /* Fix "Extra space when journal queries are not active #6773" */
@@ -74,9 +95,14 @@ const main = async () => {
     else
       if (oldSet.booleanRightSidebar === false
         && newSet.booleanRightSidebar === true)
-        provideStyleRightSidebar(
-          keyRightSidebar,
-        )
+        provideStyle(keyRightSidebar, CSS3RightSidebar)
+    if(oldSet.booleanSeparate === true
+      && newSet.booleanSeparate === false)
+      removeProvideStyle(keySeparate)
+    else
+      if(oldSet.booleanSeparate === false
+        && newSet.booleanSeparate === true)
+        provideStyle(keySeparate, CSSSeparate)
   })
 } /* end_main */
 
@@ -89,12 +115,3 @@ const provideStyle = (newKey: string, newStyle: string) => {
     style: newStyle
   })
 }
-
-
-const provideStyleRightSidebar = (keyRightSidebar: string) => {
-  logseq.provideStyle({
-    key: keyRightSidebar,
-    style: CSS3RightSidebar,
-  })
-}
-

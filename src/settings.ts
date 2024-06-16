@@ -24,6 +24,13 @@ export const settingsTemplate = (): SettingSchemaDesc[] => [
     type: "heading",
     default: "",
     description: "https://github.com/YU000jp/logseq-plugin-preview-image",
-  }
+  },
+  { // 1ページごと分離する
+    key: "booleanSeparate",
+    title: t("Separate each journal"),
+    type: "boolean",
+    default: false,
+    description: "",
+  },
 ]
 
