@@ -27,8 +27,6 @@ const main = async () => {
   //   logseq.updateSettings({ notice2023111404: true })
   // }
 
-  // versionOver = await versionCheck(0, 9, 11) //バージョンチェック
-  // versionOver0914 = await versionCheck(0, 9, 14) //バージョンチェック
   if (logseq.settings?.booleanLinkedReferences === true)
     provideStyle(keyNestingSide, CSS3Side)
   else
@@ -51,70 +49,38 @@ const main = async () => {
   })
 
   logseq.onSettingsChanged((newSet: LSPluginBaseInfo["settings"], oldSet: LSPluginBaseInfo["settings"]) => {
-    if (newSet
-      && oldSet
-      && newSet !== oldSet) {
-      if (oldSet.booleanLinkedReferences === true
-        && newSet.booleanLinkedReferences === false) {
+    if (oldSet.booleanLinkedReferences === true
+      && newSet.booleanLinkedReferences === false)
+      try {
+        removeProvideStyle(keySide)
+        removeProvideStyle(keyNestingSide)
+      } finally {
+        logseq.provideStyle({
+          key: keyNonSide,
+          style: CSSNonSide
+        })
+      }
+    else
+      if (oldSet.booleanLinkedReferences === false
+        && newSet.booleanLinkedReferences === true)
         try {
-          removeProvideStyle(keySide)
-          removeProvideStyle(keyNestingSide)
+          removeProvideStyle(keyNonSide)
         } finally {
-          logseq.provideStyle({
-            key: keyNonSide,
-            style: CSSNonSide
-          })
+          provideStyle(keyNestingSide, CSS3Side)
         }
-      } else
-        if (oldSet.booleanLinkedReferences === false
-          && newSet.booleanLinkedReferences === true) {
-          try {
-            removeProvideStyle(keyNonSide)
-          } finally {
-            provideStyle(keyNestingSide, CSS3Side)
-          }
-        }
-      if (oldSet.booleanRightSidebar === true
-        && newSet.booleanRightSidebar === false) {
-        removeProvideStyle(keyRightSidebar)
-      } else
-        if (oldSet.booleanRightSidebar === false
-          && newSet.booleanRightSidebar === true) {
-          provideStyleRightSidebar(
-            keyRightSidebar,
-          )
-        }
-    }
-  }
-  )
+    if (oldSet.booleanRightSidebar === true
+      && newSet.booleanRightSidebar === false)
+      removeProvideStyle(keyRightSidebar)
+    else
+      if (oldSet.booleanRightSidebar === false
+        && newSet.booleanRightSidebar === true)
+        provideStyleRightSidebar(
+          keyRightSidebar,
+        )
+  })
 } /* end_main */
 
 logseq.ready(main).catch(console.error)
-
-
-// export async function versionCheck(
-//   first: number,
-//   second: number,
-//   third: number
-// ): Promise<boolean> {
-//   let version: string = await logseq.App.getInfo("version")
-//   //0.9.13-nightly.20230811のような文字列であった場合、-nightly以降を削除する
-//   if (version?.includes("-")) {
-//     const versionArr = version?.split("-") as string[]
-//     version = versionArr[0]
-//   }
-//   const versionArr = version?.split(".") as string[]
-//   if (
-//     Number(versionArr[0]) > first
-//     || (Number(versionArr[0]) === first
-//       && Number(versionArr[1]) > second)
-//     || (Number(versionArr[1]) === second
-//       && Number(versionArr[2]) >= third)
-//   )
-//     return true //指定した以上のバージョンの場合
-//   else
-//     return false //指定より古いバージョンの場合
-// }
 
 
 const provideStyle = (newKey: string, newStyle: string) => {
