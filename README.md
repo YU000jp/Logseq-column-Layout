@@ -69,7 +69,7 @@ Install from Logseq Marketplace
 
 ## Showcase / Questions / Ideas / Help
 
-> Go to the [discussion](https://github.com/YU000jp/Logseq-column-Layout/discussions) tab to ask and find this kind of things.
+> Go to the [Discussions](https://github.com/YU000jp/Logseq-column-Layout/discussions) tab to ask and find this kind of things.
 1. Linked References space is blank if there are no tasks in Logseq.
 1. Linked reference from journal are limited to dates other than today.
 1. If you find it difficult to see the image in a reduced view, please use the zoom function or open it in sidebar.
