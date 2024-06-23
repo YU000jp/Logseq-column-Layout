@@ -1,18 +1,18 @@
-[English](https://github.com/YU000jp/Logseq-column-Layout)
-
 # Logseq プラグイン: *Column Layout*
 
 - 日誌UI: 独自のスタイルを適用します。日誌と、そのリンク参照のリスト("Lined References")、日誌クエリー(Journal Queries)を横並びにして、カラムレイアウトで配置します。
   > 日誌以外の場合 >> [ページタグと階層 プラグイン](https://github.com/YU000jp/logseq-page-tags-and-hierarchy/)
 
-[![最新リリースバージョン](https://img.shields.io/github/v/release/YU000jp/Logseq-column-Layout)](https://github.com/YU000jp/Logseq-column-Layout/releases)
-[![ライセンス](https://img.shields.io/github/license/YU000jp/Logseq-column-Layout?color=blue)](https://github.com/YU000jp/Logseq-column-Layout/blob/main/LICENSE)
-[![ダウンロード](https://img.shields.io/github/downloads/YU000jp/Logseq-column-Layout/total.svg)](https://github.com/YU000jp/Logseq-column-Layout/releases)
- 公開日: 2022/09/13
+<div align="right">
 
-## スクリーンショット
+[English](https://github.com/YU000jp/Logseq-column-Layout)/[日本語](https://github.com/YU000jp/Logseq-column-Layout/blob/main/README.ja.md) [![latest release version](https://img.shields.io/github/v/release/YU000jp/Logseq-column-Layout)](https://github.com/YU000jp/Logseq-column-Layout/releases)
+[![License](https://img.shields.io/github/license/YU000jp/Logseq-column-Layout?color=blue)](https://github.com/YU000jp/Logseq-column-Layout/blob/main/LICENSE)
+[![Downloads](https://img.shields.io/github/downloads/YU000jp/Logseq-column-Layout/total.svg)](https://github.com/YU000jp/Logseq-column-Layout/releases)
+ 公開日 20220913 <a href="https://www.buymeacoffee.com/yu000japan"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a pizza&emoji=🍕&slug=yu000japan&button_colour=FFDD00&font_colour=000000&font_family=Poppins&outline_colour=000000&coffee_colour=ffffff" /></a>
+</div>
 
-![image](https://user-images.githubusercontent.com/111847207/195663729-7c979e9e-9309-4f0b-9766-581778c5aaa7.png)
+- スクリーンショット
+  > ![image](https://user-images.githubusercontent.com/111847207/195663729-7c979e9e-9309-4f0b-9766-581778c5aaa7.png)
 
 ## できること
 
@@ -20,7 +20,7 @@
 
 - 引用(ブロック参照)で、タイムラインを記述します。ログの記録としても効果的です。 ⌨️`Win/Cmd + Alt` キーを同時押しで、箇条書き(・)を掴みながらドラッグして、そのブロック参照をブロックに置きます。
 
-![image](https://user-images.githubusercontent.com/111847207/195662824-35aecadd-c404-42a8-82eb-54ffc628c321.png)
+  > ![image](https://user-images.githubusercontent.com/111847207/195662824-35aecadd-c404-42a8-82eb-54ffc628c321.png)
 
 ### "Lined References"
 
@@ -55,10 +55,10 @@ Logseq マーケットプレイス からインストール
 
 ### プラグイン設定
 
-- 日誌の隣に"Lined References"を配置する: ブール
+- 日誌の隣に"Lined References"を配置する
    - `true` デフォルト
    - `false`
-- 右サイドバーのコンテンツを並列に配置する: ブール
+- 右サイドバーのコンテンツを並列に配置する
    > ⚠️ Logseq v0.9.14バージョンから、横並びの制限は2になりました。
    - `true`
    - `false` デフォルト
@@ -71,14 +71,16 @@ Logseq マーケットプレイス からインストール
 
 > [ディスカッション](https://github.com/YU000jp/Logseq-column-Layout/discussions)タブに移動して質問し、この種の情報を見つけてください。
 
-1. Logseqにタスクがない場合、"Lined References"のスペースは空白になります。
-1. 日記からの参照("Lined References")は、今日以外の日付に限られます。
-1. 縮小表示で画像が見にくい場合、ズーム機能を使用するか、サイドバーで開いてください。
-1. 日誌で、昨日などの過去の分を表示したくない場合
-   - [Single Journal プラグイン](https://github.com/YU000jp/logseq-plugin-single-journal)
-1. 日誌の上にミニカレンダーを配置する
-   - [Show weekday and week-number プラグイン](https://github.com/YU000jp/logseq-plugin-show-weekday-and-week-number)
+- Logseqにタスクがない場合、"Lined References"のスペースは空白になります。
+- 日記からの参照("Lined References")は、今日以外の日付に限られます。
+- 縮小表示で画像が見にくい場合、ズーム機能を使用するか、サイドバーで開いてください。
+- 日誌で、昨日などの過去の分を表示したくない場合
+  - [Single Journal プラグイン](https://github.com/YU000jp/logseq-plugin-single-journal)
+- 日誌の上にミニカレンダーを配置する
+  - [Show weekday and week-number プラグイン](https://github.com/YU000jp/logseq-plugin-show-weekday-and-week-number)
 
-製作者 > [@YU000jp](https://github.com/YU000jp)
+## クレジット
+
+- 製作者 > [@YU000jp](https://github.com/YU000jp)
 
 <a href="https://www.buymeacoffee.com/yu000japan"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a pizza&emoji=🍕&slug=yu000japan&button_colour=FFDD00&font_colour=000000&font_family=Poppins&outline_colour=000000&coffee_colour=ffffff" /></a>
