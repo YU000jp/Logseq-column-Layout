@@ -1,6 +1,7 @@
 # Logseq プラグイン: *Column Layout*
 
-- 日誌UI: 独自のスタイルを適用します。日誌と、そのリンク参照のリスト("Lined References")、日誌クエリー(Journal Queries)を横並びにして、カラムレイアウトで配置します。
+- Logseqの日誌(ジャーナル)にカラムレイアウトのスタイルを適用します。
+日次ジャーナルと、そのリンク参照("Lined References")、ジャーナルクエリ(Journal Queries)を横並びにして配置します。
   > 日誌以外の場合 >> [ページタグと階層 プラグイン](https://github.com/YU000jp/logseq-page-tags-and-hierarchy/)
 
 <div align="right">
@@ -36,7 +37,7 @@
 
 - Logseq はPDFファイルを読み込んでそのPDFにマーカーをつける機能 (ハイライト)があります。そのブロックの親に日付リンクをタグ付けすると、"Lined References" という参照リストに含まれます。 [PDFハイライト（docs.logseq.com 英語）](https://docs.logseq.com/#/page/pdf%20highlights)
 
-### 日誌クエリー
+### ジャーナルクエリ
 
 > 通常では、NOWクエリーとNEXTクエリーの 2つのクエリーが設置されています。タスクをさらに取得するには、Logseq から`config.edn` ファイルでその設定の変更をおこないます。 [その詳細については、このリンク（サンプルコード）を参照してください (英語)](https://github.com/YU000jp/logseq-default-queries-journals)
 
