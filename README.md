@@ -1,14 +1,14 @@
 # Logseq Plugin: *Column Layout*
 
-1. Journals view UI: For quick reference, place journals, linked references, and journal queries side by side.
-   > For non-journals >> [Page-tags and Hierarchy (Page UI) plugin](https://github.com/YU000jp/logseq-page-tags-and-hierarchy/)
+- Apply column layout style to Journals in Logseq - For quick reference, place journals, linked references, and journal queries side by side.
+   > For non-journals >> [Page-tags and Hierarchy  plugin](https://github.com/YU000jp/logseq-page-tags-and-hierarchy/)
 
 <div align="right">
 
 [English](https://github.com/YU000jp/Logseq-column-Layout)/[日本語](https://github.com/YU000jp/Logseq-column-Layout/blob/main/README.ja.md) [![latest release version](https://img.shields.io/github/v/release/YU000jp/Logseq-column-Layout)](https://github.com/YU000jp/Logseq-column-Layout/releases)
 [![License](https://img.shields.io/github/license/YU000jp/Logseq-column-Layout?color=blue)](https://github.com/YU000jp/Logseq-column-Layout/blob/main/LICENSE)
 [![Downloads](https://img.shields.io/github/downloads/YU000jp/Logseq-column-Layout/total.svg)](https://github.com/YU000jp/Logseq-column-Layout/releases)
- Published 2022/09/13 <a href="https://www.buymeacoffee.com/yu000japan"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a pizza&emoji=🍕&slug=yu000japan&button_colour=FFDD00&font_colour=000000&font_family=Poppins&outline_colour=000000&coffee_colour=ffffff" /></a>
+ Published 20220913 <a href="https://www.buymeacoffee.com/yu000japan"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a pizza&emoji=🍕&slug=yu000japan&button_colour=FFDD00&font_colour=000000&font_family=Poppins&outline_colour=000000&coffee_colour=ffffff" /></a>
 </div>
 
 - Screenshot
