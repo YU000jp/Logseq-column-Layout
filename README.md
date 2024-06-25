@@ -1,6 +1,7 @@
 # Logseq Plugin: *Column Layout*
 
-- Apply column layout style to Journals in Logseq - For quick reference, place journals, linked references, and journal queries side by side.
+- Apply column layout style to Journals in Logseq
+- For quick reference, place journals, linked references, and journal queries side by side.
    > For non-journals >> [Page-tags and Hierarchy  plugin](https://github.com/YU000jp/logseq-page-tags-and-hierarchy/)
 
 <div align="right">
