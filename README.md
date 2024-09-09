@@ -4,6 +4,9 @@
   - For quick reference, place journals, linked references, and journal queries side by side.
     > For non-journals >> [Page-tags and Hierarchy  plugin](https://github.com/YU000jp/logseq-page-tags-and-hierarchy/)
 
+> [!WARNING]
+This plugin does not work with Logseq db version.
+
 <div align="right">
 
 [English](https://github.com/YU000jp/Logseq-column-Layout)/[日本語](https://github.com/YU000jp/Logseq-column-Layout/blob/main/README.ja.md) [![latest release version](https://img.shields.io/github/v/release/YU000jp/Logseq-column-Layout)](https://github.com/YU000jp/Logseq-column-Layout/releases)

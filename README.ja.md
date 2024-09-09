@@ -4,6 +4,9 @@
   - 日次ジャーナルと、そのリンク参照("Lined References")、ジャーナルクエリ(Journal Queries)を横並びにして配置します。
     > 日誌以外の場合 >> [ページタグと階層 プラグイン](https://github.com/YU000jp/logseq-page-tags-and-hierarchy/)
 
+> [!WARNING]
+>このプラグインはLogseq dbバージョンでは動作しません。
+
 <div align="right">
 
 [English](https://github.com/YU000jp/Logseq-column-Layout)/[日本語](https://github.com/YU000jp/Logseq-column-Layout/blob/main/README.ja.md) [![latest release version](https://img.shields.io/github/v/release/YU000jp/Logseq-column-Layout)](https://github.com/YU000jp/Logseq-column-Layout/releases)
