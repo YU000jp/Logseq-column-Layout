@@ -1,6 +1,6 @@
-body[data-page="home"]>div#root>div>main>div {
-    & div#main-content-container {
-        & div#today-queries {
+body[data-page="home"]>#root>div>main>div {
+    & #main-content-container {
+        & #today-queries {
             &>div.lazy-visibility {
                 min-height: unset !important;
             }
@@ -16,7 +16,7 @@ body[data-page="home"]>div#root>div>main>div {
     }
 }
 
-body>div#root>div>main>div {
+body>#root>div>main>div {
     & img {
         overflow-x: scroll
     }
@@ -25,11 +25,11 @@ body>div#root>div>main>div {
         font-size: .95em
     }
 
-    & div#time-repeater {
+    & #time-repeater {
         min-width: 200px
     }
 
-    & div.timestamp div#date-time-picker {
+    & div.timestamp #date-time-picker {
         top: 3.8em;
         z-index: 11;
 

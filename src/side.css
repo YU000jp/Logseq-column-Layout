@@ -10,16 +10,16 @@
 
 body[data-page="home"]:not(.is-pdf-active) {
     @media screen and (min-width:1850px) {
-        &>div#root>div>main {
+        &>#root>div>main {
 
-            &.ls-wide-mode div#main-content-container div.cp__sidebar-main-content,
-            & div#main-container div.cp__sidebar-main-content {
+            &.ls-wide-mode #main-content-container div.cp__sidebar-main-content,
+            & #main-container div.cp__sidebar-main-content {
                 max-width: unset !important;
             }
 
         }
 
-        &.is-tabs-loaded>div#root>div>main>div div#journals div#today-queries {
+        &.is-tabs-loaded>#root>div>main>div #journals #today-queries {
             top: calc(var(--ls-headbar-height) + var(--ls-headbar-inner-top-padding) + 40px)
         }
 
@@ -27,9 +27,9 @@ body[data-page="home"]:not(.is-pdf-active) {
             display: none
         }
 
-        &>div#root>div>main:not(.ls-right-sidebar-open) div#main-content-container {
+        &>#root>div>main:not(.ls-right-sidebar-open) #main-content-container {
 
-            & div#journals>div>div>div.journal.page {
+            & #journals>div>div>div.journal.page {
                 display: flex;
                 justify-content: space-around;
                 margin-right: 0.25em;
@@ -69,7 +69,7 @@ body[data-page="home"]:not(.is-pdf-active) {
                 }
             }
 
-            & div#today-queries+div.flex.flex-col,
+            & #today-queries+div.flex.flex-col,
             & div.scheduled-or-deadlines {
                 position: fixed;
                 bottom: 1em;
@@ -91,7 +91,7 @@ body[data-page="home"]:not(.is-pdf-active) {
                 }
             }
 
-            & div#today-queries {
+            & #today-queries {
                 background: var(--ls-primary-background-color);
                 position: fixed;
                 right: 0;
@@ -161,7 +161,7 @@ body[data-page="home"]:not(.is-pdf-active) {
         }
     }
 
-    &>div#root>div>main:not(.ls-right-sidebar-open) div#journals {
+    &>#root>div>main:not(.ls-right-sidebar-open) #journals {
 
         /* Linked Referencesのマウスオーバー */
         @media screen and (min-width:1850px) and (max-width:2799px) {
@@ -177,7 +177,7 @@ body[data-page="home"]:not(.is-pdf-active) {
         @media screen and (min-width:1850px) and (max-width:1910px) {
             margin-right: 360px;
 
-            & div#today-queries {
+            & #today-queries {
                 width: 380px;
 
             }
@@ -195,7 +195,7 @@ body[data-page="home"]:not(.is-pdf-active) {
         @media screen and (min-width:1911px) and (max-width:2019px) {
             margin-right: 360px;
 
-            & div#today-queries {
+            & #today-queries {
                 width: 380px;
 
             }
@@ -213,7 +213,7 @@ body[data-page="home"]:not(.is-pdf-active) {
         @media screen and (min-width:2020px) and (max-width:2259px) {
             margin-right: 360px;
 
-            & div#today-queries {
+            & #today-queries {
                 width: 380px;
 
             }
@@ -231,7 +231,7 @@ body[data-page="home"]:not(.is-pdf-active) {
         @media screen and (min-width:2260px) and (max-width:2799px) {
             margin-right: 480px;
 
-            & div#today-queries {
+            & #today-queries {
                 width: 500px;
             }
 
@@ -248,7 +248,7 @@ body[data-page="home"]:not(.is-pdf-active) {
         @media screen and (min-width:2800px) {
             margin-right: 680px;
 
-            & div#today-queries {
+            & #today-queries {
                 width: 700px;
             }
 

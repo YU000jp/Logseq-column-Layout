@@ -1,6 +1,6 @@
-body>div#root>div>main {
+body>#root>div>main {
 
-    & div#right-sidebar {
+    & #right-sidebar {
         overflow: scroll;
 
 
@@ -98,7 +98,7 @@ body>div#root>div>main {
             flex-direction: row-reverse
         }
 
-        & div#date-time-picker {
+        & #date-time-picker {
             width: 430px;
             background: var(--color-level-1);
             z-index: var(--ls-z-index-level-4)
@@ -109,12 +109,12 @@ body>div#root>div>main {
         }
     }
 
-    &.ls-right-sidebar-open :is(div#today-queries, div.scheduled-or-deadlines) {
+    &.ls-right-sidebar-open :is(#today-queries, div.scheduled-or-deadlines) {
         display: none
     }
 }
 
-body.is-tabs-loaded>div#root>div>main div#right-sidebar div.sidebar-item-list {
+body.is-tabs-loaded>#root>div>main #right-sidebar div.sidebar-item-list {
     height: calc(96vh - 60px);
 
 }
