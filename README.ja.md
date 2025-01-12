@@ -28,10 +28,6 @@
 
 ### "Lined References"
 
-#### [Omnivoreプラグイン](https://github.com/omnivore-app/logseq-omnivore) が適しています
-
-- 「Omnivore.app」というWebアプリは、**Logseq に引用できるWebクリップのツール** です。その日のWebクリップが、日記の隣に表示されます。 (`substack.com` のニュースレターも表示できます。)
-
 #### 📅 次の日記を書く際の思考リストとして、リンクする
 
 - [datenlpプラグイン](https://github.com/hkgnp/logseq-datenlp-plugin) を使用します。水曜日に表示させたい場合は`@wednesday`、もしくは過去の日記を読んで気になったブロックに`@today`を追加します。これらはリンクになり、"Linked References" という参照リストに含まれます。(当日分は含まれません)
