@@ -29,10 +29,6 @@ This plugin does not work with Logseq db version.
 
 ### Linked reference
 
-#### Suitable for [Omnivore plugin](https://github.com/omnivore-app/logseq-omnivore)
-
-- Omnivore is a **WebClipping tool** that can be quoted to Logseq. It is possible to see the table of web clips for the day next to the journal, so it's easy to access. (View `substack.com` newsletter)
-
 #### 📅 As a list for inclusion in the next journal
 
 - Use [datenlp plugin](https://github.com/hkgnp/logseq-datenlp-plugin). Add `@wednesday` or read past journals and add `@today`. They become links.
