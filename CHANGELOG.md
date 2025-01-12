@@ -1,3 +1,11 @@
+## [2.12.1](https://github.com/YU000jp/Logseq-column-Layout/compare/v2.12.0...v2.12.1) (2025-01-12)
+
+
+### Bug Fixes
+
+* **bug:** for "SCHEDULED AND DEADLINE" ([3bfa247](https://github.com/YU000jp/Logseq-column-Layout/commit/3bfa247eb70103aa6d069192e4bda31cbfe36f7b))
+* **refactor:** CSS ([7cd16a9](https://github.com/YU000jp/Logseq-column-Layout/commit/7cd16a949cab499cf60be3b0025511c6bfdc69f2))
+
 # [2.12.0](https://github.com/YU000jp/Logseq-column-Layout/compare/v2.11.1...v2.12.0) (2024-06-16)
 
 
