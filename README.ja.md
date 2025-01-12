@@ -1,7 +1,7 @@
 # Logseq プラグイン: *Column Layout*
 
 - Logseqの日誌(ジャーナル)にカラムレイアウトのスタイルを適用します。
-  - 日次ジャーナルと、そのリンク参照("Lined References")、ジャーナルクエリ(Journal Queries)を横並びにして配置します。
+  - 日次ジャーナルとそのLined References、ジャーナルクエリ(Journal Queries)を横並びにして配置します。
     > 日誌以外の場合 >> [ページタグと階層 プラグイン](https://github.com/YU000jp/logseq-page-tags-and-hierarchy/)
 
 > [!WARNING]
