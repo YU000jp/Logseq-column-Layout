@@ -39,11 +39,6 @@ body[data-page="home"]:not(.is-pdf-active) {
                     margin-right: 0.25em;
                 }
 
-                /* 無効になっているUnlinked References */
-                &>div#today-queries+div.lazy-visibility {
-                    display: none;
-                }
-
                 @media screen and (max-width:2259px) {
 
                     /* Linked References */
