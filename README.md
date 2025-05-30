@@ -63,8 +63,6 @@ This plugin does not work with Logseq db version.
    - `true`
    - `false` default
 
-> Image size limit feature' has been moved to [Preview Image plugin](https://github.com/YU000jp/logseq-plugin-preview-image).
-
 ---
 
 ## Showcase / Questions / Ideas / Help
