@@ -63,8 +63,6 @@ Logseq マーケットプレイス からインストール
    - `true`
    - `false` デフォルト
 
-> 画像サイズ制限機能は、[画像プレビュープラグイン](https://github.com/YU000jp/logseq-plugin-preview-image)に移動しました。
-
 ---
 
 ## ショーケース / 質問 / アイデア / ヘルプ
