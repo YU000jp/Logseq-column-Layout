@@ -1,3 +1,15 @@
+# [2.13.0](https://github.com/YU000jp/Logseq-column-Layout/compare/v2.12.1...v2.13.0) (2025-06-11)
+
+
+### Features
+
+* Additional translations of plugin settings. ([3ffc97d](https://github.com/YU000jp/Logseq-column-Layout/commit/3ffc97dbc292b434142602f5f797924702965b4f))
+
+
+### Performance Improvements
+
+* Importing CSS into one file ([9e516a1](https://github.com/YU000jp/Logseq-column-Layout/commit/9e516a1d3b0f270e286c25ac2f944a7bef121797))
+
 ## [2.12.1](https://github.com/YU000jp/Logseq-column-Layout/compare/v2.12.0...v2.12.1) (2025-01-12)
 
 
