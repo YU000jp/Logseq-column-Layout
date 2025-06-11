@@ -1,13 +1,13 @@
 import "@logseq/libs"
 import { LSPluginBaseInfo } from "@logseq/libs/dist/LSPlugin.user"
-import { setup as l10nSetup, t } from "logseq-l10n" //https://github.com/sethyuan/logseq-l10n
 import { removeProvideStyle } from "./lib"
+import { loadLogseqL10n } from "./translations/l10nSetup"
+
 import CSSmain from "./main.css?inline"
-import CSS3Side from "./side.css?inline"
 import CSSNonSide from "./notSide.css?inline"
-import { settingsTemplate } from "./settings"
-import ja from "./translations/ja.json"
 import CSS3RightSidebar from "./rightSidebar.css?inline"
+import { settingsTemplate } from "./settings"
+import CSS3Side from "./side.css?inline"
 const keyRightSidebar = "rightSidebar"
 const keySide = "side"
 const keyNestingSide = "nestingSide"
@@ -33,7 +33,8 @@ const CSSSeparate = `
 /* main */
 const main = async () => {
 
-  await l10nSetup({ builtinTranslations: { ja } })
+    // ユーザー設定言語を取得し、L10Nをセットアップ
+    await loadLogseqL10n()
 
   /* user settings */
   logseq.useSettingsSchema(settingsTemplate())
