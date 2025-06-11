@@ -5,9 +5,24 @@ import { settingsTemplate } from "./settings"
 import { CSS3RightSidebar, CSS3Side, CSSmain, CSSNonSide, CSSSeparate } from "./css/styles"
 import { loadLogseqL10n } from "./translations/l10nSetup"
 import { keyNestingSide, keyNonSide, keyRightSidebar, keySeparate, keySide } from "./key"
+import { logseqModelCheck } from "./logseqModelCheck"
+
+
+// 変数 (同じモジュール内で使用するため、exportしない)
+let logseqVersion: string = "" //バージョンチェック用
+let logseqMdModel: boolean = false //モデルチェック用
+// 外部から参照するためにexportする
+export const getLogseqVersion = () => logseqVersion //バージョンチェック用
+export const replaceLogseqVersion = (version: string) => logseqVersion = version
+export const booleanLogseqMdModel = () => logseqMdModel //モデルチェック用
+export const replaceLogseqMdModel = (mdModel: boolean) => logseqMdModel = mdModel
+
 
 /* main */
 const main = async () => {
+
+  // Logseqモデルのチェックを実行
+  const logseqMdModel = await logseqModelCheck()
 
   // ユーザー設定言語を取得し、L10Nをセットアップ
   await loadLogseqL10n()
