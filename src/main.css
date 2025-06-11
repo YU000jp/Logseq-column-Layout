@@ -1,5 +1,4 @@
-body[data-page="home"]>#root>div>main>div {
-    & #main-content-container {
+body[data-page="home"]>#root>div>main #main-content-container {
         & #today-queries {
             &>div.lazy-visibility {
                 min-height: unset !important;
@@ -13,7 +12,6 @@ body[data-page="home"]>#root>div>main>div {
         & div.nav-content-item-inner {
             margin-top: 2em
         }
-    }
 }
 
 body>#root>div>main>div {

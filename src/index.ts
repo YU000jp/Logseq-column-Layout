@@ -14,7 +14,7 @@ const keyNestingSide = "nestingSide"
 const keyNonSide = "nonSide"
 const keySeparate = "continuous"
 const CSSSeparate = `
-      body[data-page="home"]:not(.is-pdf-active)>div#root>div>main div#main-content-container div#journals {
+      body[data-page="home"]:not(.is-pdf-active)>#root>div>main #journals {
 
       &:first-child {
         min-height: unset;
