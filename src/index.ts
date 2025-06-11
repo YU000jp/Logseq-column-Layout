@@ -2,14 +2,9 @@ import "@logseq/libs"
 import { LSPluginBaseInfo } from "@logseq/libs/dist/LSPlugin.user"
 import { removeProvideStyle } from "./lib"
 import { settingsTemplate } from "./settings"
-import { CSS3RightSidebar, CSS3Side, CSSmain, CSSNonSide, CSSSeparate } from "./styles"
+import { CSS3RightSidebar, CSS3Side, CSSmain, CSSNonSide, CSSSeparate } from "./css/styles"
 import { loadLogseqL10n } from "./translations/l10nSetup"
-
-const keyRightSidebar = "rightSidebar"
-const keySide = "side"
-const keyNestingSide = "nestingSide"
-const keyNonSide = "nonSide"
-const keySeparate = "continuous"
+import { keyNestingSide, keyNonSide, keyRightSidebar, keySeparate, keySide } from "./key"
 
 /* main */
 const main = async () => {
@@ -52,39 +47,38 @@ const main = async () => {
   })
 
   logseq.onSettingsChanged((newSet: LSPluginBaseInfo["settings"], oldSet: LSPluginBaseInfo["settings"]) => {
-    if (oldSet.booleanLinkedReferences === true
-      && newSet.booleanLinkedReferences === false)
-      try {
+    // Handle booleanLinkedReferences changes
+    if (oldSet.booleanLinkedReferences !== newSet.booleanLinkedReferences) {
+      if (newSet.booleanLinkedReferences) {
+        removeProvideStyle(keyNonSide)
+        provideStyle(keyNestingSide, CSS3Side)
+      } else {
         removeProvideStyle(keySide)
         removeProvideStyle(keyNestingSide)
-      } finally {
         logseq.provideStyle({
           key: keyNonSide,
           style: CSSNonSide
         })
       }
-    else
-      if (oldSet.booleanLinkedReferences === false
-        && newSet.booleanLinkedReferences === true)
-        try {
-          removeProvideStyle(keyNonSide)
-        } finally {
-          provideStyle(keyNestingSide, CSS3Side)
-        }
-    if (oldSet.booleanRightSidebar === true
-      && newSet.booleanRightSidebar === false)
-      removeProvideStyle(keyRightSidebar)
-    else
-      if (oldSet.booleanRightSidebar === false
-        && newSet.booleanRightSidebar === true)
+    }
+
+    // Handle booleanRightSidebar changes
+    if (oldSet.booleanRightSidebar !== newSet.booleanRightSidebar) {
+      if (newSet.booleanRightSidebar) {
         provideStyle(keyRightSidebar, CSS3RightSidebar)
-    if (oldSet.booleanSeparate === true
-      && newSet.booleanSeparate === false)
-      removeProvideStyle(keySeparate)
-    else
-      if (oldSet.booleanSeparate === false
-        && newSet.booleanSeparate === true)
+      } else {
+        removeProvideStyle(keyRightSidebar)
+      }
+    }
+
+    // Handle booleanSeparate changes
+    if (oldSet.booleanSeparate !== newSet.booleanSeparate) {
+      if (newSet.booleanSeparate) {
         provideStyle(keySeparate, CSSSeparate)
+      } else {
+        removeProvideStyle(keySeparate)
+      }
+    }
   })
 } /* end_main */
 

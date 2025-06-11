@@ -1,0 +1,5 @@
+export const keyRightSidebar = "rightSidebar"
+export const keySide = "side"
+export const keyNestingSide = "nestingSide"
+export const keyNonSide = "nonSide"
+export const keySeparate = "continuous"
