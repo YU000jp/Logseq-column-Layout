@@ -9,7 +9,7 @@
 }
 
 body[data-page="home"]:not(.is-pdf-active) {
-    @media screen and (min-width:1850px) {
+    @media screen and (min-width:1400px) {
         &>#root>div>main {
 
             &.ls-wide-mode #main-content-container div.cp__sidebar-main-content,
@@ -164,13 +164,30 @@ body[data-page="home"]:not(.is-pdf-active) {
     &>#root>div>main:not(.ls-right-sidebar-open) #journals {
 
         /* Linked Referencesのマウスオーバー */
-        @media screen and (min-width:1850px) and (max-width:2799px) {
+        @media screen and (min-width:1400px) and (max-width:2799px) {
             & div.page-linked:is(:focus-within, :hover) {
                 background: var(--ls-primary-background-color);
                 backdrop-filter: blur(40px);
                 min-width: 660px;
                 max-width: 660px;
                 z-index: var(--ls-z-index-level-1)
+            }
+        }
+
+        @media screen and (min-width:1400px) and (max-width:1849px) {
+            margin-right: 300px;
+
+            & #today-queries {
+                width: 320px;
+            }
+
+            & div.journal>div.flex.flex-col {
+                min-width: 700px
+            }
+
+            & div.scheduled-or-deadlines {
+                width: 320px;
+                right: 320px;
             }
         }
 

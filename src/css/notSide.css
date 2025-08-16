@@ -1,4 +1,4 @@
-@media screen and (min-width:1850px){
+@media screen and (min-width:1400px){
 body[data-page=home] main.ls-wide-mode div#main-content-container div.cp__sidebar-main-content{max-width:unset}
 body[data-page=home] div#main-container div.cp__sidebar-main-content{max-width:unset}
 body[data-page=home].is-tabs-loaded div#journals div#today-queries{top:calc(var(--ls-headbar-height) + var(--ls-headbar-inner-top-padding) + 40px)}
