@@ -51,7 +51,7 @@ This plugin does not work with Logseq db version.
 
 ### Usage
 
-- Styles be applied only to journals. The styles are not applied if the window size is less than 1850px.
+- Styles be applied only to journals. The styles are not applied if the window size is less than 1400px.
 
 ### Plugin Settings
 
