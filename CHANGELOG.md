@@ -1,3 +1,10 @@
+## [2.13.1](https://github.com/YU000jp/Logseq-column-Layout/compare/v2.13.0...v2.13.1) (2025-08-17)
+
+
+### Bug Fixes
+
+* Lower minimum width requirement from 1850px to 1400px for sidebar visibility on scaled displays [#28](https://github.com/YU000jp/Logseq-column-Layout/issues/28) ([f99e841](https://github.com/YU000jp/Logseq-column-Layout/commit/f99e841daefbc5a1dacfa894236079b3b2d72358)), closes [#29](https://github.com/YU000jp/Logseq-column-Layout/issues/29)
+
 # [2.13.0](https://github.com/YU000jp/Logseq-column-Layout/compare/v2.12.1...v2.13.0) (2025-06-11)
 
 
