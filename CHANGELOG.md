@@ -1,3 +1,10 @@
+## [2.13.2](https://github.com/YU000jp/Logseq-column-Layout/compare/v2.13.1...v2.13.2) (2026-07-20)
+
+
+### Bug Fixes
+
+* detect Logseq OG (1.x) as MD model in checkLogseqVersion ([63c156f](https://github.com/YU000jp/Logseq-column-Layout/commit/63c156fbfe47966324a5a4fb4b8cf72c41f2f841))
+
 ## [2.13.1](https://github.com/YU000jp/Logseq-column-Layout/compare/v2.13.0...v2.13.1) (2025-08-17)
 
 
