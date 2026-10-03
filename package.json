@@ -20,7 +20,7 @@
         "prod": "npm run clean && vite build"
     },
     "dependencies": {
-        "@logseq/libs": "^0.0.17",
+        "@logseq/libs": "^0.2.12",
         "logseq-l10n": "^0.2.0"
     },
     "devDependencies": {
