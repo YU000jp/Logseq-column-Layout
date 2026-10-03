@@ -21,8 +21,8 @@ export const replaceLogseqMdModel = (mdModel: boolean) => logseqMdModel = mdMode
 /* main */
 const main = async () => {
 
-  // Logseqモデルのチェックを実行
-  const logseqMdModel = await logseqModelCheck()
+  // Logseqモデルのチェックを実行 (戻り値は現在未使用。フラグはbooleanLogseqMdModel()経由で参照可能)
+  await logseqModelCheck()
 
   // ユーザー設定言語を取得し、L10Nをセットアップ
   await loadLogseqL10n()
