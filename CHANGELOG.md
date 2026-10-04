@@ -1,3 +1,10 @@
+## [2.13.3](https://github.com/YU000jp/Logseq-column-Layout/compare/v2.13.2...v2.13.3) (2026-10-04)
+
+
+### Bug Fixes
+
+* グラフ種別判定を公式API(checkCurrentIsDbGraph)に置き換え、アプリ世代とグラフ種別の判定を分離 ([4e16edf](https://github.com/YU000jp/Logseq-column-Layout/commit/4e16edf23a95af813a193dd1aa0fb9ff8c606204))
+
 ## [2.13.2](https://github.com/YU000jp/Logseq-column-Layout/compare/v2.13.1...v2.13.2) (2026-07-20)
 
 
